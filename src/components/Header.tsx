@@ -106,11 +106,18 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-6">
-            <a href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : "tel:+33124636789"} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group">
+            <a 
+              href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : undefined} 
+              className={`flex items-center gap-2 text-white/90 transition-colors group ${companyInfo === undefined ? 'cursor-default' : 'hover:text-white'}`}
+            >
               <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                 <Phone className="w-4 h-4" />
               </div>
-              <span className="text-sm font-semibold tracking-wide">{companyInfo?.phone || "+33 1 24 63 67 89"}</span>
+              {companyInfo === undefined ? (
+                <div className="h-4 w-28 bg-white/20 rounded animate-pulse"></div>
+              ) : (
+                <span className="text-sm font-semibold tracking-wide">{companyInfo?.phone}</span>
+              )}
             </a>
 
             <Link
@@ -122,7 +129,11 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-4 lg:hidden ml-auto mr-4">
-            <a href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : "tel:+33124636789"} className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/90 hover:text-white hover:bg-white/20 transition-colors" aria-label="Appeler">
+            <a 
+              href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : undefined} 
+              className={`w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/90 transition-colors ${companyInfo === undefined ? 'opacity-50 animate-pulse pointer-events-none' : 'hover:text-white hover:bg-white/20'}`} 
+              aria-label="Appeler"
+            >
               <Phone className="w-4.5 h-4.5" />
             </a>
           </div>

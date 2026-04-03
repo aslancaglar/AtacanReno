@@ -193,9 +193,18 @@ const ContactPageClient = () => {
                         <span className="text-xs font-semibold text-secondary uppercase tracking-wider block mb-1">
                           {item.label}
                         </span>
-                        <span className="text-sm text-nav font-medium whitespace-pre-line leading-relaxed">
-                          {item.value}
-                        </span>
+                        {companyInfoFromDb === undefined ? (
+                          <div className="space-y-2 mt-2">
+                            <div className="h-4 w-3/4 bg-primary/10 rounded animate-pulse"></div>
+                            {item.label === "Adresse" || item.label === "Horaires" ? (
+                              <div className="h-4 w-1/2 bg-primary/10 rounded animate-pulse"></div>
+                            ) : null}
+                          </div>
+                        ) : (
+                          <span className="text-sm text-nav font-medium whitespace-pre-line leading-relaxed">
+                            {item.value}
+                          </span>
+                        )}
                       </div>
                     </motion.div>
                   );

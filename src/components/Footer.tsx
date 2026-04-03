@@ -15,9 +15,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-bold mb-4 text-primary-foreground">ATC Rénovation</h3>
-            <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
-              {companyInfo?.description || "Votre partenaire de confiance pour tous vos projets de rénovation intérieure dans la région de Nancy."}
-            </p>
+            {companyInfo === undefined ? (
+              <div className="space-y-2 mb-2">
+                <div className="h-4 w-full bg-primary-foreground/10 rounded animate-pulse"></div>
+                <div className="h-4 w-full bg-primary-foreground/10 rounded animate-pulse"></div>
+                <div className="h-4 w-2/3 bg-primary-foreground/10 rounded animate-pulse"></div>
+              </div>
+            ) : (
+              <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
+                {companyInfo?.description}
+              </p>
+            )}
           </div>
 
           <div>
@@ -49,19 +57,31 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
-                <span>{companyInfo?.address || "371 Avenue des Champs Elysées Nancy, 54000"}</span>
+                {companyInfo === undefined ? (
+                  <div className="h-4 w-48 bg-primary-foreground/10 rounded animate-pulse"></div>
+                ) : (
+                  <span>{companyInfo?.address}</span>
+                )}
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-secondary" />
-                <a href={`tel:${companyInfo?.phone || ""}`} className="hover:text-secondary transition-colors">
-                  {companyInfo?.phone || "+33 1 24 63 67 89"}
-                </a>
+                {companyInfo === undefined ? (
+                  <div className="h-4 w-32 bg-primary-foreground/10 rounded animate-pulse"></div>
+                ) : (
+                  <a href={`tel:${companyInfo?.phone}`} className="hover:text-secondary transition-colors">
+                    {companyInfo?.phone}
+                  </a>
+                )}
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-secondary" />
-                <a href={`mailto:${companyInfo?.email || ""}`} className="hover:text-secondary transition-colors">
-                  {companyInfo?.email || "contact@atacan-renovation.fr"}
-                </a>
+                {companyInfo === undefined ? (
+                  <div className="h-4 w-40 bg-primary-foreground/10 rounded animate-pulse"></div>
+                ) : (
+                  <a href={`mailto:${companyInfo?.email}`} className="hover:text-secondary transition-colors">
+                    {companyInfo?.email}
+                  </a>
+                )}
               </li>
             </ul>
           </div>
