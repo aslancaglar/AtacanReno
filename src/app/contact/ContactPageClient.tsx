@@ -45,7 +45,7 @@ const getContactInfo = (companyDetails: any) => [
   {
     icon: Clock,
     label: "Horaires",
-    value: "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00", // Hardcoded for now unless added to DB mapped settings
+    value: companyDetails?.workingHours || "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00", // Hardcoded fallback if empty
     href: undefined,
   },
 ];

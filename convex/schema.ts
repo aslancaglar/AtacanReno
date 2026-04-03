@@ -63,6 +63,8 @@ export default defineSchema({
     phone: v.string(),
     address: v.string(),
     description: v.optional(v.string()),
+    workingHours: v.optional(v.string()),
+    whatsappNumber: v.optional(v.string()),
     instagramUrl: v.optional(v.string()),
     facebookUrl: v.optional(v.string()),
     updatedAt: v.number(),

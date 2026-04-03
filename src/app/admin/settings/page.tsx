@@ -20,6 +20,8 @@ export default function SettingsPage() {
     email: "",
     phone: "",
     address: "",
+    workingHours: "",
+    whatsappNumber: "",
     description: "",
     instagramUrl: "",
     facebookUrl: "",
@@ -33,6 +35,8 @@ export default function SettingsPage() {
         email: companyInfo.email || "",
         phone: companyInfo.phone || "",
         address: companyInfo.address || "",
+        workingHours: companyInfo.workingHours || "",
+        whatsappNumber: companyInfo.whatsappNumber || "",
         description: companyInfo.description || "",
         instagramUrl: companyInfo.instagramUrl || "",
         facebookUrl: companyInfo.facebookUrl || "",
@@ -103,6 +107,18 @@ export default function SettingsPage() {
           </div>
 
           <div className="space-y-2">
+            <Label htmlFor="workingHours">Horaires d'ouverture</Label>
+            <Textarea 
+              id="workingHours" 
+              value={form.workingHours} 
+              onChange={(e) => setForm({ ...form, workingHours: e.target.value })} 
+              placeholder="Lun – Ven : 8h00 – 18h00&#10;Sam : 9h00 – 13h00" 
+              rows={2}
+              className="resize-none"
+            />
+          </div>
+
+          <div className="space-y-2">
             <Label htmlFor="description">Texte officiel (À propos)</Label>
             <Textarea 
               id="description" 
@@ -116,11 +132,20 @@ export default function SettingsPage() {
           </div>
 
           <div className="border-b border-border pt-4 pb-4">
-            <h3 className="text-lg font-bold text-nav">Réseaux Sociaux</h3>
+            <h3 className="text-lg font-bold text-nav">Réseaux Sociaux & Messagerie</h3>
             <p className="text-sm text-muted-foreground">Laissez vide pour masquer l'icône sur le site public.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="whatsapp">Numéro WhatsApp</Label>
+              <Input 
+                id="whatsapp" 
+                value={form.whatsappNumber} 
+                onChange={(e) => setForm({ ...form, whatsappNumber: e.target.value })} 
+                placeholder="Ex: 33612345678 (sans le + et les espaces)" 
+              />
+            </div>
             <div className="space-y-2">
               <Label htmlFor="instagram">Lien Instagram</Label>
               <Input 
