@@ -130,10 +130,11 @@ const Header = () => {
           <div className="flex items-center gap-4 lg:hidden ml-auto mr-4">
             <a 
               href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : undefined} 
-              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/90 hover:text-white hover:bg-white/20 transition-colors"
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full text-white/90 transition-colors"
               aria-label="Appeler"
             >
-              <Phone className="w-4.5 h-4.5" />
+              <Phone className="w-4 h-4" />
+              <span className="text-[13px] font-bold tracking-tight">{companyInfo?.phone}</span>
             </a>
           </div>
 
