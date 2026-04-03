@@ -53,7 +53,15 @@ export const update = mutation({
   },
   handler: async (ctx, args) => {
     const { id, ...data } = args;
-    await ctx.db.patch(id, data);
+    await ctx.db.patch(id, {
+      title: args.title,
+      location: args.location,
+      category: args.category,
+      imageUrl: args.imageUrl,
+      beforeImageUrl: args.beforeImageUrl,
+      description: args.description,
+      visible: args.visible,
+    });
   },
 });
 
