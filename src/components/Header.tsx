@@ -3,8 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { services } from "@/data/services";
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 const navLinks = [
   { label: "Accueil", to: "/", isPage: true },
@@ -21,6 +23,7 @@ const Header = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const megaTimeout = useRef<ReturnType<typeof setTimeout>>();
   const pathname = usePathname();
+  const companyInfo = useQuery(api.companyInfo.get);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -102,13 +105,26 @@ const Header = () => {
             })}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-6">
+            <a href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : "tel:+33124636789"} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group">
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                <Phone className="w-4 h-4" />
+              </div>
+              <span className="text-sm font-semibold tracking-wide">{companyInfo?.phone || "+33 1 24 63 67 89"}</span>
+            </a>
+
             <Link
               href="/devis"
               className="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-secondary-foreground text-sm font-bold rounded-full px-7 py-3 transition-colors"
             >
               Demande de devis
             </Link>
+          </div>
+
+          <div className="flex items-center gap-4 lg:hidden ml-auto mr-4">
+            <a href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : "tel:+33124636789"} className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/90 hover:text-white hover:bg-white/20 transition-colors" aria-label="Appeler">
+              <Phone className="w-4.5 h-4.5" />
+            </a>
           </div>
 
           <button className="lg:hidden text-nav" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
