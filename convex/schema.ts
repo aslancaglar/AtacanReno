@@ -57,4 +57,14 @@ export default defineSchema({
   })
     .index("by_visible", ["visible"])
     .index("by_createdAt", ["createdAt"]),
+
+  companyInfo: defineTable({
+    email: v.string(),
+    phone: v.string(),
+    address: v.string(),
+    description: v.optional(v.string()),
+    instagramUrl: v.optional(v.string()),
+    facebookUrl: v.optional(v.string()),
+    updatedAt: v.number(),
+  }),
 });

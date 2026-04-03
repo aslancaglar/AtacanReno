@@ -3,16 +3,20 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/data/services";
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 const Footer = () => {
+  const companyInfo = useQuery(api.companyInfo.get);
+
   return (
     <footer className="bg-nav text-primary-foreground">
       <div className="container mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-bold mb-4 text-primary-foreground">ATC Rénovation</h3>
-            <p className="text-sm text-primary-foreground/60 leading-relaxed">
-              Votre partenaire de confiance pour tous vos projets de rénovation intérieure dans la région de Nancy.
+            <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
+              {companyInfo?.description || "Votre partenaire de confiance pour tous vos projets de rénovation intérieure dans la région de Nancy."}
             </p>
           </div>
 
@@ -45,15 +49,19 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
-                <span>371 Avenue des Champs Elysées Nancy, 54000</span>
+                <span>{companyInfo?.address || "371 Avenue des Champs Elysées Nancy, 54000"}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-secondary" />
-                <a href="tel:+33000000000" className="hover:text-secondary transition-colors">+33 1 24 63 67 89</a>
+                <a href={`tel:${companyInfo?.phone || ""}`} className="hover:text-secondary transition-colors">
+                  {companyInfo?.phone || "+33 1 24 63 67 89"}
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-secondary" />
-                <a href="mailto:contact@atacan-renovation.fr" className="hover:text-secondary transition-colors">contact@atacan-renovation.fr</a>
+                <a href={`mailto:${companyInfo?.email || ""}`} className="hover:text-secondary transition-colors">
+                  {companyInfo?.email || "contact@atacan-renovation.fr"}
+                </a>
               </li>
             </ul>
           </div>

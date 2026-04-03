@@ -9,6 +9,7 @@ import {
   Users,
   Image,
   Star,
+  Settings,
   Menu,
   X,
   ChevronLeft,
@@ -20,6 +21,7 @@ const navItems = [
   { href: "/admin/clients", label: "Clients", icon: Users },
   { href: "/admin/portfolio", label: "Portfolio", icon: Image },
   { href: "/admin/avis", label: "Avis clients", icon: Star },
+  { href: "/admin/settings", label: "Paramètres", icon: Settings },
 ];
 
 export default function AdminLayout({

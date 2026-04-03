@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
+import { useQuery } from "convex/react";
+import { api } from "../../../convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -21,29 +23,29 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const contactInfo = [
+const getContactInfo = (companyDetails: any) => [
   {
     icon: MapPin,
     label: "Adresse",
-    value: "371 Avenue des Champs Elysées\nNancy, 54000",
-    href: "https://maps.google.com/?q=371+Avenue+des+Champs+Elysées+Nancy+54000",
+    value: companyDetails?.address || "371 Avenue des Champs Elysées\nNancy, 54000",
+    href: companyDetails?.address ? `https://maps.google.com/?q=${encodeURIComponent(companyDetails.address)}` : "https://maps.google.com/?q=371+Avenue+des+Champs+Elysées+Nancy+54000",
   },
   {
     icon: Phone,
     label: "Téléphone",
-    value: "+33 1 24 63 67 89",
-    href: "tel:+33124636789",
+    value: companyDetails?.phone || "+33 1 24 63 67 89",
+    href: companyDetails?.phone ? `tel:${companyDetails.phone.replace(/\s+/g, '')}` : "tel:+33124636789",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "contact@atacan-renovation.fr",
-    href: "mailto:contact@atacan-renovation.fr",
+    value: companyDetails?.email || "contact@atacan-renovation.fr",
+    href: companyDetails?.email ? `mailto:${companyDetails.email}` : "mailto:contact@atacan-renovation.fr",
   },
   {
     icon: Clock,
     label: "Horaires",
-    value: "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00",
+    value: "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00", // Hardcoded for now unless added to DB mapped settings
     href: undefined,
   },
 ];
@@ -105,6 +107,9 @@ const faqs = [
 ];
 
 const ContactPageClient = () => {
+  const companyInfoFromDb = useQuery(api.companyInfo.get);
+  const contactInfo = getContactInfo(companyInfoFromDb);
+
   return (
     <Layout>
         {/* ─── Hero ─── */}
@@ -326,11 +331,11 @@ const ContactPageClient = () => {
                     lundi au vendredi de 8h à 18h.
                   </p>
                   <a
-                    href="tel:+33124636789"
+                    href={companyInfoFromDb?.phone ? `tel:${companyInfoFromDb.phone.replace(/\s+/g, '')}` : "tel:+33124636789"}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
                   >
                     <Phone className="w-4 h-4" />
-                    +33 1 24 63 67 89
+                    {companyInfoFromDb?.phone || "+33 1 24 63 67 89"}
                   </a>
                 </div>
               </motion.div>
@@ -384,7 +389,7 @@ const ContactPageClient = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
               >
-                <a href="tel:+33124636789">
+                <a href={companyInfoFromDb?.phone ? `tel:${companyInfoFromDb.phone.replace(/\s+/g, '')}` : "tel:+33124636789"}>
                   <Button className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-10 h-14 text-lg">
                     <Phone className="w-5 h-5 mr-2" />
                     Appelez-nous maintenant
