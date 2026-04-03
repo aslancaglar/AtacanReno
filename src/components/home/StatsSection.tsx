@@ -2,8 +2,6 @@
 
 import { Calendar, Home, Star, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
 
 const StatItem = ({
   stat,
@@ -33,14 +31,9 @@ const StatItem = ({
 };
 
 const StatsSection = () => {
-  const devisStats = useQuery(api.devis.getStats);
-
-  // Use live data for "Projets terminés" if available
-  const completedProjects = devisStats?.termine ?? 300;
-
   const stats = [
     { icon: Calendar, value: 10, suffix: "+", label: "Années d'expérience" },
-    { icon: Home, value: completedProjects, suffix: "+", label: "Projets terminés" },
+    { icon: Home, value: 300, suffix: "+", label: "Projets terminés" },
     { icon: Star, value: "4.9/5", suffix: "", label: "Note moyenne sur Google" },
     { icon: Clock, value: "100%", suffix: "", label: "Délais respectés" },
   ];
