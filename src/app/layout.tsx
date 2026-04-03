@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
+import { preloadQuery } from "convex/nextjs";
+import { api } from "../../convex/_generated/api";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -91,11 +93,13 @@ const structuredData = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const preloadedCompanyInfo = await preloadQuery(api.companyInfo.get);
+
   return (
     <html lang="fr" className={manrope.variable}>
       <head>
@@ -105,7 +109,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ConvexClientProvider>
+        <ConvexClientProvider preloadedCompanyInfo={preloadedCompanyInfo}>
           {children}
         </ConvexClientProvider>
       </body>

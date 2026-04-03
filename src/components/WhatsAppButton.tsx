@@ -1,12 +1,14 @@
 "use client";
 
-import { useQuery } from "convex/react";
+import { usePreloadedQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 
 export default function WhatsAppButton() {
-  const companyInfo = useQuery(api.companyInfo.get);
+  const preloadedInfo = usePreloadedCompanyInfo();
+  const companyInfo = usePreloadedQuery(preloadedInfo!);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

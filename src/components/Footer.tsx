@@ -3,11 +3,13 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/data/services";
-import { useQuery } from "convex/react";
+import { usePreloadedQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 
 const Footer = () => {
-  const companyInfo = useQuery(api.companyInfo.get);
+  const preloadedInfo = usePreloadedCompanyInfo();
+  const companyInfo = usePreloadedQuery(preloadedInfo!);
 
   return (
     <footer className="bg-nav text-primary-foreground">
@@ -15,17 +17,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-bold mb-4 text-primary-foreground">ATC Rénovation</h3>
-            {companyInfo === undefined ? (
-              <div className="space-y-2 mb-2">
-                <div className="h-4 w-full bg-primary-foreground/10 rounded animate-pulse"></div>
-                <div className="h-4 w-full bg-primary-foreground/10 rounded animate-pulse"></div>
-                <div className="h-4 w-2/3 bg-primary-foreground/10 rounded animate-pulse"></div>
-              </div>
-            ) : (
-              <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
-                {companyInfo?.description}
-              </p>
-            )}
+            <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
+              {companyInfo?.description}
+            </p>
           </div>
 
           <div>
@@ -57,31 +51,19 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
-                {companyInfo === undefined ? (
-                  <div className="h-4 w-48 bg-primary-foreground/10 rounded animate-pulse"></div>
-                ) : (
-                  <span>{companyInfo?.address}</span>
-                )}
+                <span>{companyInfo?.address}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-secondary" />
-                {companyInfo === undefined ? (
-                  <div className="h-4 w-32 bg-primary-foreground/10 rounded animate-pulse"></div>
-                ) : (
-                  <a href={`tel:${companyInfo?.phone}`} className="hover:text-secondary transition-colors">
-                    {companyInfo?.phone}
-                  </a>
-                )}
+                <a href={`tel:${companyInfo?.phone}`} className="hover:text-secondary transition-colors">
+                  {companyInfo?.phone}
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-secondary" />
-                {companyInfo === undefined ? (
-                  <div className="h-4 w-40 bg-primary-foreground/10 rounded animate-pulse"></div>
-                ) : (
-                  <a href={`mailto:${companyInfo?.email}`} className="hover:text-secondary transition-colors">
-                    {companyInfo?.email}
-                  </a>
-                )}
+                <a href={`mailto:${companyInfo?.email}`} className="hover:text-secondary transition-colors">
+                  {companyInfo?.email}
+                </a>
               </li>
             </ul>
           </div>

@@ -13,8 +13,9 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
-import { useQuery } from "convex/react";
+import { usePreloadedQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
+import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -107,7 +108,8 @@ const faqs = [
 ];
 
 const ContactPageClient = () => {
-  const companyInfoFromDb = useQuery(api.companyInfo.get);
+  const preloadedInfo = usePreloadedCompanyInfo();
+  const companyInfoFromDb = usePreloadedQuery(preloadedInfo!);
   const contactInfo = getContactInfo(companyInfoFromDb);
 
   return (
@@ -193,18 +195,9 @@ const ContactPageClient = () => {
                         <span className="text-xs font-semibold text-secondary uppercase tracking-wider block mb-1">
                           {item.label}
                         </span>
-                        {companyInfoFromDb === undefined ? (
-                          <div className="space-y-2 mt-2">
-                            <div className="h-4 w-3/4 bg-primary/10 rounded animate-pulse"></div>
-                            {item.label === "Adresse" || item.label === "Horaires" ? (
-                              <div className="h-4 w-1/2 bg-primary/10 rounded animate-pulse"></div>
-                            ) : null}
-                          </div>
-                        ) : (
-                          <span className="text-sm text-nav font-medium whitespace-pre-line leading-relaxed">
-                            {item.value}
-                          </span>
-                        )}
+                        <span className="text-sm text-nav font-medium whitespace-pre-line leading-relaxed">
+                          {item.value}
+                        </span>
                       </div>
                     </motion.div>
                   );
