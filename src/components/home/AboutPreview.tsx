@@ -82,7 +82,7 @@ const AboutPreview = () => {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1, ease: "easeOut" }}
                   className="flex items-center gap-3 text-sm"
                 >
-                  <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center shrink-0" aria-hidden="true">
                     <Check className="w-3 h-3 text-secondary" />
                   </div>
                   <span className="text-muted-foreground">{item}</span>

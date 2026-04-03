@@ -50,17 +50,17 @@ const Footer = () => {
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-primary-foreground">Contact</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" aria-hidden="true" />
                 <span>{companyInfo?.address}</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 shrink-0 text-secondary" />
-                <a href={`tel:${companyInfo?.phone}`} className="hover:text-secondary transition-colors">
+                <Phone className="w-4 h-4 shrink-0 text-secondary" aria-hidden="true" />
+                <a href={`tel:${companyInfo?.phone}`} className="hover:text-secondary transition-colors" aria-label={`Appeler le ${companyInfo?.phone || ""}`}>
                   {companyInfo?.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 shrink-0 text-secondary" />
+                <Mail className="w-4 h-4 shrink-0 text-secondary" aria-hidden="true" />
                 <a href={`mailto:${companyInfo?.email}`} className="hover:text-secondary transition-colors">
                   {companyInfo?.email}
                 </a>

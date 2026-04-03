@@ -24,7 +24,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[85vh] md:min-h-[90vh] flex items-end md:items-center overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-[60vh] lg:min-h-[90vh] flex items-end md:items-center overflow-hidden">
       {/* Background slideshow */}
       {heroImages.map((src, index) => (
         <div
@@ -39,6 +39,7 @@ const HeroSection = () => {
             fill
             className="object-cover"
             priority={index === 0}
+            {...(index === 0 ? { fetchPriority: "high" } : {})}
             sizes="100vw"
           />
         </div>
@@ -102,11 +103,11 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                <Star key={i} className="w-4 h-4 fill-secondary text-secondary" aria-hidden="true" />
               ))}
             </div>
             <a href="https://g.page/r/atacan-renovation" target="_blank" rel="noopener noreferrer" className="text-white/70 text-sm hover:text-white transition-colors inline-flex items-center gap-1">
-              4.9/5 Avis Google <ArrowUpRight className="w-3.5 h-3.5" />
+              4.9/5 Avis Google <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
           </motion.div>
         </div>
