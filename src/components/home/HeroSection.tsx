@@ -5,6 +5,7 @@ import { Star, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const heroImages = [
   "/images/hero-bg.jpg",
@@ -26,18 +27,21 @@ const HeroSection = () => {
     <section id="hero" className="relative min-h-[85vh] md:min-h-[90vh] flex items-end md:items-center overflow-hidden">
       {/* Background slideshow */}
       {heroImages.map((src, index) => (
-        <img
+        <div
           key={src}
-          src={src}
-          alt={`Rénovation intérieure — ATC Rénovation Nancy ${index + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
-          width={1920}
-          height={1080}
-          loading={index === 0 ? "eager" : "lazy"}
-          {...(index === 0 ? { fetchPriority: "high" as any } : {})}
-        />
+        >
+          <Image
+            src={src}
+            alt={`Rénovation intérieure — ATC Rénovation Nancy ${index + 1}`}
+            fill
+            className="object-cover"
+            priority={index === 0}
+            sizes="100vw"
+          />
+        </div>
       ))}
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
@@ -91,7 +95,9 @@ const HeroSection = () => {
                 "https://i.pravatar.cc/40?img=32",
                 "https://i.pravatar.cc/40?img=47",
               ].map((src, i) => (
-                <img key={i} src={src} alt="Client satisfait" className="w-8 h-8 rounded-full border-2 border-white object-cover" width={32} height={32} />
+                <div key={i} className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden">
+                  <Image src={src} alt="Client satisfait" fill className="object-cover" sizes="32px" />
+                </div>
               ))}
             </div>
             <div className="flex items-center gap-1">

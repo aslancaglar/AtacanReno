@@ -2,6 +2,7 @@
 
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import certMaprimerenov from "@/assets/cert-maprimerenov.jpg";
 import certDecennale from "@/assets/cert-garantie-decennale.jpg";
 import certRge from "@/assets/cert-rge-qualibat.jpg";
@@ -25,14 +26,15 @@ const AboutPreview = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex justify-center lg:justify-start relative"
           >
-            <img
-              src="/images/about-portrait.jpg"
-              alt="Fondateur d'Atacan Rénovation"
-              className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
-              loading="lazy"
-              width={640}
-              height={800}
-            />
+            <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-[0px_20px_40px_rgba(52,48,38,0.06)]">
+              <Image
+                src="/images/about-portrait.jpg"
+                alt="Fondateur d'Atacan Rénovation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 520px"
+              />
+            </div>
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -90,19 +92,22 @@ const AboutPreview = () => {
             {/* Certification logos */}
             <div className="flex items-center gap-6 flex-wrap">
               {certs.map((c, i) => (
-                <motion.img
+                <motion.div
                   key={c.alt}
-                  src={c.src}
-                  alt={c.alt}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 + i * 0.1, ease: "easeOut" }}
-                  className="h-24 w-auto object-contain rounded-xl shadow-md transition-transform duration-300 hover:scale-110"
-                  loading="lazy"
-                  width={64}
-                  height={64}
-                />
+                  className="relative h-24 w-24 grayscale hover:grayscale-0 transition-all duration-300"
+                >
+                  <Image
+                    src={c.src}
+                    alt={c.alt}
+                    fill
+                    className="object-contain"
+                    sizes="96px"
+                  />
+                </motion.div>
               ))}
             </div>
           </motion.div>
