@@ -98,7 +98,7 @@ const AboutPreview = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 + i * 0.1, ease: "easeOut" }}
-                  className="relative h-24 w-24 grayscale hover:grayscale-0 transition-all duration-300"
+                  className="relative h-24 w-24 transition-all duration-300"
                 >
                   <Image
                     src={c.src}
