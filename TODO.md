@@ -10,11 +10,13 @@
 - Created `src/components/Breadcrumb.tsx` (reusable, animated, with ChevronRight separators)
 - Replaced inline breadcrumbs in: AboutPageClient, ContactPageClient, DevisPageClient, RealisationsPageClient, ServiceDetailClient
 
-### Step 3: Extract SectionHeader Component
-- [ ] Deferred — lower priority, can be done in follow-up
+### Step 3: Extract SectionHeader Component ✅
+- Created `src/components/SectionHeader.tsx` (reusable, animated, supports icons and children)
+- Replaced manual headers in: AboutPageClient, ContactPageClient, RealisationsPageClient
 
-### Step 4: Extract PageHero Component
-- [ ] Deferred — lower priority, can be done in follow-up
+### Step 4: Extract PageHero Component ✅
+- Created `src/components/PageHero.tsx` (standardized spacing, breadcrumbs, and layout)
+- Replaced manual heroes in: AboutPageClient, ContactPageClient, DevisPageClient, RealisationsPageClient, ServicesPageClient
 
 ### Step 5: Use Layout Consistently ✅
 - All page clients now use `<Layout>` instead of manual `<Header />` + `<main>` + `<Footer />` wrapping

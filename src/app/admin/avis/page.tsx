@@ -4,7 +4,7 @@ import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { useState } from "react";
-import { Plus, Pencil, Trash2, Eye, EyeOff, Star, UserCircle } from "lucide-react";
+import { Plus, Pencil, Trash2, Eye, EyeOff, Star, UserCircle, ArrowUp, ArrowDown } from "lucide-react";
 import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent,
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,
@@ -28,6 +28,7 @@ export default function ReviewsPage() {
   const updateReview = useMutation(api.reviews.update);
   const toggleVisibility = useMutation(api.reviews.toggleVisibility);
   const removeReview = useMutation(api.reviews.remove);
+  const reorderReviews = useMutation(api.reviews.reorder);
 
   const [formOpen, setFormOpen] = useState(false);
   const [editingId, setEditingId] = useState<Id<"reviews"> | null>(null);
@@ -41,10 +42,27 @@ export default function ReviewsPage() {
   };
 
   const handleSave = async () => {
-    const data = { name: form.name, text: form.text, rating: form.rating, project: form.project, imageUrl: form.imageUrl || undefined, visible: form.visible };
+    const data = { name: form.name, text: form.text, rating: form.rating, project: form.project, imageUrl: form.imageUrl, visible: form.visible };
     if (editingId) await updateReview({ id: editingId, ...data });
     else await createReview(data);
     setFormOpen(false); setForm(emptyForm); setEditingId(null);
+  };
+
+  const moveReview = async (index: number, direction: 1 | -1) => {
+    if (!reviews) return;
+    const newReviews = [...reviews];
+    const swapIndex = index + direction;
+    
+    if (swapIndex < 0 || swapIndex >= newReviews.length) return;
+    
+    // Swap elements in our local array
+    const temp = newReviews[index];
+    newReviews[index] = newReviews[swapIndex];
+    newReviews[swapIndex] = temp;
+    
+    // Assign incremental order values to all elements to guarantee correctness
+    const updates = newReviews.map((r, i) => ({ id: r._id, order: i }));
+    await reorderReviews({ updates });
   };
 
   // Generate initials from name
@@ -72,7 +90,7 @@ export default function ReviewsPage() {
         <AdminEmptyState message="Aucun avis pour le moment." />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {reviews.map((review) => (
+          {reviews.map((review, index) => (
             <div key={review._id} className={`bg-white border rounded-2xl overflow-hidden shadow-sm ${review.visible ? "border-border" : "border-border opacity-60"}`}>
               {/* Project image */}
               {review.imageUrl && (
@@ -110,6 +128,11 @@ export default function ReviewsPage() {
                   </button>
                   <button onClick={() => openEdit(review)} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"><Pencil className="w-4 h-4" /></button>
                   <button onClick={() => setDeleteId(review._id)} className="p-1.5 rounded-lg text-muted-foreground hover:text-red-500 hover:bg-red-50 transition-colors"><Trash2 className="w-4 h-4" /></button>
+                  
+                  <div className="flex ml-auto gap-0.5">
+                     <button onClick={() => moveReview(index, -1)} disabled={index === 0} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed border"><ArrowUp className="w-4 h-4" /></button>
+                     <button onClick={() => moveReview(index, 1)} disabled={index === reviews.length - 1} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed border"><ArrowDown className="w-4 h-4" /></button>
+                  </div>
                 </div>
               </div>
             </div>

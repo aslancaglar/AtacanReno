@@ -18,10 +18,12 @@ import {
   User,
   FileSearch,
   Sparkles,
+  Plus,
 } from "lucide-react";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -35,13 +37,17 @@ import {
 } from "@/components/ui/select";
 import { services } from "@/data/services";
 
-const TOTAL_STEPS = 4;
+const devisServices = [
+  ...services,
+  { slug: "autre", title: "Autre projet", shortTitle: "Autre", icon: Plus },
+];
+
+const TOTAL_STEPS = 3;
 
 const stepsMeta = [
   { number: 1, label: "Projet", icon: ClipboardList },
   { number: 2, label: "Détails", icon: FileSearch },
   { number: 3, label: "Coordonnées", icon: User },
-  { number: 4, label: "Récapitulatif", icon: Sparkles },
 ];
 
 const propertyTypes = [
@@ -78,7 +84,7 @@ const referralSources = [
 ];
 
 interface FormData {
-  serviceSlug: string;
+  serviceSlugs: string[];
   propertyType: string;
   surface: string;
   budget: string;
@@ -92,7 +98,7 @@ interface FormData {
 }
 
 const initialFormData: FormData = {
-  serviceSlug: "",
+  serviceSlugs: [],
   propertyType: "",
   surface: "",
   budget: "",
@@ -118,7 +124,7 @@ const DevisPageClient = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const updateField = (field: keyof FormData, value: string) => {
+  const updateField = (field: keyof FormData, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -128,10 +134,9 @@ const DevisPageClient = () => {
 
   const canProceed = (): boolean => {
     switch (step) {
-      case 1: return formData.serviceSlug !== "" && formData.propertyType !== "";
+      case 1: return formData.serviceSlugs.length > 0 && formData.propertyType !== "";
       case 2: return true;
       case 3: return formData.name !== "" && formData.email !== "" && formData.phone !== "";
-      case 4: return true;
       default: return false;
     }
   };
@@ -145,7 +150,9 @@ const DevisPageClient = () => {
     setIsSubmitting(true);
     try {
       await createDevis({
-        serviceSlug: formData.serviceSlug,
+        serviceSlug: formData.serviceSlugs
+          .map((slug) => devisServices.find((s) => s.slug === slug)?.title || slug)
+          .join(", "),
         propertyType: formData.propertyType,
         surface: formData.surface || undefined,
         budget: formData.budget || undefined,
@@ -165,27 +172,20 @@ const DevisPageClient = () => {
     }
   };
 
-  const selectedService = services.find((s) => s.slug === formData.serviceSlug);
+  const selectedServiceTitles = formData.serviceSlugs
+    .map((slug) => devisServices.find((s) => s.slug === slug)?.title || slug)
+    .join(", ");
   const selectedProperty = propertyTypes.find((p) => p.value === formData.propertyType);
 
   return (
     <Layout>
-        {/* ─── Hero ─── */}
-        <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
-          <div className="absolute inset-0">
-            <img src="/images/hero-bg-2.jpg" alt="Demande de devis ATC Rénovation" className="w-full h-full object-cover" width={1920} height={800} />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/30" />
-          </div>
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Demande de devis" }]} />
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-4">
-              Demande de devis gratuit
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }} className="text-lg text-white/80 max-w-2xl leading-relaxed">
-              Décrivez votre projet en quelques étapes et recevez un devis personnalisé sous 48h. Gratuit et sans engagement.
-            </motion.p>
-          </div>
-        </section>
+        <PageHero
+          backgroundImage="/images/hero-bg-2.jpg"
+          breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Demande de devis" }]}
+          title="Demande de devis gratuit"
+          description="Décrivez votre projet en quelques étapes et recevez un devis personnalisé sous 48h. Gratuit et sans engagement."
+          className="pb-16 lg:pb-20"
+        />
 
         {/* ─── Form Section ─── */}
         <section className="py-16 lg:py-24">
@@ -215,7 +215,7 @@ const DevisPageClient = () => {
                       const isActive = step === s.number;
                       const isCompleted = step > s.number;
                       return (
-                        <div key={s.number} className="flex items-center flex-1">
+                        <div key={s.number} className={`flex items-center ${i < stepsMeta.length - 1 ? "flex-1" : ""}`}>
                           <div className="flex flex-col items-center gap-2 flex-shrink-0">
                             <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${isCompleted ? "bg-primary text-white" : isActive ? "bg-primary text-white shadow-lg shadow-primary/30" : "bg-surface-container-highest text-muted-foreground"}`}>
                               {isCompleted ? <Check className="w-5 h-5" /> : <Icon className="w-5 h-5" />}
@@ -249,11 +249,18 @@ const DevisPageClient = () => {
                           <div className="mb-8">
                             <Label className="text-sm font-bold mb-3 block">Type de travaux <span className="text-red-500">*</span></Label>
                             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                              {services.map((service) => {
+                              {devisServices.map((service) => {
                                 const Icon = service.icon;
-                                const isSelected = formData.serviceSlug === service.slug;
+                                const isSelected = formData.serviceSlugs.includes(service.slug);
+                                const toggleService = () => {
+                                  if (isSelected) {
+                                    updateField("serviceSlugs", formData.serviceSlugs.filter((s) => s !== service.slug));
+                                  } else {
+                                    updateField("serviceSlugs", [...formData.serviceSlugs, service.slug]);
+                                  }
+                                };
                                 return (
-                                  <button key={service.slug} type="button" onClick={() => updateField("serviceSlug", service.slug)} className={`flex flex-col items-center gap-2 p-4 rounded-2xl border-2 transition-all duration-200 text-center ${isSelected ? "border-primary bg-primary/5 shadow-md" : "border-border hover:border-primary/30 hover:bg-muted/50"}`}>
+                                  <button key={service.slug} type="button" onClick={toggleService} className={`flex flex-col items-center gap-2 p-4 rounded-2xl border-2 transition-all duration-200 text-center ${isSelected ? "border-primary bg-primary/5 shadow-md" : "border-border hover:border-primary/30 hover:bg-muted/50"}`}>
                                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${isSelected ? "bg-primary text-white" : "bg-primary/10 text-primary"}`}>
                                       <Icon className="w-5 h-5" />
                                     </div>
@@ -358,83 +365,10 @@ const DevisPageClient = () => {
                               </Select>
                             </div>
                           </div>
-                        </div>
-                      )}
 
-                      {/* STEP 4 */}
-                      {step === 4 && (
-                        <div>
-                          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-3 block">Étape 4</span>
-                          <h2 className="text-2xl lg:text-3xl font-extrabold mb-2">Récapitulatif</h2>
-                          <p className="text-muted-foreground leading-relaxed mb-8">Vérifiez les informations avant d&apos;envoyer votre demande.</p>
-
-                          <div className="space-y-6">
-                            <div className="bg-surface-container-low rounded-2xl p-6">
-                              <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">Votre projet</h3>
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Type de travaux</span>
-                                  <span className="font-semibold text-nav">{selectedService?.title || "—"}</span>
-                                </div>
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Type de bien</span>
-                                  <span className="font-semibold text-nav">{selectedProperty?.label || "—"}</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="bg-surface-container-low rounded-2xl p-6">
-                              <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">Détails</h3>
-                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Surface</span>
-                                  <span className="font-semibold text-nav">{formData.surface || "Non précisé"}</span>
-                                </div>
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Budget</span>
-                                  <span className="font-semibold text-nav">{formData.budget || "Non précisé"}</span>
-                                </div>
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Délai</span>
-                                  <span className="font-semibold text-nav">{formData.timeline || "Non précisé"}</span>
-                                </div>
-                              </div>
-                              {formData.description && (
-                                <div className="mt-4 text-sm">
-                                  <span className="text-muted-foreground block mb-0.5">Description</span>
-                                  <p className="font-medium text-nav leading-relaxed">{formData.description}</p>
-                                </div>
-                              )}
-                            </div>
-
-                            <div className="bg-surface-container-low rounded-2xl p-6">
-                              <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">Coordonnées</h3>
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Nom</span>
-                                  <span className="font-semibold text-nav">{formData.name}</span>
-                                </div>
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Email</span>
-                                  <span className="font-semibold text-nav">{formData.email}</span>
-                                </div>
-                                <div>
-                                  <span className="text-muted-foreground block mb-0.5">Téléphone</span>
-                                  <span className="font-semibold text-nav">{formData.phone}</span>
-                                </div>
-                                {formData.city && (
-                                  <div>
-                                    <span className="text-muted-foreground block mb-0.5">Ville</span>
-                                    <span className="font-semibold text-nav">{formData.city}</span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-
-                            <p className="text-xs text-muted-foreground leading-relaxed">
-                              En envoyant cette demande, vous acceptez d&apos;être recontacté par ATC Rénovation concernant votre projet. Vos données sont traitées de manière confidentielle et ne seront jamais partagées avec des tiers.
-                            </p>
-                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed mt-6">
+                            En envoyant cette demande, vous acceptez d&apos;être recontacté par ATC Rénovation concernant votre projet. Vos données sont traitées de manière confidentielle et ne seront jamais partagées avec des tiers.
+                          </p>
                         </div>
                       )}
 
@@ -458,7 +392,7 @@ const DevisPageClient = () => {
                         <ChevronRight className="w-4 h-4 ml-1" />
                       </Button>
                     ) : (
-                      <Button type="button" onClick={handleSubmit} disabled={isSubmitting} className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-8 h-12 text-base">
+                      <Button type="button" onClick={handleSubmit} disabled={isSubmitting || !canProceed()} className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-8 h-12 text-base">
                         {isSubmitting ? (
                           <span className="flex items-center gap-2">
                             <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">

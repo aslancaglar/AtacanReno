@@ -53,6 +53,7 @@ export default defineSchema({
     project: v.string(),
     imageUrl: v.optional(v.string()),
     visible: v.boolean(),
+    order: v.optional(v.number()),
     createdAt: v.number(),
   })
     .index("by_visible", ["visible"])

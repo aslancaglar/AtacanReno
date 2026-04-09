@@ -3,12 +3,11 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "Partenaire 1", logo: "https://placehold.co/200x80/f5f5f5/999?text=Partenaire+1" },
-  { name: "Partenaire 2", logo: "https://placehold.co/200x80/f5f5f5/999?text=Partenaire+2" },
-  { name: "Partenaire 3", logo: "https://placehold.co/200x80/f5f5f5/999?text=Partenaire+3" },
-  { name: "Partenaire 4", logo: "https://placehold.co/200x80/f5f5f5/999?text=Partenaire+4" },
-  { name: "Partenaire 5", logo: "https://placehold.co/200x80/f5f5f5/999?text=Partenaire+5" },
-  { name: "Partenaire 6", logo: "https://placehold.co/200x80/f5f5f5/999?text=Partenaire+6" },
+  { name: "Isover", logo: "/images/Partenaires/IsoverLogo.jpg" },
+  { name: "Knauf", logo: "/images/Partenaires/KnaufLogo.jpg" },
+  { name: "Moselle Türen", logo: "/images/Partenaires/MoselleTurenLogo.jpg" },
+  { name: "Litt", logo: "/images/Partenaires/littLogo.jpg" },
+  { name: "Semin", logo: "/images/Partenaires/seminLogo.jpg" },
 ];
 
 const PartnersSection = () => {
@@ -41,10 +40,10 @@ const PartnersSection = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="w-24 h-24 object-contain transition-all duration-300"
                 loading="lazy"
-                width={200}
-                height={80}
+                width={96}
+                height={96}
               />
             </motion.div>
           ))}

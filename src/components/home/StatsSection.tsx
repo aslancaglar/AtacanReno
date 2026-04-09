@@ -32,7 +32,7 @@ const StatItem = ({
 
 const StatsSection = () => {
   const stats = [
-    { icon: Calendar, value: 10, suffix: "+", label: "Années d'expérience" },
+    { icon: Calendar, value: 20, suffix: "+", label: "Années d'expérience" },
     { icon: Home, value: 300, suffix: "+", label: "Projets terminés" },
     { icon: Star, value: "4.9/5", suffix: "", label: "Note moyenne sur Google" },
     { icon: Clock, value: "100%", suffix: "", label: "Délais respectés" },

@@ -93,29 +93,9 @@ const TestimonialsSection = () => {
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
               className="bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              {t.imageUrl && (
-                <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={t.imageUrl}
-                    alt={t.project}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    width={640}
-                    height={360}
-                  />
-                </div>
-              )}
-              <div className="p-6">
-                <div className="flex gap-1 mb-3">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="w-3.5 h-3.5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-4">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-3 pt-3 border-t border-border">
-                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <span className="text-xs font-bold text-primary uppercase">
                       {t.name.split(" ").map((n: string) => n[0]).join("").substring(0, 2)}
                     </span>
@@ -125,6 +105,29 @@ const TestimonialsSection = () => {
                     <span className="text-xs text-secondary font-medium">{t.project}</span>
                   </div>
                 </div>
+
+                <div className="flex gap-1 mb-3">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} className="w-3.5 h-3.5 fill-secondary text-secondary" />
+                  ))}
+                </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+
+                {t.imageUrl && (
+                  <div className="aspect-[16/9] overflow-hidden rounded-xl mt-auto">
+                    <img
+                      src={t.imageUrl}
+                      alt={t.project}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      width={640}
+                      height={360}
+                    />
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
+import SectionHeader from "@/components/SectionHeader";
 import { usePreloadedQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
@@ -114,62 +116,21 @@ const ContactPageClient = () => {
 
   return (
     <Layout>
-        {/* ─── Hero ─── */}
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src="/images/hero-bg-3.jpg"
-              alt="Contact ATC Rénovation"
-              className="w-full h-full object-cover"
-              width={1920}
-              height={800}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/30" />
-          </div>
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Contact" }]} />
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-4"
-            >
-              Contactez-nous
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="text-lg text-white/80 max-w-2xl leading-relaxed"
-            >
-              Parlons de votre projet de rénovation. Devis gratuit sous 48h,
-              sans engagement.
-            </motion.p>
-          </div>
-        </section>
+        <PageHero
+          backgroundImage="/images/hero-bg-3.jpg"
+          breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Contact" }]}
+          title="Contactez-nous"
+          description="Parlons de votre projet de rénovation. Devis gratuit sous 48h, sans engagement."
+        />
 
         {/* ─── Contact Info + Map ─── */}
         <section className="py-20 lg:py-28">
           <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="mb-14"
-            >
-              <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                Coordonnées
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                Nos informations de contact
-              </h2>
-              <p className="text-muted-foreground max-w-2xl leading-relaxed">
-                N&apos;hésitez pas à nous contacter par téléphone ou par email.
-                Nous vous répondons sous 24h.
-              </p>
-            </motion.div>
+            <SectionHeader
+              eyebrow="Coordonnées"
+              title="Nos informations de contact"
+              description="N'hésitez pas à nous contacter par téléphone ou par email. Nous vous répondons sous 24h."
+            />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               {/* ── Info Cards ── */}
@@ -231,7 +192,7 @@ const ContactPageClient = () => {
                 className="rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[400px] bg-surface-container-low"
               >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2635.5!2d6.1834!3d48.6921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDQxJzMxLjYiTiA2wrAxMScwMC4yIkU!5e0!3m2!1sfr!2sfr!4v1"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(companyInfoFromDb?.address || "371 Avenue des Champs Elysées Nancy, 54000")}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -249,24 +210,11 @@ const ContactPageClient = () => {
         {/* ─── Process Steps ─── */}
         <section className="py-20 lg:py-28 bg-surface-container-low">
           <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="mb-14"
-            >
-              <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                Comment ça marche
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                De votre demande à la réalisation
-              </h2>
-              <p className="text-muted-foreground max-w-2xl leading-relaxed">
-                Un processus simple et transparent pour concrétiser votre projet
-                de rénovation.
-              </p>
-            </motion.div>
+            <SectionHeader
+              eyebrow="Comment ça marche"
+              title="De votre demande à la réalisation"
+              description="Un processus simple et transparent pour concrétiser votre projet de rénovation."
+            />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, i) => {
@@ -313,16 +261,12 @@ const ContactPageClient = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                  FAQ
-                </span>
-                <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                  Questions fréquentes
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Retrouvez les réponses aux questions les plus courantes sur
-                  nos services et notre fonctionnement.
-                </p>
+                <SectionHeader
+                  eyebrow="FAQ"
+                  title="Questions fréquentes"
+                  description="Retrouvez les réponses aux questions les plus courantes sur nos services et notre fonctionnement."
+                  className="mb-8"
+                />
                 <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6">
                   <h3 className="font-bold mb-2 flex items-center gap-2">
                     <Phone className="w-4 h-4 text-primary" />

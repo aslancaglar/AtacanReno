@@ -63,7 +63,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="text-white/80 text-lg mb-8 max-w-lg leading-relaxed"
           >
-            Appartement, maison ou local professionnel : confiez vos travaux à une équipe d'experts forts de 10 ans d'expérience.
+            Appartement, maison ou local professionnel : confiez vos travaux à une équipe d'experts forts de 20 ans d'expérience.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

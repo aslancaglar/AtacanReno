@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
+import SectionHeader from "@/components/SectionHeader";
 import BeforeAfterSlider from "@/components/home/BeforeAfterSlider";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
@@ -102,49 +104,13 @@ const RealisationsPageClient = () => {
 
   return (
     <Layout>
-        {/* ─── Page Hero ─── */}
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src="/images/real-3.jpg"
-              alt="Nos Réalisations — ATC Rénovation"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
-          </div>
-          <div className="relative container mx-auto px-4 lg:px-8">
-            <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]} className="mb-8" />
-
-            <div className="max-w-2xl">
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block"
-              >
-                Portfolio
-              </motion.span>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
-              >
-                Nos Réalisations
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-                className="text-white/80 text-lg leading-relaxed max-w-lg"
-              >
-                Découvrez nos projets de rénovation réalisés à Nancy et ses
-                environs. Chaque chantier reflète notre savoir-faire et notre
-                souci du détail.
-              </motion.p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          backgroundImage="/images/real-3.jpg"
+          breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]}
+          eyebrow="Portfolio"
+          title="Nos Réalisations"
+          description="Découvrez nos projets de rénovation réalisés à Nancy et ses environs. Chaque chantier reflète notre savoir-faire et notre souci du détail."
+        />
 
         {/* ─── Stats Bar ─── */}
         <section className="relative z-10 -mt-10">
@@ -182,25 +148,12 @@ const RealisationsPageClient = () => {
         {/* ─── Portfolio Gallery ─── */}
         <section className="py-20 lg:py-28">
           <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+            <SectionHeader
+              eyebrow="Nos projets"
+              title="Avant / Après & Travaux Récents"
+              description="Filtrez par catégorie pour explorer nos rénovations de salles de bains, cuisines, salons et appartements complets."
               className="mb-12"
             >
-              <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                Nos projets
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                Avant / Après & Travaux Récents
-              </h2>
-              <p className="text-muted-foreground max-w-2xl leading-relaxed mb-6">
-                Filtrez par catégorie pour explorer nos rénovations de salles de
-                bains, cuisines, salons et appartements complets.
-              </p>
-
-              {/* Filter chips */}
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
                   <button
@@ -216,7 +169,7 @@ const RealisationsPageClient = () => {
                   </button>
                 ))}
               </div>
-            </motion.div>
+            </SectionHeader>
 
             {/* Masonry grid */}
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">

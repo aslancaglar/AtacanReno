@@ -4,51 +4,20 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import CTASection from "@/components/home/CTASection";
 import { services, serviceImages } from "@/data/services";
 
 const ServicesPageClient = () => {
   return (
     <Layout>
-        {/* ─── Page Hero ─── */}
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src="/images/hero-bg.jpg"
-              alt="ATC Rénovation — Nos Services"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
-          </div>
-          <div className="relative container mx-auto px-4 lg:px-8">
-            <div className="max-w-2xl">
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block"
-              >
-                Nos Services
-              </motion.span>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
-              >
-                Des solutions complètes pour votre rénovation intérieure.
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-                className="text-white/80 text-lg leading-relaxed max-w-lg"
-              >
-                De la salle de bains à l'isolation RGE, nous maîtrisons tous les corps de métier pour transformer votre intérieur avec expertise et passion.
-              </motion.p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          backgroundImage="/images/hero-bg.jpg"
+          breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Services" }]}
+          eyebrow="Nos Services"
+          title="Des solutions complètes pour votre rénovation intérieure."
+          description="De la salle de bains à l'isolation RGE, nous maîtrisons tous les corps de métier pour transformer votre intérieur avec expertise et passion."
+        />
 
         {/* ─── Detailed Service Sections ─── */}
         {services.map((service, i) => {

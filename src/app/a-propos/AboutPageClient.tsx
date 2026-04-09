@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
+import SectionHeader from "@/components/SectionHeader";
 import StatsSection from "@/components/home/StatsSection";
 import CTASection from "@/components/home/CTASection";
 import PartnersSection from "@/components/home/PartnersSection";
@@ -115,48 +117,13 @@ const whyUs = [
 const AboutPageClient = () => {
   return (
     <Layout>
-        {/* ─── Page Hero ─── */}
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src="/images/about-portrait.jpg"
-              alt="ATC Rénovation — Notre équipe"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
-          </div>
-          <div className="relative container mx-auto px-4 lg:px-8">
-            <div className="max-w-2xl">
-              <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À propos" }]} />
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block"
-              >
-                À propos
-              </motion.span>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
-              >
-                Une passion pour le détail, un engagement pour la qualité.
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-                className="text-white/80 text-lg leading-relaxed max-w-lg"
-              >
-                Depuis plus de 10 ans, nous transformons les intérieurs des
-                habitations nancéiennes avec passion, expertise et un souci
-                constant de la perfection.
-              </motion.p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          backgroundImage="/images/about-portrait.jpg"
+          breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
+          eyebrow="À propos"
+          title="Une passion pour le détail, un engagement pour la qualité."
+          description="Depuis plus de 20 ans, Atacan Rénovation Intérieure vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire."
+        />
 
         {/* ─── Stats (reused from homepage) ─── */}
         <StatsSection />
@@ -171,33 +138,32 @@ const AboutPageClient = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                  Notre histoire
-                </span>
-                <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-                  De la passion artisanale à l'expertise reconnue
-                </h2>
+                <SectionHeader
+                  eyebrow="Notre histoire"
+                  title="De la passion artisanale à l'expertise reconnue"
+                />
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    ATC Rénovation est née en 2014 de la volonté d'un artisan
-                    passionné de proposer un service de rénovation intérieure
-                    d'exception à Nancy et dans toute la métropole du Grand
-                    Nancy.
+                    Spécialistes du « clé en main », nous coordonnons l'ensemble
+                    des corps de métier pour réaliser vos projets de A à Z.
+                    Depuis 2004, ATC Rénovation accompagne les habitants de Nancy
+                    et du Grand Nancy dans la transformation de leurs espaces de
+                    vie, avec passion et un souci constant de la perfection.
                   </p>
                   <p>
-                    Fort d'une expérience solide dans les différents corps de
-                    métier du bâtiment — plomberie, électricité, plâtrerie,
-                    peinture, carrelage — notre fondateur a constitué une équipe
-                    de professionnels qualifiés partageant la même exigence de
-                    qualité.
+                    De la rénovation complète de votre appartement à la création
+                    de votre salle de bains ou de votre cuisine, en passant par
+                    la peinture, les revêtements de sols, la menuiserie,
+                    l'électricité ou encore l'aménagement de vos combles : nous
+                    transformons vos rêves en réalité, avec soin et passion.
                   </p>
                   <p>
-                    Aujourd'hui, avec plus de 300 projets réalisés et une note
-                    de 4.9/5 sur Google, ATC Rénovation est devenu un acteur de
-                    référence de la rénovation intérieure dans la région
-                    nancéienne. Notre certification RGE nous permet également
-                    d'accompagner nos clients dans leurs projets d'isolation et
-                    de rénovation énergétique.
+                    Aujourd'hui, avec plus de 300 projets livrés et une note de
+                    4.9/5 sur Google, ATC Rénovation est un acteur de référence
+                    de la rénovation intérieure en région nancéienne. Notre
+                    certification RGE nous permet également d'accompagner nos
+                    clients dans leurs projets d'isolation et de rénovation
+                    énergétique avec accès aux aides de l'État.
                   </p>
                 </div>
               </motion.div>
@@ -270,20 +236,10 @@ const AboutPageClient = () => {
         {/* ─── Timeline ─── */}
         <section className="py-20 lg:py-28">
           <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="mb-14"
-            >
-              <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                Notre parcours
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Les étapes clés
-              </h2>
-            </motion.div>
+            <SectionHeader
+              eyebrow="Notre parcours"
+              title="Les étapes clés"
+            />
 
             <div className="relative">
               {/* Vertical line */}
@@ -342,24 +298,11 @@ const AboutPageClient = () => {
         {/* ─── Our Values ─── */}
         <section className="py-20 lg:py-28 bg-surface-container-low">
           <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="mb-14"
-            >
-              <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                Ce qui nous définit
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                Nos Valeurs
-              </h2>
-              <p className="text-muted-foreground max-w-2xl leading-relaxed">
-                Chaque projet est guidé par des principes forts qui font la
-                différence entre un bon travail et un travail exceptionnel.
-              </p>
-            </motion.div>
+            <SectionHeader
+              eyebrow="Ce qui nous définit"
+              title="Nos Valeurs"
+              description="Chaque projet est guidé par des principes forts qui font la différence entre un bon travail et un travail exceptionnel."
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map((value, i) => {
@@ -401,12 +344,10 @@ const AboutPageClient = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
-                  Pourquoi nous choisir
-                </span>
-                <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-                  L'assurance d'un travail bien fait, du premier coup.
-                </h2>
+                <SectionHeader
+                  eyebrow="Pourquoi nous choisir"
+                  title="L'assurance d'un travail bien fait, du premier coup."
+                />
                 <ul className="space-y-3 mb-8">
                   {whyUs.map((item, i) => (
                     <motion.li

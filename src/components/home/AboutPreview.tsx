@@ -43,7 +43,7 @@ const AboutPreview = () => {
               transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
               className="absolute -bottom-4 -right-4 lg:-right-6 bg-secondary text-secondary-foreground rounded-2xl px-5 py-4 shadow-lg text-center"
             >
-              <span className="block text-2xl font-extrabold leading-none">10+</span>
+              <span className="block text-2xl font-extrabold leading-none">20+</span>
               <span className="block text-xs font-semibold mt-1">ans d'expérience</span>
             </motion.div>
           </motion.div>
@@ -62,7 +62,7 @@ const AboutPreview = () => {
               Une passion pour le détail, un engagement pour la qualité.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Depuis 10 ans, Atacan Rénovation Intérieure vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
+              Depuis 20 ans, Atacan Rénovation Intérieure vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à la création de votre salle de bains ou cuisine, en passant par la peinture, les revêtements de sols, la menuiserie, l'électricité ou encore l'aménagement de vos combles : nous transformons vos rêves en réalité, avec soin et passion.
@@ -70,7 +70,7 @@ const AboutPreview = () => {
             <ul className="space-y-3 mb-8">
               {[
                 "Un interlocuteur unique pour tous vos travaux d'intérieur",
-                "10 ans d'expertise sur le bassin nancéien",
+                "20 ans d'expertise sur le bassin nancéien",
                 "Respect strict des délais et de votre budget",
                 "Garantie décennale et isolation thermique certifiée RGE",
               ].map((item, i) => (
