@@ -4,14 +4,28 @@ import { query, mutation } from "./_generated/server";
 export const list = query({
   args: { onlyVisible: v.optional(v.boolean()) },
   handler: async (ctx, args) => {
+    let results;
     if (args.onlyVisible) {
-      return await ctx.db
+      results = await ctx.db
         .query("portfolio")
         .withIndex("by_visible", (q) => q.eq("visible", true))
-        .order("desc")
         .collect();
+    } else {
+      results = await ctx.db.query("portfolio").collect();
     }
-    return await ctx.db.query("portfolio").order("desc").collect();
+
+    return results.sort((a, b) => {
+      // Sort by order ascending if both have it
+      if (a.order !== undefined && b.order !== undefined) {
+        return a.order - b.order;
+      }
+      // If only one has it, prioritize it
+      if (a.order !== undefined) return -1;
+      if (b.order !== undefined) return 1;
+
+      // Fallback to _creationTime desc
+      return b._creationTime - a._creationTime;
+    });
   },
 });
 
@@ -79,5 +93,16 @@ export const remove = mutation({
   args: { id: v.id("portfolio") },
   handler: async (ctx, args) => {
     await ctx.db.delete(args.id);
+  },
+});
+
+export const reorder = mutation({
+  args: {
+    updates: v.array(v.object({ id: v.id("portfolio"), order: v.number() })),
+  },
+  handler: async (ctx, args) => {
+    for (const update of args.updates) {
+      await ctx.db.patch(update.id, { order: update.order });
+    }
   },
 });

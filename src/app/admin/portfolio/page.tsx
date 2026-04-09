@@ -4,7 +4,7 @@ import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { useState } from "react";
-import { Plus, Pencil, Trash2, Eye, EyeOff } from "lucide-react";
+import { Plus, Pencil, Trash2, Eye, EyeOff, ArrowUp, ArrowDown, X } from "lucide-react";
 import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent,
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,
@@ -22,7 +22,7 @@ import { AdminLoadingState, AdminEmptyState } from "@/components/admin/AdminStat
 
 interface PortfolioForm { title: string; location: string; category: string; imageUrl: string; beforeImageUrl: string; description: string; visible: boolean; }
 const emptyForm: PortfolioForm = { title: "", location: "", category: "", imageUrl: "", beforeImageUrl: "", description: "", visible: true };
-const categories = ["Cuisines", "Salles de bain", "Salons", "Appartements", "Combles", "Peinture", "Autre"];
+const defaultCategories = ["Cuisines", "Salles de bain", "Salons", "Appartements", "Combles", "Peinture", "Autre"];
 
 export default function PortfolioPage() {
   const items = useQuery(api.portfolio.list, {});
@@ -30,16 +30,22 @@ export default function PortfolioPage() {
   const updateItem = useMutation(api.portfolio.update);
   const toggleVisibility = useMutation(api.portfolio.toggleVisibility);
   const removeItem = useMutation(api.portfolio.remove);
+  const reorderItems = useMutation(api.portfolio.reorder);
 
   const [formOpen, setFormOpen] = useState(false);
   const [editingId, setEditingId] = useState<Id<"portfolio"> | null>(null);
   const [form, setForm] = useState<PortfolioForm>(emptyForm);
   const [deleteId, setDeleteId] = useState<Id<"portfolio"> | null>(null);
+  const [isCustomCategory, setIsCustomCategory] = useState(false);
 
-  const openNew = () => { setForm(emptyForm); setEditingId(null); setFormOpen(true); };
+  // Build categories from defaults + existing DB categories
+  const dbCategories = items ? Array.from(new Set(items.map((i) => i.category))) : [];
+  const categories = Array.from(new Set([...defaultCategories, ...dbCategories]));
+
+  const openNew = () => { setForm(emptyForm); setEditingId(null); setIsCustomCategory(false); setFormOpen(true); };
   const openEdit = (item: NonNullable<typeof items>[number]) => {
     setForm({ title: item.title, location: item.location, category: item.category, imageUrl: item.imageUrl, beforeImageUrl: item.beforeImageUrl ?? "", description: item.description ?? "", visible: item.visible });
-    setEditingId(item._id); setFormOpen(true);
+    setEditingId(item._id); setIsCustomCategory(!categories.includes(item.category)); setFormOpen(true);
   };
 
   const handleSave = async () => {
@@ -47,6 +53,23 @@ export default function PortfolioPage() {
     if (editingId) await updateItem({ id: editingId, ...data });
     else await createItem(data);
     setFormOpen(false); setForm(emptyForm); setEditingId(null);
+  };
+
+  const moveItem = async (index: number, direction: 1 | -1) => {
+    if (!items) return;
+    const newItems = [...items];
+    const swapIndex = index + direction;
+
+    if (swapIndex < 0 || swapIndex >= newItems.length) return;
+
+    // Swap elements in our local array
+    const temp = newItems[index];
+    newItems[index] = newItems[swapIndex];
+    newItems[swapIndex] = temp;
+
+    // Assign incremental order values to all elements to guarantee correctness
+    const updates = newItems.map((item, i) => ({ id: item._id, order: i }));
+    await reorderItems({ updates });
   };
 
   return (
@@ -67,7 +90,7 @@ export default function PortfolioPage() {
         <AdminEmptyState message="Aucun projet dans le portfolio." />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <div key={item._id} className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm group">
               <div className="aspect-[4/3] relative overflow-hidden">
                 <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
@@ -86,6 +109,11 @@ export default function PortfolioPage() {
                   </button>
                   <button onClick={() => openEdit(item)} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"><Pencil className="w-4 h-4" /></button>
                   <button onClick={() => setDeleteId(item._id)} className="p-1.5 rounded-lg text-muted-foreground hover:text-red-500 hover:bg-red-50 transition-colors"><Trash2 className="w-4 h-4" /></button>
+                  
+                  <div className="flex ml-auto gap-0.5">
+                     <button onClick={() => moveItem(index, -1)} disabled={index === 0} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed border"><ArrowUp className="w-4 h-4" /></button>
+                     <button onClick={() => moveItem(index, 1)} disabled={index === items.length - 1} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed border"><ArrowDown className="w-4 h-4" /></button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -102,10 +130,41 @@ export default function PortfolioPage() {
               <div className="space-y-2"><Label>Lieu *</Label><Input value={form.location} onChange={(e) => setForm({ ...form, location: e.target.value })} placeholder="Nancy Centre" /></div>
               <div className="space-y-2">
                 <Label>Catégorie *</Label>
-                <Select value={form.category} onValueChange={(v) => setForm({ ...form, category: v })}>
-                  <SelectTrigger><SelectValue placeholder="Choisir" /></SelectTrigger>
-                  <SelectContent>{categories.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
-                </Select>
+                {isCustomCategory ? (
+                  <div className="flex gap-2">
+                    <Input
+                      value={form.category}
+                      onChange={(e) => setForm({ ...form, category: e.target.value })}
+                      placeholder="Nom de la catégorie"
+                      autoFocus
+                    />
+                    <button
+                      type="button"
+                      onClick={() => { setIsCustomCategory(false); setForm({ ...form, category: "" }); }}
+                      className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors border shrink-0"
+                      title="Annuler"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                ) : (
+                  <Select value={form.category} onValueChange={(v) => {
+                    if (v === "__new__") {
+                      setIsCustomCategory(true);
+                      setForm({ ...form, category: "" });
+                    } else {
+                      setForm({ ...form, category: v });
+                    }
+                  }}>
+                    <SelectTrigger><SelectValue placeholder="Choisir" /></SelectTrigger>
+                    <SelectContent>
+                      {categories.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+                      <SelectItem value="__new__" className="text-primary font-medium">
+                        <span className="flex items-center gap-1.5"><Plus className="w-3.5 h-3.5" /> Nouvelle catégorie...</span>
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                )}
               </div>
             </div>
 

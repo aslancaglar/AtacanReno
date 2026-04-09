@@ -8,41 +8,39 @@ import { SectionHeading } from "./SectionHeading";
 import { api } from "../../../convex/_generated/api";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import Link from "next/link";
+import { fallbackProjects, type ProjectData } from "@/data/realisations";
+import { ArrowRight } from "lucide-react";
 
-const defaultCategories = ["Tout", "Cuisines", "Salles de bain", "Salons"];
-
-// Fallback data when Convex is not yet connected or empty
-const fallbackProjects = [
-  { title: "Suite Parentale de Luxe", location: "Nancy Centre", category: "Salles de bain", imageUrl: "/images/real-1.jpg", beforeImageUrl: "/images/before-1.jpg" },
-  { title: "Rénovation Complète T4", location: "Vandoeuvre-lès-Nancy", category: "Salons", imageUrl: "/images/real-2.jpg", beforeImageUrl: "/images/before-2.jpg" },
-  { title: "Loft Parisien Contemporain", location: "Nancy Vieille Ville", category: "Salons", imageUrl: "/images/real-3.jpg" },
-  { title: "Renovation Design Epuré", location: "Laxou", category: "Salons", imageUrl: "/images/real-4.jpg", beforeImageUrl: "/images/before-4.jpg" },
-  { title: "Concept Loft Central", location: "Nancy Centre", category: "Cuisines", imageUrl: "/images/real-5.jpg" },
-  { title: "Harmonie et Lumière", location: "Essey-lès-Nancy", category: "Cuisines", imageUrl: "/images/real-6.jpg" },
-];
+const PREVIEW_LIMIT = 6;
 
 const RealisationsPreview = () => {
   const [activeFilter, setActiveFilter] = useState("Tout");
   const convexPortfolio = useQuery(api.portfolio.list, { onlyVisible: true });
 
   // Use Convex data if available and non-empty, otherwise fall back
-  const projects = convexPortfolio && convexPortfolio.length > 0
-    ? convexPortfolio.map((p) => ({
-        title: p.title,
-        location: p.location,
-        category: p.category,
-        imageUrl: p.imageUrl,
-        beforeImageUrl: p.beforeImageUrl,
-      }))
-    : fallbackProjects;
+  const allProjects: ProjectData[] =
+    convexPortfolio && convexPortfolio.length > 0
+      ? convexPortfolio.map((p) => ({
+          title: p.title,
+          location: p.location,
+          category: p.category,
+          description: p.description ?? "",
+          image: p.imageUrl,
+          beforeImage: p.beforeImageUrl,
+        }))
+      : fallbackProjects;
 
   // Build categories from actual project data
-  const uniqueCategories = Array.from(new Set(projects.map((p) => p.category)));
+  const uniqueCategories = Array.from(new Set(allProjects.map((p) => p.category)));
   const categories = ["Tout", ...uniqueCategories];
 
-  const filtered = activeFilter === "Tout"
-    ? projects
-    : projects.filter((p) => p.category === activeFilter);
+  const filtered =
+    activeFilter === "Tout"
+      ? allProjects
+      : allProjects.filter((p) => p.category === activeFilter);
+
+  // Limit to 6 items for the homepage preview
+  const displayedProjects = filtered.slice(0, PREVIEW_LIMIT);
 
   return (
     <section id="realisations" className="py-20 lg:py-28">
@@ -79,7 +77,7 @@ const RealisationsPreview = () => {
 
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           <AnimatePresence mode="popLayout">
-            {filtered.map((project, i) => {
+            {displayedProjects.map((project, i) => {
               const heights = ["aspect-[3/4]", "aspect-square", "aspect-[4/5]", "aspect-[2/3]", "aspect-[5/6]", "aspect-[3/5]"];
               const aspectClass = heights[i % heights.length];
               return (
@@ -94,16 +92,16 @@ const RealisationsPreview = () => {
                   className="group cursor-pointer break-inside-avoid"
                 >
                   <div className={`${aspectClass} rounded-2xl overflow-hidden mb-3 relative`}>
-                    {project.beforeImageUrl ? (
+                    {project.beforeImage ? (
                       <BeforeAfterSlider
-                        beforeImage={project.beforeImageUrl}
-                        afterImage={project.imageUrl}
+                        beforeImage={project.beforeImage}
+                        afterImage={project.image}
                         alt={project.title}
                         className="w-full h-full"
                       />
                     ) : (
                       <img
-                        src={project.imageUrl}
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
@@ -134,8 +132,9 @@ const RealisationsPreview = () => {
           className="text-center mt-12"
         >
           <Link href="/realisations">
-            <Button variant="outline" className="btn-pill px-8 font-semibold">
+            <Button variant="outline" className="btn-pill px-8 font-semibold group">
               Voir toutes nos réalisations
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </motion.div>

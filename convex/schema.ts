@@ -39,6 +39,7 @@ export default defineSchema({
     beforeImageUrl: v.optional(v.string()),
     description: v.optional(v.string()),
     visible: v.boolean(),
+    order: v.optional(v.number()),
     createdAt: v.number(),
   })
     .index("by_category", ["category"])

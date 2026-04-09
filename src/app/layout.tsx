@@ -112,7 +112,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <ConvexClientProvider preloadedCompanyInfo={preloadedCompanyInfo}>
           {children}
         </ConvexClientProvider>
