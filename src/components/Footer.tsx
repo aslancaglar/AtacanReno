@@ -16,7 +16,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-4 text-primary-foreground">ATC Rénovation</h3>
+            <div className="flex flex-col items-start mb-4 leading-tight">
+              <h3 className="text-lg font-bold text-primary-foreground">ATC Rénovation</h3>
+              <span className="text-[10px] font-medium tracking-wider text-primary-foreground/50 uppercase">Notre qualité fait la différence</span>
+            </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
               {companyInfo?.description}
             </p>
