@@ -36,6 +36,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { services } from "@/data/services";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const devisServices = [
   ...services,
@@ -144,6 +150,13 @@ const DevisPageClient = () => {
   const goNext = () => { if (step < TOTAL_STEPS && canProceed()) { setDirection(1); setStep((s) => s + 1); } };
   const goPrev = () => { if (step > 1) { setDirection(-1); setStep((s) => s - 1); } };
 
+  const resetForm = () => {
+    setIsSubmitted(false);
+    setStep(1);
+    setFormData(initialFormData);
+    setDirection(1);
+  };
+
   const createDevis = useMutation(api.devis.create);
 
   const handleSubmit = async () => {
@@ -191,22 +204,43 @@ const DevisPageClient = () => {
         <section className="py-16 lg:py-24">
           <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
 
-            {isSubmitted ? (
-              <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, ease: "easeOut" }} className="bg-card rounded-2xl shadow-lg p-10 lg:p-16 text-center">
-                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-primary" />
-                </div>
-                <h2 className="text-3xl font-extrabold mb-3">Demande envoyée !</h2>
-                <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto mb-8">
-                  Merci pour votre demande de devis. Notre équipe l&apos;étudie et vous recontactera sous 24 à 48h avec une proposition personnalisée.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/"><Button variant="outline" className="btn-pill px-8 font-semibold">Retour à l&apos;accueil</Button></Link>
-                  <a href="tel:+33124636789"><Button className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8"><Phone className="w-4 h-4 mr-2" />Nous appeler</Button></a>
-                </div>
-              </motion.div>
-            ) : (
-              <>
+            {/* Success Modal */}
+            <Dialog open={isSubmitted} onOpenChange={(open) => { if (!open) resetForm(); }}>
+              <DialogContent className="sm:max-w-2xl p-0 overflow-hidden border-none bg-transparent shadow-none">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }} 
+                  animate={{ opacity: 1, scale: 1 }} 
+                  transition={{ duration: 0.5, ease: "easeOut" }} 
+                  className="bg-card rounded-2xl shadow-2xl p-10 lg:p-16 text-center border border-border/50"
+                >
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-10 h-10 text-primary" />
+                  </div>
+                  <DialogHeader className="p-0 mb-3">
+                    <DialogTitle className="text-3xl font-extrabold text-center">Demande envoyée !</DialogTitle>
+                  </DialogHeader>
+                  <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto mb-8">
+                    Merci pour votre demande de devis. Notre équipe l&apos;étudie et vous recontactera sous 24 à 48h avec une proposition personnalisée.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/">
+                      <Button variant="outline" className="btn-pill px-8 font-semibold w-full sm:w-auto">
+                        Retour à l&apos;accueil
+                      </Button>
+                    </Link>
+                    <a href="tel:+33124636789">
+                      <Button className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 w-full sm:w-auto">
+                        <Phone className="w-4 h-4 mr-2" />
+                        Nous appeler
+                      </Button>
+                    </a>
+                  </div>
+                </motion.div>
+              </DialogContent>
+            </Dialog>
+
+            {/* Form Content */}
+            <div className={isSubmitted ? "opacity-50 pointer-events-none transition-opacity" : "transition-opacity"}>
                 {/* ── Progress Bar ── */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="mb-10">
                   <div className="flex items-center justify-between mb-6">
@@ -411,8 +445,7 @@ const DevisPageClient = () => {
                     )}
                   </div>
                 </div>
-              </>
-            )}
+            </div>
 
           </div>
         </section>
