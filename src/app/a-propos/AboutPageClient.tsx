@@ -62,38 +62,6 @@ const values = [
   },
 ];
 
-const timeline = [
-  {
-    year: "2014",
-    title: "Les débuts",
-    description:
-      "Création d'ATC Rénovation à Nancy, fondée sur la passion de la rénovation intérieure et un savoir-faire artisanal solide.",
-  },
-  {
-    year: "2016",
-    title: "Premiers grands chantiers",
-    description:
-      "Réalisation de nos premières rénovations complètes d'appartements à Nancy et dans la métropole du Grand Nancy.",
-  },
-  {
-    year: "2018",
-    title: "Certification RGE",
-    description:
-      "Obtention de la certification RGE Qualibat, nous permettant d'accompagner nos clients dans leurs projets d'isolation et de rénovation énergétique.",
-  },
-  {
-    year: "2020",
-    title: "Développement & croissance",
-    description:
-      "Expansion de notre équipe et diversification de nos services pour offrir une offre complète clé en main.",
-  },
-  {
-    year: "2024",
-    title: "300+ projets réalisés",
-    description:
-      "Plus de 300 projets livrés avec une note moyenne de 4.9/5 sur Google. Une équipe renforcée pour des projets toujours plus ambitieux.",
-  },
-];
 
 const certs = [
   { src: certRge.src, alt: "Certification RGE Qualibat", title: "RGE Qualibat" },
@@ -203,7 +171,7 @@ const AboutPageClient = () => {
         </section>
 
         {/* ─── Certifications (images only) ─── */}
-        <section className="py-10 lg:py-14 bg-surface-container-low">
+        <section className="py-10 lg:py-14 border-y border-border/50">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
               {certs.map((cert, i) => (
@@ -233,67 +201,6 @@ const AboutPageClient = () => {
           </div>
         </section>
 
-        {/* ─── Timeline ─── */}
-        <section className="py-20 lg:py-28">
-          <div className="container mx-auto px-4 lg:px-8">
-            <SectionHeader
-              eyebrow="Notre parcours"
-              title="Les étapes clés"
-            />
-
-            <div className="relative">
-              {/* Vertical line */}
-              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-px" />
-
-              <div className="space-y-8 lg:space-y-0">
-                {timeline.map((item, i) => {
-                  const isLeft = i % 2 === 0;
-                  return (
-                    <motion.div
-                      key={item.year}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{
-                        duration: 0.5,
-                        delay: i * 0.1,
-                        ease: "easeOut",
-                      }}
-                      className={`relative lg:flex lg:items-center lg:gap-8 ${
-                        isLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-                      }`}
-                    >
-                      {/* Content */}
-                      <div
-                        className={`lg:w-[calc(50%-2rem)] ${
-                          isLeft ? "lg:text-right" : "lg:text-left"
-                        }`}
-                      >
-                        <div className="bg-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 border border-border">
-                          <span className="text-sm font-bold text-secondary">
-                            {item.year}
-                          </span>
-                          <h3 className="text-lg font-bold mt-1 mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Dot */}
-                      <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
-
-                      {/* Spacer for the other side */}
-                      <div className="hidden lg:block lg:w-[calc(50%-2rem)]" />
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ─── Our Values ─── */}
         <section className="py-20 lg:py-28 bg-surface-container-low">
