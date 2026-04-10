@@ -21,6 +21,7 @@ import {
   Plus,
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageHero from "@/components/PageHero";
@@ -124,6 +125,7 @@ const slideVariants = {
 };
 
 const DevisPageClient = () => {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -205,7 +207,7 @@ const DevisPageClient = () => {
           <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
 
             {/* Success Modal */}
-            <Dialog open={isSubmitted} onOpenChange={(open) => { if (!open) resetForm(); }}>
+            <Dialog open={isSubmitted} onOpenChange={(open) => { if (!open) router.push("/"); }}>
               <DialogContent className="sm:max-w-2xl p-0 overflow-hidden border-none bg-transparent shadow-none">
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.95 }} 
