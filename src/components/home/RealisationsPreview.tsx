@@ -10,8 +10,19 @@ import BeforeAfterSlider from "./BeforeAfterSlider";
 import Link from "next/link";
 import { fallbackProjects, type ProjectData } from "@/data/realisations";
 import { ArrowRight } from "lucide-react";
+import MasonryGrid from "@/components/MasonryGrid";
 
 const PREVIEW_LIMIT = 6;
+
+/* Cycle through heights for the Pinterest effect */
+const aspectClasses = [
+  "aspect-[3/4]",
+  "aspect-square",
+  "aspect-[4/5]",
+  "aspect-[2/3]",
+  "aspect-[5/6]",
+  "aspect-[3/5]",
+];
 
 const RealisationsPreview = () => {
   const [activeFilter, setActiveFilter] = useState("Tout");
@@ -75,21 +86,18 @@ const RealisationsPreview = () => {
           </div>
         </motion.div>
 
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-          <AnimatePresence mode="popLayout">
+        <MasonryGrid columns={{ sm: 1, md: 2, lg: 3 }} gap={24}>
             {displayedProjects.map((project, i) => {
-              const heights = ["aspect-[3/4]", "aspect-square", "aspect-[4/5]", "aspect-[2/3]", "aspect-[5/6]", "aspect-[3/5]"];
-              const aspectClass = heights[i % heights.length];
+              const aspectClass = aspectClasses[i % aspectClasses.length];
               return (
                 <motion.div
-                  key={project.title}
-                  layout
+                  key={`${project.title}-${i}`}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                  className="group cursor-pointer break-inside-avoid"
+                  className="group cursor-pointer"
                 >
                   <div className={`${aspectClass} rounded-2xl overflow-hidden mb-3 relative`}>
                     {project.beforeImage ? (
@@ -121,8 +129,7 @@ const RealisationsPreview = () => {
                 </motion.div>
               );
             })}
-          </AnimatePresence>
-        </div>
+          </MasonryGrid>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

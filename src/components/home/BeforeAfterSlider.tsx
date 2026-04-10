@@ -10,7 +10,7 @@ interface BeforeAfterSliderProps {
 }
 
 const BeforeAfterSlider = ({ beforeImage, afterImage, alt, className = "" }: BeforeAfterSliderProps) => {
-  const [sliderPosition, setSliderPosition] = useState(50);
+  const [sliderPosition, setSliderPosition] = useState(20);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 

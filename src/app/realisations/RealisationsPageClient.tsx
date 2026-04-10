@@ -11,15 +11,21 @@ import BeforeAfterSlider from "@/components/home/BeforeAfterSlider";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
 import { fallbackProjects, type ProjectData } from "@/data/realisations";
+import MasonryGrid from "@/components/MasonryGrid";
+import StatsSection from "@/components/home/StatsSection";
 
-/* ───────────────────── Stats ───────────────────── */
+/* ───────────────────── Aspect ratios for masonry ───────────────────── */
 
-const stats = [
-  { value: "300+", label: "Projets réalisés" },
-  { value: "4.9/5", label: "Note Google" },
-  { value: "10+", label: "Ans d'expérience" },
-  { value: "100%", label: "Clients satisfaits" },
+const aspectClasses = [
+  "aspect-[3/4]",
+  "aspect-square",
+  "aspect-[4/5]",
+  "aspect-[2/3]",
+  "aspect-[5/6]",
+  "aspect-[3/5]",
 ];
+
+/* ───────────────────── Component ───────────────────── */
 
 /* ───────────────────── Component ───────────────────── */
 
@@ -60,37 +66,7 @@ const RealisationsPageClient = () => {
         />
 
         {/* ─── Stats Bar ─── */}
-        <section className="relative z-10 -mt-10">
-          <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="bg-primary rounded-2xl shadow-2xl px-6 py-8 lg:py-6"
-            >
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:divide-x divide-white/20">
-                {stats.map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                    className="text-center"
-                  >
-                    <span className="text-2xl lg:text-3xl font-extrabold text-white block">
-                      {stat.value}
-                    </span>
-                    <span className="text-[11px] font-semibold uppercase tracking-widest text-white/60 mt-1 block">
-                      {stat.label}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <StatsSection />
 
         {/* ─── Portfolio Gallery ─── */}
         <section className="py-20 lg:py-28">
@@ -118,23 +94,12 @@ const RealisationsPageClient = () => {
               </div>
             </SectionHeader>
 
-            {/* Masonry grid */}
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-              <AnimatePresence mode="popLayout">
+            <MasonryGrid columns={{ sm: 1, md: 2, lg: 3 }} gap={24}>
                 {filtered.map((project, i) => {
-                  const heights = [
-                    "aspect-[3/4]",
-                    "aspect-square",
-                    "aspect-[4/5]",
-                    "aspect-[2/3]",
-                    "aspect-[5/6]",
-                    "aspect-[3/5]",
-                  ];
-                  const aspectClass = heights[i % heights.length];
+                  const aspectClass = aspectClasses[i % aspectClasses.length];
                   return (
                     <motion.div
-                      key={project.title}
-                      layout
+                      key={`${project.title}-${i}`}
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.9 }}
@@ -144,7 +109,7 @@ const RealisationsPageClient = () => {
                         delay: i * 0.08,
                         ease: "easeOut",
                       }}
-                      className="group cursor-pointer break-inside-avoid"
+                      className="group cursor-pointer"
                     >
                       <div
                         className={`${aspectClass} rounded-2xl overflow-hidden mb-3 relative`}
@@ -186,8 +151,7 @@ const RealisationsPageClient = () => {
                     </motion.div>
                   );
                 })}
-              </AnimatePresence>
-            </div>
+              </MasonryGrid>
           </div>
         </section>
 

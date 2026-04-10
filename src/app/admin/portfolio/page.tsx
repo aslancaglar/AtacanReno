@@ -39,8 +39,8 @@ export default function PortfolioPage() {
   const [isCustomCategory, setIsCustomCategory] = useState(false);
 
   // Build categories from defaults + existing DB categories
-  const dbCategories = items ? Array.from(new Set(items.map((i) => i.category))) : [];
-  const categories = Array.from(new Set([...defaultCategories, ...dbCategories]));
+  const dbCategories = items ? Array.from(new Set<string>(items.map((i) => i.category))) : [];
+  const categories = Array.from(new Set<string>([...defaultCategories, ...dbCategories]));
 
   const openNew = () => { setForm(emptyForm); setEditingId(null); setIsCustomCategory(false); setFormOpen(true); };
   const openEdit = (item: NonNullable<typeof items>[number]) => {
