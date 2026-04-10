@@ -224,18 +224,12 @@ const DevisPageClient = () => {
                   <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto mb-8">
                     Merci pour votre demande de devis. Notre équipe l&apos;étudie et vous recontactera sous 24 à 48h avec une proposition personnalisée.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex justify-center">
                     <Link href="/">
-                      <Button variant="outline" className="btn-pill px-8 font-semibold w-full sm:w-auto">
+                      <Button variant="outline" className="btn-pill px-8 font-semibold">
                         Retour à l&apos;accueil
                       </Button>
                     </Link>
-                    <a href="tel:+33124636789">
-                      <Button className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 w-full sm:w-auto">
-                        <Phone className="w-4 h-4 mr-2" />
-                        Nous appeler
-                      </Button>
-                    </a>
                   </div>
                 </motion.div>
               </DialogContent>
