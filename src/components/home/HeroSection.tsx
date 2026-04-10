@@ -29,9 +29,8 @@ const HeroSection = () => {
       {heroImages.map((src, index) => (
         <div
           key={src}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           <Image
             src={src}
@@ -106,7 +105,7 @@ const HeroSection = () => {
                 <Star key={i} className="w-4 h-4 fill-secondary text-secondary" aria-hidden="true" />
               ))}
             </div>
-            <a href="https://g.page/r/atacan-renovation" target="_blank" rel="noopener noreferrer" className="text-white/70 text-sm hover:text-white transition-colors inline-flex items-center gap-1">
+            <a href="https://maps.app.goo.gl/RwbnhGRwfampRRGS8" target="_blank" rel="noopener noreferrer" className="text-white/70 text-sm hover:text-white transition-colors inline-flex items-center gap-1">
               4.9/5 Avis Google <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
           </motion.div>
