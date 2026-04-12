@@ -90,7 +90,7 @@ const AboutPageClient = () => {
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
           eyebrow="À propos"
           title="Une passion pour le détail, un engagement pour la qualité."
-          description="Depuis plus de 20 ans, Atacan Rénovation Intérieure vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire."
+          description="Depuis plus de 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire."
         />
 
         {/* ─── Stats (reused from homepage) ─── */}

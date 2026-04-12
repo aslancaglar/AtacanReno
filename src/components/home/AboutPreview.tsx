@@ -29,7 +29,7 @@ const AboutPreview = () => {
             <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-[0px_20px_40px_rgba(52,48,38,0.06)]">
               <Image
                 src="/images/about-portrait.jpg"
-                alt="Fondateur d'Atacan Rénovation"
+                alt="Fondateur d'ATC Rénovation"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 520px"
@@ -62,7 +62,7 @@ const AboutPreview = () => {
               Une passion pour le détail, un engagement pour la qualité.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Depuis 20 ans, Atacan Rénovation Intérieure vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
+              Depuis 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à la création de votre salle de bains ou cuisine, en passant par la peinture, les revêtements de sols, la menuiserie, l'électricité ou encore l'aménagement de vos combles : nous transformons vos rêves en réalité, avec soin et passion.

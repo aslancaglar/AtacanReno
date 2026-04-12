@@ -1,4 +1,21 @@
+import type { Metadata } from "next";
 import HomeClient from "./HomeClient";
+
+export const metadata: Metadata = {
+  title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
+  description:
+    "Artisan RGE à Nancy depuis plus de 20 ans. Salle de bains, cuisine, isolation, peinture, combles. Devis gratuit sous 48h. Intervention sur Nancy et le Grand Nancy.",
+  alternates: {
+    canonical: "https://atc-renovation.fr",
+  },
+  openGraph: {
+    title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
+    description:
+      "Artisan RGE à Nancy depuis plus de 20 ans. Salle de bains, cuisine, isolation, peinture, combles. Devis gratuit sous 48h.",
+    url: "https://atc-renovation.fr",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return <HomeClient />;
