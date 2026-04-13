@@ -68,7 +68,7 @@ const Header = () => {
         <div className={`flex items-center justify-between rounded-full px-6 py-5 xl:py-3 transition-all duration-300 bg-primary overflow-hidden ${scrolled ? "shadow-lg" : "xl:bg-transparent"}`}>
           <Link href="/" className="flex flex-col items-start shrink-0 leading-tight group">
             <span className="text-lg font-bold tracking-tight text-white group-hover:text-secondary transition-colors">ATC Rénovation</span>
-            <span className="text-[10px] font-medium tracking-wider text-white/70 uppercase">Notre qualité fait la différence</span>
+            <span className="text-[10px] font-medium tracking-wider text-white/70 uppercase">Notre différence est notre qualité</span>
           </Link>
 
           <nav className="hidden xl:flex items-center bg-primary rounded-full px-1.5 py-1.5 gap-0.5">
@@ -129,14 +129,13 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="flex items-center gap-4 xl:hidden ml-auto mr-4">
+          <div className="flex items-center gap-3 xl:hidden ml-auto mr-2">
             <a 
               href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : undefined} 
-              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full text-white/90 transition-colors"
+              className="flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
               aria-label={`Appeler le ${companyInfo?.phone || ""}`}
             >
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              <span className="text-[13px] font-bold tracking-tight">{companyInfo?.phone}</span>
+              <Phone className="w-5 h-5 text-secondary" aria-hidden="true" />
             </a>
           </div>
 
@@ -233,8 +232,17 @@ const Header = () => {
                 </button>
               );
             })}
+            <a 
+              href={companyInfo?.phone ? `tel:${companyInfo.phone.replace(/\s+/g, '')}` : undefined} 
+              className="flex items-center justify-center gap-3 py-3 px-4 rounded-full bg-primary text-white transition-all hover:bg-primary/90 mt-1 shadow-sm"
+              onClick={() => setMobileOpen(false)}
+            >
+              <Phone className="w-4.5 h-4.5" aria-hidden="true" />
+              <span className="text-sm font-bold tracking-wide">{companyInfo?.phone}</span>
+            </a>
+
             <Link href="/devis" onClick={() => setMobileOpen(false)} className="mt-2 block">
-              <span className="inline-flex items-center justify-center bg-secondary text-secondary-foreground text-sm font-bold rounded-full px-5 py-2.5 w-full text-center">
+              <span className="inline-flex items-center justify-center bg-secondary text-secondary-foreground text-sm font-bold rounded-full px-5 py-3 w-full text-center shadow-sm">
                 Demande de devis
               </span>
             </Link>

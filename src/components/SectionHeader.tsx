@@ -42,7 +42,7 @@ const SectionHeader = ({
         {title}
       </h2>
       {description && (
-        <p className={`text-muted-foreground leading-relaxed ${align === "center" ? "mx-auto" : ""} max-w-2xl`}>
+        <p className={`text-muted-foreground leading-relaxed ${align === "center" ? "mx-auto" : ""} max-w-2xl lg:max-w-none`}>
           {description}
         </p>
       )}

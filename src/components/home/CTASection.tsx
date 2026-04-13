@@ -23,7 +23,7 @@ const CTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          className="text-primary-foreground/70 max-w-xl mx-auto mb-8 leading-relaxed"
+          className="text-primary-foreground/70 max-w-xl lg:max-w-none mx-auto mb-8 leading-relaxed"
         >
           Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
         </motion.p>

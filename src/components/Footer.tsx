@@ -18,7 +18,7 @@ const Footer = () => {
           <div>
             <div className="flex flex-col items-start mb-4 leading-tight">
               <h3 className="text-lg font-bold text-primary-foreground">ATC Rénovation</h3>
-              <span className="text-[10px] font-medium tracking-wider text-primary-foreground/50 uppercase">Notre qualité fait la différence</span>
+              <span className="text-[10px] font-medium tracking-wider text-primary-foreground/50 uppercase">Notre différence est notre qualité</span>
             </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
               {companyInfo?.description}

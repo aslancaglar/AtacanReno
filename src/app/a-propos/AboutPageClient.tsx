@@ -119,9 +119,8 @@ const AboutPageClient = () => {
                     vie, avec passion et un souci constant de la perfection.
                   </p>
                   <p>
-                    De la rénovation complète de votre appartement à la création
-                    de votre salle de bains ou de votre cuisine, en passant par
-                    la peinture, les revêtements de sols, la menuiserie,
+                    De la rénovation complète de votre appartement à la
+                    peinture, en passant par les revêtements de sols, la menuiserie,
                     l'électricité ou encore l'aménagement de vos combles : nous
                     transformons vos rêves en réalité, avec soin et passion.
                   </p>
@@ -159,7 +158,7 @@ const AboutPageClient = () => {
                   className="absolute -bottom-4 -right-4 lg:-right-6 bg-secondary text-secondary-foreground rounded-2xl px-5 py-4 shadow-lg text-center"
                 >
                   <span className="block text-2xl font-extrabold leading-none">
-                    10+
+                    20+
                   </span>
                   <span className="block text-xs font-semibold mt-1">
                     ans d'expérience

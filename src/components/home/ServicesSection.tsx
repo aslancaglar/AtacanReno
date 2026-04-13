@@ -17,7 +17,7 @@ const ServicesSection = () => {
           className="mb-16"
         >
           <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">Nos Services Spécialisés</h2>
-          <p className="text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="text-muted-foreground max-w-2xl lg:max-w-none leading-relaxed">
             Découvrez notre gamme complète de services de rénovation intérieure, adaptés à chaque besoin spécifique.
           </p>
         </motion.div>

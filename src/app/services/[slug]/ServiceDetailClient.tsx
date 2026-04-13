@@ -194,7 +194,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Nos prestations
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-muted-foreground max-w-2xl lg:max-w-none mx-auto leading-relaxed">
                 Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
               </p>
             </motion.div>
@@ -239,7 +239,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Notre approche
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-muted-foreground max-w-2xl lg:max-w-none mx-auto leading-relaxed">
                 Un processus simple et transparent pour votre projet de {service.shortTitle.toLowerCase()}.
               </p>
             </motion.div>

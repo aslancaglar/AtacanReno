@@ -24,7 +24,7 @@ export function SectionHeading({ subtitle, title, description }: SectionHeadingP
       <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-nav leading-tight">
         {title}
       </h2>
-      <p className="text-muted-foreground max-w-2xl leading-relaxed text-[15px]">
+      <p className="text-muted-foreground max-w-2xl lg:max-w-none leading-relaxed text-[15px]">
         {description}
       </p>
     </motion.div>

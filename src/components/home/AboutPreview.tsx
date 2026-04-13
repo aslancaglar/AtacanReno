@@ -65,7 +65,7 @@ const AboutPreview = () => {
               Depuis 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à la création de votre salle de bains ou cuisine, en passant par la peinture, les revêtements de sols, la menuiserie, l'électricité ou encore l'aménagement de vos combles : nous transformons vos rêves en réalité, avec soin et passion.
+              Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à la peinture, en passant par les revêtements de sols, la menuiserie, l'électricité ou encore l'aménagement de vos combles : nous transformons vos rêves en réalité, avec soin et passion.
             </p>
             <ul className="space-y-3 mb-8">
               {[
