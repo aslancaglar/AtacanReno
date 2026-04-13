@@ -40,7 +40,7 @@ export default function WhatsAppButton() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
-          className="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0px_10px_20px_rgba(37,211,102,0.3)] hover:shadow-[0px_15px_30px_rgba(37,211,102,0.4)] transition-shadow duration-300 flex items-center justify-center group"
+          className="fixed bottom-8 right-6 lg:bottom-8 lg:right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0px_10px_20px_rgba(37,211,102,0.3)] hover:shadow-[0px_15px_30px_rgba(37,211,102,0.4)] transition-shadow duration-300 flex items-center justify-center group"
           aria-label="Discuter sur WhatsApp"
         >
           {/* Custom WhatsApp SVG icon */}

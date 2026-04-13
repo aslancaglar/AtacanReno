@@ -39,14 +39,14 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="relative -mt-10 z-10 pb-2">
+    <section className="relative lg:-mt-10 -mt-6 z-10 pb-2">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-primary rounded-2xl shadow-2xl px-6 py-5 lg:py-6 lg:px-10"
+          className="bg-primary rounded-2xl shadow-2xl px-6 py-4 lg:py-6 lg:px-10"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-white/20">
             {stats.map((stat, i) => (
