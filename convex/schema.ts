@@ -69,6 +69,7 @@ export default defineSchema({
     whatsappNumber: v.optional(v.string()),
     instagramUrl: v.optional(v.string()),
     facebookUrl: v.optional(v.string()),
+    interventionZones: v.optional(v.string()),
     updatedAt: v.number(),
   }),
 });

@@ -14,9 +14,10 @@ export const get = query({
         address: "54000 Nancy, France",
         workingHours: "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00",
         whatsappNumber: "0612345678",
-        description: "Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 10 ans. De la conception à la réalisation, nous transformons votre intérieur.",
+        description: "Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.",
         instagramUrl: "",
         facebookUrl: "",
+        interventionZones: "Nancy (54000)\nVandœuvre-lès-Nancy\nLaxou & Villers-lès-Nancy\nEssey & Saint-Max\nMalzéville & Tomblaine\nJarville & Heillecourt\nSaint-Nicolas-de-Port\nPont-à-Mousson & Toul",
       };
     }
     return info;
@@ -33,6 +34,7 @@ export const update = mutation({
     description: v.optional(v.string()),
     instagramUrl: v.optional(v.string()),
     facebookUrl: v.optional(v.string()),
+    interventionZones: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const existing = await ctx.db.query("companyInfo").first();

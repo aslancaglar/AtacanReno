@@ -25,6 +25,7 @@ export default function SettingsPage() {
     description: "",
     instagramUrl: "",
     facebookUrl: "",
+    interventionZones: "",
   });
   const [isSaving, setIsSaving] = useState(false);
 
@@ -40,6 +41,7 @@ export default function SettingsPage() {
         description: companyInfo.description || "",
         instagramUrl: companyInfo.instagramUrl || "",
         facebookUrl: companyInfo.facebookUrl || "",
+        interventionZones: companyInfo.interventionZones || "",
       });
     }
   }, [companyInfo]);
@@ -117,7 +119,6 @@ export default function SettingsPage() {
               className="resize-none"
             />
           </div>
-
           <div className="space-y-2">
             <Label htmlFor="description">Texte officiel (À propos)</Label>
             <Textarea 
@@ -129,6 +130,19 @@ export default function SettingsPage() {
               className="resize-none"
             />
             <p className="text-[11px] text-muted-foreground">Ce court texte s'affiche en bas de page sur le site public.</p>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="interventionZones">Zones d'Intervention</Label>
+            <Textarea 
+              id="interventionZones" 
+              value={form.interventionZones} 
+              onChange={(e) => setForm({ ...form, interventionZones: e.target.value })} 
+              placeholder={"Nancy (54000)\nVandœuvre-lès-Nancy\n..."} 
+              rows={4}
+              className="resize-none"
+            />
+            <p className="text-[11px] text-muted-foreground">Indiquez vos zones de déplacement (une ville ou un secteur par ligne).</p>
           </div>
 
           <div className="border-b border-border pt-4 pb-4">

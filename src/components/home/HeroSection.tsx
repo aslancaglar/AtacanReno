@@ -24,7 +24,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[85vh] md:min-h-[60vh] lg:min-h-[90vh] flex items-end md:items-center overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-end md:items-center overflow-hidden">
       {/* Background slideshow */}
       {heroImages.map((src, index) => (
         <div
@@ -46,7 +46,7 @@ const HeroSection = () => {
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
 
-      <div className="relative container mx-auto px-4 lg:px-8 pb-14 sm:pb-24 lg:pb-24 pt-28 sm:pt-24 lg:pt-32">
+      <div className="relative container mx-auto px-4 lg:px-8 pb-14 md:pb-32 lg:pb-24 pt-28 md:pt-32 lg:pt-32">
         <div className="max-w-2xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

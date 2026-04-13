@@ -85,234 +85,222 @@ const whyUs = [
 const AboutPageClient = () => {
   return (
     <Layout>
-        <PageHero
-          backgroundImage="/images/about-portrait.jpg"
-          breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
-          eyebrow="À propos"
-          title="Une passion pour le détail, un engagement pour la qualité."
-          description="Depuis plus de 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire."
-        />
+      <PageHero
+        backgroundImage="/images/about-portrait.jpg"
+        breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
+        eyebrow="À propos"
+        title="Artisan en rénovation intérieure à Nancy et en Meurthe-et-Moselle"
+        description="ATC Rénovation est votre spécialiste de la rénovation intérieure clé en main depuis plus de 20 ans. Nous intervenons à Nancy et dans toute la Meurthe-et-Moselle (54)."
+      />
 
-        {/* ─── Stats (reused from homepage) ─── */}
-        <StatsSection />
+      {/* ─── Stats (reused from homepage) ─── */}
+      <StatsSection />
 
-        {/* ─── Our Story ─── */}
-        <section className="py-20 lg:py-28">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* ─── Our Story ─── */}
+      <section className="py-20 lg:py-28">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <SectionHeader
+                eyebrow="Notre histoire"
+                title="De la passion artisanale à l'expertise reconnue"
+              />
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Depuis plus de 20 ans, ATC Rénovation transforme votre intérieur de A à Z. Experts en rénovation clé en main, nous donnons vie à vos projets sur Nancy et dans toute la Meurthe-et-Moselle (54).
+                </p>
+                <p>
+                  Appartement, maison ou local professionnel : nous coordonnons l'ensemble des corps de métier pour mener votre projet de A à Z. Plâtrerie, peinture, revêtements de sols, isolation thermique, menuiserie intérieure, aménagement de combles — un seul interlocuteur, zéro stress.
+                </p>
+                <p>
+                  Aujourd'hui, avec plus de 300 projets livrés et une note de 4.9/5 sur Google, ATC Rénovation est un acteur de référence de la rénovation intérieure en région nancéienne. Certifiés RGE Qualibat, nous vous accompagnons également dans vos travaux de rénovation énergétique éligibles à MaPrimeRénov'.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+              className="relative flex justify-center"
+            >
+              <img
+                src="/images/about-portrait.jpg"
+                alt="Fondateur d'ATC Rénovation"
+                className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
+                loading="lazy"
+                width={640}
+                height={800}
+              />
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+                className="absolute -bottom-4 -right-4 lg:-right-6 bg-secondary text-secondary-foreground rounded-2xl px-5 py-4 shadow-lg text-center"
               >
-                <SectionHeader
-                  eyebrow="Notre histoire"
-                  title="De la passion artisanale à l'expertise reconnue"
-                />
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Spécialistes du « clé en main », nous coordonnons l'ensemble
-                    des corps de métier pour réaliser vos projets de A à Z.
-                    Depuis 2004, ATC Rénovation accompagne les habitants de Nancy
-                    et du Grand Nancy dans la transformation de leurs espaces de
-                    vie, avec passion et un souci constant de la perfection.
-                  </p>
-                  <p>
-                    De la rénovation complète de votre appartement à la
-                    peinture, en passant par les revêtements de sols, la menuiserie,
-                    l'électricité ou encore l'aménagement de vos combles : nous
-                    transformons vos rêves en réalité, avec soin et passion.
-                  </p>
-                  <p>
-                    Aujourd'hui, avec plus de 300 projets livrés et une note de
-                    4.9/5 sur Google, ATC Rénovation est un acteur de référence
-                    de la rénovation intérieure en région nancéienne. Notre
-                    certification RGE nous permet également d'accompagner nos
-                    clients dans leurs projets d'isolation et de rénovation
-                    énergétique avec accès aux aides de l'État.
-                  </p>
-                </div>
+                <span className="block text-2xl font-extrabold leading-none">
+                  20+
+                </span>
+                <span className="block text-xs font-semibold mt-1">
+                  ans d'expérience
+                </span>
               </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
+      {/* ─── Certifications (images only) ─── */}
+      <section className="py-10 lg:py-14 border-y border-border/50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {certs.map((cert, i) => (
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                key={cert.alt}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                className="relative flex justify-center"
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.1,
+                  ease: "easeOut",
+                }}
+                className="flex items-center justify-center"
               >
                 <img
-                  src="/images/about-portrait.jpg"
-                  alt="Fondateur d'ATC Rénovation"
-                  className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
+                  src={cert.src}
+                  alt={cert.alt}
+                  className="h-24 lg:h-28 w-auto object-contain rounded-xl hover:scale-110 transition-transform duration-300"
                   loading="lazy"
-                  width={640}
-                  height={800}
+                  width={128}
+                  height={128}
                 />
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-                  className="absolute -bottom-4 -right-4 lg:-right-6 bg-secondary text-secondary-foreground rounded-2xl px-5 py-4 shadow-lg text-center"
-                >
-                  <span className="block text-2xl font-extrabold leading-none">
-                    20+
-                  </span>
-                  <span className="block text-xs font-semibold mt-1">
-                    ans d'expérience
-                  </span>
-                </motion.div>
               </motion.div>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ─── Certifications (images only) ─── */}
-        <section className="py-10 lg:py-14 border-y border-border/50">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
-              {certs.map((cert, i) => (
+
+      {/* ─── Our Values ─── */}
+      <section className="py-20 lg:py-28 bg-surface-container-low">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeader
+            eyebrow="Ce qui nous définit"
+            title="Nos Valeurs"
+            description="Chaque projet est guidé par des principes forts qui font la différence entre un bon travail et un travail exceptionnel."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((value, i) => {
+              const Icon = value.icon;
+              return (
                 <motion.div
-                  key={cert.alt}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={value.title}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition={{
                     duration: 0.5,
-                    delay: i * 0.1,
+                    delay: i * 0.08,
                     ease: "easeOut",
                   }}
-                  className="flex items-center justify-center"
+                  className="bg-card rounded-2xl p-6 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300 group border border-border"
                 >
-                  <img
-                    src={cert.src}
-                    alt={cert.alt}
-                    className="h-24 lg:h-28 w-auto object-contain rounded-xl hover:scale-110 transition-transform duration-300"
-                    loading="lazy"
-                    width={128}
-                    height={128}
-                  />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{value.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        </section>
+        </div>
+      </section>
 
-
-        {/* ─── Our Values ─── */}
-        <section className="py-20 lg:py-28 bg-surface-container-low">
-          <div className="container mx-auto px-4 lg:px-8">
-            <SectionHeader
-              eyebrow="Ce qui nous définit"
-              title="Nos Valeurs"
-              description="Chaque projet est guidé par des principes forts qui font la différence entre un bon travail et un travail exceptionnel."
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {values.map((value, i) => {
-                const Icon = value.icon;
-                return (
-                  <motion.div
-                    key={value.title}
-                    initial={{ opacity: 0, y: 30 }}
+      {/* ─── Why Choose Us ─── */}
+      <section className="py-20 lg:py-28">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <SectionHeader
+                eyebrow="Pourquoi nous choisir"
+                title="L'assurance d'un travail bien fait, du premier coup."
+              />
+              <ul className="space-y-3 mb-8">
+                {whyUs.map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1 }}
+                    viewport={{ once: true }}
                     transition={{
-                      duration: 0.5,
-                      delay: i * 0.08,
+                      duration: 0.4,
+                      delay: 0.2 + i * 0.06,
                       ease: "easeOut",
                     }}
-                    className="bg-card rounded-2xl p-6 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300 group border border-border"
+                    className="flex items-center gap-3 text-sm"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-6 h-6 text-primary" />
+                    <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                      <Check className="w-3 h-3 text-secondary" />
                     </div>
-                    <h3 className="text-lg font-bold mb-2">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {value.description}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
+                    <span className="text-muted-foreground">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Image collage */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <img
+                src="/images/real-1.jpg"
+                alt="Rénovation salle de bains ATC"
+                className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm"
+                loading="lazy"
+                width={400}
+                height={500}
+              />
+              <img
+                src="/images/real-3.jpg"
+                alt="Rénovation salon ATC"
+                className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm mt-8"
+                loading="lazy"
+                width={400}
+                height={500}
+              />
+            </motion.div>
           </div>
-        </section>
-
-        {/* ─── Why Choose Us ─── */}
-        <section className="py-20 lg:py-28">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <SectionHeader
-                  eyebrow="Pourquoi nous choisir"
-                  title="L'assurance d'un travail bien fait, du premier coup."
-                />
-                <ul className="space-y-3 mb-8">
-                  {whyUs.map((item, i) => (
-                    <motion.li
-                      key={item}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.2 + i * 0.06,
-                        ease: "easeOut",
-                      }}
-                      className="flex items-center gap-3 text-sm"
-                    >
-                      <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
-                        <Check className="w-3 h-3 text-secondary" />
-                      </div>
-                      <span className="text-muted-foreground">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* Image collage */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                className="grid grid-cols-2 gap-4"
-              >
-                <img
-                  src="/images/real-1.jpg"
-                  alt="Rénovation salle de bains ATC"
-                  className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm"
-                  loading="lazy"
-                  width={400}
-                  height={500}
-                />
-                <img
-                  src="/images/real-3.jpg"
-                  alt="Rénovation salon ATC"
-                  className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm mt-8"
-                  loading="lazy"
-                  width={400}
-                  height={500}
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Partners (reused from homepage) ─── */}
-        <div className="bg-surface-container-low">
-          <PartnersSection />
         </div>
+      </section>
 
-        {/* ─── CTA (reused from homepage) ─── */}
-        <CTASection />
+      {/* ─── Partners (reused from homepage) ─── */}
+      <div className="bg-surface-container-low">
+        <PartnersSection />
+      </div>
+
+      {/* ─── CTA (reused from homepage) ─── */}
+      <CTASection />
     </Layout>
   );
 };

@@ -59,13 +59,16 @@ const AboutPreview = () => {
               À propos de nous
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-              Une passion pour le détail, un engagement pour la qualité.
+              ATC Rénovation — Artisan en rénovation intérieure à Nancy et en Meurthe-et-Moselle
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Depuis 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
+              Depuis plus de 20 ans, ATC Rénovation transforme votre intérieur de A à Z. Experts en rénovation clé en main, nous donnons vie à vos projets sur Nancy et dans toute la Meurthe-et-Moselle (54).
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Appartement, maison ou local professionnel : nous coordonnons l'ensemble des corps de métier pour mener votre projet de A à Z. Plâtrerie, peinture, revêtements de sols, isolation thermique, menuiserie intérieure, aménagement de combles — un seul interlocuteur, zéro stress.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à la peinture, en passant par les revêtements de sols, la menuiserie, l'électricité ou encore l'aménagement de vos combles : nous transformons vos rêves en réalité, avec soin et passion.
+              Certifiés RGE Qualibat, nous vous accompagnons également dans vos travaux de rénovation énergétique éligibles à MaPrimeRénov'. Plus de 300 chantiers réalisés, une note de 4,9/5 sur Google, des délais et budgets toujours respectés : notre différence, c'est notre qualité.
             </p>
             <ul className="space-y-3 mb-8">
               {[

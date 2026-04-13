@@ -1,9 +1,10 @@
 "use client";
 
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
+import { Button } from "@/components/ui/button";
 
 import { SectionHeading } from "./SectionHeading";
 
@@ -131,6 +132,27 @@ const TestimonialsSection = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <a 
+              href="https://maps.app.goo.gl/RwbnhGRwfampRRGS8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button variant="outline" className="btn-pill border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-nav px-8 py-6 text-base font-semibold transition-all group">
+                Lire tous les avis sur Google
+                <ArrowUpRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+              </Button>
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

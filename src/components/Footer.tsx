@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <footer className="bg-nav text-primary-foreground">
       <div className="container mx-auto px-4 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="lg:col-span-1">
             <div className="flex flex-col items-start mb-4 leading-tight">
               <h3 className="text-lg font-bold text-primary-foreground">ATC Rénovation</h3>
               <span className="text-[10px] font-medium tracking-wider text-primary-foreground/50 uppercase">Notre différence est notre qualité</span>
@@ -45,6 +45,15 @@ const Footer = () => {
                     {service.shortTitle}
                   </Link>
                 </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-primary-foreground">Zones d'Intervention</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/60">
+              {companyInfo?.interventionZones?.split('\n').filter(Boolean).map((zone, i) => (
+                <li key={i}>{zone}</li>
               ))}
             </ul>
           </div>
