@@ -70,6 +70,7 @@ export default defineSchema({
     instagramUrl: v.optional(v.string()),
     facebookUrl: v.optional(v.string()),
     interventionZones: v.optional(v.string()),
+    siret: v.optional(v.string()),
     updatedAt: v.number(),
   }),
 });
