@@ -7,6 +7,13 @@ export const list = query({
   },
 });
 
+export const count = query({
+  handler: async (ctx) => {
+    const all = await ctx.db.query("clients").collect();
+    return all.length;
+  },
+});
+
 export const getById = query({
   args: { id: v.id("clients") },
   handler: async (ctx, args) => {

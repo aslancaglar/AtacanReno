@@ -19,7 +19,7 @@ const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/devis", label: "Demandes de devis", icon: FileText },
   { href: "/admin/clients", label: "Clients", icon: Users },
-  { href: "/admin/portfolio", label: "Portfolio", icon: Image },
+  { href: "/admin/portfolio", label: "Réalisations", icon: Image },
   { href: "/admin/avis", label: "Avis clients", icon: Star },
   { href: "/admin/settings", label: "Paramètres", icon: Settings },
 ];

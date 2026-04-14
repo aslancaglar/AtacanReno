@@ -2,6 +2,13 @@ import { v } from "convex/values";
 import { query, mutation } from "./_generated/server";
 import { byOrder } from "./utils";
 
+export const count = query({
+  handler: async (ctx) => {
+    const all = await ctx.db.query("reviews").collect();
+    return all.length;
+  },
+});
+
 export const list = query({
   args: { onlyVisible: v.optional(v.boolean()) },
   handler: async (ctx, args) => {

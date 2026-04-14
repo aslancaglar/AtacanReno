@@ -6,9 +6,9 @@ import type { Id } from "../../../convex/_generated/dataModel";
 import { useState } from "react";
 import {
   FileText,
-  Clock,
-  CheckCircle,
-  AlertCircle,
+  Users,
+  Star,
+  Image,
   ArrowRight,
   Phone,
   Mail,
@@ -38,6 +38,9 @@ const statusColumns = [
 
 export default function AdminDashboard() {
   const stats = useQuery(api.devis.getStats);
+  const clientsCount = useQuery(api.clients.count);
+  const reviewsCount = useQuery(api.reviews.count);
+  const portfolioCount = useQuery(api.portfolio.count);
   const recentDevis = useQuery(api.devis.listRecent, { limit: 5 });
   const updateStatus = useMutation(api.devis.updateStatus);
   const createClient = useMutation(api.clients.create);
@@ -59,32 +62,32 @@ export default function AdminDashboard() {
 
   const statCards = [
     {
-      label: "Total demandes",
+      label: "Demandes de devis",
       value: stats?.total ?? "—",
       icon: FileText,
       color: "bg-blue-50 border-blue-100",
       iconColor: "text-blue-500 bg-blue-100",
     },
     {
-      label: "Nouveaux",
-      value: stats?.nouveau ?? "—",
-      icon: AlertCircle,
-      color: "bg-amber-50 border-amber-100",
-      iconColor: "text-amber-500 bg-amber-100",
-    },
-    {
-      label: "Envoyés",
-      value: stats?.envoye ?? "—",
-      icon: Clock,
-      color: "bg-amber-50 border-amber-100",
-      iconColor: "text-amber-500 bg-amber-100",
-    },
-    {
-      label: "Acceptés",
-      value: stats?.accepte ?? "—",
-      icon: CheckCircle,
+      label: "Clients",
+      value: clientsCount ?? "—",
+      icon: Users,
       color: "bg-emerald-50 border-emerald-100",
       iconColor: "text-emerald-500 bg-emerald-100",
+    },
+    {
+      label: "Avis clients",
+      value: reviewsCount ?? "—",
+      icon: Star,
+      color: "bg-rose-50 border-rose-100",
+      iconColor: "text-rose-500 bg-rose-100",
+    },
+    {
+      label: "Réalisations",
+      value: portfolioCount ?? "—",
+      icon: Image,
+      color: "bg-violet-50 border-violet-100",
+      iconColor: "text-violet-500 bg-violet-100",
     },
   ];
 
