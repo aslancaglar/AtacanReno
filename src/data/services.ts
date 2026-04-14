@@ -142,7 +142,7 @@ export const serviceImages: Record<string, string> = {
   "peinture-decoration": "/images/service-peinture-highres.png",
   "revetements-sols-murs": "/images/service-sols-highres.png",
   "menuiserie-amenagement": "/images/service-menuiserie-highres.png",
-  "platrerie-faux-plafonds": "/images/service-platrerie-highres.png",
+  "platrerie-faux-plafonds": "/images/service-platrerie-v2.png",
   "isolation-renovation-energetique": "/images/service-isolation-highres.png",
   "amenagement-combles": "/images/service-combles-highres.png",
 };
