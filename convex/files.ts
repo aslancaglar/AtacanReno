@@ -9,7 +9,7 @@ export const generateUploadUrl = mutation({
 });
 
 // Get the public URL for a stored file
-export const getUrl = mutation({
+export const getUrl = query({
   args: { storageId: v.id("_storage") },
   handler: async (ctx, args) => {
     return await ctx.storage.getUrl(args.storageId);

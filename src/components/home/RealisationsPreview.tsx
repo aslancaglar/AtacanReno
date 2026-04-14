@@ -4,25 +4,15 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "convex/react";
-import { SectionHeading } from "./SectionHeading";
+import SectionHeader from "@/components/SectionHeader";
 import { api } from "../../../convex/_generated/api";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import Link from "next/link";
-import { fallbackProjects, type ProjectData } from "@/data/realisations";
+import { fallbackProjects, aspectClasses, type ProjectData } from "@/data/realisations";
 import { ArrowRight } from "lucide-react";
 import MasonryGrid from "@/components/MasonryGrid";
 
 const PREVIEW_LIMIT = 6;
-
-/* Cycle through heights for the Pinterest effect */
-const aspectClasses = [
-  "aspect-[3/4]",
-  "aspect-square",
-  "aspect-[4/5]",
-  "aspect-[2/3]",
-  "aspect-[5/6]",
-  "aspect-[3/5]",
-];
 
 const RealisationsPreview = () => {
   const [activeFilter, setActiveFilter] = useState("Tout");
@@ -56,10 +46,10 @@ const RealisationsPreview = () => {
   return (
     <section id="realisations" className="py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
-        <SectionHeading 
-          subtitle="Portfolio" 
-          title="Nos Dernières Réalisations" 
-          description="Découvrez nos projets de rénovation réalisés à Nancy et ses environs. Chaque chantier reflète notre savoir-faire et notre souci du détail." 
+        <SectionHeader
+          eyebrow="Portfolio"
+          title="Nos Dernières Réalisations"
+          description="Découvrez nos projets de rénovation réalisés à Nancy et ses environs. Chaque chantier reflète notre savoir-faire et notre souci du détail."
         />
         <motion.div
           initial={{ opacity: 0, y: 20 }}

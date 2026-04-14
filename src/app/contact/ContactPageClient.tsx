@@ -106,13 +106,17 @@ const faqs = [
 
 const ContactPageClient = () => {
   const preloadedInfo = usePreloadedCompanyInfo();
-  const companyInfoFromDb = usePreloadedQuery(preloadedInfo!);
+  
+  // Safety check to prevent crashes during hydration if preloaded info is missing
+  if (!preloadedInfo) return null;
+
+  const companyInfoFromDb = usePreloadedQuery(preloadedInfo);
   const contactInfo = getContactInfo(companyInfoFromDb);
 
   return (
     <Layout>
       <PageHero
-        backgroundImage="/images/hero-bg-3.jpg"
+        backgroundImage="/images/hero-bg-3-highres.png"
         breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Contact" }]}
         title="Contactez-nous"
         description="Parlons de votre projet de rénovation. Devis gratuit sous 48h, sans engagement."

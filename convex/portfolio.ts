@@ -1,5 +1,6 @@
 import { v } from "convex/values";
 import { query, mutation } from "./_generated/server";
+import { byOrder } from "./utils";
 
 export const list = query({
   args: { onlyVisible: v.optional(v.boolean()) },
@@ -14,18 +15,7 @@ export const list = query({
       results = await ctx.db.query("portfolio").collect();
     }
 
-    return results.sort((a, b) => {
-      // Sort by order ascending if both have it
-      if (a.order !== undefined && b.order !== undefined) {
-        return a.order - b.order;
-      }
-      // If only one has it, prioritize it
-      if (a.order !== undefined) return -1;
-      if (b.order !== undefined) return 1;
-
-      // Fallback to _creationTime desc
-      return b._creationTime - a._creationTime;
-    });
+    return results.sort(byOrder);
   },
 });
 

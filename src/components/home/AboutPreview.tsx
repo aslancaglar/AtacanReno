@@ -3,15 +3,7 @@
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import certMaprimerenov from "@/assets/cert-maprimerenov.jpg";
-import certDecennale from "@/assets/cert-garantie-decennale.jpg";
-import certRge from "@/assets/cert-rge-qualibat.jpg";
-
-const certs = [
-  { src: certRge.src, alt: "Certification RGE Qualibat" },
-  { src: certDecennale.src, alt: "Garantie Décennale" },
-  { src: certMaprimerenov.src, alt: "MaPrimeRénov'" },
-];
+import { certs } from "@/data/certifications";
 
 const AboutPreview = () => {
   return (
@@ -28,7 +20,7 @@ const AboutPreview = () => {
           >
             <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-[0px_20px_40px_rgba(52,48,38,0.06)]">
               <Image
-                src="/images/about-portrait.jpg"
+                src="/images/about-highres.png"
                 alt="Fondateur d'ATC Rénovation"
                 fill
                 className="object-cover"

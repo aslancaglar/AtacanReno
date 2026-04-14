@@ -10,13 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
-
-const statusLabels: Record<string, { label: string; color: string }> = {
-  nouveau: { label: "Nouveau", color: "bg-blue-50 text-blue-600" },
-  en_cours: { label: "En cours", color: "bg-amber-50 text-amber-600" },
-  termine: { label: "Terminé", color: "bg-emerald-50 text-emerald-600" },
-  refuse: { label: "Refusé", color: "bg-red-50 text-red-600" },
-};
+import { statusLabels, statusStyles } from "@/data/devisStatus";
 
 export default function AdminDashboard() {
   const stats = useQuery(api.devis.getStats);
@@ -123,10 +117,6 @@ export default function AdminDashboard() {
               </thead>
               <tbody className="divide-y divide-border">
                 {recentDevis.map((d) => {
-                  const status = statusLabels[d.status] ?? {
-                    label: d.status,
-                    color: "bg-muted text-muted-foreground",
-                  };
                   return (
                     <tr
                       key={d._id}
@@ -150,9 +140,9 @@ export default function AdminDashboard() {
                       </td>
                       <td className="px-6 py-3.5">
                         <span
-                          className={`inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ${status.color}`}
+                          className={`inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ${statusStyles[d.status] ?? "bg-muted text-muted-foreground"}`}
                         >
-                          {status.label}
+                          {statusLabels[d.status] ?? d.status}
                         </span>
                       </td>
                       <td className="px-6 py-3.5 text-right">

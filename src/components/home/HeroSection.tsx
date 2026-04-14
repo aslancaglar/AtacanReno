@@ -8,9 +8,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const heroImages = [
-  "/images/hero-bg.jpg",
-  "/images/hero-bg-2.jpg",
-  "/images/hero-bg-3.jpg",
+  "/images/hero-bg-highres.png",
+  "/images/hero-bg-2-highres.png",
+  "/images/hero-bg-3-highres.png",
 ];
 
 const HeroSection = () => {
@@ -24,7 +24,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-end md:items-center overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[70vh] xl:min-h-[65vh] max-h-[900px] flex items-end md:items-center overflow-hidden">
       {/* Background slideshow */}
       {heroImages.map((src, index) => (
         <div
@@ -46,7 +46,7 @@ const HeroSection = () => {
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
 
-      <div className="relative container mx-auto px-4 lg:px-8 pb-14 md:pb-32 lg:pb-24 pt-28 md:pt-32 lg:pt-32">
+      <div className="relative container mx-auto px-4 lg:px-8 pb-14 md:pb-32 lg:pb-32 pt-28 md:pt-32 lg:pt-40">
         <div className="max-w-2xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

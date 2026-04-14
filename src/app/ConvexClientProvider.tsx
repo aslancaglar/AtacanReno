@@ -11,8 +11,9 @@ const CompanyInfoContext = createContext<Preloaded<typeof api.companyInfo.get> |
 
 export const usePreloadedCompanyInfo = () => {
   const context = useContext(CompanyInfoContext);
-  if (context === undefined) {
-    throw new Error("usePreloadedCompanyInfo must be used within a ConvexClientProvider");
+  if (context === undefined || context === null) {
+    // Return early or handle the null case in components to prevent crashes
+    return context;
   }
   return context;
 };

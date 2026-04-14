@@ -6,7 +6,17 @@ import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { Button } from "@/components/ui/button";
 
-import { SectionHeading } from "./SectionHeading";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselPrevious, 
+  CarouselNext,
+  type CarouselApi 
+} from "@/components/ui/carousel";
+import React from 'react';
+
+import SectionHeader from "@/components/SectionHeader";
 
 // Fallback data if Convex is not yet connected or has no reviews
 const fallbackTestimonials = [
@@ -62,6 +72,7 @@ const fallbackTestimonials = [
 
 const TestimonialsSection = () => {
   const convexReviews = useQuery(api.reviews.list, { onlyVisible: true });
+  const [carouselApi, setCarouselApi] = React.useState<CarouselApi>();
 
   // Use convex reviews if available and non-empty, otherwise fall back to static data
   const testimonials = convexReviews && convexReviews.length > 0
@@ -75,63 +86,91 @@ const TestimonialsSection = () => {
       }))
     : fallbackTestimonials;
 
+  // Auto-slide logic
+  React.useEffect(() => {
+    if (!carouselApi) return;
+    
+    const interval = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [carouselApi]);
+
   return (
-    <section className="py-20 lg:py-28 bg-surface-container-low">
+    <section className="py-20 lg:py-28 bg-surface-container-low overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
-        <SectionHeading 
-          subtitle="Témoignages" 
-          title="Ce que disent nos clients" 
-          description="La satisfaction de nos clients est notre meilleure carte de visite. Découvrez leurs retours d'expérience." 
+        <SectionHeader
+          eyebrow="Témoignages"
+          title="Ce que disent nos clients"
+          description="La satisfaction de nos clients est notre meilleure carte de visite. Découvrez leurs retours d'expérience."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-              className="bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-xs font-bold text-primary uppercase">
-                      {t.name.split(" ").map((n: string) => n[0]).join("").substring(0, 2)}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-sm font-bold text-nav block">{t.name}</span>
-                    <span className="text-xs text-secondary font-medium">{t.project}</span>
-                  </div>
-                </div>
+        <div className="relative group/carousel">
+          <Carousel
+            setApi={setCarouselApi}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((t, i) => (
+                <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3 pl-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                    className="bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full border border-border/50"
+                  >
+                    <div className="p-6 flex flex-col h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <span className="text-xs font-bold text-primary uppercase">
+                            {t.name.split(" ").map((n: string) => n[0]).join("").substring(0, 2)}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-sm font-bold text-nav block">{t.name}</span>
+                          <span className="text-xs text-secondary font-medium">{t.project}</span>
+                        </div>
+                      </div>
 
-                <div className="flex gap-1 mb-3">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="w-3.5 h-3.5 fill-secondary text-secondary" />
-                  ))}
-                </div>
+                      <div className="flex gap-1 mb-3">
+                        {Array.from({ length: t.rating }).map((_, j) => (
+                          <Star key={j} className="w-3.5 h-3.5 fill-secondary text-secondary" />
+                        ))}
+                      </div>
 
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
-                  &ldquo;{t.text}&rdquo;
-                </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow italic">
+                        &ldquo;{t.text}&rdquo;
+                      </p>
 
-                {t.imageUrl && (
-                  <div className="aspect-[16/9] overflow-hidden rounded-xl mt-auto">
-                    <img
-                      src={t.imageUrl}
-                      alt={t.project}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      width={640}
-                      height={360}
-                    />
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                      {t.imageUrl && (
+                        <div className="aspect-[16/9] overflow-hidden rounded-xl mt-auto">
+                          <img
+                            src={t.imageUrl}
+                            alt={t.project}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                            width={640}
+                            height={360}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            <div className="hidden lg:block">
+              <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2 opacity-0 group-hover/carousel:opacity-100 transition-opacity" />
+              <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2 opacity-0 group-hover/carousel:opacity-100 transition-opacity" />
+            </div>
+          </Carousel>
         </div>
 
         <div className="mt-12 text-center">

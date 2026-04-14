@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactNode } from "react";
 
 interface AdminHeaderProps {
   title: string;
   description: string;
-  actionButton?: React.ReactNode;
+  actionButton?: ReactNode;
 }
 
 export function AdminHeader({ title, description, actionButton }: AdminHeaderProps) {

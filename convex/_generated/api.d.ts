@@ -16,6 +16,7 @@ import type * as files from "../files.js";
 import type * as portfolio from "../portfolio.js";
 import type * as reviews from "../reviews.js";
 import type * as seed from "../seed.js";
+import type * as utils from "../utils.js";
 
 import type {
   ApiFromModules,
@@ -32,6 +33,7 @@ declare const fullApi: ApiFromModules<{
   portfolio: typeof portfolio;
   reviews: typeof reviews;
   seed: typeof seed;
+  utils: typeof utils;
 }>;
 
 /**

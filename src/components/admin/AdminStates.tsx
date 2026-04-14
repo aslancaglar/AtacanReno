@@ -1,4 +1,3 @@
-import React from "react";
 import { Loader2, FolderOpen } from "lucide-react";
 
 interface AdminEmptyStateProps {

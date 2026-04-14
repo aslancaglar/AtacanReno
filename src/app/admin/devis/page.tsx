@@ -19,6 +19,7 @@ import {
 
 import { AdminHeader } from "@/components/admin/AdminHeader";
 import { AdminLoadingState, AdminEmptyState } from "@/components/admin/AdminStates";
+import { statusStyles, statusLabels } from "@/data/devisStatus";
 
 const statusTabs = [
   { key: undefined, label: "Tous" },
@@ -27,20 +28,6 @@ const statusTabs = [
   { key: "termine", label: "Terminé" },
   { key: "refuse", label: "Refusé" },
 ];
-
-const statusStyles: Record<string, string> = {
-  nouveau: "bg-blue-50 text-blue-600",
-  en_cours: "bg-amber-50 text-amber-600",
-  termine: "bg-emerald-50 text-emerald-600",
-  refuse: "bg-red-50 text-red-600",
-};
-
-const statusLabels: Record<string, string> = {
-  nouveau: "Nouveau",
-  en_cours: "En cours",
-  termine: "Terminé",
-  refuse: "Refusé",
-};
 
 export default function DevisListPage() {
   const [activeStatus, setActiveStatus] = useState<string | undefined>(undefined);

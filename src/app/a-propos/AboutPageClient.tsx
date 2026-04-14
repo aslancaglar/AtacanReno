@@ -17,9 +17,7 @@ import SectionHeader from "@/components/SectionHeader";
 import StatsSection from "@/components/home/StatsSection";
 import CTASection from "@/components/home/CTASection";
 import PartnersSection from "@/components/home/PartnersSection";
-import certMaprimerenov from "@/assets/cert-maprimerenov.jpg";
-import certDecennale from "@/assets/cert-garantie-decennale.jpg";
-import certRge from "@/assets/cert-rge-qualibat.jpg";
+import { certs } from "@/data/certifications";
 
 /* ───────────────────── Data ───────────────────── */
 
@@ -63,12 +61,6 @@ const values = [
 ];
 
 
-const certs = [
-  { src: certRge.src, alt: "Certification RGE Qualibat", title: "RGE Qualibat" },
-  { src: certDecennale.src, alt: "Garantie Décennale", title: "Garantie Décennale" },
-  { src: certMaprimerenov.src, alt: "MaPrimeRénov'", title: "MaPrimeRénov'" },
-];
-
 const whyUs = [
   "Un interlocuteur unique pour tous vos travaux d'intérieur",
   "Artisan certifié RGE pour l'isolation et la rénovation énergétique",
@@ -86,7 +78,7 @@ const AboutPageClient = () => {
   return (
     <Layout>
       <PageHero
-        backgroundImage="/images/about-portrait.jpg"
+        backgroundImage="/images/about-hero-highres.png"
         breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
         eyebrow="À propos"
         title="Artisan en rénovation intérieure à Nancy et en Meurthe-et-Moselle"
@@ -131,7 +123,7 @@ const AboutPageClient = () => {
               className="relative flex justify-center"
             >
               <img
-                src="/images/about-portrait.jpg"
+                src="/images/about-highres.png"
                 alt="Fondateur d'ATC Rénovation"
                 className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
                 loading="lazy"
@@ -274,7 +266,7 @@ const AboutPageClient = () => {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src="/images/real-1.jpg"
+                src="/images/service-peinture-highres.png"
                 alt="Rénovation salle de bains ATC"
                 className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm"
                 loading="lazy"

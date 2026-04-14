@@ -1,3 +1,13 @@
+/** Cycles through aspect ratios for the Pinterest/masonry effect. */
+export const aspectClasses = [
+  "aspect-[3/4]",
+  "aspect-square",
+  "aspect-[4/5]",
+  "aspect-[2/3]",
+  "aspect-[5/6]",
+  "aspect-[3/5]",
+] as const;
+
 export interface ProjectData {
   title: string;
   location: string;
@@ -70,7 +80,7 @@ export const fallbackProjects: ProjectData[] = [
     category: "Salles de bain",
     description:
       "Aménagement accessible avec douche de plain-pied, barres d'appui et revêtements antidérapants.",
-    image: "/images/service-sdb.jpg",
+    image: "/images/service-sdb-highres.png",
   },
   {
     title: "Appartement Investisseur",
@@ -78,7 +88,7 @@ export const fallbackProjects: ProjectData[] = [
     category: "Appartements",
     description:
       "Rénovation complète pour mise en location : optimisation des espaces, finitions soignées et budget maîtrisé.",
-    image: "/images/service-appart.jpg",
+    image: "/images/service-appart-highres.png",
   },
   {
     title: "Salon Cosy Contemporain",
@@ -86,6 +96,6 @@ export const fallbackProjects: ProjectData[] = [
     category: "Salons",
     description:
       "Transformation d'un salon vieillissant en espace chaleureux avec papier peint panoramique et parquet contrecollé.",
-    image: "/images/service-salon.jpg",
+    image: "/images/service-salon-highres.png",
   },
 ];

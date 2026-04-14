@@ -10,24 +10,9 @@ import SectionHeader from "@/components/SectionHeader";
 import BeforeAfterSlider from "@/components/home/BeforeAfterSlider";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
-import { fallbackProjects, type ProjectData } from "@/data/realisations";
+import { fallbackProjects, aspectClasses, type ProjectData } from "@/data/realisations";
 import MasonryGrid from "@/components/MasonryGrid";
 import StatsSection from "@/components/home/StatsSection";
-
-/* ───────────────────── Aspect ratios for masonry ───────────────────── */
-
-const aspectClasses = [
-  "aspect-[3/4]",
-  "aspect-square",
-  "aspect-[4/5]",
-  "aspect-[2/3]",
-  "aspect-[5/6]",
-  "aspect-[3/5]",
-];
-
-/* ───────────────────── Component ───────────────────── */
-
-/* ───────────────────── Component ───────────────────── */
 
 const RealisationsPageClient = () => {
   const [activeFilter, setActiveFilter] = useState("Tout");
@@ -58,7 +43,7 @@ const RealisationsPageClient = () => {
   return (
     <Layout>
         <PageHero
-          backgroundImage="/images/real-3.jpg"
+          backgroundImage="/images/service-salon-highres.png"
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]}
           eyebrow="Portfolio"
           title="Nos Réalisations"

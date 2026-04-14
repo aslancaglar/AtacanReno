@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation } from "convex/react";
+import { useMutation, useConvex } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import type { Id } from "../../../convex/_generated/dataModel";
 import { useState, useRef } from "react";
@@ -22,7 +22,7 @@ export default function ImageUpload({
   aspectRatio = "aspect-[4/3]",
 }: ImageUploadProps) {
   const generateUploadUrl = useMutation(api.files.generateUploadUrl);
-  const getUrl = useMutation(api.files.getUrl);
+  const convex = useConvex();
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -44,7 +44,7 @@ export default function ImageUpload({
       const { storageId } = await result.json();
 
       // 3. Get the public URL
-      const publicUrl = await getUrl({
+      const publicUrl = await convex.query(api.files.getUrl, {
         storageId: storageId as Id<"_storage">,
       });
 
