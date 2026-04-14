@@ -34,8 +34,8 @@ export function LegalModals({ isOpen, onClose, companyInfo }: LegalModalsProps) 
   return (
     <Dialog open={!!isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col p-0 overflow-hidden border-none shadow-2xl bg-background">
-        <DialogHeader className="p-8 pb-4 bg-primary text-white shrink-0">
-          <DialogTitle className="text-2xl font-bold tracking-tight">
+        <DialogHeader className="p-8 pb-4 bg-primary shrink-0">
+          <DialogTitle className="text-2xl font-bold tracking-tight text-secondary">
             {content?.title}
           </DialogTitle>
           <div className="h-1 w-12 bg-secondary mt-2 rounded-full" />

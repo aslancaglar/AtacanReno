@@ -13,7 +13,7 @@ Responsable de la publication : M. Caglar Aslan
 Siège social : [ADRESSE]
 Email : [EMAIL]
 Téléphone : [PHONE]
-SIRET : [SIRET_PLACEHOLDER]
+SIRET : 82369837800028
 Code APE : 4334Z (Travaux de peinture et vitrerie - à titre indicatif)`,
       },
       {
