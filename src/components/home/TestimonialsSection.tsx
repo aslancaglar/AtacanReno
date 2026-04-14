@@ -86,16 +86,18 @@ const TestimonialsSection = () => {
       }))
     : fallbackTestimonials;
 
-  // Auto-slide logic
+  // Auto-slide logic with pause on hover
+  const [isHovered, setIsHovered] = React.useState(false);
+
   React.useEffect(() => {
-    if (!carouselApi) return;
-    
+    if (!carouselApi || isHovered) return;
+
     const interval = setInterval(() => {
       carouselApi.scrollNext();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [carouselApi]);
+  }, [carouselApi, isHovered]);
 
   return (
     <section className="py-20 lg:py-28 bg-surface-container-low overflow-hidden">
@@ -106,7 +108,11 @@ const TestimonialsSection = () => {
           description="La satisfaction de nos clients est notre meilleure carte de visite. Découvrez leurs retours d'expérience."
         />
 
-        <div className="relative group/carousel">
+        <div
+          className="relative group/carousel"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <Carousel
             setApi={setCarouselApi}
             opts={{
@@ -115,7 +121,7 @@ const TestimonialsSection = () => {
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="items-start">
               {testimonials.map((t, i) => (
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3 pl-6">
                   <motion.div
@@ -123,9 +129,9 @@ const TestimonialsSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-                    className="bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full border border-border/50"
+                    className="bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50"
                   >
-                    <div className="p-6 flex flex-col h-full">
+                    <div className="p-6 flex flex-col">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <span className="text-xs font-bold text-primary uppercase">
@@ -144,7 +150,7 @@ const TestimonialsSection = () => {
                         ))}
                       </div>
 
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow italic">
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-6 italic">
                         &ldquo;{t.text}&rdquo;
                       </p>
 

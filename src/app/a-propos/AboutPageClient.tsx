@@ -81,7 +81,7 @@ const AboutPageClient = () => {
         backgroundImage="/images/about-hero-highres.png"
         breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
         eyebrow="À propos"
-        title="Artisan en rénovation intérieure à Nancy et en Meurthe-et-Moselle"
+        title="Votre artisan de confiance pour la rénovation intérieure à Nancy"
         description="ATC Rénovation est votre spécialiste de la rénovation intérieure clé en main depuis plus de 20 ans. Nous intervenons à Nancy et dans toute la Meurthe-et-Moselle (54)."
       />
 
@@ -100,17 +100,20 @@ const AboutPageClient = () => {
             >
               <SectionHeader
                 eyebrow="Notre histoire"
-                title="De la passion artisanale à l'expertise reconnue"
+                title="Une conviction, un métier, plus de 20 ans d'exigence"
               />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Depuis plus de 20 ans, ATC Rénovation transforme votre intérieur de A à Z. Experts en rénovation clé en main, nous donnons vie à vos projets sur Nancy et dans toute la Meurthe-et-Moselle (54).
+                  ATC Rénovation est née d'une conviction simple : la rénovation intérieure, ça ne devrait pas être une source de stress. Ça devrait être un moment où l'on voit son chez-soi se transformer, étape par étape, entre les mains d'une équipe en qui on a confiance.
                 </p>
                 <p>
-                  Appartement, maison ou local professionnel : nous coordonnons l'ensemble des corps de métier pour mener votre projet de A à Z. Plâtrerie, peinture, revêtements de sols, isolation thermique, menuiserie intérieure, aménagement de combles — un seul interlocuteur, zéro stress.
+                  Depuis plus de 20 ans, c'est cette promesse que nous tenons au quotidien. Plus de 300 chantiers livrés sur le bassin nancéien — appartements, maisons, locaux professionnels — et une réputation qui s'est construite projet après projet, par le bouche-à-oreille et la satisfaction de nos clients.
                 </p>
                 <p>
-                  Aujourd'hui, avec plus de 300 projets livrés et une note de 4.9/5 sur Google, ATC Rénovation est un acteur de référence de la rénovation intérieure en région nancéienne. Certifiés RGE Qualibat, nous vous accompagnons également dans vos travaux de rénovation énergétique éligibles à MaPrimeRénov'.
+                  Notre exigence est la même sur chaque chantier : des finitions irréprochables, un planning respecté, et un intérieur dont vous serez fier pendant des années. Pas de demi-mesure, pas de raccourci.
+                </p>
+                <p>
+                  Aujourd'hui, ATC Rénovation est certifié RGE Qualibat pour les travaux d'isolation et de rénovation énergétique en Meurthe-et-Moselle, et accompagne ses clients dans l'obtention des aides MaPrimeRénov'. Mais ce qui nous motive chaque matin reste le même : la fierté de rendre les clés d'un intérieur transformé.
                 </p>
               </div>
             </motion.div>
@@ -150,7 +153,7 @@ const AboutPageClient = () => {
       </section>
 
       {/* ─── Certifications (images only) ─── */}
-      <section className="py-10 lg:py-14 border-y border-border/50">
+      <section className="py-10 lg:py-14 bg-surface-container-low">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
             {certs.map((cert, i) => (
@@ -182,7 +185,7 @@ const AboutPageClient = () => {
 
 
       {/* ─── Our Values ─── */}
-      <section className="py-20 lg:py-28 bg-surface-container-low">
+      <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             eyebrow="Ce qui nous définit"
@@ -221,7 +224,7 @@ const AboutPageClient = () => {
       </section>
 
       {/* ─── Why Choose Us ─── */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28 bg-surface-container-low">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -287,9 +290,7 @@ const AboutPageClient = () => {
       </section>
 
       {/* ─── Partners (reused from homepage) ─── */}
-      <div className="bg-surface-container-low">
-        <PartnersSection />
-      </div>
+      <PartnersSection />
 
       {/* ─── CTA (reused from homepage) ─── */}
       <CTASection />

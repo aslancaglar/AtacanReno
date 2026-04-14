@@ -51,16 +51,16 @@ const AboutPreview = () => {
               À propos de nous
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-              De la passion artisanale à l&apos;expertise reconnue
+              Une conviction, un métier, plus de 20 ans d&apos;exigence
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Depuis plus de 20 ans, ATC Rénovation transforme votre intérieur de A à Z. Experts en rénovation clé en main, nous donnons vie à vos projets sur Nancy et dans toute la Meurthe-et-Moselle (54).
+              ATC Rénovation est née d&apos;une conviction simple : la rénovation intérieure, ça ne devrait pas être une source de stress. Ça devrait être un moment où l&apos;on voit son chez-soi se transformer, étape par étape, entre les mains d&apos;une équipe en qui on a confiance.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Appartement, maison ou local professionnel : nous coordonnons l'ensemble des corps de métier pour mener votre projet de A à Z. Plâtrerie, peinture, revêtements de sols, isolation thermique, menuiserie intérieure, aménagement de combles — un seul interlocuteur, zéro stress.
+              Depuis plus de 20 ans, c&apos;est cette promesse que nous tenons au quotidien. Plus de 300 chantiers livrés sur le bassin nancéien — appartements, maisons, locaux professionnels — et une réputation qui s&apos;est construite projet après projet, par le bouche-à-oreille et la satisfaction de nos clients.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Certifiés RGE Qualibat, nous vous accompagnons également dans vos travaux de rénovation énergétique éligibles à MaPrimeRénov'. Plus de 300 chantiers réalisés, une note de 4,9/5 sur Google, des délais et budgets toujours respectés : notre différence, c'est notre qualité.
+              Notre exigence est la même sur chaque chantier : des finitions irréprochables, un planning respecté, et un intérieur dont vous serez fier pendant des années. Pas de demi-mesure, pas de raccourci.
             </p>
             <ul className="space-y-3 mb-8">
               {[
