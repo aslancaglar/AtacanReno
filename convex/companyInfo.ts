@@ -18,6 +18,7 @@ export const get = query({
         instagramUrl: "",
         facebookUrl: "",
         interventionZones: "Nancy (54000)\nVandœuvre-lès-Nancy\nLaxou & Villers-lès-Nancy\nEssey & Saint-Max\nMalzéville & Tomblaine\nJarville & Heillecourt\nSaint-Nicolas-de-Port\nPont-à-Mousson & Toul",
+        siret: "82369837800028",
       };
     }
     return info;
