@@ -35,7 +35,7 @@ const PageHero = ({
           alt={title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/30" />
       </div>
       <div className="relative container mx-auto px-4 lg:px-8">
         <div className="max-w-2xl">
