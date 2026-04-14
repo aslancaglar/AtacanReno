@@ -226,7 +226,7 @@ export default function DevisListPage() {
                           <h4 className="text-sm font-bold text-nav truncate">{d.name}</h4>
                           <p className="text-xs text-muted-foreground truncate">{d.serviceSlug}</p>
                         </div>
-                        <div className="flex items-center gap-0.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="flex items-center gap-0.5 shrink-0 opacity-100 xl:opacity-0 xl:group-hover:opacity-100 transition-opacity">
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
@@ -266,8 +266,24 @@ export default function DevisListPage() {
                         )}
                       </div>
 
+                      {/* Mobile status selector */}
+                      <div className="xl:hidden mt-3 pt-2.5 border-t border-border/40">
+                        <select
+                          value={d.status}
+                          onChange={(e) => {
+                            e.stopPropagation();
+                            updateStatus({ id: d._id, status: e.target.value });
+                          }}
+                          className="w-full text-xs font-semibold rounded-lg border border-border/60 bg-muted/30 px-2 py-1.5 text-nav focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        >
+                          {columns.map((c) => (
+                            <option key={c.key} value={c.key}>{c.label}</option>
+                          ))}
+                        </select>
+                      </div>
+
                       {/* Card Footer */}
-                      <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-border/40">
+                      <div className="flex items-center justify-between mt-2 xl:mt-3 xl:pt-2.5 xl:border-t xl:border-border/40">
                         <span className="text-[11px] text-muted-foreground">
                           {new Date(d.createdAt).toLocaleDateString("fr-FR", {
                             day: "2-digit",

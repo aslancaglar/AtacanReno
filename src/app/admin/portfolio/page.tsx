@@ -104,9 +104,6 @@ export default function PortfolioPage() {
                 <h3 className="text-sm font-bold text-nav">{item.title}</h3>
                 <p className="text-xs text-muted-foreground mt-0.5">{item.location} · {item.category}</p>
                 <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-border">
-                  <button onClick={() => toggleVisibility({ id: item._id })} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors" title={item.visible ? "Masquer" : "Afficher"}>
-                    {item.visible ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-                  </button>
                   <button onClick={() => openEdit(item)} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"><Pencil className="w-4 h-4" /></button>
                   <button onClick={() => setDeleteId(item._id)} className="p-1.5 rounded-lg text-muted-foreground hover:text-red-500 hover:bg-red-50 transition-colors"><Trash2 className="w-4 h-4" /></button>
                   

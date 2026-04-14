@@ -123,9 +123,6 @@ export default function ReviewsPage() {
                 )}
 
                 <div className="flex items-center gap-1.5 pt-3 border-t border-border">
-                  <button onClick={() => toggleVisibility({ id: review._id })} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors" title={review.visible ? "Masquer" : "Afficher"}>
-                    {review.visible ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-                  </button>
                   <button onClick={() => openEdit(review)} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"><Pencil className="w-4 h-4" /></button>
                   <button onClick={() => setDeleteId(review._id)} className="p-1.5 rounded-lg text-muted-foreground hover:text-red-500 hover:bg-red-50 transition-colors"><Trash2 className="w-4 h-4" /></button>
                   
