@@ -41,14 +41,16 @@ export const getStats = query({
   handler: async (ctx) => {
     const all = await ctx.db.query("devis").collect();
     const nouveau = all.filter((d) => d.status === "nouveau").length;
-    const enCours = all.filter((d) => d.status === "en_cours").length;
-    const termine = all.filter((d) => d.status === "termine").length;
+    const qualifie = all.filter((d) => d.status === "qualifie").length;
+    const envoye = all.filter((d) => d.status === "envoye").length;
+    const accepte = all.filter((d) => d.status === "accepte").length;
     const refuse = all.filter((d) => d.status === "refuse").length;
     return {
       total: all.length,
       nouveau,
-      enCours,
-      termine,
+      qualifie,
+      envoye,
+      accepte,
       refuse,
     };
   },
@@ -92,7 +94,7 @@ export const create = mutation({
   },
 });
 
-// Update devis status
+// Update devis status — auto-creates client when accepted
 export const updateStatus = mutation({
   args: {
     id: v.id("devis"),
@@ -100,6 +102,28 @@ export const updateStatus = mutation({
   },
   handler: async (ctx, args) => {
     await ctx.db.patch(args.id, { status: args.status });
+
+    if (args.status === "accepte") {
+      const devis = await ctx.db.get(args.id);
+      if (!devis) return;
+
+      // Check if client with same email already exists
+      const existing = await ctx.db
+        .query("clients")
+        .filter((q) => q.eq(q.field("email"), devis.email))
+        .first();
+
+      if (!existing) {
+        await ctx.db.insert("clients", {
+          name: devis.name,
+          email: devis.email,
+          phone: devis.phone,
+          city: devis.city,
+          notes: `Ajouté automatiquement — devis accepté: ${devis.serviceSlug}`,
+          createdAt: Date.now(),
+        });
+      }
+    }
   },
 });
 

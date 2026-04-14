@@ -76,7 +76,9 @@ export default function ClientsPage() {
         ) : filtered.length === 0 ? (
           <AdminEmptyState message={search ? "Aucun client ne correspond à votre recherche." : "Vous n'avez pas encore de clients."} />
         ) : (
-          <div className="overflow-x-auto">
+          <>
+          {/* Desktop table */}
+          <div className="hidden md:block overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-muted-foreground text-xs uppercase tracking-wider">
@@ -107,6 +109,27 @@ export default function ClientsPage() {
               </tbody>
             </table>
           </div>
+
+          {/* Mobile cards */}
+          <div className="md:hidden divide-y divide-border">
+            {filtered.map((c) => (
+              <div key={c._id} className="px-4 py-3.5">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-nav">{c.name}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{c.email}</p>
+                    <p className="text-xs text-muted-foreground">{c.phone}{c.city ? ` · ${c.city}` : ""}</p>
+                    {c.notes && <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{c.notes}</p>}
+                  </div>
+                  <div className="flex items-center gap-1 shrink-0">
+                    <button onClick={() => openEdit(c)} className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"><Pencil className="w-4 h-4" /></button>
+                    <button onClick={() => setDeleteId(c._id)} className="p-1.5 rounded-lg text-muted-foreground hover:text-red-500 hover:bg-red-50 transition-colors"><Trash2 className="w-4 h-4" /></button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          </>
         )}
       </div>
 

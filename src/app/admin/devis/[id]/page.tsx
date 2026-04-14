@@ -9,8 +9,9 @@ import Link from "next/link";
 
 const statusOptions = [
   { value: "nouveau", label: "Nouveau", color: "bg-blue-50 text-blue-600 border-blue-200" },
-  { value: "en_cours", label: "En cours", color: "bg-amber-50 text-amber-600 border-amber-200" },
-  { value: "termine", label: "Terminé", color: "bg-emerald-50 text-emerald-600 border-emerald-200" },
+  { value: "qualifie", label: "Qualifié", color: "bg-violet-50 text-violet-600 border-violet-200" },
+  { value: "envoye", label: "Envoyé", color: "bg-amber-50 text-amber-600 border-amber-200" },
+  { value: "accepte", label: "Accepté", color: "bg-emerald-50 text-emerald-600 border-emerald-200" },
   { value: "refuse", label: "Refusé", color: "bg-red-50 text-red-600 border-red-200" },
 ];
 
