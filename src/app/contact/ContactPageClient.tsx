@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Quelle est votre zone d'intervention ?",
     answer:
-      "Nous intervenons à Nancy et dans toute la métropole du Grand Nancy : Vandoeuvre-lès-Nancy, Laxou, Villers-lès-Nancy, Essey-lès-Nancy, Maxéville, et les communes environnantes dans un rayon de 50 km.",
+      "Nous intervenons à Nancy et dans toute la métropole du Grand Nancy : Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Flavigny-sur-Moselle et les communes environnantes dans un rayon de 50 km.",
   },
   {
     question: "Quels sont vos délais d'intervention ?",
@@ -106,7 +106,7 @@ const faqs = [
 
 const ContactPageClient = () => {
   const preloadedInfo = usePreloadedCompanyInfo();
-  
+
   // Safety check to prevent crashes during hydration if preloaded info is missing
   if (!preloadedInfo) return null;
 
