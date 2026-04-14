@@ -92,7 +92,7 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto space-y-5 sm:space-y-8 overflow-hidden">
       {/* Header */}
       <div>
         <h1 className="text-2xl font-extrabold text-nav">Dashboard</h1>
@@ -102,23 +102,23 @@ export default function AdminDashboard() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {statCards.map((card) => {
           const Icon = card.icon;
           return (
             <div
               key={card.label}
-              className={`${card.color} border rounded-2xl p-5`}
+              className={`${card.color} border rounded-2xl p-3.5 sm:p-5`}
             >
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">
+              <div className="flex items-center justify-between mb-2 sm:mb-3">
+                <span className="text-[10px] sm:text-xs text-muted-foreground font-semibold uppercase tracking-wider">
                   {card.label}
                 </span>
-                <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${card.iconColor}`}>
-                  <Icon className="w-4.5 h-4.5" />
+                <div className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center ${card.iconColor}`}>
+                  <Icon className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5" />
                 </div>
               </div>
-              <span className="text-3xl font-extrabold text-nav">
+              <span className="text-2xl sm:text-3xl font-extrabold text-nav">
                 {card.value}
               </span>
             </div>
@@ -128,7 +128,7 @@ export default function AdminDashboard() {
 
       {/* Recent Devis */}
       <div className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-border">
           <h2 className="text-base font-bold text-nav">Dernières demandes</h2>
           <Link
             href="/admin/devis"
