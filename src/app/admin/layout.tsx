@@ -13,6 +13,7 @@ import {
   Menu,
   X,
   ChevronLeft,
+  LogOut,
 } from "lucide-react";
 
 const navItems = [
@@ -129,6 +130,18 @@ export default function AdminLayout({
             <Menu className="w-5 h-5" />
           </button>
           <div className="flex-1" />
+          <form action={async () => {
+            const { logoutAction } = await import("../login/actions");
+            await logoutAction();
+          }} className="lg:hidden">
+            <button
+              type="submit"
+              className="p-2 rounded-xl text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors"
+              title="Se déconnecter"
+            >
+              <LogOut className="w-5 h-5" />
+            </button>
+          </form>
         </header>
 
         {/* Page content */}
