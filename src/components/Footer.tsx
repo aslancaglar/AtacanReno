@@ -1,13 +1,14 @@
-"use client";
-
+import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/data/services";
 import { usePreloadedQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
+import { LegalModals } from "./LegalModals";
 
 const Footer = () => {
+  const [activeModal, setActiveModal] = useState<"mentions" | "politique" | null>(null);
   const preloadedInfo = usePreloadedCompanyInfo();
   const companyInfo = usePreloadedQuery(preloadedInfo!);
 
@@ -17,7 +18,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-1">
             <div className="flex flex-col items-start mb-4 leading-tight">
-              <h3 className="text-lg font-bold text-primary-foreground">ATC Rénovation</h3>
+              <h3 className="text-lg font-bold text-primary-foreground uppercase tracking-tight">ATC Rénovation</h3>
               <span className="text-[10px] font-medium tracking-wider text-primary-foreground/50 uppercase">Notre différence est notre qualité</span>
             </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed whitespace-pre-line">
@@ -28,11 +29,11 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-primary-foreground">Navigation</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/60">
-              <li><Link href="/" className="hover:text-secondary transition-colors">Accueil</Link></li>
-              <li><Link href="/a-propos" className="hover:text-secondary transition-colors">À Propos</Link></li>
-              <li><Link href="/services" className="hover:text-secondary transition-colors">Services</Link></li>
-              <li><Link href="/realisations" className="hover:text-secondary transition-colors">Réalisations</Link></li>
-              <li><Link href="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
+              <li><Link href="/" className="hover:text-secondary transition-colors transition-transform hover:translate-x-1 block">Accueil</Link></li>
+              <li><Link href="/a-propos" className="hover:text-secondary transition-colors transition-transform hover:translate-x-1 block">À Propos</Link></li>
+              <li><Link href="/services" className="hover:text-secondary transition-colors transition-transform hover:translate-x-1 block">Services</Link></li>
+              <li><Link href="/realisations" className="hover:text-secondary transition-colors transition-transform hover:translate-x-1 block">Réalisations</Link></li>
+              <li><Link href="/contact" className="hover:text-secondary transition-colors transition-transform hover:translate-x-1 block">Contact</Link></li>
             </ul>
           </div>
 
@@ -41,7 +42,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-primary-foreground/60">
               {services.map((service) => (
                 <li key={service.slug}>
-                  <Link href={`/services/${service.slug}`} className="hover:text-secondary transition-colors">
+                  <Link href={`/services/${service.slug}`} className="hover:text-secondary transition-colors transition-transform hover:translate-x-1 block">
                     {service.shortTitle}
                   </Link>
                 </li>
@@ -83,12 +84,28 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/40">
           <p>© {new Date().getFullYear()} ATC Rénovation Intérieure. Tous droits réservés.</p>
-          <div className="flex gap-4">
-            <span>Mentions légales</span>
-            <span>Politique de confidentialité</span>
+          <div className="flex gap-6">
+            <button 
+              onClick={() => setActiveModal("mentions")}
+              className="hover:text-secondary transition-colors underline-offset-4 hover:underline"
+            >
+              Mentions légales
+            </button>
+            <button 
+              onClick={() => setActiveModal("politique")}
+              className="hover:text-secondary transition-colors underline-offset-4 hover:underline"
+            >
+              Politique de confidentialité
+            </button>
           </div>
         </div>
       </div>
+
+      <LegalModals 
+        isOpen={activeModal} 
+        onClose={() => setActiveModal(null)} 
+        companyInfo={companyInfo}
+      />
     </footer>
   );
 };
