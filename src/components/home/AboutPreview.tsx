@@ -51,7 +51,7 @@ const AboutPreview = () => {
               À propos de nous
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-              ATC Rénovation — Artisan en rénovation intérieure à Nancy et en Meurthe-et-Moselle
+              De la passion artisanale à l&apos;expertise reconnue
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Depuis plus de 20 ans, ATC Rénovation transforme votre intérieur de A à Z. Experts en rénovation clé en main, nous donnons vie à vos projets sur Nancy et dans toute la Meurthe-et-Moselle (54).
