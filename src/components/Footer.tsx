@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/data/services";
@@ -6,9 +5,10 @@ import { usePreloadedQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 import { LegalModals } from "./LegalModals";
+import { useLegal } from "@/context/LegalContext";
 
 const Footer = () => {
-  const [activeModal, setActiveModal] = useState<"mentions" | "politique" | null>(null);
+  const { activeModal, openModal, closeModal } = useLegal();
   const preloadedInfo = usePreloadedCompanyInfo();
   const companyInfo = usePreloadedQuery(preloadedInfo!);
 
@@ -90,13 +90,13 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} ATC Rénovation Intérieure. Tous droits réservés.</p>
           <div className="flex gap-6">
             <button 
-              onClick={() => setActiveModal("mentions")}
+              onClick={() => openModal("mentions")}
               className="hover:text-secondary transition-colors underline-offset-4 hover:underline"
             >
               Mentions légales
             </button>
             <button 
-              onClick={() => setActiveModal("politique")}
+              onClick={() => openModal("politique")}
               className="hover:text-secondary transition-colors underline-offset-4 hover:underline"
             >
               Politique de confidentialité
@@ -107,7 +107,7 @@ const Footer = () => {
 
       <LegalModals 
         isOpen={activeModal} 
-        onClose={() => setActiveModal(null)} 
+        onClose={closeModal} 
         companyInfo={companyInfo}
       />
     </footer>

@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShieldCheck, X } from "lucide-react";
+import { useLegal } from "@/context/LegalContext";
 
 export function RGPDNotification() {
   const [isVisible, setIsVisible] = useState(false);
+  const { openModal } = useLegal();
 
   useEffect(() => {
     const consent = localStorage.getItem("atc-rgpd-consent");
@@ -43,10 +45,7 @@ export function RGPDNotification() {
                   Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic. 
                   En continuant votre visite, vous acceptez notre utilisation des cookies et notre 
                   <button 
-                    onClick={() => {
-                      const footer = document.querySelector('footer');
-                      footer?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    onClick={() => openModal("politique")}
                     className="text-secondary hover:underline ml-1 font-medium"
                   >
                     politique de confidentialité
