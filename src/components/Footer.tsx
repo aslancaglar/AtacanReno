@@ -78,6 +78,10 @@ const Footer = () => {
                   {companyInfo?.email}
                 </a>
               </li>
+              <li className="flex items-center gap-2 pointer-events-none">
+                <span className="text-secondary font-bold text-xs shrink-0">SIRET</span>
+                <span className="text-xs">{companyInfo?.siret || "82369837800028"}</span>
+              </li>
             </ul>
           </div>
         </div>

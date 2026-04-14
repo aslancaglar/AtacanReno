@@ -4,6 +4,7 @@ import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
 import { preloadQuery, fetchQuery } from "convex/nextjs";
 import { api } from "../../convex/_generated/api";
+import { RGPDNotification } from "@/components/RGPDNotification";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -146,6 +147,7 @@ export default async function RootLayout({
       <body suppressHydrationWarning>
         <ConvexClientProvider preloadedCompanyInfo={preloadedCompanyInfo}>
           {children}
+          <RGPDNotification />
         </ConvexClientProvider>
       </body>
     </html>
