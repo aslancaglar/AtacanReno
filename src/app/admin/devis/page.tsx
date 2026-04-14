@@ -16,6 +16,7 @@ import {
   Calendar,
   X,
   UserPlus,
+  Pencil,
 } from "lucide-react";
 import {
   AlertDialog,
@@ -85,6 +86,7 @@ export default function DevisListPage() {
   const [search, setSearch] = useState("");
   const [deleteId, setDeleteId] = useState<Id<"devis"> | null>(null);
   const [viewId, setViewId] = useState<Id<"devis"> | null>(null);
+  const [statusChangeId, setStatusChangeId] = useState<Id<"devis"> | null>(null);
   const [draggedId, setDraggedId] = useState<Id<"devis"> | null>(null);
   const [dragOverColumn, setDragOverColumn] = useState<string | null>(null);
 
@@ -266,20 +268,18 @@ export default function DevisListPage() {
                         )}
                       </div>
 
-                      {/* Mobile status selector */}
+                      {/* Mobile status change button */}
                       <div className="xl:hidden mt-3 pt-2.5 border-t border-border/40">
-                        <select
-                          value={d.status}
-                          onChange={(e) => {
+                        <button
+                          onClick={(e) => {
                             e.stopPropagation();
-                            updateStatus({ id: d._id, status: e.target.value });
+                            setStatusChangeId(d._id);
                           }}
-                          className="w-full text-xs font-semibold rounded-lg border border-border/60 bg-muted/30 px-2 py-1.5 text-nav focus:outline-none focus:ring-2 focus:ring-primary/20"
+                          className={`w-full flex items-center justify-center gap-1.5 text-xs font-semibold rounded-lg border px-2 py-1.5 transition-colors ${col.statusColor}`}
                         >
-                          {columns.map((c) => (
-                            <option key={c.key} value={c.key}>{c.label}</option>
-                          ))}
-                        </select>
+                          {col.label}
+                          <Pencil className="w-3 h-3 opacity-50" />
+                        </button>
                       </div>
 
                       {/* Card Footer */}
@@ -483,6 +483,40 @@ export default function DevisListPage() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* Mobile Status Change Modal */}
+      <Dialog open={!!statusChangeId} onOpenChange={(open) => !open && setStatusChangeId(null)}>
+        <DialogContent className="sm:max-w-xs">
+          <DialogHeader>
+            <DialogTitle className="text-base font-bold text-nav">Changer le statut</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-2 mt-2">
+            {columns.map((col) => {
+              const isActive = filtered?.find((d) => d._id === statusChangeId)?.status === col.key;
+              return (
+                <button
+                  key={col.key}
+                  onClick={async () => {
+                    if (statusChangeId) {
+                      await updateStatus({ id: statusChangeId, status: col.key });
+                      setStatusChangeId(null);
+                    }
+                  }}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold border transition-all ${
+                    isActive
+                      ? col.statusColor
+                      : "bg-white text-nav border-border/60 hover:bg-muted/50"
+                  }`}
+                >
+                  <div className={`w-2.5 h-2.5 rounded-full ${col.color}`} />
+                  {col.label}
+                  {isActive && <span className="ml-auto text-xs opacity-60">Actuel</span>}
+                </button>
+              );
+            })}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
