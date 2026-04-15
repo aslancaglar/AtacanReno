@@ -81,7 +81,7 @@ const AboutPageClient = () => {
         backgroundImage="/images/about-hero-highres.png"
         breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
         eyebrow="À propos"
-        title="Votre artisan de confiance pour la rénovation intérieure à Nancy"
+        title="ATC Rénovation - Notre différence est notre qualité"
         description="ATC Rénovation est votre spécialiste de la rénovation intérieure clé en main depuis plus de 20 ans. Nous intervenons à Nancy et dans toute la Meurthe-et-Moselle (54)."
       />
 
@@ -100,20 +100,17 @@ const AboutPageClient = () => {
             >
               <SectionHeader
                 eyebrow="Notre histoire"
-                title="Une conviction, un métier, plus de 20 ans d'exigence"
+                title="Bien plus qu'un chantier : un engagement de qualité, de rigueur et de confiance"
               />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  ATC Rénovation est née d'une conviction simple : la rénovation intérieure, ça ne devrait pas être une source de stress. Ça devrait être un moment où l'on voit son chez-soi se transformer, étape par étape, entre les mains d'une équipe en qui on a confiance.
+                  Chez <strong>ATC Rénovation,</strong> nous croyons qu'un chantier bien mené change bien plus qu'un espace — il change votre quotidien. C'est pourquoi chaque projet est abordé avec la même rigueur et la même attention au détail. On écoute, on conseille, on planifie, et on exécute — du premier coup de marteau jusqu'à la dernière finition.
                 </p>
                 <p>
-                  Depuis plus de 20 ans, c'est cette promesse que nous tenons au quotidien. Plus de 300 chantiers livrés sur le bassin nancéien — appartements, maisons, locaux professionnels — et une réputation qui s'est construite projet après projet, par le bouche-à-oreille et la satisfaction de nos clients.
+                  <strong>20 ans d'expérience. Plus de 300 projets livrés.</strong> Appartements, maisons, locaux professionnels — chaque chantier nous a fait progresser. Si notre réputation s'est construite sans publicité, c'est parce que notre meilleur argument reste le travail accompli : des finitions soignées, un planning respecté, et une transparence totale du premier rendez-vous à la remise des clés.
                 </p>
                 <p>
-                  Notre exigence est la même sur chaque chantier : des finitions irréprochables, un planning respecté, et un intérieur dont vous serez fier pendant des années. Pas de demi-mesure, pas de raccourci.
-                </p>
-                <p>
-                  Aujourd'hui, ATC Rénovation est certifié RGE Qualibat pour les travaux d'isolation et de rénovation énergétique en Meurthe-et-Moselle, et accompagne ses clients dans l'obtention des aides MaPrimeRénov'. Mais ce qui nous motive chaque matin reste le même : la fierté de rendre les clés d'un intérieur transformé.
+                  <strong>Certifiés RGE Qualibat</strong>, nous intervenons également sur les travaux d'isolation et de rénovation énergétique, et nous vous accompagnons dans vos démarches MaPrimeRénov' pour optimiser votre budget.
                 </p>
               </div>
             </motion.div>

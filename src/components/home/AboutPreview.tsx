@@ -51,17 +51,20 @@ const AboutPreview = () => {
               À propos de nous
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-              Une conviction, un métier, plus de 20 ans d&apos;exigence
+              Bien plus qu'un chantier : un engagement de qualité, de rigueur et de confiance
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              ATC Rénovation est née d&apos;une conviction simple : la rénovation intérieure, ça ne devrait pas être une source de stress. Ça devrait être un moment où l&apos;on voit son chez-soi se transformer, étape par étape, entre les mains d&apos;une équipe en qui on a confiance.
+            <p>
+              Chez <strong>ATC Rénovation,</strong> nous croyons qu'un chantier bien mené change bien plus qu'un espace — il change votre quotidien. C'est pourquoi chaque projet est abordé avec la même rigueur et la même attention au détail. On écoute, on conseille, on planifie, et on exécute — du premier coup de marteau jusqu'à la dernière finition.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Depuis plus de 20 ans, c&apos;est cette promesse que nous tenons au quotidien. Plus de 300 chantiers livrés sur le bassin nancéien — appartements, maisons, locaux professionnels — et une réputation qui s&apos;est construite projet après projet, par le bouche-à-oreille et la satisfaction de nos clients.
+            <br />
+            <p>
+              <strong>20 ans d'expérience. Plus de 300 projets livrés.</strong> Appartements, maisons, locaux professionnels — chaque chantier nous a fait progresser. Si notre réputation s'est construite sans publicité, c'est parce que notre meilleur argument reste le travail accompli : des finitions soignées, un planning respecté, et une transparence totale du premier rendez-vous à la remise des clés.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Notre exigence est la même sur chaque chantier : des finitions irréprochables, un planning respecté, et un intérieur dont vous serez fier pendant des années. Pas de demi-mesure, pas de raccourci.
+            <br />
+            <p>
+              <strong>Certifiés RGE Qualibat</strong>, nous intervenons également sur les travaux d'isolation et de rénovation énergétique, et nous vous accompagnons dans vos démarches MaPrimeRénov' pour optimiser votre budget.
             </p>
+            <br />
             <ul className="space-y-3 mb-8">
               {[
                 "Un interlocuteur unique pour tous vos travaux d'intérieur",

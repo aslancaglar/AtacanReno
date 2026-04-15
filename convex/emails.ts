@@ -85,11 +85,11 @@ export const sendNewDevisEmail = action({
         })
       });
 
+      const data = await response.json();
       if (!response.ok) {
-        const error = await response.text();
-        console.error("Erreur lors de l'envoi de l'email via Resend:", error);
+        console.error("Erreur Resend:", JSON.stringify(data));
       } else {
-        console.log(`Email de notification envoyé avec succès pour le devis ${args.devisId}`);
+        console.log(`Email envoyé avec succès (id: ${data.id}) pour le devis ${args.devisId}`);
       }
     } catch (error) {
       console.error("Exception lors de l'envoi de l'email:", error);
