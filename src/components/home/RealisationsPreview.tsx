@@ -10,6 +10,7 @@ import BeforeAfterSlider from "./BeforeAfterSlider";
 import Link from "next/link";
 import { fallbackProjects, aspectClasses, type ProjectData } from "@/data/realisations";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import MasonryGrid from "@/components/MasonryGrid";
 
 const PREVIEW_LIMIT = 6;
@@ -98,13 +99,12 @@ const RealisationsPreview = () => {
                         className="w-full h-full"
                       />
                     ) : (
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                        width={640}
-                        height={800}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent pointer-events-none" />

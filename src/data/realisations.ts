@@ -80,7 +80,7 @@ export const fallbackProjects: ProjectData[] = [
     category: "Salles de bain",
     description:
       "Aménagement accessible avec douche de plain-pied, barres d'appui et revêtements antidérapants.",
-    image: "/images/service-sdb-highres.png",
+    image: "/images/service-sdb.jpg",
   },
   {
     title: "Appartement Investisseur",
@@ -88,7 +88,7 @@ export const fallbackProjects: ProjectData[] = [
     category: "Appartements",
     description:
       "Rénovation complète pour mise en location : optimisation des espaces, finitions soignées et budget maîtrisé.",
-    image: "/images/service-appart-highres.png",
+    image: "/images/service-appart.jpg",
   },
   {
     title: "Salon Cosy Contemporain",
@@ -96,6 +96,6 @@ export const fallbackProjects: ProjectData[] = [
     category: "Salons",
     description:
       "Transformation d'un salon vieillissant en espace chaleureux avec papier peint panoramique et parquet contrecollé.",
-    image: "/images/service-salon-highres.png",
+    image: "/images/service-salon.jpg",
   },
 ];

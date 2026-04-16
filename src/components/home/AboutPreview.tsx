@@ -20,7 +20,7 @@ const AboutPreview = () => {
           >
             <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-[0px_20px_40px_rgba(52,48,38,0.06)]">
               <Image
-                src="/images/about-highres.png"
+                src="/images/about.jpg"
                 alt="Fondateur d'ATC Rénovation"
                 fill
                 className="object-cover"

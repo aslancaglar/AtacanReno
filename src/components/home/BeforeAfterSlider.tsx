@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import Image from "next/image";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -65,10 +66,12 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, alt, className = "" }: Bef
       className={`relative select-none overflow-hidden ${className}`}
     >
       {/* After image (full) */}
-      <img
+      <Image
         src={afterImage}
         alt={`${alt} - Après`}
-        className="w-full h-full object-cover pointer-events-none"
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover pointer-events-none"
         draggable={false}
       />
 
@@ -77,10 +80,12 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, alt, className = "" }: Bef
         className="absolute inset-0 overflow-hidden pointer-events-none"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <img
+        <Image
           src={beforeImage}
           alt={`${alt} - Avant`}
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
           draggable={false}
         />
       </div>

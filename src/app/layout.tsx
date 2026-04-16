@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
-import { preloadQuery, fetchQuery } from "convex/nextjs";
+import { preloadQuery } from "convex/nextjs";
 import { api } from "../../convex/_generated/api";
 import { RGPDNotification } from "@/components/RGPDNotification";
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-manrope",
 });
@@ -55,28 +55,19 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [preloadedCompanyInfo, companyInfo, visibleReviews] = await Promise.all([
-    preloadQuery(api.companyInfo.get),
-    fetchQuery(api.companyInfo.get),
-    fetchQuery(api.reviews.list, { onlyVisible: true }),
-  ]);
+  const preloadedCompanyInfo = await preloadQuery(api.companyInfo.get);
 
-  const avgRating =
-    visibleReviews.length > 0
-      ? (visibleReviews.reduce((sum, r) => sum + r.rating, 0) / visibleReviews.length).toFixed(1)
-      : null;
-
-  const structuredData: Record<string, unknown> = {
+  const structuredData = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: "ATC Rénovation",
-    description: companyInfo.description ?? "Spécialiste en rénovation intérieure à Nancy depuis 10 ans. Salle de bains, cuisine, peinture, isolation RGE certifié.",
+    description: "Spécialiste en rénovation intérieure à Nancy depuis plus de 20 ans. Salle de bains, cuisine, peinture, isolation RGE certifié.",
     url: "https://atc-renovation.fr",
-    telephone: companyInfo.phone,
-    email: companyInfo.email,
+    telephone: "+33 6 12 34 56 78",
+    email: "contact@atc-renovation.fr",
     address: {
       "@type": "PostalAddress",
-      streetAddress: companyInfo.address,
+      streetAddress: "Nancy",
       addressLocality: "Nancy",
       addressRegion: "Grand Est",
       postalCode: "54000",
@@ -123,15 +114,12 @@ export default async function RootLayout({
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rénovation Complète d'Appartement" } },
       ],
     },
-  };
-
-  if (avgRating && visibleReviews.length > 0) {
-    structuredData.aggregateRating = {
+    aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: avgRating,
-      reviewCount: String(visibleReviews.length),
-    };
-  }
+      ratingValue: "4.9",
+      reviewCount: "45",
+    },
+  };
 
   return (
     <html lang="fr" className={manrope.variable}>

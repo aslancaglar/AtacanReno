@@ -116,7 +116,7 @@ const ContactPageClient = () => {
   return (
     <Layout>
       <PageHero
-        backgroundImage="/images/hero-bg-3-highres.png"
+        backgroundImage="/images/hero-bg-3.jpg"
         breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Contact" }]}
         title="Contactez-nous"
         description="Parlons de votre projet de rénovation. Devis gratuit sous 48h, sans engagement."

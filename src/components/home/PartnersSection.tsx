@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const partners = [
   { name: "Isover", logo: "/images/Partenaires/IsoverLogo.jpg" },
@@ -37,13 +38,13 @@ const PartnersSection = () => {
               transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
               className="flex items-center justify-center p-4 rounded-xl bg-card shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <img
+              <Image
                 src={partner.logo}
                 alt={partner.name}
-                className="w-24 h-24 object-contain transition-all duration-300"
-                loading="lazy"
                 width={96}
                 height={96}
+                sizes="96px"
+                className="w-24 h-24 object-contain transition-all duration-300"
               />
             </motion.div>
           ))}

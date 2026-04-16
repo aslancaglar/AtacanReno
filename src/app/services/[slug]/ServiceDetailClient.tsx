@@ -8,6 +8,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/home/CTASection";
 import RealisationsPreview from "@/components/home/RealisationsPreview";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import Image from "next/image";
 import { services, serviceImages, getServiceBySlug } from "@/data/services";
 
 const processSteps = [
@@ -56,10 +57,13 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
         {/* ─── Page Hero ─── */}
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
           <div className="absolute inset-0">
-            <img
+            <Image
               src={imageUrl}
               alt={service.title}
-              className="w-full h-full object-cover"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
           </div>
@@ -152,13 +156,13 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                 transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src={imageUrl}
                     alt={service.title}
-                    className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
-                    loading="lazy"
                     width={640}
                     height={480}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
                   />
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -327,13 +331,13 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                       className="group bg-card rounded-2xl overflow-hidden hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300 h-full block"
                     >
                       <div className="aspect-[4/3] overflow-hidden">
-                        <img
+                        <Image
                           src={serviceImages[related.slug]}
                           alt={related.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
                           width={640}
-                          height={512}
+                          height={480}
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
                       <div className="p-6">

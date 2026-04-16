@@ -2,6 +2,7 @@
 
 import { Star, Quote, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { Button } from "@/components/ui/button";
@@ -155,14 +156,13 @@ const TestimonialsSection = () => {
                       </p>
 
                       {t.imageUrl && (
-                        <div className="aspect-[16/9] overflow-hidden rounded-xl mt-auto">
-                          <img
+                        <div className="relative aspect-[16/9] overflow-hidden rounded-xl mt-auto">
+                          <Image
                             src={t.imageUrl}
                             alt={t.project}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                            width={640}
-                            height={360}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover"
                           />
                         </div>
                       )}

@@ -8,13 +8,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 const heroImages = [
-  "/images/hero-bg-highres.png",
-  "/images/hero-bg-2-highres.png",
-  "/images/hero-bg-3-highres.png",
+  "/images/hero-bg.jpg",
+  "/images/hero-bg-2.jpg",
+  "/images/hero-bg-3.jpg",
 ];
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [allSlidesLoaded, setAllSlidesLoaded] = useState(false);
+
+  useEffect(() => {
+    setAllSlidesLoaded(true);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,24 +30,27 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[70vh] xl:min-h-[65vh] max-h-[900px] flex items-end md:items-center overflow-hidden">
-      {/* Background slideshow */}
-      {heroImages.map((src, index) => (
-        <div
-          key={src}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-        >
-          <Image
-            src={src}
-            alt={`Rénovation intérieure — ATC Rénovation Nancy ${index + 1}`}
-            fill
-            className="object-cover"
-            priority={index === 0}
-            {...(index === 0 ? { fetchPriority: "high" } : {})}
-            sizes="100vw"
-          />
-        </div>
-      ))}
+      {/* Background slideshow — only first slide on initial render, rest after mount */}
+      {heroImages.map((src, index) => {
+        if (index > 0 && !allSlidesLoaded) return null;
+        return (
+          <div
+            key={src}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+          >
+            <Image
+              src={src}
+              alt={`Rénovation intérieure — ATC Rénovation Nancy ${index + 1}`}
+              fill
+              className="object-cover"
+              priority={index === 0}
+              {...(index === 0 ? { fetchPriority: "high" } : {})}
+              sizes="100vw"
+            />
+          </div>
+        );
+      })}
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-black/65" />
 

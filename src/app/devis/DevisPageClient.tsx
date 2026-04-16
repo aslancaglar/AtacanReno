@@ -195,7 +195,7 @@ const DevisPageClient = () => {
   return (
     <Layout>
         <PageHero
-          backgroundImage="/images/hero-bg-2-highres.png"
+          backgroundImage="/images/hero-bg-2.jpg"
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Demande de devis" }]}
           title="Demande de devis gratuit"
           description="Décrivez votre projet en quelques étapes et recevez un devis personnalisé sous 48h. Gratuit et sans engagement."

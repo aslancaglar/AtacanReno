@@ -6,13 +6,14 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/home/CTASection";
+import Image from "next/image";
 import { services, serviceImages } from "@/data/services";
 
 const ServicesPageClient = () => {
   return (
     <Layout>
         <PageHero
-          backgroundImage="/images/hero-bg-highres.png"
+          backgroundImage="/images/hero-bg.jpg"
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Services" }]}
           eyebrow="Nos Services"
           title="Des solutions complètes pour votre rénovation intérieure."
@@ -40,13 +41,13 @@ const ServicesPageClient = () => {
                     className={`${!isEven ? "lg:order-2" : ""}`}
                   >
                     <div className="relative">
-                      <img
+                      <Image
                         src={serviceImages[service.slug]}
                         alt={service.title}
-                        className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
-                        loading="lazy"
                         width={640}
                         height={480}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
                       />
                       {/* Service number badge */}
                       <motion.div

@@ -10,6 +10,7 @@ import {
   Award,
   Handshake,
 } from "lucide-react";
+import Image from "next/image";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageHero from "@/components/PageHero";
@@ -78,7 +79,7 @@ const AboutPageClient = () => {
   return (
     <Layout>
       <PageHero
-        backgroundImage="/images/about-hero-highres.png"
+        backgroundImage="/images/about-hero.jpg"
         breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
         eyebrow="À propos"
         title="ATC Rénovation - Notre différence est notre qualité"
@@ -122,13 +123,13 @@ const AboutPageClient = () => {
               transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
               className="relative flex justify-center"
             >
-              <img
-                src="/images/about-highres.png"
+              <Image
+                src="/images/about.jpg"
                 alt="Fondateur d'ATC Rénovation"
-                className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
-                loading="lazy"
                 width={640}
                 height={800}
+                sizes="(max-width: 768px) 100vw, 520px"
+                className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
               />
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -166,13 +167,13 @@ const AboutPageClient = () => {
                 }}
                 className="flex items-center justify-center"
               >
-                <img
+                <Image
                   src={cert.src}
                   alt={cert.alt}
-                  className="h-24 lg:h-28 w-auto object-contain rounded-xl hover:scale-110 transition-transform duration-300"
-                  loading="lazy"
                   width={128}
                   height={128}
+                  sizes="128px"
+                  className="h-24 lg:h-28 w-auto object-contain rounded-xl hover:scale-110 transition-transform duration-300"
                 />
               </motion.div>
             ))}
@@ -265,21 +266,21 @@ const AboutPageClient = () => {
               transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
               className="grid grid-cols-2 gap-4"
             >
-              <img
-                src="/images/service-peinture-highres.png"
+              <Image
+                src="/images/service-peinture.jpg"
                 alt="Rénovation salle de bains ATC"
-                className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm"
-                loading="lazy"
                 width={400}
                 height={500}
+                sizes="(max-width: 768px) 50vw, 300px"
+                className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm"
               />
-              <img
+              <Image
                 src="/images/real-3.jpg"
                 alt="Rénovation salon ATC"
-                className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm mt-8"
-                loading="lazy"
                 width={400}
                 height={500}
+                sizes="(max-width: 768px) 50vw, 300px"
+                className="rounded-2xl object-cover w-full aspect-[3/4] shadow-sm mt-8"
               />
             </motion.div>
           </div>

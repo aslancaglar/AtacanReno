@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Breadcrumb from "./Breadcrumb";
 
 interface BreadcrumbItem {
@@ -30,10 +31,13 @@ const PageHero = ({
   return (
     <section className={`relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden ${className}`}>
       <div className="absolute inset-0">
-        <img
+        <Image
           src={backgroundImage}
           alt={title}
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/65" />
       </div>

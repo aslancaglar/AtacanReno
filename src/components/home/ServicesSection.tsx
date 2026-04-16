@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { services, serviceImages } from "@/data/services";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const ServicesSection = () => {
@@ -36,13 +37,13 @@ const ServicesSection = () => {
                 className="group bg-card rounded-2xl overflow-hidden hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300 h-full block"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={serviceImages[service.slug]}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
                     width={640}
-                    height={512}
+                    height={480}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">

@@ -137,14 +137,14 @@ export const services: ServiceData[] = [
 ];
 
 export const serviceImages: Record<string, string> = {
-  "renovation-chambre-salon": "/images/service-salon-highres.png",
-  "renovation-complete-appartement": "/images/service-appart-highres.png",
-  "peinture-decoration": "/images/service-peinture-highres.png",
-  "revetements-sols-murs": "/images/service-sols-highres.png",
-  "menuiserie-amenagement": "/images/service-menuiserie-highres.png",
-  "platrerie-faux-plafonds": "/images/service-platrerie-v2.png",
-  "isolation-renovation-energetique": "/images/service-isolation-highres.png",
-  "amenagement-combles": "/images/service-combles-highres.png",
+  "renovation-chambre-salon": "/images/service-salon.jpg",
+  "renovation-complete-appartement": "/images/service-appart.jpg",
+  "peinture-decoration": "/images/service-peinture.jpg",
+  "revetements-sols-murs": "/images/service-sols.jpg",
+  "menuiserie-amenagement": "/images/service-menuiserie.jpg",
+  "platrerie-faux-plafonds": "/images/service-platrerie.jpg",
+  "isolation-renovation-energetique": "/images/service-isolation.jpg",
+  "amenagement-combles": "/images/service-combles.jpg",
 };
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {

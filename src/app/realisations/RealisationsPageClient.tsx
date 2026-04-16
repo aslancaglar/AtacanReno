@@ -11,6 +11,7 @@ import BeforeAfterSlider from "@/components/home/BeforeAfterSlider";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
 import { fallbackProjects, aspectClasses, type ProjectData } from "@/data/realisations";
+import Image from "next/image";
 import MasonryGrid from "@/components/MasonryGrid";
 import StatsSection from "@/components/home/StatsSection";
 
@@ -43,7 +44,7 @@ const RealisationsPageClient = () => {
   return (
     <Layout>
         <PageHero
-          backgroundImage="/images/service-salon-highres.png"
+          backgroundImage="/images/service-salon.jpg"
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]}
           eyebrow="Portfolio"
           title="Nos Réalisations"
@@ -107,13 +108,12 @@ const RealisationsPageClient = () => {
                             className="w-full h-full"
                           />
                         ) : (
-                          <img
+                          <Image
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                            width={640}
-                            height={800}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                         )}
                         <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent pointer-events-none" />
