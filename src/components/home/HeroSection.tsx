@@ -47,7 +47,7 @@ const HeroSection = () => {
               className="object-cover"
               priority={index === 0}
               {...(index === 0 ? { fetchPriority: "high" } : {})}
-              quality={index === 0 ? 85 : 75}
+              quality={75}
               sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
             />
           </div>
