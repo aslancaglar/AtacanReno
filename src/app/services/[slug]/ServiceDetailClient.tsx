@@ -62,8 +62,9 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
               alt={service.title}
               fill
               priority
-              quality={95}
-              sizes="100vw"
+              fetchPriority="high"
+              quality={75}
+              sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />

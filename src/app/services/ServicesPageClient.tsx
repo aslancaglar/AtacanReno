@@ -46,8 +46,8 @@ const ServicesPageClient = () => {
                         alt={service.title}
                         width={640}
                         height={480}
-                        quality={95}
-                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        quality={75}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                         className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
                       />
                       {/* Service number badge */}
