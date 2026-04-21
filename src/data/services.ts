@@ -111,8 +111,8 @@ export const services: ServiceData[] = [
     title: "Installation de Portes Intérieures",
     shortTitle: "Portes",
     icon: DoorOpen,
-    shortDescription: "Blocs-portes, portes à galandage et systèmes fin de chantier : structurez vos circulations.",
-    description: "Nous assurons la pose de tous types de portes intérieures avec une précision artisanale. De la porte classique au système à galandage plus technique, nous garantissons une installation parfaite pour un confort acoustique et visuel optimal.",
+    shortDescription: "Blocs-portes et systèmes fin de chantier : structurez vos circulations.",
+    description: "Nous assurons la pose de tous types de portes intérieures avec une précision artisanale.Nous garantissons une installation parfaite pour un confort acoustique et visuel optimal.",
     prestations: [
       "Pose de blocs-portes",
       "Portes fin de chantier",
