@@ -27,7 +27,7 @@ const fallbackTestimonials = [
     text: "Nous avons confié à ATC Rénovation la rénovation complète de notre salle de bains. Le résultat est spectaculaire : douche à l'italienne en mosaïque, double vasque sur mesure, et une finition irréprochable. L'équipe a respecté chaque détail de notre vision tout en apportant des conseils précieux. Un chantier propre, des délais tenus, un budget respecté. Nous recommandons sans hésiter !",
     rating: 5,
     project: "Rénovation Salle de Bains",
-    imageUrl: "/images/real-1.jpg",
+    imageUrl: "/images/real-2.jpg",
   },
   {
     name: "Jean-Pierre Morel",

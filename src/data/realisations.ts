@@ -29,8 +29,7 @@ export const fallbackProjects: ProjectData[] = [
     category: "Salles de bain",
     description:
       "Rénovation complète avec douche à l'italienne en mosaïque, double vasque sur mesure et finitions haut de gamme.",
-    image: "/images/real-1.jpg",
-    beforeImage: "/images/before-1.jpg",
+    image: "/images/real-2.jpg",
   },
   {
     title: "Rénovation Complète T4",
@@ -38,8 +37,7 @@ export const fallbackProjects: ProjectData[] = [
     category: "Appartements",
     description:
       "Transformation intégrale d'un T4 : sols, murs, cuisine, salle de bains, électricité — un résultat clé en main.",
-    image: "/images/real-2.jpg",
-    beforeImage: "/images/before-2.jpg",
+    image: "/images/real-3.jpg",
   },
   {
     title: "Loft Parisien Contemporain",
@@ -56,7 +54,6 @@ export const fallbackProjects: ProjectData[] = [
     description:
       "Salon modernisé avec enduit décoratif, éclairage encastré et mobilier sur mesure pour un rendu épuré.",
     image: "/images/real-4.jpg",
-    beforeImage: "/images/before-4.jpg",
   },
   {
     title: "Cuisine Ouverte Sur Mesure",
