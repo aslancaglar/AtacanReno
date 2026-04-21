@@ -62,6 +62,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
               alt={service.title}
               fill
               priority
+              quality={95}
               sizes="100vw"
               className="object-cover"
             />
