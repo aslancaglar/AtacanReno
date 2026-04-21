@@ -79,7 +79,7 @@ const AboutPageClient = () => {
   return (
     <Layout>
       <PageHero
-        backgroundImage="/images/about-hero.jpg"
+        backgroundImage="/images/AboutAtcReno.jpg"
         breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "À propos" }]}
         eyebrow="À propos"
         title="ATC Rénovation - Notre différence est notre qualité"
