@@ -44,7 +44,7 @@ const RealisationsPageClient = () => {
   return (
     <Layout>
         <PageHero
-          backgroundImage="/images/service-salon.jpg"
+          backgroundImage="/images/service-appart.jpg"
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]}
           eyebrow="Portfolio"
           title="Nos Réalisations"
