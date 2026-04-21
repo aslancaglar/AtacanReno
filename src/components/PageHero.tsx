@@ -17,7 +17,6 @@ interface PageHeroProps {
   breadcrumbItems: BreadcrumbItem[];
   children?: React.ReactNode;
   className?: string;
-  imagePosition?: string;
 }
 
 const PageHero = ({
@@ -28,7 +27,6 @@ const PageHero = ({
   breadcrumbItems,
   children,
   className = "",
-  imagePosition = "object-center",
 }: PageHeroProps) => {
   return (
     <section className={`relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden ${className}`}>
@@ -39,7 +37,7 @@ const PageHero = ({
           fill
           priority
           sizes="100vw"
-          className={`object-cover ${imagePosition}`}
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/65" />
       </div>
