@@ -1,7 +1,6 @@
 "use client";
 
 import { Calendar, Home, Star, Clock } from "lucide-react";
-import { motion } from "framer-motion";
 
 const StatItem = ({
   stat,
@@ -11,12 +10,9 @@ const StatItem = ({
   index: number;
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-      className="flex flex-col items-center text-center px-4"
+    <div
+      className="hero-fade-in flex flex-col items-center text-center px-4"
+      style={{ animationDelay: `${0.1 + index * 0.1}s` }}
     >
       <stat.icon className="w-5 h-5 text-secondary mb-1" />
       <span className="text-2xl lg:text-3xl font-extrabold text-white leading-none">
@@ -26,7 +22,7 @@ const StatItem = ({
       <span className="text-white/60 text-[11px] font-semibold uppercase tracking-widest mt-1">
         {stat.label}
       </span>
-    </motion.div>
+    </div>
   );
 };
 
@@ -41,19 +37,16 @@ const StatsSection = () => {
   return (
     <section className="relative lg:-mt-10 -mt-6 z-10 pb-2">
       <div className="container mx-auto px-4 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.97 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-primary rounded-2xl shadow-2xl px-6 py-4 lg:py-6 lg:px-10"
+        <div
+          className="hero-fade-in bg-primary rounded-2xl shadow-2xl px-6 py-4 lg:py-6 lg:px-10"
+          style={{ animationDelay: "0.3s" }}
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-white/20">
             {stats.map((stat, i) => (
               <StatItem key={stat.label} stat={stat} index={i} />
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

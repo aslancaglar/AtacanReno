@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Star, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -15,10 +14,12 @@ const heroImages = [
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [allSlidesLoaded, setAllSlidesLoaded] = useState(false);
+  const [slidesReady, setSlidesReady] = useState(false);
 
+  // Delay-load slideshow images 2 & 3 — only after 4s (just before first transition at 5s)
   useEffect(() => {
-    setAllSlidesLoaded(true);
+    const timer = setTimeout(() => setSlidesReady(true), 4000);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -30,9 +31,9 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[70vh] xl:min-h-[65vh] max-h-[900px] flex items-end md:items-center overflow-hidden">
-      {/* Background slideshow — only first slide on initial render, rest after mount */}
+      {/* Background slideshow — only first slide on initial render, rest after 4s */}
       {heroImages.map((src, index) => {
-        if (index > 0 && !allSlidesLoaded) return null;
+        if (index > 0 && !slidesReady) return null;
         return (
           <div
             key={src}
@@ -56,27 +57,21 @@ const HeroSection = () => {
 
       <div className="relative container mx-auto px-4 lg:px-8 pb-14 md:pb-32 lg:pb-32 pt-28 md:pt-32 lg:pt-40">
         <div className="max-w-2xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
+          <h1
+            className="hero-fade-in text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
+            style={{ animationDelay: "0s" }}
           >
             Votre spécialiste en rénovation intérieure à Nancy
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="text-white/80 text-lg mb-8 max-w-lg leading-relaxed"
+          </h1>
+          <p
+            className="hero-fade-in text-white/80 text-lg mb-8 max-w-lg leading-relaxed"
+            style={{ animationDelay: "0.2s" }}
           >
             Appartement, maison ou local professionnel : confiez vos travaux à une équipe d'experts forts de 20 ans d'expérience.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-wrap gap-3 mb-8"
+          </p>
+          <div
+            className="hero-fade-in flex flex-wrap gap-3 mb-8"
+            style={{ animationDelay: "0.4s" }}
           >
             <Link href="/devis">
               <Button className="btn-pill bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-6 text-base font-bold">
@@ -88,23 +83,21 @@ const HeroSection = () => {
                 Nos Réalisations
               </Button>
             </Link>
-          </motion.div>
-          {/* Trust badges */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
-            className="flex items-center gap-3"
+          </div>
+          {/* Trust badges — CSS-only avatars (no external requests) */}
+          <div
+            className="hero-fade-in flex items-center gap-3"
+            style={{ animationDelay: "0.6s" }}
           >
             <div className="flex -space-x-2">
               {[
-                "https://i.pravatar.cc/40?img=12",
-                "https://i.pravatar.cc/40?img=25",
-                "https://i.pravatar.cc/40?img=32",
-                "https://i.pravatar.cc/40?img=47",
-              ].map((src, i) => (
-                <div key={i} className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-                  <Image src={src} alt="Client satisfait" fill className="object-cover" sizes="32px" />
+                { initials: "SL", bg: "bg-blue-500" },
+                { initials: "JP", bg: "bg-emerald-500" },
+                { initials: "MD", bg: "bg-amber-500" },
+                { initials: "TR", bg: "bg-rose-500" },
+              ].map((avatar, i) => (
+                <div key={i} className={`w-8 h-8 rounded-full border-2 border-white ${avatar.bg} flex items-center justify-center`}>
+                  <span className="text-[10px] font-bold text-white leading-none">{avatar.initials}</span>
                 </div>
               ))}
             </div>
@@ -116,7 +109,7 @@ const HeroSection = () => {
             <a href="https://maps.app.goo.gl/RwbnhGRwfampRRGS8" target="_blank" rel="noopener noreferrer" className="text-white/70 text-sm hover:text-white transition-colors inline-flex items-center gap-1">
               4.9/5 Avis Google <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
