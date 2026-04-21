@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 
 interface SectionHeaderProps {
@@ -23,12 +20,8 @@ const SectionHeader = ({
   children,
 }: SectionHeaderProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`mb-14 ${align === "center" ? "text-center" : "text-left"} ${className}`}
+    <div
+      className={`mb-14 scroll-fade-in ${align === "center" ? "text-center" : "text-left"} ${className}`}
     >
       {Icon && (
         <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 ${align === "center" ? "mx-auto" : ""}`}>
@@ -47,7 +40,7 @@ const SectionHeader = ({
         </p>
       )}
       {children}
-    </motion.div>
+    </div>
   );
 };
 

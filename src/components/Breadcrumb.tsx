@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
@@ -16,12 +13,9 @@ interface BreadcrumbProps {
 
 const Breadcrumb = ({ items, className = "" }: BreadcrumbProps) => {
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className={`flex items-center gap-2 text-sm text-white/60 mb-6 ${className}`}
-      aria-label="Fil d&#39;Ariane"
+    <nav
+      className={`hero-fade-in flex items-center gap-2 text-sm text-white/60 mb-6 ${className}`}
+      aria-label="Fil d'Ariane"
     >
       {items.map((item, i) => (
         <span key={i} className="flex items-center gap-2">
@@ -35,7 +29,7 @@ const Breadcrumb = ({ items, className = "" }: BreadcrumbProps) => {
           )}
         </span>
       ))}
-    </motion.nav>
+    </nav>
   );
 };
 

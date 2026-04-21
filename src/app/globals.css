@@ -168,3 +168,30 @@
 .animate-slide-up {
   animation: slideUp 0.5s ease-out forwards;
 }
+
+/* Scroll-triggered fade-in — replaces framer-motion whileInView for SectionHeader */
+@keyframes scrollFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-fade-in {
+  opacity: 0;
+  animation: scrollFadeIn 0.6s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+/* Fallback for browsers that don't support scroll-driven animations */
+@supports not (animation-timeline: view()) {
+  .scroll-fade-in {
+    /* Simple fade-in after 0.2s delay for non-supporting browsers */
+    animation: scrollFadeIn 0.6s ease-out 0.2s forwards;
+  }
+}

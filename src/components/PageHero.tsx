@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Breadcrumb from "./Breadcrumb";
 
@@ -47,32 +44,26 @@ const PageHero = ({
         <div className="max-w-2xl">
           <Breadcrumb items={breadcrumbItems} className="mb-8" />
           {eyebrow && (
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block"
+            <span
+              className="hero-fade-in text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block"
+              style={{ animationDelay: "0.1s" }}
             >
               {eyebrow}
-            </motion.span>
+            </span>
           )}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
+          <h1
+            className="hero-fade-in text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
+            style={{ animationDelay: "0.2s" }}
           >
             {title}
-          </motion.h1>
+          </h1>
           {description && (
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-white/80 text-lg leading-relaxed max-w-lg"
+            <p
+              className="hero-fade-in text-white/80 text-lg leading-relaxed max-w-lg"
+              style={{ animationDelay: "0.35s" }}
             >
               {description}
-            </motion.p>
+            </p>
           )}
           {children}
         </div>

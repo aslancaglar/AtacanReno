@@ -1,6 +1,55 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+
+// Lazy-loads Google Maps only when the container scrolls into view
+function LazyMap({ address }: { address: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [src, setSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSrc(`https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=14&ie=UTF8&iwloc=&output=embed`);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [address]);
+
+  return (
+    <div ref={ref} className="w-full h-full min-h-[300px] lg:min-h-[400px]">
+      {src ? (
+        <iframe
+          src={src}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          title="ATC Rénovation — Nancy"
+          className="w-full h-full"
+        />
+      ) : (
+        <a
+          href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-full h-full bg-surface-container text-muted-foreground text-sm gap-2 hover:text-primary transition-colors"
+        >
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Voir sur Google Maps
+        </a>
+      )}
+    </div>
+  );
+}
 import {
   Phone,
   Mail,
@@ -137,16 +186,8 @@ const ContactPageClient = () => {
               {contactInfo.map((item, i) => {
                 const Icon = item.icon;
                 const content = (
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: i * 0.08,
-                      ease: "easeOut",
-                    }}
-                    className="flex items-start gap-4 p-6 bg-card rounded-2xl hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-shadow duration-300 h-full"
+                  <div
+                    className="scroll-fade-in flex items-start gap-4 p-6 bg-card rounded-2xl hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-shadow duration-300 h-full"
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5 text-primary" />
@@ -159,7 +200,7 @@ const ContactPageClient = () => {
                         {item.value}
                       </span>
                     </div>
-                  </motion.div>
+                  </div>
                 );
 
                 return item.href ? (
@@ -182,26 +223,12 @@ const ContactPageClient = () => {
               })}
             </div>
 
-            {/* ── Map ── */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            {/* ── Map — lazy loaded when scrolled into view ── */}
+            <div
               className="rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[400px] bg-surface-container-low"
             >
-              <iframe
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(companyInfoFromDb?.address || "371 Avenue des Champs Elysées Nancy, 54000")}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="ATC Rénovation — Nancy"
-                className="w-full h-full"
-              />
-            </motion.div>
+              <LazyMap address={companyInfoFromDb?.address || "371 Avenue des Champs Elysées Nancy, 54000"} />
+            </div>
           </div>
         </div>
       </section>
@@ -219,17 +246,9 @@ const ContactPageClient = () => {
             {processSteps.map((step, i) => {
               const Icon = step.icon;
               return (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: i * 0.1,
-                    ease: "easeOut",
-                  }}
-                  className="relative bg-card rounded-2xl p-6 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-shadow duration-300"
+                  className="scroll-fade-in relative bg-card rounded-2xl p-6 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-shadow duration-300"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
@@ -243,7 +262,7 @@ const ContactPageClient = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -254,12 +273,7 @@ const ContactPageClient = () => {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
+            <div className="scroll-fade-in">
               <SectionHeader
                 eyebrow="FAQ"
                 title="Questions fréquentes"
@@ -283,14 +297,9 @@ const ContactPageClient = () => {
                   {companyInfoFromDb?.phone || "+33 1 24 63 67 89"}
                 </a>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            >
+            <div className="scroll-fade-in">
               <Accordion type="single" collapsible className="space-y-3">
                 {faqs.map((faq, i) => (
                   <AccordionItem
@@ -307,7 +316,7 @@ const ContactPageClient = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -315,12 +324,7 @@ const ContactPageClient = () => {
       {/* ─── CTA ─── */}
       <section className="bg-primary py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <div className="scroll-fade-in">
             <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
               Prêt à transformer votre intérieur ?
             </h2>
@@ -328,20 +332,13 @@ const ContactPageClient = () => {
               Obtenez un devis gratuit et personnalisé sous 48h. Sans
               engagement, sans surprise.
             </p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-            >
-              <a href={companyInfoFromDb?.phone ? `tel:${companyInfoFromDb.phone.replace(/\s+/g, '')}` : "tel:+33124636789"}>
-                <Button className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-10 h-14 text-lg">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Appelez-nous maintenant
-                </Button>
-              </a>
-            </motion.div>
-          </motion.div>
+            <a href={companyInfoFromDb?.phone ? `tel:${companyInfoFromDb.phone.replace(/\s+/g, '')}` : "tel:+33124636789"}>
+              <Button className="btn-pill bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-10 h-14 text-lg">
+                <Phone className="w-5 h-5 mr-2" />
+                Appelez-nous maintenant
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
     </Layout>
