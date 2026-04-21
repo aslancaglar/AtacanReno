@@ -13,7 +13,7 @@ const ServicesPageClient = () => {
   return (
     <Layout>
         <PageHero
-          backgroundImage="/images/hero-bg.jpg"
+          backgroundImage="/images/service-appart.jpg"
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Services" }]}
           eyebrow="Nos Services"
           title="Des solutions complètes pour votre rénovation intérieure."
