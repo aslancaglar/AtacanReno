@@ -20,7 +20,7 @@ const AboutPreview = () => {
           >
             <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-[0px_20px_40px_rgba(52,48,38,0.06)]">
               <Image
-                src="/images/about.jpg"
+                src="/images/AboutAtcReno.jpg"
                 alt="Fondateur d'ATC Rénovation"
                 fill
                 className="object-cover"
@@ -51,20 +51,17 @@ const AboutPreview = () => {
               À propos de nous
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-              Bien plus qu'un chantier : un engagement de qualité, de rigueur et de confiance
+              Une passion pour le détail, un engagement pour la qualité.
             </h2>
             <p>
-              Chez <strong>ATC Rénovation,</strong> nous croyons qu'un chantier bien mené change bien plus qu'un espace — il change votre quotidien. C'est pourquoi chaque projet est abordé avec la même rigueur et la même attention au détail. On écoute, on conseille, on planifie, et on exécute — du premier coup de marteau jusqu'à la dernière finition.
+              Depuis 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
             </p>
             <br />
             <p>
-              <strong>20 ans d'expérience. Plus de 300 projets livrés.</strong> Appartements, maisons, locaux professionnels — chaque chantier nous a fait progresser. Si notre réputation s'est construite sans publicité, c'est parce que notre meilleur argument reste le travail accompli : des finitions soignées, un planning respecté, et une transparence totale du premier rendez-vous à la remise des clés.
+              Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à l'aménagement de vos combles, en passant par la peinture, les revêtements de sols, la menuiserie ou encore l'électricité : nous transformons vos rêves en réalité, avec soin et passion.
             </p>
             <br />
-            <p>
-              <strong>Certifiés RGE Qualibat</strong>, nous intervenons également sur les travaux d'isolation et de rénovation énergétique, et nous vous accompagnons dans vos démarches MaPrimeRénov' pour optimiser votre budget.
-            </p>
-            <br />
+
             <ul className="space-y-3 mb-8">
               {[
                 "Un interlocuteur unique pour tous vos travaux d'intérieur",

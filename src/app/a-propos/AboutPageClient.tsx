@@ -101,17 +101,17 @@ const AboutPageClient = () => {
             >
               <SectionHeader
                 eyebrow="Notre histoire"
-                title="Bien plus qu'un chantier : un engagement de qualité, de rigueur et de confiance"
+                title="De la passion artisanale à l'expertise reconnue"
               />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Chez <strong>ATC Rénovation,</strong> nous croyons qu'un chantier bien mené change bien plus qu'un espace — il change votre quotidien. C'est pourquoi chaque projet est abordé avec la même rigueur et la même attention au détail. On écoute, on conseille, on planifie, et on exécute — du premier coup de marteau jusqu'à la dernière finition.
+                  Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. Depuis 2004, ATC Rénovation accompagne les habitants de Nancy et du Grand Nancy dans la transformation de leurs espaces de vie, avec passion et un souci constant de la perfection.
                 </p>
                 <p>
-                  <strong>20 ans d'expérience. Plus de 300 projets livrés.</strong> Appartements, maisons, locaux professionnels — chaque chantier nous a fait progresser. Si notre réputation s'est construite sans publicité, c'est parce que notre meilleur argument reste le travail accompli : des finitions soignées, un planning respecté, et une transparence totale du premier rendez-vous à la remise des clés.
+                  De la rénovation complète de votre appartement à l'aménagement de vos combles, en passant par la peinture, les revêtements de sols, la menuiserie ou encore l'électricité : nous transformons vos rêves en réalité, avec soin et passion.
                 </p>
                 <p>
-                  <strong>Certifiés RGE Qualibat</strong>, nous intervenons également sur les travaux d'isolation et de rénovation énergétique, et nous vous accompagnons dans vos démarches MaPrimeRénov' pour optimiser votre budget.
+                  Aujourd'hui, avec plus de 300 projets livrés et une note de 4.9/5 sur Google, ATC Rénovation est un acteur de référence de la rénovation intérieure en région nancéienne. Notre certification RGE nous permet également d'accompagner nos clients dans leurs projets d'isolation et de rénovation énergétique avec accès aux aides de l'État.
                 </p>
               </div>
             </motion.div>
@@ -124,7 +124,7 @@ const AboutPageClient = () => {
               className="relative flex justify-center"
             >
               <Image
-                src="/images/about.jpg"
+                src="/images/AboutAtcReno.jpg"
                 alt="Fondateur d'ATC Rénovation"
                 width={640}
                 height={800}

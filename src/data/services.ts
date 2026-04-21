@@ -33,7 +33,7 @@ export const services: ServiceData[] = [
     shortTitle: "Isolation RGE",
     icon: Thermometer,
     shortDescription: "Isolation certifiée RGE : bénéficiez des aides MaPrimeRénov' et réduisez vos factures.",
-    description: "En tant qu'artisan certifié RGE, nous vous accompagnons dans vos travaux d'isolation pour améliorer le confort thermique de votre logement tout en réduisant vos factures d'énergie. Nous vous aidons également à monter vos dossiers d'aides financières.",
+    description: "En tant qu'artisan certifié RGE, nous vous accompagnons dans vos travaux d'isolation pour améliorer le confort thermique de votre logement tout en réduisant vos factures d'énergie.",
     prestations: [
       "Isolation des combles (ouate de cellulose, laine de verre, fibre de bois)",
       "Isolation des murs par l'intérieur (ITI)",
@@ -69,11 +69,9 @@ export const services: ServiceData[] = [
     prestations: [
       "Pose de carrelage et faïence",
       "Pose de parquet (massif, stratifié, contrecollé)",
-      "Pose de moquette",
       "Ragréage et préparation des supports",
       "Carrelage grand format",
       "Sol PVC clipsable",
-      "Revêtement mural en pierre naturelle",
     ],
   },
   {
@@ -117,7 +115,6 @@ export const services: ServiceData[] = [
     description: "Nous assurons la pose de tous types de portes intérieures avec une précision artisanale. De la porte classique au système à galandage plus technique, nous garantissons une installation parfaite pour un confort acoustique et visuel optimal.",
     prestations: [
       "Pose de blocs-portes",
-      "Portes à galandage",
       "Portes fin de chantier",
       "Réglages et finitions",
     ],
