@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   images: {
+    qualities: [25, 50, 75, 95, 100],
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
