@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Artisan RGE à Nancy depuis plus de 20 ans. Salle de bains, cuisine, isolation, peinture, combles. Devis gratuit sous 48h. Intervention sur Nancy et le Grand Nancy.",
   alternates: {
-    canonical: "https://atc-renovation.fr",
+    canonical: "https://atcrenovation.com",
   },
   openGraph: {
     title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
     description:
       "Artisan RGE à Nancy depuis plus de 20 ans. Salle de bains, cuisine, isolation, peinture, combles. Devis gratuit sous 48h.",
-    url: "https://atc-renovation.fr",
+    url: "https://atcrenovation.com",
     type: "website",
   },
 };

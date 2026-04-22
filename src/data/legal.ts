@@ -4,7 +4,7 @@ export const legalContent = {
     sections: [
       {
         title: "1. Présentation du site",
-        content: `En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site atc-renovation.fr l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :`,
+        content: `En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site atcrenovation.com l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :`,
       },
       {
         title: "2. Propriétaire et Éditeur",
@@ -31,7 +31,7 @@ Code APE : 4334Z (Travaux de peinture et vitrerie - à titre indicatif)`,
     sections: [
       {
         title: "1. Protection des données",
-        content: `ATC Rénovation s'engage à ce que la collecte et le traitement de vos données, effectués à partir du site atc-renovation.fr, soient conformes au règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.`,
+        content: `ATC Rénovation s'engage à ce que la collecte et le traitement de vos données, effectués à partir du site atcrenovation.com, soient conformes au règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.`,
       },
       {
         title: "2. Données collectées",

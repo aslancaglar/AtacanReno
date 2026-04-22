@@ -27,7 +27,7 @@ export function LegalModals({ isOpen, onClose, companyInfo }: LegalModalsProps) 
   const replacePlaceholders = (text: string) => {
     return text
       .replace("[ADRESSE]", companyInfo?.address || "Nancy, France")
-      .replace("[EMAIL]", companyInfo?.email || "contact@atc-renovation.fr")
+      .replace("[EMAIL]", companyInfo?.email || "contact@atcrenovation.com")
       .replace("[PHONE]", companyInfo?.phone || "Non renseigné");
   };
 

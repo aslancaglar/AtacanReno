@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://atc-renovation.fr",
+    url: "https://atcrenovation.com",
     siteName: "ATC Rénovation",
     title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
     description:
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://atc-renovation.fr",
+    canonical: "https://atcrenovation.com",
   },
   other: {
     "geo.region": "FR-54",
@@ -62,9 +62,9 @@ export default async function RootLayout({
     "@type": "HomeAndConstructionBusiness",
     name: "ATC Rénovation",
     description: "Spécialiste en rénovation intérieure à Nancy depuis plus de 20 ans. Salle de bains, cuisine, peinture, isolation RGE certifié.",
-    url: "https://atc-renovation.fr",
+    url: "https://atcrenovation.com",
     telephone: "+33 6 12 34 56 78",
-    email: "contact@atc-renovation.fr",
+    email: "contact@atcrenovation.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Nancy",
