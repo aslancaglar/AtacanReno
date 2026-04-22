@@ -14,6 +14,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://atcrenovation.com"),
   title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
   description:
     "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
@@ -28,7 +29,10 @@ export const metadata: Metadata = {
       "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
     images: [
       {
-        url: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7376ca57-f0f3-48b0-835d-0ea92127fb8a/id-preview-ec315f8c--fcdfaf25-f28f-4301-acf9-5a46a237e444.lovable.app-1775030363078.png",
+        url: "/images/service-platrerie.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ATC Rénovation - Travaux de plâtrerie et rénovation à Nancy",
       },
     ],
   },
@@ -36,10 +40,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
     description:
-      "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 10 ans. Salle de bains, cuisine, peinture, isolation RGE. Devis gratuit, artisan certifié.",
-    images: [
-      "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7376ca57-f0f3-48b0-835d-0ea92127fb8a/id-preview-ec315f8c--fcdfaf25-f28f-4301-acf9-5a46a237e444.lovable.app-1775030363078.png",
-    ],
+      "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
+    images: ["/images/service-platrerie.jpg"],
   },
   alternates: {
     canonical: "https://atcrenovation.com",
