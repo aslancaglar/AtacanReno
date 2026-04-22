@@ -16,7 +16,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
   description:
-    "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 10 ans. Salle de bains, cuisine, peinture, isolation RGE. Devis gratuit, artisan certifié.",
+    "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
   authors: [{ name: "ATC Rénovation" }],
   openGraph: {
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "ATC Rénovation",
     title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
     description:
-      "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 10 ans. Salle de bains, cuisine, peinture, isolation RGE. Devis gratuit, artisan certifié.",
+      "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
     images: [
       {
         url: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7376ca57-f0f3-48b0-835d-0ea92127fb8a/id-preview-ec315f8c--fcdfaf25-f28f-4301-acf9-5a46a237e444.lovable.app-1775030363078.png",
@@ -61,7 +61,7 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: "ATC Rénovation",
-    description: "Spécialiste en rénovation intérieure à Nancy depuis plus de 20 ans. Salle de bains, cuisine, peinture, isolation RGE certifié.",
+    description: "Spécialiste en rénovation intérieure à Nancy depuis plus de 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles.",
     url: "https://atcrenovation.com",
     telephone: "+33 6 12 34 56 78",
     email: "contact@atcrenovation.com",

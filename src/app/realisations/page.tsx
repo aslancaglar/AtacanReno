@@ -4,11 +4,11 @@ import RealisationsPageClient from "./RealisationsPageClient";
 export const metadata: Metadata = {
   title: "Nos Réalisations — ATC Rénovation | Portfolio Rénovation Nancy",
   description:
-    "Découvrez nos projets de rénovation intérieure réalisés à Nancy et ses environs. Avant/après, salles de bains, cuisines, salons — chaque chantier reflète notre savoir-faire.",
+    "Découvrez nos projets de rénovation intérieure réalisés à Nancy et ses environs. Avant/après, appartements, peinture, isolation — chaque chantier reflète notre savoir-faire.",
   openGraph: {
     title: "Nos Réalisations — ATC Rénovation | Portfolio Rénovation Nancy",
     description:
-      "Découvrez nos projets de rénovation intérieure réalisés à Nancy et ses environs. Avant/après, salles de bains, cuisines, salons.",
+      "Découvrez nos projets de rénovation intérieure réalisés à Nancy et ses environs. Avant/après, appartements, peinture, isolation.",
   },
 };
 
