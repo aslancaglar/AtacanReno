@@ -53,11 +53,11 @@ const AboutPreview = () => {
             <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
               Une passion pour le détail, un engagement pour la qualité.
             </h2>
-            <p>
+            <p data-nosnippet>
               Depuis 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
             </p>
             <br />
-            <p>
+            <p data-nosnippet>
               Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à l'aménagement de vos combles, en passant par la peinture, les revêtements de sols, la menuiserie ou encore l'électricité : nous transformons vos rêves en réalité, avec soin et passion.
             </p>
             <br />
