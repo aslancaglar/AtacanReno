@@ -37,12 +37,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { services } from "@/data/services";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 
 const devisServices = [
   ...services,
@@ -130,7 +124,6 @@ const DevisPageClient = () => {
   const [direction, setDirection] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const updateField = (field: keyof FormData, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -153,7 +146,6 @@ const DevisPageClient = () => {
   const goPrev = () => { if (step > 1) { setDirection(-1); setStep((s) => s - 1); } };
 
   const resetForm = () => {
-    setIsSubmitted(false);
     setStep(1);
     setFormData(initialFormData);
     setDirection(1);
@@ -179,7 +171,7 @@ const DevisPageClient = () => {
         city: formData.city || undefined,
         referral: formData.referral || undefined,
       });
-      setIsSubmitted(true);
+      router.push("/devis/success");
     } catch (error) {
       console.error("Error submitting devis:", error);
     } finally {
@@ -206,37 +198,8 @@ const DevisPageClient = () => {
         <section className="py-16 lg:py-24">
           <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
 
-            {/* Success Modal */}
-            <Dialog open={isSubmitted} onOpenChange={(open) => { if (!open) router.push("/"); }}>
-              <DialogContent className="sm:max-w-2xl p-0 overflow-hidden border-none bg-transparent shadow-none">
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }} 
-                  animate={{ opacity: 1, scale: 1 }} 
-                  transition={{ duration: 0.5, ease: "easeOut" }} 
-                  className="bg-card rounded-2xl shadow-2xl p-10 lg:p-16 text-center border border-border/50"
-                >
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="w-10 h-10 text-primary" />
-                  </div>
-                  <DialogHeader className="p-0 mb-3">
-                    <DialogTitle className="text-3xl font-extrabold text-center">Demande envoyée !</DialogTitle>
-                  </DialogHeader>
-                  <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto mb-8">
-                    Merci pour votre demande de devis. Notre équipe l&apos;étudie et vous recontactera sous 24 à 48h avec une proposition personnalisée.
-                  </p>
-                  <div className="flex justify-center">
-                    <Link href="/">
-                      <Button variant="outline" className="btn-pill px-8 font-semibold">
-                        Retour à l&apos;accueil
-                      </Button>
-                    </Link>
-                  </div>
-                </motion.div>
-              </DialogContent>
-            </Dialog>
-
             {/* Form Content */}
-            <div className={isSubmitted ? "opacity-50 pointer-events-none transition-opacity" : "transition-opacity"}>
+            <div>
                 {/* ── Progress Bar ── */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="mb-10">
                   <div className="flex items-center justify-between mb-6">
