@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default function DevisSuccessPage() {
   return (
-    <Layout>
+    <Layout hideHeader hideFooter hideWhatsApp>
       <section className="py-24 lg:py-40 bg-surface-container-low min-h-[80vh] flex items-center">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
           <motion.div
