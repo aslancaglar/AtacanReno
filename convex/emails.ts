@@ -22,7 +22,10 @@ export const sendNewDevisEmail = action({
       return;
     }
 
-    const htmlContent = `
+        const dashboardUrl = `https://atcrenovation.com/admin/devis/${args.devisId}`;
+        console.log(`Lien dashboard généré: ${dashboardUrl}`);
+
+        const htmlContent = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
         <h2 style="color: #2F6146; border-bottom: 2px solid #2F6146; padding-bottom: 10px;">Nouvelle Demande de Devis</h2>
         <p>Une nouvelle demande de devis a été soumise sur votre site <strong>ATC Rénovation</strong>.</p>
@@ -63,7 +66,7 @@ export const sendNewDevisEmail = action({
         ` : ''}
 
         <div style="text-align: center; margin-top: 30px;">
-          <a href="${process.env.SITE_URL || 'https://atcrenovation.com'}/admin/devis/${args.devisId}" style="background-color: #2F6146; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">Voir dans le Dashboard</a>
+          <a href="${dashboardUrl}" style="background-color: #2F6146; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">Voir dans le Dashboard</a>
         </div>
       </div>
     `;
@@ -78,7 +81,7 @@ export const sendNewDevisEmail = action({
         body: JSON.stringify({
           // The 'from' address must be a verified domain on Resend (like onboarding@resend.dev for testing 
           // or a real domain you verified like devis@atcrenovation.com)
-          from: "ATC Rénovation <onboarding@resend.dev>",
+          from: "ATC Rénovation <devis@atcrenovation.com>",
           to: adminEmail,
           subject: `Nouvelle Demande de Devis : ${args.serviceSlug} - ${args.name}`,
           html: htmlContent
