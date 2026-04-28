@@ -9,7 +9,7 @@ export const get = query({
     // Default values if table is empty
     if (!info) {
       return {
-        email: "contact@atacan-renovation.fr",
+        email: "contact@atcrenovation.com",
         phone: "03 83 XX XX XX",
         address: "54000 Nancy, France",
         workingHours: "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00",

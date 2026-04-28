@@ -84,7 +84,7 @@ export default function SettingsPage() {
                 id="email" 
                 value={form.email} 
                 onChange={(e) => setForm({ ...form, email: e.target.value })} 
-                placeholder="contact@atacan-renovation.fr" 
+                placeholder="contact@atcrenovation.com" 
               />
             </div>
             <div className="space-y-2">

@@ -63,7 +63,7 @@ export const sendNewDevisEmail = action({
         ` : ''}
 
         <div style="text-align: center; margin-top: 30px;">
-          <a href="https://atacan-renovation.fr/admin/devis/${args.devisId}" style="background-color: #2F6146; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">Voir dans le Dashboard</a>
+          <a href="${process.env.SITE_URL || 'https://atcrenovation.com'}/admin/devis/${args.devisId}" style="background-color: #2F6146; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">Voir dans le Dashboard</a>
         </div>
       </div>
     `;
@@ -77,7 +77,7 @@ export const sendNewDevisEmail = action({
         },
         body: JSON.stringify({
           // The 'from' address must be a verified domain on Resend (like onboarding@resend.dev for testing 
-          // or a real domain you verified like devis@atacan-renovation.fr)
+          // or a real domain you verified like devis@atcrenovation.com)
           from: "ATC Rénovation <onboarding@resend.dev>",
           to: adminEmail,
           subject: `Nouvelle Demande de Devis : ${args.serviceSlug} - ${args.name}`,

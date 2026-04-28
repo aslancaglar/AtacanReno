@@ -91,8 +91,8 @@ const getContactInfo = (companyDetails: any) => [
   {
     icon: Mail,
     label: "Email",
-    value: companyDetails?.email || "contact@atacan-renovation.fr",
-    href: companyDetails?.email ? `mailto:${companyDetails.email}` : "mailto:contact@atacan-renovation.fr",
+    value: companyDetails?.email || "contact@atcrenovation.com",
+    href: companyDetails?.email ? `mailto:${companyDetails.email}` : "mailto:contact@atcrenovation.com",
   },
   {
     icon: Clock,
