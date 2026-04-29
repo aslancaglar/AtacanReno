@@ -14,8 +14,9 @@ export const sendNewDevisEmail = action({
   },
   handler: async (ctx, args) => {
     const resendApiKey = process.env.RESEND_API_KEY;
-    // Default email to receive notifications. Must match Resend account email for testing domain!
-    const adminEmail = process.env.ADMIN_EMAIL || "caslanfedev@gmail.com"; 
+    // Supports multiple emails separated by commas (e.g. "email1@test.com, email2@test.com")
+    const adminEmailEnv = process.env.ADMIN_EMAIL || "caslanfedev@gmail.com";
+    const adminEmails = adminEmailEnv.split(",").map(email => email.trim());
 
     if (!resendApiKey) {
       console.warn("RESEND_API_KEY non configurée. Impossible d'envoyer l'email.");
@@ -82,7 +83,7 @@ export const sendNewDevisEmail = action({
           // The 'from' address must be a verified domain on Resend (like onboarding@resend.dev for testing 
           // or a real domain you verified like devis@atcrenovation.com)
           from: "ATC Rénovation <devis@atcrenovation.com>",
-          to: adminEmail,
+          to: adminEmails,
           subject: `Nouvelle Demande de Devis : ${args.serviceSlug} - ${args.name}`,
           html: htmlContent
         })
