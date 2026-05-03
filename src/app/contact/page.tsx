@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description:
       "Contactez ATC Rénovation pour un devis gratuit sous 48h. Rénovation intérieure à Nancy.",
   },
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

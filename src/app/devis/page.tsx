@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description:
       "Demandez votre devis gratuit en ligne pour vos travaux de rénovation intérieure à Nancy. Réponse sous 48h.",
   },
+  alternates: {
+    canonical: "/devis",
+  },
 };
 
 export default function DevisPage() {

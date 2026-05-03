@@ -44,9 +44,6 @@ export const metadata: Metadata = {
       "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
     images: ["/images/service-platrerie.jpg"],
   },
-  alternates: {
-    canonical: "https://atcrenovation.com",
-  },
   other: {
     "geo.region": "FR-54",
     "geo.placename": "Nancy",

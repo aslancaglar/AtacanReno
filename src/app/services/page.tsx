@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description:
       "Découvrez tous nos services de rénovation intérieure à Nancy : peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles et plus encore.",
   },
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

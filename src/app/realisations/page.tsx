@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description:
       "Découvrez nos projets de rénovation intérieure réalisés à Nancy et ses environs. Avant/après, appartements, peinture, isolation.",
   },
+  alternates: {
+    canonical: "/realisations",
+  },
 };
 
 export default function RealisationsPage() {

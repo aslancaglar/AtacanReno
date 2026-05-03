@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description:
       "Découvrez ATC Rénovation, votre artisan certifié RGE spécialisé en rénovation intérieure à Nancy depuis plus de 20 ans.",
   },
+  alternates: {
+    canonical: "/a-propos",
+  },
 };
 
 export default function AboutPage() {
