@@ -48,6 +48,10 @@ export const metadata: Metadata = {
     "geo.region": "FR-54",
     "geo.placename": "Nancy",
   },
+  icons: {
+    icon: "/Logoicon.png",
+    apple: "/Logoicon.png",
+  },
 };
 
 export default async function RootLayout({
@@ -62,6 +66,8 @@ export default async function RootLayout({
     "@type": "HomeAndConstructionBusiness",
     name: "ATC Rénovation",
     description: "Spécialiste en rénovation intérieure à Nancy depuis plus de 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles.",
+    logo: "https://atcrenovation.com/Logoicon.png",
+    image: "https://atcrenovation.com/Logoicon.png",
     url: "https://atcrenovation.com",
     telephone: "+33 6 12 34 56 78",
     email: "atacanch@gmail.com",
