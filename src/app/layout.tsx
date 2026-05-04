@@ -106,13 +106,13 @@ export default async function RootLayout({
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         opens: "08:00",
-        closes: "18:00",
+        closes: "19:00",
       },
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "13:00",
+        opens: "08:00",
+        closes: "19:00",
       },
     ],
     priceRange: "€",
@@ -132,8 +132,8 @@ export default async function RootLayout({
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "45",
+      ratingValue: "5.0",
+      reviewCount: "29",
     },
   };
 
