@@ -16,16 +16,16 @@ const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesReady, setSlidesReady] = useState(false);
 
-  // Delay-load slideshow images 2 & 3 — only after 4s (just before first transition at 5s)
+  // Delay-load slideshow images 2 & 3 — only after 6s (just before first transition at 8s)
   useEffect(() => {
-    const timer = setTimeout(() => setSlidesReady(true), 4000);
+    const timer = setTimeout(() => setSlidesReady(true), 6000);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 
