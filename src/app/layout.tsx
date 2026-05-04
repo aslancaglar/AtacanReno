@@ -48,11 +48,6 @@ export const metadata: Metadata = {
     "geo.region": "FR-54",
     "geo.placename": "Nancy",
   },
-  icons: {
-    icon: "/Logoicon.png",
-    shortcut: "/Logoicon.png",
-    apple: "/Logoicon.png",
-  },
 };
 
 export default async function RootLayout({
