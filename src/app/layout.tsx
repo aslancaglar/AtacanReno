@@ -67,10 +67,10 @@ export default async function RootLayout({
     email: "contact@atcrenovation.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Nancy",
-      addressLocality: "Nancy",
+      streetAddress: "123 Rue de Nancy",
+      addressLocality: "Flavigny-sur-Moselle",
       addressRegion: "Grand Est",
-      postalCode: "54000",
+      postalCode: "54630",
       addressCountry: "FR",
     },
     geo: {
