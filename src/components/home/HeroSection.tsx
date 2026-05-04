@@ -1,59 +1,23 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Star, ArrowUpRight } from "lucide-react";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const heroImages = [
-  "/images/hero-bg.jpg",
-  "/images/hero-bg-2.jpg",
-  "/images/hero-bg-3.jpg",
-];
-
 const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [slidesReady, setSlidesReady] = useState(false);
-
-  // Delay-load slideshow images 2 & 3 — only after 6s (just before first transition at 8s)
-  useEffect(() => {
-    const timer = setTimeout(() => setSlidesReady(true), 6000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[70vh] xl:min-h-[65vh] max-h-[900px] flex items-end md:items-center overflow-hidden">
-      {/* Background slideshow — only first slide on initial render, rest after 4s */}
-      {heroImages.map((src, index) => {
-        if (index > 0 && !slidesReady) return null;
-        return (
-          <div
-            key={src}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <Image
-              src={src}
-              alt={`Rénovation intérieure — ATC Rénovation Nancy ${index + 1}`}
-              fill
-              className="object-cover"
-              priority={index === 0}
-              {...(index === 0 ? { fetchPriority: "high" } : {})}
-              quality={75}
-              sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
-            />
-          </div>
-        );
-      })}
-      {/* Overlay gradient */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="Rénovation intérieure — ATC Rénovation Nancy"
+          fill
+          priority
+          fetchPriority="high"
+          quality={75}
+          sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
+          className="object-cover"
+        />
+      </div>
       <div className="absolute inset-0 bg-black/65" />
 
       <div className="relative container mx-auto px-4 lg:px-8 pb-14 md:pb-32 lg:pb-32 pt-28 md:pt-32 lg:pt-40">
