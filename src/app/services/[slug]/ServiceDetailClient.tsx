@@ -119,7 +119,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Text */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -152,7 +152,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
 
               {/* Image */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -167,7 +167,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                     className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
                   />
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 1, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
@@ -188,7 +188,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
         <section className="py-20 lg:py-28 bg-surface-container-low">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -209,7 +209,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
               {service.prestations.map((prestation, j) => (
                 <motion.div
                   key={prestation}
-                  initial={{ opacity: 0, y: 25 }}
+                  initial={{ opacity: 1, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
@@ -233,7 +233,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
         <section className="py-20 lg:py-28">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -256,7 +256,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                 return (
                   <motion.div
                     key={step.title}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 1, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
@@ -303,7 +303,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
         <section className="py-20 lg:py-28 bg-surface-container-low">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -323,7 +323,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                 return (
                   <motion.div
                     key={related.slug}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 1, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.5, delay: j * 0.08, ease: "easeOut" }}
@@ -363,7 +363,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
 
             {/* View all services link */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
