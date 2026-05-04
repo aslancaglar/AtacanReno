@@ -81,7 +81,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
 
             <div className="max-w-2xl">
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 1, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex items-center gap-3 mb-5"
@@ -94,17 +94,17 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                 </span>
               </motion.div>
               <motion.h1
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white"
               >
-                {service.title}
+                {service.seoTitle}
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+                transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
                 className="text-white/80 text-lg leading-relaxed max-w-lg"
               >
                 {service.shortDescription}

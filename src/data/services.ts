@@ -5,6 +5,8 @@ export interface ServiceData {
   slug: string;
   title: string;
   shortTitle: string;
+  seoTitle: string;
+  metaDescription: string;
   icon: ComponentType<{ className?: string }>;
   shortDescription: string;
   description: string;
@@ -17,6 +19,8 @@ export const services: ServiceData[] = [
     slug: "platrerie-faux-plafonds",
     title: "Plâtrerie, Cloisons & Faux Plafonds",
     shortTitle: "Plâtrerie",
+    seoTitle: "Plâtrerie, Cloisons & Faux Plafonds à Nancy",
+    metaDescription: "Artisan plâtrier à Nancy : cloisons Placoplâtre, faux plafonds, isolation phonique et enduits de finition. ATC Rénovation, 20 ans d'expérience. Devis gratuit sous 48h.",
     icon: Wrench,
     shortDescription: "Cloisons, faux plafonds, isolation phonique : structurez vos espaces.",
     description: "La plâtrerie est la base d'un intérieur réussi. Nous réalisons toutes les interventions de plâtrerie sèche, des cloisons aux faux plafonds, en passant par l'isolation phonique et les enduits de finition.",
@@ -31,6 +35,8 @@ export const services: ServiceData[] = [
     slug: "isolation-renovation-energetique",
     title: "Isolation & Rénovation Énergétique (RGE)",
     shortTitle: "Isolation RGE",
+    seoTitle: "Isolation Thermique & Rénovation Énergétique à Nancy (RGE)",
+    metaDescription: "Isolation certifiée RGE à Nancy : combles, murs, planchers bas. Éligible MaPrimeRénov', jusqu'à 80% d'aides. ATC Rénovation, artisan RGE qualifié. Devis gratuit.",
     icon: Thermometer,
     shortDescription: "Isolation certifiée RGE : bénéficiez des aides MaPrimeRénov' et réduisez vos factures.",
     description: "En tant qu'artisan certifié RGE, nous vous accompagnons dans vos travaux d'isolation pour améliorer le confort thermique de votre logement tout en réduisant vos factures d'énergie.",
@@ -49,6 +55,8 @@ export const services: ServiceData[] = [
     slug: "peinture-decoration",
     title: "Peinture & Décoration",
     shortTitle: "Peinture",
+    seoTitle: "Peinture & Décoration Intérieure à Nancy",
+    metaDescription: "Peintre en bâtiment à Nancy : peinture intérieure, papier peint, enduits décoratifs. Finitions impeccables, conseils colorimétriques inclus. ATC Rénovation. Devis gratuit.",
     icon: Paintbrush,
     shortDescription: "Peinture intérieure, enduits décoratifs, papier peint : sublimez vos murs.",
     description: "La peinture est l'un des moyens les plus efficaces de transformer un intérieur. Nos peintres expérimentés maîtrisent toutes les techniques, de la peinture classique aux finitions décoratives les plus raffinées.",
@@ -63,6 +71,8 @@ export const services: ServiceData[] = [
     slug: "revetements-sols-murs",
     title: "Revêtements de Sols & Murs",
     shortTitle: "Sols & Murs",
+    seoTitle: "Revêtements de Sols & Murs à Nancy",
+    metaDescription: "Pose de carrelage, parquet et sols souples à Nancy. Faïence, grand format, ragréage. ATC Rénovation, artisan qualifié RGE. Devis gratuit sous 48h.",
     icon: Layers,
     shortDescription: "Carrelage, parquet, sols souples : des revêtements posés dans les règles de l'art.",
     description: "Le choix du revêtement est déterminant pour l'ambiance et la durabilité de votre intérieur. Nous posons tous types de revêtements avec une préparation soignée des supports pour un résultat impeccable et durable.",
@@ -78,6 +88,8 @@ export const services: ServiceData[] = [
     slug: "renovation-chambre-salon",
     title: "Rénovation de Chambre & Salon",
     shortTitle: "Chambre & Salon",
+    seoTitle: "Rénovation de Chambre & Salon à Nancy",
+    metaDescription: "Rénovation chambre et salon à Nancy : peinture, sols, cloisons, faux plafonds. Aménagement sur mesure avec finitions soignées. ATC Rénovation. Devis gratuit sous 48h.",
     icon: Home,
     shortDescription: "Modernisez vos pièces de vie avec des finitions soignées et un aménagement sur mesure.",
     description: "Donnez un nouveau souffle à vos espaces de vie. Que ce soit pour une chambre cosy ou un salon contemporain, nous intervenons sur la peinture, les sols, les cloisons et les rangements pour créer l'intérieur qui vous ressemble.",
@@ -94,6 +106,8 @@ export const services: ServiceData[] = [
     slug: "renovation-complete-appartement",
     title: "Rénovation Complète d'Appartement",
     shortTitle: "Appartement Complet",
+    seoTitle: "Rénovation Complète d'Appartement à Nancy",
+    metaDescription: "Rénovation complète d'appartement à Nancy, clé en main : tous corps de métier coordonnés. Plomberie, électricité, peinture, sols. ATC Rénovation. Devis personnalisé gratuit.",
     icon: Building2,
     shortDescription: "Prise en charge de A à Z de votre projet de rénovation, tous corps de métier réunis.",
     description: "Confiez-nous la rénovation intégrale de votre appartement. Un seul interlocuteur, tous les corps de métier coordonnés, un résultat clé en main. Idéal pour les investisseurs et propriétaires souhaitant une transformation complète.",
@@ -110,9 +124,11 @@ export const services: ServiceData[] = [
     slug: "menuiserie-amenagement",
     title: "Installation de Portes Intérieures",
     shortTitle: "Portes",
+    seoTitle: "Installation de Portes Intérieures à Nancy",
+    metaDescription: "Pose de portes intérieures à Nancy : blocs-portes, portes fin de chantier, réglages précis. Confort acoustique et visuel optimal. ATC Rénovation. Devis gratuit.",
     icon: DoorOpen,
     shortDescription: "Blocs-portes et systèmes fin de chantier : structurez vos circulations.",
-    description: "Nous assurons la pose de tous types de portes intérieures avec une précision artisanale.Nous garantissons une installation parfaite pour un confort acoustique et visuel optimal.",
+    description: "Nous assurons la pose de tous types de portes intérieures avec une précision artisanale. Nous garantissons une installation parfaite pour un confort acoustique et visuel optimal.",
     prestations: [
       "Pose de blocs-portes",
       "Portes fin de chantier",
@@ -123,6 +139,8 @@ export const services: ServiceData[] = [
     slug: "amenagement-combles",
     title: "Aménagement des Combles",
     shortTitle: "Combles",
+    seoTitle: "Aménagement des Combles à Nancy",
+    metaDescription: "Aménagement de combles à Nancy, clé en main : isolation, plâtrerie, électricité, sols et peinture. Créez chambre ou bureau sous les toits. ATC Rénovation. Devis gratuit.",
     icon: ArrowUpFromDot,
     shortDescription: "Transformez vos combles en espace de vie : chambre et bureau.",
     description: "L'aménagement des combles est l'une des solutions les plus rentables pour gagner de l'espace habitable. Nous réalisons des aménagements clé en main incluant isolation, plâtrerie, électricité, sols et peinture.",
