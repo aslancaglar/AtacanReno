@@ -12,7 +12,7 @@ export default function DevisSuccessPage() {
       <section className="py-24 lg:py-40 bg-surface-container-low min-h-[80vh] flex items-center">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="bg-card rounded-3xl shadow-xl p-10 lg:p-16 text-center border border-border/50"

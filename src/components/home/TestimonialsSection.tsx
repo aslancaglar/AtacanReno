@@ -1,6 +1,6 @@
 "use client";
 
-import { Star, Quote, ArrowUpRight } from "lucide-react";
+import { Star, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useQuery } from "convex/react";
@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
               {testimonials.map((t, i) => (
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3 pl-6">
                   <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 1, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
@@ -181,7 +181,7 @@ const TestimonialsSection = () => {
 
         <div className="mt-12 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}

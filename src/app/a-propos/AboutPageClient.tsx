@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Layout from "@/components/Layout";
-import Breadcrumb from "@/components/Breadcrumb";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import StatsSection from "@/components/home/StatsSection";
@@ -94,7 +93,7 @@ const AboutPageClient = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -117,7 +116,7 @@ const AboutPageClient = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -132,7 +131,7 @@ const AboutPageClient = () => {
                 className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
               />
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 1, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
@@ -157,7 +156,7 @@ const AboutPageClient = () => {
             {certs.map((cert, i) => (
               <motion.div
                 key={cert.alt}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{
@@ -197,7 +196,7 @@ const AboutPageClient = () => {
               return (
                 <motion.div
                   key={value.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{
@@ -226,7 +225,7 @@ const AboutPageClient = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -239,7 +238,7 @@ const AboutPageClient = () => {
                 {whyUs.map((item, i) => (
                   <motion.li
                     key={item}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
@@ -260,7 +259,7 @@ const AboutPageClient = () => {
 
             {/* Image collage */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}

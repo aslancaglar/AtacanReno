@@ -16,7 +16,7 @@ const PartnersSection = () => {
     <section className="py-10 lg:py-14">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -32,7 +32,7 @@ const PartnersSection = () => {
           {partners.map((partner, i) => (
             <motion.div
               key={partner.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}

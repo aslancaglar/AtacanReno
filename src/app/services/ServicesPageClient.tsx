@@ -34,7 +34,7 @@ const ServicesPageClient = () => {
                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${!isEven ? "lg:flex-row-reverse" : ""}`}>
                   {/* Image */}
                   <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -52,7 +52,7 @@ const ServicesPageClient = () => {
                       />
                       {/* Service number badge */}
                       <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 1, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
@@ -70,7 +70,7 @@ const ServicesPageClient = () => {
 
                   {/* Content */}
                   <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -102,7 +102,7 @@ const ServicesPageClient = () => {
                         {service.prestations.map((prestation, j) => (
                           <motion.li
                             key={prestation}
-                            initial={{ opacity: 0, y: 15 }}
+                            initial={{ opacity: 1, y: 8 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{

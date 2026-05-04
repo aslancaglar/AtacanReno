@@ -8,8 +8,6 @@ import {
   ChevronRight,
   ChevronLeft,
   Check,
-  CheckCircle2,
-  Phone,
   Home,
   Building2,
   Store,
@@ -17,13 +15,10 @@ import {
   ClipboardList,
   User,
   FileSearch,
-  Sparkles,
   Plus,
 } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Layout from "@/components/Layout";
-import Breadcrumb from "@/components/Breadcrumb";
 import PageHero from "@/components/PageHero";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -145,12 +140,6 @@ const DevisPageClient = () => {
   const goNext = () => { if (step < TOTAL_STEPS && canProceed()) { setDirection(1); setStep((s) => s + 1); } };
   const goPrev = () => { if (step > 1) { setDirection(-1); setStep((s) => s - 1); } };
 
-  const resetForm = () => {
-    setStep(1);
-    setFormData(initialFormData);
-    setDirection(1);
-  };
-
   const createDevis = useMutation(api.devis.create);
 
   const handleSubmit = async () => {
@@ -179,11 +168,6 @@ const DevisPageClient = () => {
     }
   };
 
-  const selectedServiceTitles = formData.serviceSlugs
-    .map((slug) => devisServices.find((s) => s.slug === slug)?.title || slug)
-    .join(", ");
-  const selectedProperty = propertyTypes.find((p) => p.value === formData.propertyType);
-
   return (
     <Layout>
         <PageHero
@@ -201,7 +185,7 @@ const DevisPageClient = () => {
             {/* Form Content */}
             <div>
                 {/* ── Progress Bar ── */}
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="mb-10">
+                <motion.div initial={{ opacity: 1, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="mb-10">
                   <div className="flex items-center justify-between mb-6">
                     {stepsMeta.map((s, i) => {
                       const Icon = s.icon;

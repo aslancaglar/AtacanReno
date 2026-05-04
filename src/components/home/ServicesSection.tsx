@@ -11,7 +11,7 @@ const ServicesSection = () => {
     <section id="services" className="py-20 lg:py-28 bg-surface-container-low">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -27,7 +27,7 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <motion.div
               key={service.slug}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}

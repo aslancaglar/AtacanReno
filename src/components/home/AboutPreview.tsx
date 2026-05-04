@@ -12,7 +12,7 @@ const AboutPreview = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(380px,520px)_minmax(0,1fr)] gap-8 lg:gap-12 items-center">
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -29,7 +29,7 @@ const AboutPreview = () => {
             </div>
             {/* Badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 1, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
@@ -42,7 +42,7 @@ const AboutPreview = () => {
 
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -71,7 +71,7 @@ const AboutPreview = () => {
               ].map((item, i) => (
                 <motion.li
                   key={item}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1, ease: "easeOut" }}
@@ -89,7 +89,7 @@ const AboutPreview = () => {
               {certs.map((c, i) => (
                 <motion.div
                   key={c.alt}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 + i * 0.1, ease: "easeOut" }}

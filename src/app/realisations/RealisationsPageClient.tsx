@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import Layout from "@/components/Layout";
@@ -86,7 +86,7 @@ const RealisationsPageClient = () => {
                   return (
                     <motion.div
                       key={`${project.title}-${i}`}
-                      initial={{ opacity: 0, y: 40 }}
+                      initial={{ opacity: 1, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.9 }}
                       viewport={{ once: true, amount: 0.2 }}

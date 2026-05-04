@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useQuery } from "convex/react";
 import SectionHeader from "@/components/SectionHeader";
 import { api } from "../../../convex/_generated/api";
@@ -53,7 +53,7 @@ const RealisationsPreview = () => {
           description="Découvrez nos projets de rénovation réalisés à Nancy et ses environs. Chaque chantier reflète notre savoir-faire et notre souci du détail."
         />
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -83,7 +83,7 @@ const RealisationsPreview = () => {
               return (
                 <motion.div
                   key={`${project.title}-${i}`}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   viewport={{ once: true, amount: 0.2 }}
@@ -122,7 +122,7 @@ const RealisationsPreview = () => {
           </MasonryGrid>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}

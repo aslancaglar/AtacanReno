@@ -9,7 +9,7 @@ const CTASection = () => {
     <section id="contact" className="bg-primary py-20 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8 text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -19,7 +19,7 @@ const CTASection = () => {
           espace de vie ?
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -28,7 +28,7 @@ const CTASection = () => {
           Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 1, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
