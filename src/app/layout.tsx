@@ -145,7 +145,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang="fr" className={manrope.variable}>
+    <html lang="fr" className={manrope.variable} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
