@@ -75,8 +75,8 @@ export default async function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 48.6921,
-      longitude: 6.1844,
+      latitude: 48.5749693291545,
+      longitude: 6.183951325162242,
     },
     areaServed: [
       { "@type": "City", name: "Nancy" },
