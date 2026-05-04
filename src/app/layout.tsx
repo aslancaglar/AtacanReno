@@ -64,7 +64,7 @@ export default async function RootLayout({
     description: "Spécialiste en rénovation intérieure à Nancy depuis plus de 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles.",
     url: "https://atcrenovation.com",
     telephone: "+33 6 12 34 56 78",
-    email: "contact@atcrenovation.com",
+    email: "atacanch@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "123 Rue de Nancy",
