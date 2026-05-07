@@ -125,10 +125,10 @@ const AboutPageClient = () => {
               <Image
                 src="/images/AboutAtcReno.jpg?v=2"
                 alt="Fondateur d'ATC Rénovation"
-                width={640}
-                height={800}
+                width={800}
+                height={1200}
                 sizes="(max-width: 768px) 100vw, 520px"
-                className="rounded-2xl object-cover w-full max-w-md aspect-[3/4] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
+                className="rounded-2xl w-full max-w-md h-auto shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
               />
               <motion.div
                 initial={{ opacity: 1, scale: 0.95 }}
