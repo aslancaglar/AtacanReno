@@ -101,7 +101,7 @@ const TestimonialsSection = () => {
   }, [carouselApi, isHovered]);
 
   return (
-    <section className="py-20 lg:py-28 bg-surface-container-low overflow-hidden">
+    <section className="py-20 lg:py-28 bg-surface-container-low overflow-hidden" suppressHydrationWarning>
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           eyebrow="Témoignages"
@@ -113,6 +113,7 @@ const TestimonialsSection = () => {
           className="relative group/carousel"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          suppressHydrationWarning
         >
           <Carousel
             setApi={setCarouselApi}

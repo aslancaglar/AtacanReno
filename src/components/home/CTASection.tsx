@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const CTASection = () => {
   return (
-    <section id="contact" className="bg-primary py-20 lg:py-24">
-      <div className="container mx-auto px-4 lg:px-8 text-center">
+    <section id="contact" className="bg-primary py-20 lg:py-24" suppressHydrationWarning>
+      <div className="container mx-auto px-4 lg:px-8 text-center" suppressHydrationWarning>
         <motion.h2
           initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}

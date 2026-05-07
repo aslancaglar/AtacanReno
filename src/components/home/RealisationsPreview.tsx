@@ -45,7 +45,7 @@ const RealisationsPreview = () => {
   const displayedProjects = filtered.slice(0, PREVIEW_LIMIT);
 
   return (
-    <section id="realisations" className="py-20 lg:py-28">
+    <section id="realisations" className="py-20 lg:py-28" suppressHydrationWarning>
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           eyebrow="Portfolio"
@@ -60,7 +60,7 @@ const RealisationsPreview = () => {
           className="mb-12 -mt-6"
         >
           {/* Filter chips */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2" suppressHydrationWarning>
             {categories.map((cat) => (
               <button
                 key={cat}

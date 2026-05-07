@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-surface-container-low">
+    <section id="services" className="py-20 lg:py-28 bg-surface-container-low" suppressHydrationWarning>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 1, y: 12 }}
@@ -23,7 +23,7 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" suppressHydrationWarning>
           {services.map((service, i) => (
             <motion.div
               key={service.slug}

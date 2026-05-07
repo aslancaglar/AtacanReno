@@ -13,8 +13,8 @@ const Footer = () => {
   const companyInfo = usePreloadedQuery(preloadedInfo!);
 
   return (
-    <footer className="bg-nav text-primary-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-12">
+    <footer className="bg-nav text-primary-foreground" suppressHydrationWarning>
+      <div className="container mx-auto px-4 lg:px-8 py-12" suppressHydrationWarning>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-1">
             <div className="flex flex-col items-start mb-4 leading-tight">

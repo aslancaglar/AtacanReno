@@ -7,9 +7,9 @@ import { certs } from "@/data/certifications";
 
 const AboutPreview = () => {
   return (
-    <section id="a-propos" className="py-20 lg:py-28">
+    <section id="a-propos" className="py-20 lg:py-28" suppressHydrationWarning>
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(380px,520px)_minmax(0,1fr)] gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(380px,520px)_minmax(0,1fr)] gap-8 lg:gap-12 items-center" suppressHydrationWarning>
           {/* Image */}
           <motion.div
             initial={{ opacity: 1, y: 20 }}

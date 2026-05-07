@@ -13,7 +13,7 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section className="py-10 lg:py-14">
+    <section className="py-10 lg:py-14" suppressHydrationWarning>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 1, y: 12 }}
@@ -28,7 +28,7 @@ const PartnersSection = () => {
           <h2 className="text-3xl lg:text-4xl font-extrabold">Nos Partenaires</h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center" suppressHydrationWarning>
           {partners.map((partner, i) => (
             <motion.div
               key={partner.name}

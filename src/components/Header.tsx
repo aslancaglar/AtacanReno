@@ -63,8 +63,8 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-4 xl:px-8 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50" suppressHydrationWarning>
+      <div className="container mx-auto px-4 xl:px-8 py-4" suppressHydrationWarning>
         <div className={`flex items-center justify-between rounded-full px-6 py-5 xl:py-3 transition-all duration-300 bg-primary overflow-hidden ${scrolled ? "shadow-lg" : "xl:bg-transparent"}`}>
           <Link href="/" className="flex flex-col items-start shrink-0 leading-tight group">
             <span className="text-lg font-bold tracking-tight text-white group-hover:text-secondary transition-colors">ATC Rénovation</span>

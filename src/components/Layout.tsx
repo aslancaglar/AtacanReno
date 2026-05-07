@@ -15,7 +15,7 @@ interface LayoutProps {
 
 const Layout = ({ children, hideHeader, hideFooter, hideWhatsApp, hideStickyCTA }: LayoutProps) => {
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden relative">
+    <div className="flex flex-col min-h-screen overflow-x-hidden relative" suppressHydrationWarning>
       {!hideHeader && <Header />}
       <main className="flex-1">{children}</main>
       {!hideFooter && <Footer />}

@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[70vh] xl:min-h-[65vh] max-h-[900px] flex items-end md:items-center overflow-hidden">
-      <div className="absolute inset-0">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-[75vh] lg:min-h-[70vh] xl:min-h-[65vh] max-h-[900px] flex items-end md:items-center overflow-hidden" suppressHydrationWarning>
+      <div className="absolute inset-0" suppressHydrationWarning>
         <Image
           src="/images/hero-bg.jpg"
           alt="Rénovation intérieure — ATC Rénovation Nancy"
@@ -18,7 +18,7 @@ const HeroSection = () => {
           className="object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/65" suppressHydrationWarning />
 
       <div className="relative container mx-auto px-4 lg:px-8 pb-14 md:pb-32 lg:pb-32 pt-28 md:pt-32 lg:pt-40">
         <div className="max-w-2xl">
