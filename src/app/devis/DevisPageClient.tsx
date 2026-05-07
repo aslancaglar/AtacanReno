@@ -169,7 +169,7 @@ const DevisPageClient = () => {
   };
 
   return (
-    <Layout>
+    <Layout hideStickyCTA>
         <PageHero
           backgroundImage="/images/hero-bg-2.jpg"
           breadcrumbItems={[{ label: "Accueil", href: "/" }, { label: "Demande de devis" }]}
