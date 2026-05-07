@@ -234,17 +234,4 @@ const PeintureDecorationPageClient = () => (
   </Layout>
 );
  
-export default PeintureDecorationPageClient;   </div>
-              <h3 className="text-base font-bold text-nav mb-2">{prestation}</h3>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* ─── CTA ─── */}
-    <CTASection />
-  </Layout>
-);
-
 export default PeintureDecorationPageClient;
