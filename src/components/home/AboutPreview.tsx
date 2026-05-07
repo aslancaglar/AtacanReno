@@ -16,16 +16,15 @@ const AboutPreview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex justify-center lg:justify-start relative"
+            className="flex justify-center lg:justify-start relative w-full h-full"
           >
-            <div className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-[0px_20px_40px_rgba(52,48,38,0.06)]">
+            <div className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-full min-h-[500px] rounded-3xl overflow-hidden shadow-[0px_20px_40px_rgba(52,48,38,0.1)]">
               <Image
                 src="/images/AboutAtcReno.jpg?v=2"
                 alt="Fondateur d'ATC Rénovation"
-                width={800}
-                height={1200}
-                sizes="(max-width: 768px) 100vw, 520px"
-                className="rounded-2xl w-full max-w-md h-auto shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 600px"
               />
             </div>
             {/* Badge */}
