@@ -13,7 +13,8 @@ function LazyMap({ address }: { address: string }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setSrc(`https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=14&ie=UTF8&iwloc=&output=embed`);
+          const query = encodeURIComponent(`ATC Rénovation, ${address}`);
+          setSrc(`https://maps.google.com/maps?q=${query}&t=&z=14&ie=UTF8&iwloc=&output=embed`);
           observer.disconnect();
         }
       },
@@ -38,7 +39,7 @@ function LazyMap({ address }: { address: string }) {
         />
       ) : (
         <a
-          href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
+          href={`https://maps.google.com/?q=${encodeURIComponent(`ATC Rénovation, ${address}`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-full h-full bg-surface-container text-muted-foreground text-sm gap-2 hover:text-primary transition-colors"
@@ -59,6 +60,7 @@ import {
   FileText,
   HardHat,
   CalendarCheck,
+  ChevronDown,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -68,12 +70,6 @@ import { usePreloadedQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const getContactInfo = (companyDetails: any) => [
   {
@@ -299,23 +295,21 @@ const ContactPageClient = () => {
               </div>
             </div>
 
-            <div className="scroll-fade-in">
-              <Accordion type="single" collapsible className="space-y-3">
-                {faqs.map((faq, i) => (
-                  <AccordionItem
-                    key={i}
-                    value={`faq-${i}`}
-                    className="bg-card rounded-2xl border-none px-6 shadow-sm"
-                  >
-                    <AccordionTrigger className="text-left font-bold hover:no-underline py-5 text-nav">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+            <div className="scroll-fade-in space-y-3">
+              {faqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group bg-card rounded-2xl px-6 shadow-sm"
+                >
+                  <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-bold py-5 text-nav text-left">
+                    <span>{faq.question}</span>
+                    <ChevronDown className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="text-sm text-muted-foreground leading-relaxed pb-5">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </div>

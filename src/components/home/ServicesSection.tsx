@@ -53,7 +53,7 @@ const ServicesSection = () => {
                     {service.title}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    {service.shortDescription}
+                    {service.homeDescription}
                   </p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
                     En savoir plus

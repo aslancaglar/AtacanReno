@@ -90,7 +90,7 @@ const ServicesPageClient = () => {
                     </h2>
 
                     <p className="text-muted-foreground leading-relaxed mb-8">
-                      {service.description}
+                      {service.shortDescription}
                     </p>
 
                     {/* Prestations list */}

@@ -1,8 +1,6 @@
 "use client";
 
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner";
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/home/HeroSection";
 import StatsSection from "@/components/home/StatsSection";
@@ -14,9 +12,8 @@ import PartnersSection from "@/components/home/PartnersSection";
 import CTASection from "@/components/home/CTASection";
 
 const HomeClient = () => (
-  <TooltipProvider>
+  <>
     <Toaster />
-    <Sonner />
     <Layout>
       <HeroSection />
       <StatsSection />
@@ -27,7 +24,7 @@ const HomeClient = () => (
       <PartnersSection />
       <CTASection />
     </Layout>
-  </TooltipProvider>
+  </>
 );
 
 export default HomeClient;

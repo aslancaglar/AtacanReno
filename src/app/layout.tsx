@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://atcrenovation.com"),
   title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
   description:
-    "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
+    "ATC Rénovation, artisan RGE à Nancy depuis 20 ans : peinture, isolation, plâtrerie, sols, aménagement de combles. Devis gratuit sous 48h.",
   authors: [{ name: "ATC Rénovation" }],
   openGraph: {
     type: "website",
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     siteName: "ATC Rénovation",
     title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
     description:
-      "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
+      "ATC Rénovation, artisan RGE à Nancy depuis 20 ans : peinture, isolation, plâtrerie, sols, aménagement de combles. Devis gratuit sous 48h.",
     images: [
       {
-        url: "/images/service-platrerie.jpg",
+        url: "/images/hero-bg.jpg",
         width: 1200,
         height: 630,
-        alt: "ATC Rénovation - Travaux de plâtrerie et rénovation à Nancy",
+        alt: "ATC Rénovation — Spécialiste en rénovation intérieure à Nancy",
       },
     ],
   },
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ATC Rénovation — Rénovation Intérieure à Nancy | Artisan RGE",
     description:
-      "ATC Rénovation, spécialiste en rénovation intérieure à Nancy depuis 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles. Devis gratuit, artisan certifié.",
-    images: ["/images/service-platrerie.jpg"],
+      "ATC Rénovation, artisan RGE à Nancy depuis 20 ans : peinture, isolation, plâtrerie, sols, aménagement de combles. Devis gratuit sous 48h.",
+    images: ["/images/hero-bg.jpg"],
   },
   other: {
     "geo.region": "FR-54",
@@ -147,8 +147,10 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://precise-walrus-432.eu-west-1.convex.cloud" />
         <link rel="preconnect" href="https://precise-walrus-432.eu-west-1.convex.cloud" crossOrigin="anonymous" />
         <script
+          id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          suppressHydrationWarning
         />
         {/* Google Tag (gtag.js) */}
         <Script
