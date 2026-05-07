@@ -125,7 +125,7 @@ const PlatrerieFauxPlafondsPageClient = () => (
             initial={{ opacity: 1, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-white/80 text-lg leading-relaxed max-w-lg"
+            className="text-white/80 text-base leading-relaxed max-w-lg"
           >
             {shortDescription}
           </motion.p>
@@ -148,58 +148,63 @@ const PlatrerieFauxPlafondsPageClient = () => (
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-8">{title}</h2>
 
-            {/* Image between title and text */}
-            <div className="relative mb-12">
-              <Image
-                src={imageUrl}
-                alt={title}
-                width={1200}
-                height={800}
-                priority
-                className="rounded-3xl object-cover w-full aspect-[16/9] shadow-[0px_20px_40px_rgba(52,48,38,0.1)]"
-              />
-              <motion.div
-                initial={{ opacity: 1, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-4 -right-4 lg:-right-6 bg-primary text-primary-foreground rounded-2xl px-5 py-4 shadow-lg text-center hidden sm:block"
-              >
-                <Wrench className="w-6 h-6 mx-auto mb-1 text-white" />
-                <span className="block text-[10px] font-semibold uppercase tracking-wider text-white/60">
-                  Spécialiste
-                </span>
-              </motion.div>
-            </div>
-
-            <div className="space-y-6">
-              {description.split("\n\n").map((paragraph, index) => {
-                const isHeading =
-                  paragraph.startsWith("**") &&
-                  paragraph.endsWith("**") &&
-                  !paragraph.includes(".") &&
-                  paragraph.length < 100;
-
-                if (isHeading) {
-                  return (
-                    <h3
-                      key={index}
-                      className="text-2xl font-bold text-nav mt-12 mb-6 first:mt-0 flex items-center gap-3"
-                    >
-                      <span className="w-8 h-[2px] bg-secondary rounded-full" />
-                      {paragraph.replace(/\*\*/g, "")}
-                    </h3>
-                  );
-                }
-                return (
-                  <p
-                    key={index}
-                    className="text-muted-foreground leading-relaxed text-lg whitespace-pre-line"
+            <div className="relative">
+              {/* Floated Image for text wrap */}
+              <div className="float-left w-full lg:w-1/2 lg:mr-10 mb-10 lg:mb-6">
+                <div className="relative">
+                  <Image
+                    src={imageUrl}
+                    alt={title}
+                    width={800}
+                    height={600}
+                    priority
+                    className="rounded-3xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.1)]"
+                  />
+                  <motion.div
+                    initial={{ opacity: 1, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                    className="absolute right-2 sm:-right-4 bottom-2 sm:-bottom-4 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-lg text-center"
                   >
-                    {renderWithBold(paragraph)}
-                  </p>
-                );
-              })}
+                    <Wrench className="w-5 h-5 mx-auto mb-1 text-white" />
+                    <span className="block text-[8px] font-semibold uppercase tracking-wider text-white/60">
+                      Spécialiste
+                    </span>
+                  </motion.div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                {description.split("\n\n").map((paragraph, index) => {
+                  const isHeading =
+                    paragraph.startsWith("**") &&
+                    paragraph.endsWith("**") &&
+                    !paragraph.includes(".") &&
+                    paragraph.length < 100;
+
+                  if (isHeading) {
+                    return (
+                      <h3
+                        key={index}
+                        className="text-2xl font-bold text-nav mt-12 mb-6 first:mt-0 flex items-center gap-3 clear-none"
+                      >
+                        <span className="w-8 h-[2px] bg-secondary rounded-full" />
+                        {paragraph.replace(/\*\*/g, "")}
+                      </h3>
+                    );
+                  }
+                  return (
+                    <p
+                      key={index}
+                      className="text-muted-foreground leading-relaxed text-base whitespace-pre-line"
+                    >
+                      {renderWithBold(paragraph)}
+                    </p>
+                  );
+                })}
+              </div>
+              <div className="clear-both" />
             </div>
           </motion.div>
         </div>
@@ -220,7 +225,7 @@ const PlatrerieFauxPlafondsPageClient = () => (
             Ce que nous faisons
           </span>
           <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">Nos prestations</h2>
-          <p className="text-muted-foreground max-w-2xl lg:max-w-none mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-base max-w-2xl lg:max-w-none mx-auto leading-relaxed">
             Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
           </p>
         </motion.div>
@@ -232,12 +237,12 @@ const PlatrerieFauxPlafondsPageClient = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: j * 0.08, ease: "easeOut" }}
-              className="bg-card rounded-2xl p-6 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300"
+              className="bg-card rounded-2xl p-8 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center shrink-0 mb-4">
-                <Check className="w-5 h-5 text-secondary" />
+              <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center shrink-0 mb-6">
+                <Check className="w-6 h-6 text-secondary" />
               </div>
-              <h3 className="text-base font-bold text-nav mb-2">{prestation}</h3>
+              <h3 className="text-base font-bold text-nav leading-snug">{prestation}</h3>
             </motion.div>
           ))}
         </div>
