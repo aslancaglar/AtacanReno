@@ -125,7 +125,7 @@ const Header = () => {
               href="/devis"
               className="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-secondary-foreground text-sm font-bold rounded-full px-7 py-3 transition-colors"
             >
-              Demande de devis
+              Demander un devis
             </Link>
           </div>
 
@@ -243,7 +243,7 @@ const Header = () => {
 
             <Link href="/devis" onClick={() => setMobileOpen(false)} className="mt-2 block">
               <span className="inline-flex items-center justify-center bg-secondary text-secondary-foreground text-sm font-bold rounded-full px-5 py-3 w-full text-center shadow-sm">
-                Demande de devis
+                Demander un devis
               </span>
             </Link>
           </nav>

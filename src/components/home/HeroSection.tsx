@@ -40,7 +40,7 @@ const HeroSection = () => {
           >
             <Link href="/devis">
               <Button className="btn-pill bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-6 text-base font-bold">
-                Demande de devis
+                Demander un devis
               </Button>
             </Link>
             <Link href="/realisations">
