@@ -123,7 +123,7 @@ const AboutPageClient = () => {
               className="relative flex justify-center"
             >
               <Image
-                src="/images/AboutAtcReno.jpg"
+                src="/images/AboutAtcReno.jpg?v=2"
                 alt="Fondateur d'ATC Rénovation"
                 width={640}
                 height={800}
