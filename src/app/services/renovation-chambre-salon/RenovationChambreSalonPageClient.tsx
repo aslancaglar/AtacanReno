@@ -1,32 +1,58 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { Check, Home } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/home/CTASection";
 import Image from "next/image";
-
+ 
 /* ───────────────────── Data ───────────────────── */
-
+ 
 const title = "Rénovation de Chambre & Salon";
 const shortTitle = "Chambre & Salon";
 const seoTitle = "Rénovation de Chambre & Salon à Nancy";
 const imageUrl = "/images/service-salon.jpg";
 const shortDescription = "Modernisez vos pièces de vie avec des finitions soignées et un aménagement sur mesure.";
-const description =
-  "Une chambre ou un salon rénové, c'est plus qu'une pièce repeinte : c'est un espace repensé pour mieux vivre, mieux dormir, mieux recevoir. ATC Rénovation prend en charge la rénovation complète de vos pièces de vie à Nancy avec une approche sur mesure : nous écoutons votre quotidien, vos contraintes, vos envies, puis nous proposons un projet cohérent qui assemble tous les corps de métier nécessaires. Pour une chambre, nous traitons en priorité l'acoustique et la lumière. Cela peut signifier un doublage phonique sur la cloison mitoyenne, un faux plafond avec spots LED encastrés à intensité variable, un parquet contrecollé chêne pour la chaleur visuelle, et une peinture mate dans des teintes apaisantes. Nous concevons aussi des rangements intégrés : têtes de lit avec niches, dressing sur mesure derrière des portes coulissantes, qui gagnent de la place sans alourdir l'espace. Pour un salon, l'enjeu est différent : créer un volume généreux, lumineux, qui structure la circulation et met en valeur le mobilier. Nous abattons les cloisons non porteuses pour ouvrir la cuisine, posons des sols à grande lame qui fluidifient la perception, créons des niches lumineuses ou des bibliothèques sur mesure, installons des éclairages multipoints (général, d'accentuation, d'ambiance) qui transforment radicalement l'atmosphère selon les moments de la journée. Notre intervention couvre la peinture, les sols, les cloisons, les faux plafonds, l'éclairage, les rangements sur mesure et la décoration finale. Nous coordonnons l'ensemble pour vous éviter de gérer plusieurs artisans, et nous tenons les délais grâce à un planning précis communiqué dès la signature du devis. Nos chantiers chambre ou salon durent en moyenne 2 à 3 semaines selon l'ampleur des travaux.";
+const description = `**Une chambre ou un salon rénové, c'est un espace repensé pour mieux vivre.** Chez **ATC Rénovation**, nous prenons en charge la transformation complète de vos pièces de vie à **Nancy** avec une approche sur mesure.
+ 
+**Confort Acoustique et Lumineux**
+ 
+Pour vos chambres, nous privilégions le calme et la sérénité. Nous installons des **doublages phoniques**, des faux plafonds avec éclairage LED variable et des parquets chaleureux. Nous concevons également des **rangements intégrés** et des dressings sur mesure pour libérer l'espace.
+ 
+**Espaces de Vie Ouverts et Modernes**
+ 
+Dans le salon, l'objectif est de créer du volume et de la lumière. Nous réalisons l'ouverture de cloisons, la pose de sols fluides et la création de **bibliothèques sur mesure**. Notre équipe coordonne tous les corps d'état (peinture, électricité, sol) pour vous garantir un résultat harmonieux.
+ 
+**Un Accompagnement de A à Z**
+ 
+De la conception aux finitions, nous sommes votre interlocuteur unique. Un chantier de rénovation de pièce de vie dure généralement **2 à 3 semaines**. Nous nous engageons sur un planning précis et une propreté exemplaire tout au long des travaux.`;
+ 
 const prestations = [
-  "Peinture et décoration murale",
-  "Pose de revêtements de sol",
-  "Création de cloisons",
-  "Rangements sur mesure",
-  "Faux plafonds et éclairage",
-  "Décoration et finitions",
+  "Peinture & Décoration murale",
+  "Pose de parquets & Sols",
+  "Rangements & Dressings sur mesure",
+  "Éclairage & Faux plafonds",
 ];
-
+ 
+/* ───────────────────── Helper ───────────────────── */
+ 
+const renderWithBold = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={i} className="text-nav font-bold">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+};
+ 
 /* ───────────────────── Component ───────────────────── */
-
+ 
 const RenovationChambreSalonPageClient = () => (
   <Layout>
     {/* ─── Page Hero ─── */}
@@ -79,18 +105,18 @@ const RenovationChambreSalonPageClient = () => (
             initial={{ opacity: 1, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-white/80 text-lg leading-relaxed max-w-lg"
+            className="text-white/80 text-base leading-relaxed max-w-lg"
           >
             {shortDescription}
           </motion.p>
         </div>
       </div>
     </section>
-
+ 
     {/* ─── Description Section ─── */}
     <section className="py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
           <motion.div
             initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,49 +126,71 @@ const RenovationChambreSalonPageClient = () => (
             <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
               Notre expertise
             </span>
-            <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">{title}</h2>
-            <div className="space-y-6">
-              {description.split("\n\n").map((paragraph, index) => (
-                <p key={index} className="text-muted-foreground leading-relaxed text-base whitespace-pre-line">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 1, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          >
+            <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-8">{title}</h2>
+ 
             <div className="relative">
-              <Image
-                src={imageUrl}
-                alt={title}
-                width={640}
-                height={480}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
-              />
-              <motion.div
-                initial={{ opacity: 1, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-4 -right-4 lg:-right-6 bg-primary text-primary-foreground rounded-2xl px-5 py-4 shadow-lg text-center"
-              >
-                <Home className="w-6 h-6 mx-auto mb-1" />
-                <span className="block text-[10px] font-semibold uppercase tracking-wider text-white/60">
-                  Spécialiste
-                </span>
-              </motion.div>
+              {/* Floated Image for text wrap */}
+              <div className="float-right w-full lg:w-1/2 lg:ml-10 mb-10 lg:mb-6">
+                <div className="relative">
+                  <Image
+                    src={imageUrl}
+                    alt={title}
+                    width={800}
+                    height={600}
+                    priority
+                    className="rounded-3xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.1)]"
+                  />
+                  <motion.div
+                    initial={{ opacity: 1, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                    className="absolute left-2 sm:-left-4 bottom-2 sm:-bottom-4 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-lg text-center"
+                  >
+                    <Home className="w-5 h-5 mx-auto mb-1 text-white" />
+                    <span className="block text-[8px] font-semibold uppercase tracking-wider text-white/60">
+                      Spécialiste
+                    </span>
+                  </motion.div>
+                </div>
+              </div>
+ 
+              <div className="space-y-6">
+                {description.split("\n\n").map((paragraph, index) => {
+                  const isHeading =
+                    paragraph.startsWith("**") &&
+                    paragraph.endsWith("**") &&
+                    !paragraph.includes(".") &&
+                    paragraph.length < 100;
+ 
+                  if (isHeading) {
+                    return (
+                      <h3
+                        key={index}
+                        className="text-2xl font-bold text-nav mt-12 mb-6 first:mt-0 flex items-center gap-3 clear-none"
+                      >
+                        <span className="w-8 h-[2px] bg-secondary rounded-full" />
+                        {paragraph.replace(/\*\*/g, "")}
+                      </h3>
+                    );
+                  }
+                  return (
+                    <p
+                      key={index}
+                      className="text-muted-foreground leading-relaxed text-base whitespace-pre-line"
+                    >
+                      {renderWithBold(paragraph)}
+                    </p>
+                  );
+                })}
+              </div>
+              <div className="clear-both" />
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-
+ 
     {/* ─── Prestations Section ─── */}
     <section className="py-20 lg:py-28 bg-surface-container-low">
       <div className="container mx-auto px-4 lg:px-8">
@@ -157,7 +205,7 @@ const RenovationChambreSalonPageClient = () => (
             Ce que nous faisons
           </span>
           <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">Nos prestations</h2>
-          <p className="text-muted-foreground max-w-2xl lg:max-w-none mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-base max-w-2xl lg:max-w-none mx-auto leading-relaxed">
             Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
           </p>
         </motion.div>
@@ -169,21 +217,21 @@ const RenovationChambreSalonPageClient = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: j * 0.08, ease: "easeOut" }}
-              className="bg-card rounded-2xl p-6 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300"
+              className="bg-card rounded-2xl p-8 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center shrink-0 mb-4">
-                <Check className="w-5 h-5 text-secondary" />
+              <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center shrink-0 mb-6">
+                <Check className="w-6 h-6 text-secondary" />
               </div>
-              <h3 className="text-base font-bold text-nav mb-2">{prestation}</h3>
+              <h3 className="text-base font-bold text-nav leading-snug">{prestation}</h3>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-
+ 
     {/* ─── CTA ─── */}
     <CTASection />
   </Layout>
 );
-
+ 
 export default RenovationChambreSalonPageClient;

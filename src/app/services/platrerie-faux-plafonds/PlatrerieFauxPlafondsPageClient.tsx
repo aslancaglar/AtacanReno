@@ -150,7 +150,7 @@ const PlatrerieFauxPlafondsPageClient = () => (
 
             <div className="relative">
               {/* Floated Image for text wrap */}
-              <div className="float-left w-full lg:w-1/2 lg:mr-10 mb-10 lg:mb-6">
+              <div className="float-right w-full lg:w-1/2 lg:ml-10 mb-10 lg:mb-6">
                 <div className="relative">
                   <Image
                     src={imageUrl}
@@ -165,7 +165,7 @@ const PlatrerieFauxPlafondsPageClient = () => (
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                    className="absolute right-2 sm:-right-4 bottom-2 sm:-bottom-4 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-lg text-center"
+                    className="absolute left-2 sm:-left-4 bottom-2 sm:-bottom-4 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-lg text-center"
                   >
                     <Wrench className="w-5 h-5 mx-auto mb-1 text-white" />
                     <span className="block text-[8px] font-semibold uppercase tracking-wider text-white/60">

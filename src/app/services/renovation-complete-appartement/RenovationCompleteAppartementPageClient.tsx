@@ -1,32 +1,58 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { Check, Building2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/home/CTASection";
 import Image from "next/image";
-
+ 
 /* ───────────────────── Data ───────────────────── */
-
+ 
 const title = "Rénovation Complète d'Appartement";
 const shortTitle = "Appartement Complet";
 const seoTitle = "Rénovation Complète d'Appartement à Nancy";
 const imageUrl = "/images/service-appart.jpg";
 const shortDescription = "Prise en charge de A à Z de votre projet de rénovation, tous corps de métier réunis.";
-const description =
-  "La rénovation complète d'appartement est notre cœur de métier à Nancy. Que vous soyez propriétaire occupant en quête d'un cadre de vie modernisé, investisseur préparant une mise en location, ou primo-accédant ayant acheté un bien à rafraîchir, ATC Rénovation prend en charge l'intégralité du projet en clé en main : un seul interlocuteur, tous les corps de métier coordonnés, un planning maîtrisé. Notre démarche commence par une visite technique approfondie. Nous relevons les contraintes (configuration, structure porteuse, réseaux existants, règlement de copropriété), évaluons l'état des installations électriques et de plomberie selon les normes NF C 15-100 actuelles, et discutons avec vous de l'usage futur de chaque pièce. À partir de là, nous établissons un projet complet : plans, calepinages, choix des matériaux, planning et budget détaillé sous 48h. La coordination des corps de métier est la clé d'un chantier réussi. Démolition, plomberie, électricité, plâtrerie, menuiserie, revêtements de sols, faïence, peinture : chacun de ces métiers doit intervenir au bon moment, dans le bon ordre, sans ralentir les autres. Nous gérons le séquencement complet et ne libérons un poste qu'une fois la finition validée. Vous recevez un planning hebdomadaire et une visite de suivi tous les 7 à 10 jours. Notre rénovation clé en main inclut systématiquement : la dépose des éléments existants, la mise aux normes électriques (tableau, prises, interrupteurs, éclairages), la rénovation complète de la salle de bains et de la cuisine si nécessaire, le remplacement des sols, le rafraîchissement total des peintures et la pose de menuiseries intérieures neuves. À la livraison, l'appartement est nettoyé, les déchets évacués et chaque détail vérifié avec vous lors d'une réception finale.";
+const description = `**La rénovation complète est notre cœur de métier.** Que vous soyez un particulier ou un investisseur à **Nancy**, **ATC Rénovation** prend en charge l'intégralité de votre projet avec une solution clé en main.
+ 
+**Une Gestion de Projet Centralisée**
+ 
+Finis les soucis de coordination entre artisans. Nous sommes votre **interlocuteur unique** et gérons l'ensemble des corps d'état : démolition, électricité, plomberie, plâtrerie et finitions. Nous établissons un planning précis et nous nous y tenons.
+ 
+**Mise aux Normes et Modernisation**
+ 
+Chaque projet débute par une mise en conformité technique rigoureuse. Nous assurons la **remise aux normes électriques (NF C 15-100)**, la rénovation complète des réseaux de plomberie, et l'optimisation thermique de votre logement pour un confort durable et une valeur immobilière accrue.
+ 
+**Des Finitions Haut de Gamme**
+ 
+Notre exigence se porte sur chaque détail : du choix des matériaux à la qualité des peintures et des revêtements de sols. À la livraison, votre appartement est prêt à être habité, nettoyé et vérifié selon nos standards de qualité les plus élevés.`;
+ 
 const prestations = [
-  "Diagnostic et conseil personnalisé",
-  "Coordination de tous les corps de métier",
-  "Plomberie et électricité",
-  "Revêtements sols et murs",
-  "Menuiserie intérieure",
-  "Peinture et finitions complètes",
+  "Rénovation complète clé en main",
+  "Mise aux normes électriques & plomberie",
+  "Optimisation de l'espace & cloisons",
+  "Finitions intérieures premium",
 ];
-
+ 
+/* ───────────────────── Helper ───────────────────── */
+ 
+const renderWithBold = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={i} className="text-nav font-bold">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+};
+ 
 /* ───────────────────── Component ───────────────────── */
-
+ 
 const RenovationCompleteAppartementPageClient = () => (
   <Layout>
     {/* ─── Page Hero ─── */}
@@ -79,18 +105,18 @@ const RenovationCompleteAppartementPageClient = () => (
             initial={{ opacity: 1, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-white/80 text-lg leading-relaxed max-w-lg"
+            className="text-white/80 text-base leading-relaxed max-w-lg"
           >
             {shortDescription}
           </motion.p>
         </div>
       </div>
     </section>
-
+ 
     {/* ─── Description Section ─── */}
     <section className="py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
           <motion.div
             initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,49 +126,71 @@ const RenovationCompleteAppartementPageClient = () => (
             <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
               Notre expertise
             </span>
-            <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">{title}</h2>
-            <div className="space-y-6">
-              {description.split("\n\n").map((paragraph, index) => (
-                <p key={index} className="text-muted-foreground leading-relaxed text-base whitespace-pre-line">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 1, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          >
+            <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-8">{title}</h2>
+ 
             <div className="relative">
-              <Image
-                src={imageUrl}
-                alt={title}
-                width={640}
-                height={480}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
-              />
-              <motion.div
-                initial={{ opacity: 1, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-4 -right-4 lg:-right-6 bg-primary text-primary-foreground rounded-2xl px-5 py-4 shadow-lg text-center"
-              >
-                <Building2 className="w-6 h-6 mx-auto mb-1" />
-                <span className="block text-[10px] font-semibold uppercase tracking-wider text-white/60">
-                  Spécialiste
-                </span>
-              </motion.div>
+              {/* Floated Image for text wrap */}
+              <div className="float-right w-full lg:w-1/2 lg:ml-10 mb-10 lg:mb-6">
+                <div className="relative">
+                  <Image
+                    src={imageUrl}
+                    alt={title}
+                    width={800}
+                    height={600}
+                    priority
+                    className="rounded-3xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.1)]"
+                  />
+                  <motion.div
+                    initial={{ opacity: 1, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                    className="absolute left-2 sm:-left-4 bottom-2 sm:-bottom-4 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-lg text-center"
+                  >
+                    <Building2 className="w-5 h-5 mx-auto mb-1 text-white" />
+                    <span className="block text-[8px] font-semibold uppercase tracking-wider text-white/60">
+                      Spécialiste
+                    </span>
+                  </motion.div>
+                </div>
+              </div>
+ 
+              <div className="space-y-6">
+                {description.split("\n\n").map((paragraph, index) => {
+                  const isHeading =
+                    paragraph.startsWith("**") &&
+                    paragraph.endsWith("**") &&
+                    !paragraph.includes(".") &&
+                    paragraph.length < 100;
+ 
+                  if (isHeading) {
+                    return (
+                      <h3
+                        key={index}
+                        className="text-2xl font-bold text-nav mt-12 mb-6 first:mt-0 flex items-center gap-3 clear-none"
+                      >
+                        <span className="w-8 h-[2px] bg-secondary rounded-full" />
+                        {paragraph.replace(/\*\*/g, "")}
+                      </h3>
+                    );
+                  }
+                  return (
+                    <p
+                      key={index}
+                      className="text-muted-foreground leading-relaxed text-base whitespace-pre-line"
+                    >
+                      {renderWithBold(paragraph)}
+                    </p>
+                  );
+                })}
+              </div>
+              <div className="clear-both" />
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-
+ 
     {/* ─── Prestations Section ─── */}
     <section className="py-20 lg:py-28 bg-surface-container-low">
       <div className="container mx-auto px-4 lg:px-8">
@@ -157,7 +205,7 @@ const RenovationCompleteAppartementPageClient = () => (
             Ce que nous faisons
           </span>
           <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">Nos prestations</h2>
-          <p className="text-muted-foreground max-w-2xl lg:max-w-none mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-base max-w-2xl lg:max-w-none mx-auto leading-relaxed">
             Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
           </p>
         </motion.div>
@@ -169,21 +217,21 @@ const RenovationCompleteAppartementPageClient = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: j * 0.08, ease: "easeOut" }}
-              className="bg-card rounded-2xl p-6 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300"
+              className="bg-card rounded-2xl p-8 hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center shrink-0 mb-4">
-                <Check className="w-5 h-5 text-secondary" />
+              <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center shrink-0 mb-6">
+                <Check className="w-6 h-6 text-secondary" />
               </div>
-              <h3 className="text-base font-bold text-nav mb-2">{prestation}</h3>
+              <h3 className="text-base font-bold text-nav leading-snug">{prestation}</h3>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-
+ 
     {/* ─── CTA ─── */}
     <CTASection />
   </Layout>
 );
-
+ 
 export default RenovationCompleteAppartementPageClient;
