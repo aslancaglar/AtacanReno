@@ -22,17 +22,12 @@ export const metadata: Metadata = {
   authors: [{ name: "ATC Rénovation" }],
   icons: {
     icon: [
-      { url: "/favicons/favicon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicons/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicons/favicon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/favicons/favicon-96.png", sizes: "96x96", type: "image/png" },
-      { url: "/favicons/favicon-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/favicons/favicon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/favicons/favicon-256.png", sizes: "256x256", type: "image/png" },
+      { url: "/icon1.png", type: "image/png" },
+      { url: "/icon0.svg", type: "image/svg+xml" },
     ],
-    shortcut: "/favicons/favicon-192.png",
-    apple: "/favicons/favicon-180.png",
+    apple: "/apple-icon.png",
   },
+  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -60,6 +55,7 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "FR-54",
     "geo.placename": "Nancy",
+    "apple-mobile-web-app-title": "ATC Rénovation",
   },
 };
 
