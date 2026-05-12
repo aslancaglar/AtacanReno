@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     shortcut: "/favicons/favicon-192.png",
     apple: "/favicons/favicon-180.png",
   },
+  appleWebApp: {
+    title: "ATC Rénovation",
+    statusBarStyle: "default",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
