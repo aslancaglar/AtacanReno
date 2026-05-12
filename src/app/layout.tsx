@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description:
     "ATC Rénovation, artisan RGE à Nancy depuis 20 ans : peinture, isolation, plâtrerie, sols, aménagement de combles. Devis gratuit sous 48h.",
   authors: [{ name: "ATC Rénovation" }],
+  icons: {
+    icon: "/Logoicon.png",
+    shortcut: "/Logoicon.png",
+    apple: "/Logoicon.png",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
