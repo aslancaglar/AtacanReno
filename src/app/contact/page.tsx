@@ -46,6 +46,7 @@ const structuredData = [
       email: "atacanch@gmail.com",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "123 Rue de Nancy",
         addressLocality: "Flavigny-sur-Moselle",
         postalCode: "54630",
         addressCountry: "FR",

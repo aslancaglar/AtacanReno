@@ -11,7 +11,7 @@ export const get = query({
       return {
         email: "contact@atcrenovation.com",
         phone: "06 29 04 72 72",
-        address: "54630 Flavigny-sur-Moselle",
+        address: "123 Rue de Nancy, 54630 Flavigny-sur-Moselle",
         workingHours: "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00",
         whatsappNumber: "0629047272",
         description: "Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.",

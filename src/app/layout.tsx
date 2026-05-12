@@ -78,6 +78,7 @@ export default async function RootLayout({
     email: "atacanch@gmail.com",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "123 Rue de Nancy",
       addressLocality: "Flavigny-sur-Moselle",
       addressRegion: "Grand Est",
       postalCode: "54630",

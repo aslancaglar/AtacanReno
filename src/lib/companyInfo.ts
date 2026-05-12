@@ -1,16 +1,9 @@
-export const PUBLIC_ADDRESS_FALLBACK = "54630 Flavigny-sur-Moselle";
-
-const PLACEHOLDER_STREET_PATTERN = /^123 Rue de Nancy,\s*/i;
+export const PUBLIC_ADDRESS_FALLBACK = "123 Rue de Nancy, 54630 Flavigny-sur-Moselle";
 
 export function getPublicAddress(address?: string) {
   if (!address) return PUBLIC_ADDRESS_FALLBACK;
 
-  const publicAddress = address
-    .replace(PLACEHOLDER_STREET_PATTERN, "")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  return publicAddress || PUBLIC_ADDRESS_FALLBACK;
+  return address.replace(/\s+/g, " ").trim();
 }
 
 export function getPhoneHref(phone?: string) {
