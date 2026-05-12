@@ -17,9 +17,9 @@ const ServicesSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-16"
         >
-          <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">Nos Services Spécialisés</h2>
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">Nos services de rénovation intérieure à Nancy</h2>
           <p className="text-muted-foreground max-w-2xl lg:max-w-none leading-relaxed">
-            Découvrez notre gamme complète de services de rénovation intérieure, adaptés à chaque besoin spécifique.
+            Peinture, isolation thermique RGE, plâtrerie, revêtements de sols, menuiserie et aménagement des combles : des artisans qualifiés interviennent à Nancy et dans tout le Grand Nancy.
           </p>
         </motion.div>
 
@@ -56,7 +56,7 @@ const ServicesSection = () => {
                     {service.homeDescription}
                   </p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                    En savoir plus
+                    Voir nos prestations
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -64,6 +64,9 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+        <p className="mt-12 text-sm text-muted-foreground leading-relaxed max-w-4xl">
+          ATC Rénovation intervient à Nancy, Vandœuvre-lès-Nancy, Laxou, Maxéville, Villers-lès-Nancy et dans toute la Meurthe-et-Moselle pour vos projets de rénovation intérieure. Que vous cherchiez un peintre à Nancy, un artisan plaquiste pour vos cloisons ou faux plafonds, un poseur de carrelage ou parquet, ou encore un isolateur certifié RGE pour bénéficier de MaPrimeRénov' : notre équipe coordonne tous les corps de métier, du sol au plafond. Devis gratuit sous 48h, respect des délais, garantie décennale.
+        </p>
       </div>
     </section>
   );
