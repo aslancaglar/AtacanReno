@@ -42,11 +42,10 @@ const structuredData = [
       "@type": "Organization",
       name: "ATC Rénovation",
       url: BASE_URL,
-      telephone: "+33 6 12 34 56 78",
+      telephone: "+33629047272",
       email: "atacanch@gmail.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "123 Rue de Nancy",
         addressLocality: "Flavigny-sur-Moselle",
         postalCode: "54630",
         addressCountry: "FR",

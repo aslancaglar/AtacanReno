@@ -74,11 +74,10 @@ export default async function RootLayout({
     logo: "https://atcrenovation.com/Logoicon.png",
     image: "https://atcrenovation.com/Logoicon.png",
     url: "https://atcrenovation.com",
-    telephone: "+33 6 12 34 56 78",
+    telephone: "+33629047272",
     email: "atacanch@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Rue de Nancy",
       addressLocality: "Flavigny-sur-Moselle",
       addressRegion: "Grand Est",
       postalCode: "54630",
@@ -143,7 +142,7 @@ export default async function RootLayout({
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
+      ratingValue: "4.9",
       reviewCount: "29",
     },
   };
