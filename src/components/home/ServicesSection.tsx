@@ -56,7 +56,7 @@ const ServicesSection = () => {
                     {service.homeDescription}
                   </p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                    Voir nos prestations
+                    Voir {service.linkLabel}
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>

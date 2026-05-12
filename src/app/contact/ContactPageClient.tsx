@@ -67,22 +67,22 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import { usePreloadedQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
 import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 import { Button } from "@/components/ui/button";
+import { getMapsHref, getPhoneHref, getPublicAddress, PUBLIC_ADDRESS_FALLBACK } from "@/lib/companyInfo";
 
 const getContactInfo = (companyDetails: any) => [
   {
     icon: MapPin,
     label: "Adresse",
-    value: companyDetails?.address || "371 Avenue des Champs Elysées\nNancy, 54000",
-    href: companyDetails?.address ? `https://maps.google.com/?q=${encodeURIComponent(companyDetails.address)}` : "https://maps.google.com/?q=371+Avenue+des+Champs+Elysées+Nancy+54000",
+    value: getPublicAddress(companyDetails?.address),
+    href: getMapsHref(companyDetails?.address),
   },
   {
     icon: Phone,
     label: "Téléphone",
     value: companyDetails?.phone || "+33 1 24 63 67 89",
-    href: companyDetails?.phone ? `tel:${companyDetails.phone.replace(/\s+/g, '')}` : "tel:+33124636789",
+    href: getPhoneHref(companyDetails?.phone) || "tel:+33124636789",
   },
   {
     icon: Mail,
@@ -223,7 +223,7 @@ const ContactPageClient = () => {
             <div
               className="rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[400px] bg-surface-container-low"
             >
-              <LazyMap address={companyInfoFromDb?.address || "371 Avenue des Champs Elysées Nancy, 54000"} />
+              <LazyMap address={getPublicAddress(companyInfoFromDb?.address) || PUBLIC_ADDRESS_FALLBACK} />
             </div>
           </div>
         </div>

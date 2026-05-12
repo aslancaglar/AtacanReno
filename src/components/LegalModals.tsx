@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { legalContent } from "@/data/legal";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { getPublicAddress } from "@/lib/companyInfo";
 
 interface LegalModalsProps {
   isOpen: "mentions" | "politique" | null;
@@ -26,7 +27,7 @@ export function LegalModals({ isOpen, onClose, companyInfo }: LegalModalsProps) 
 
   const replacePlaceholders = (text: string) => {
     return text
-      .replace("[ADRESSE]", companyInfo?.address || "Nancy, France")
+      .replace("[ADRESSE]", getPublicAddress(companyInfo?.address))
       .replace("[EMAIL]", companyInfo?.email || "contact@atcrenovation.com")
       .replace("[PHONE]", companyInfo?.phone || "Non renseigné");
   };

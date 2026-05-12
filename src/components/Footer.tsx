@@ -2,15 +2,17 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/data/services";
 import { usePreloadedQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 import { LegalModals } from "./LegalModals";
 import { useLegal } from "@/context/LegalContext";
+import { getPhoneHref, getPublicAddress } from "@/lib/companyInfo";
 
 const Footer = () => {
   const { activeModal, openModal, closeModal } = useLegal();
   const preloadedInfo = usePreloadedCompanyInfo();
   const companyInfo = usePreloadedQuery(preloadedInfo!);
+  const publicAddress = getPublicAddress(companyInfo?.address);
+  const phoneHref = getPhoneHref(companyInfo?.phone);
 
   return (
     <footer className="bg-nav text-primary-foreground" suppressHydrationWarning>
@@ -64,11 +66,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" aria-hidden="true" />
-                <span>{companyInfo?.address}</span>
+                <span>{publicAddress}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-secondary" aria-hidden="true" />
-                <a href={`tel:${companyInfo?.phone}`} className="hover:text-secondary transition-colors" aria-label={`Appeler le ${companyInfo?.phone || ""}`}>
+                <a href={phoneHref} className="hover:text-secondary transition-colors" aria-label={`Appeler le ${companyInfo?.phone || ""}`}>
                   {companyInfo?.phone}
                 </a>
               </li>

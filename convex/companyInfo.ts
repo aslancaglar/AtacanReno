@@ -10,10 +10,10 @@ export const get = query({
     if (!info) {
       return {
         email: "contact@atcrenovation.com",
-        phone: "03 83 XX XX XX",
-        address: "54000 Nancy, France",
+        phone: "06 29 04 72 72",
+        address: "54630 Flavigny-sur-Moselle",
         workingHours: "Lun – Ven : 8h00 – 18h00\nSam : 9h00 – 13h00",
-        whatsappNumber: "0612345678",
+        whatsappNumber: "0629047272",
         description: "Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.",
         instagramUrl: "",
         facebookUrl: "",

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
@@ -20,136 +20,74 @@ const ServicesPageClient = () => {
           description="De la salle de bains à l'isolation RGE, nous maîtrisons tous les corps de métier pour transformer votre intérieur avec expertise et passion."
         />
 
-        {/* ─── Detailed Service Sections ─── */}
-        {services.map((service, i) => {
-          const Icon = service.icon;
-          const isEven = i % 2 === 0;
-          return (
-            <section
-              key={service.slug}
-              id={service.slug}
-              className={`py-20 lg:py-28 ${isEven ? "bg-surface-container-low" : "bg-background"}`}
+        <section className="py-20 lg:py-28 bg-surface-container-low">
+          <div className="container mx-auto px-4 lg:px-8">
+            <motion.div
+              initial={{ opacity: 1, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="mb-12 max-w-3xl"
             >
-              <div className="container mx-auto px-4 lg:px-8">
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${!isEven ? "lg:flex-row-reverse" : ""}`}>
-                  {/* Image */}
+              <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
+                Choisir une prestation
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
+                Tous nos métiers de rénovation à Nancy
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Cette page sert de point d'entrée vers nos prestations. Chaque fiche détaille les méthodes, matériaux, délais et cas d'usage propres au service concerné.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {services.map((service, i) => {
+                const Icon = service.icon;
+                return (
                   <motion.div
-                    initial={{ opacity: 1, y: 20 }}
+                    key={service.slug}
+                    initial={{ opacity: 1, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className={`${!isEven ? "lg:order-2" : ""}`}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
                   >
-                    <div className="relative">
-                      <Image
-                        src={serviceImages[service.slug]}
-                        alt={service.title}
-                        width={640}
-                        height={480}
-                        quality={75}
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
-                        className="rounded-2xl object-cover w-full aspect-[4/3] shadow-[0px_20px_40px_rgba(52,48,38,0.06)]"
-                      />
-                      {/* Service number badge */}
-                      <motion.div
-                        initial={{ opacity: 1, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                        className={`absolute -bottom-4 ${isEven ? "-right-4 lg:-right-6" : "-left-4 lg:-left-6"} bg-primary text-primary-foreground rounded-2xl px-5 py-4 shadow-lg text-center`}
-                      >
-                        <span className="block text-2xl font-extrabold leading-none">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="block text-[10px] font-semibold mt-1 uppercase tracking-wider text-white/60">
-                          Service
-                        </span>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-
-                  {/* Content */}
-                  <motion.div
-                    initial={{ opacity: 1, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                    className={`${!isEven ? "lg:order-1" : ""}`}
-                  >
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <span className="text-sm font-semibold text-secondary uppercase tracking-widest">
-                        {service.shortTitle}
-                      </span>
-                    </div>
-
-                    <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-6">
-                      {service.title}
-                    </h2>
-
-                    <p className="text-muted-foreground leading-relaxed mb-8">
-                      {service.shortDescription}
-                    </p>
-
-                    {/* Prestations list */}
-                    <div className="mb-8">
-                      <h3 className="text-sm font-bold uppercase tracking-wider text-nav mb-4">
-                        Nos prestations
-                      </h3>
-                      <ul className="space-y-3">
-                        {service.prestations.map((prestation, j) => (
-                          <motion.li
-                            key={prestation}
-                            initial={{ opacity: 1, y: 8 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                              duration: 0.4,
-                              delay: 0.2 + j * 0.06,
-                              ease: "easeOut",
-                            }}
-                            className="flex items-start gap-3 text-sm"
-                          >
-                            <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center shrink-0 mt-0.5">
-                              <Check className="w-3 h-3 text-secondary" />
-                            </div>
-                            <span className="text-muted-foreground">{prestation}</span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Highlights */}
-                    {service.highlights && service.highlights.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-8">
-                        {service.highlights.map((highlight) => (
-                          <span
-                            key={highlight}
-                            className="inline-flex items-center gap-1.5 bg-secondary/10 text-secondary-foreground text-xs font-semibold px-3 py-1.5 rounded-full border border-secondary/20"
-                          >
-                            <Icon className="w-3 h-3 text-secondary" />
-                            {highlight}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* CTA Button */}
                     <Link
                       href={`/services/${service.slug}`}
-                      className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground text-sm font-bold rounded-full px-7 py-3 transition-colors group/btn"
+                      className="group bg-card rounded-2xl overflow-hidden hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300 h-full block"
                     >
-                      En savoir plus
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <Image
+                          src={serviceImages[service.slug]}
+                          alt={service.title}
+                          width={640}
+                          height={480}
+                          quality={75}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mb-4">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <h2 className="text-lg font-bold text-nav mb-3 group-hover:text-primary transition-colors">
+                          {service.seoTitle}
+                        </h2>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                          {service.homeDescription}
+                        </p>
+                        <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                          Découvrir {service.linkLabel}
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
                     </Link>
                   </motion.div>
-                </div>
-              </div>
-            </section>
-          );
-        })}
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
         {/* ─── CTA (reused from homepage) ─── */}
         <CTASection />
