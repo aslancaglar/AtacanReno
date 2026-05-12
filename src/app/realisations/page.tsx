@@ -11,6 +11,18 @@ export const metadata: Metadata = {
     title: "Réalisations Rénovation Intérieure Nancy — ATC Rénovation",
     description:
       "Découvrez nos projets de rénovation intérieure à Nancy et environs. Avant/après, appartements, peinture, isolation.",
+    url: `${BASE_URL}/realisations`,
+    type: "website",
+    locale: "fr_FR",
+    siteName: "ATC Rénovation",
+    images: [
+      {
+        url: `${BASE_URL}/images/hero-bg.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Réalisations de rénovation intérieure Nancy — ATC Rénovation",
+      },
+    ],
   },
   alternates: {
     canonical: "/realisations",

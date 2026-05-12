@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
+    images: [
+      {
+        url: `${BASE_URL}/images/service-combles.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Aménagement des combles à Nancy — ATC Rénovation",
+      },
+    ],
   },
   alternates: {
     canonical: `${BASE_URL}/services/${SLUG}`,

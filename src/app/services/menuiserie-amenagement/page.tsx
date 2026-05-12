@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
+    images: [
+      {
+        url: `${BASE_URL}/images/service-menuiserie.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Menuiserie et portes intérieures à Nancy — ATC Rénovation",
+      },
+    ],
   },
   alternates: {
     canonical: `${BASE_URL}/services/${SLUG}`,
