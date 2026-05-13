@@ -29,34 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "Nos Réalisations",
-    url: `${BASE_URL}/realisations`,
-    description:
-      "Portfolio de projets de rénovation intérieure réalisés à Nancy et ses environs.",
-    isPartOf: { "@type": "WebSite", name: "ATC Rénovation", url: BASE_URL },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Réalisations", item: `${BASE_URL}/realisations` },
-    ],
-  },
-];
-
 export default function RealisationsPage() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <RealisationsPageClient />
-    </>
-  );
+  return <RealisationsPageClient />;
 }

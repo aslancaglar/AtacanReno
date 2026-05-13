@@ -29,39 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "Demande de Devis Gratuit",
-    url: `${BASE_URL}/devis`,
-    description:
-      "Formulaire de demande de devis gratuit pour vos travaux de rénovation intérieure à Nancy.",
-    isPartOf: { "@type": "WebSite", name: "ATC Rénovation", url: BASE_URL },
-    potentialAction: {
-      "@type": "Action",
-      name: "Demander un devis",
-      target: `${BASE_URL}/devis`,
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Devis", item: `${BASE_URL}/devis` },
-    ],
-  },
-];
-
 export default function DevisPage() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <DevisPageClient />
-    </>
-  );
+  return <DevisPageClient />;
 }

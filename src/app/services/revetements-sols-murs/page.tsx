@@ -30,56 +30,6 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Revêtements de Sols & Murs à Nancy",
-    description: "Pose de carrelage, parquet et sols souples à Nancy. Faïence, grand format, ragréage.",
-    url: `${BASE_URL}/services/${SLUG}`,
-    provider: {
-      "@type": "LocalBusiness",
-      name: "ATC Rénovation",
-      url: BASE_URL,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Nancy",
-        addressRegion: "Grand Est",
-        postalCode: "54000",
-        addressCountry: "FR",
-      },
-    },
-    areaServed: [
-      { "@type": "City", name: "Nancy" },
-      { "@type": "AdministrativeArea", name: "Meurthe-et-Moselle" },
-    ],
-    offers: {
-      "@type": "Offer",
-      description: "Devis gratuit sous 48h",
-      price: "0",
-      priceCurrency: "EUR",
-      url: `${BASE_URL}/devis`,
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Services", item: `${BASE_URL}/services` },
-      { "@type": "ListItem", position: 3, name: "Sols & Murs", item: `${BASE_URL}/services/${SLUG}` },
-    ],
-  },
-];
-
 export default function RevêtementsPage() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <RevetementsSolsMursPageClient />
-    </>
-  );
+  return <RevetementsSolsMursPageClient />;
 }

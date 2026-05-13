@@ -29,48 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Contact ATC Rénovation",
-    url: `${BASE_URL}/contact`,
-    description:
-      "Contactez ATC Rénovation à Nancy pour un devis gratuit sous 48h.",
-    isPartOf: { "@type": "WebSite", name: "ATC Rénovation", url: BASE_URL },
-    mainEntity: {
-      "@type": "Organization",
-      name: "ATC Rénovation",
-      url: BASE_URL,
-      telephone: "+33629047272",
-      email: "atacanch@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "123 Rue de Nancy",
-        addressLocality: "Flavigny-sur-Moselle",
-        postalCode: "54630",
-        addressCountry: "FR",
-      },
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Contact", item: `${BASE_URL}/contact` },
-    ],
-  },
-];
-
 export default function ContactPage() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <ContactPageClient />
-    </>
-  );
+  return <ContactPageClient />;
 }

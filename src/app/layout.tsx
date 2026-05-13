@@ -66,88 +66,6 @@ export default async function RootLayout({
 }>) {
   const preloadedCompanyInfo = await preloadQuery(api.companyInfo.get);
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    name: "ATC Rénovation",
-    description: "Spécialiste en rénovation intérieure à Nancy depuis plus de 20 ans. Peinture, isolation RGE, plâtrerie, revêtements de sols, aménagement de combles.",
-    logo: "https://atcrenovation.com/Logoicon.png",
-    image: "https://atcrenovation.com/Logoicon.png",
-    url: "https://atcrenovation.com",
-    telephone: "+33629047272",
-    email: "atacanch@gmail.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "123 Rue de Nancy",
-      addressLocality: "Flavigny-sur-Moselle",
-      addressRegion: "Grand Est",
-      postalCode: "54630",
-      addressCountry: "FR",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 48.5749693291545,
-      longitude: 6.183951325162242,
-    },
-    areaServed: [
-      { "@type": "City", name: "Nancy" },
-      { "@type": "City", name: "Flavigny-sur-Moselle" },
-      { "@type": "City", name: "Vandœuvre-lès-Nancy" },
-      { "@type": "City", name: "Lunéville" },
-      { "@type": "City", name: "Toul" },
-      { "@type": "City", name: "Longwy" },
-      { "@type": "City", name: "Villers-lès-Nancy" },
-      { "@type": "City", name: "Pont-à-Mousson" },
-      { "@type": "City", name: "Saint-Max" },
-      { "@type": "City", name: "Villerupt" },
-      { "@type": "City", name: "Essey-lès-Nancy" },
-      { "@type": "City", name: "Malzéville" },
-      { "@type": "City", name: "Dombasle-sur-Meurthe" },
-      { "@type": "City", name: "Jarville-la-Malgrange" },
-      { "@type": "City", name: "Mont-Saint-Martin" },
-      { "@type": "City", name: "Tomblaine" },
-      { "@type": "City", name: "Saint-Nicolas-de-Port" },
-      { "@type": "City", name: "Val de Briey" },
-      { "@type": "City", name: "Jarny" },
-      { "@type": "AdministrativeArea", name: "Grand Nancy" },
-      { "@type": "AdministrativeArea", name: "Meurthe-et-Moselle" },
-    ],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:00",
-        closes: "19:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "08:00",
-        closes: "19:00",
-      },
-    ],
-    priceRange: "€",
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Services de rénovation",
-      itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plâtrerie, Cloisons & Faux Plafonds" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Isolation & Rénovation Énergétique RGE" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Peinture & Décoration Intérieure" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Revêtements de Sols & Murs" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rénovation Chambre & Salon" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rénovation Complète d'Appartement" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Menuiserie & Aménagement Intérieur" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Aménagement des Combles" } },
-      ],
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "29",
-    },
-  };
-
   return (
     <html lang="fr" className={manrope.variable} suppressHydrationWarning>
       <head>
@@ -155,12 +73,6 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://precise-walrus-432.eu-west-1.convex.cloud" />
         <link rel="preconnect" href="https://precise-walrus-432.eu-west-1.convex.cloud" crossOrigin="anonymous" />
-        <script
-          id="json-ld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-          suppressHydrationWarning
-        />
         {/* Google Tag (gtag.js) */}
         <Script
           async
