@@ -26,6 +26,9 @@ export default function SettingsPage() {
     instagramUrl: "",
     facebookUrl: "",
     interventionZones: "",
+    vacationStartDate: "",
+    vacationEndDate: "",
+    vacationMessage: "",
   });
   const [isSaving, setIsSaving] = useState(false);
 
@@ -42,6 +45,9 @@ export default function SettingsPage() {
         instagramUrl: companyInfo.instagramUrl || "",
         facebookUrl: companyInfo.facebookUrl || "",
         interventionZones: companyInfo.interventionZones || "",
+        vacationStartDate: companyInfo.vacationStartDate || "",
+        vacationEndDate: companyInfo.vacationEndDate || "",
+        vacationMessage: companyInfo.vacationMessage || "",
       });
     }
   }, [companyInfo]);
@@ -143,6 +149,45 @@ export default function SettingsPage() {
               className="resize-none"
             />
             <p className="text-[11px] text-muted-foreground">Indiquez vos zones de déplacement (une ville ou un secteur par ligne).</p>
+          </div>
+
+          <div className="border-b border-border pt-4 pb-4">
+            <h3 className="text-lg font-bold text-nav">Congés / Fermeture Exceptionnelle</h3>
+            <p className="text-sm text-muted-foreground">Configurez une période de fermeture. Un message s'affichera aux visiteurs du site.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="vacationStartDate">Date de début</Label>
+              <Input 
+                type="date"
+                id="vacationStartDate" 
+                value={form.vacationStartDate} 
+                onChange={(e) => setForm({ ...form, vacationStartDate: e.target.value })} 
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="vacationEndDate">Date de fin</Label>
+              <Input 
+                type="date"
+                id="vacationEndDate" 
+                value={form.vacationEndDate} 
+                onChange={(e) => setForm({ ...form, vacationEndDate: e.target.value })} 
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="vacationMessage">Message d'information</Label>
+            <Textarea 
+              id="vacationMessage" 
+              value={form.vacationMessage} 
+              onChange={(e) => setForm({ ...form, vacationMessage: e.target.value })} 
+              placeholder="Ex: L'entreprise sera fermée pour congés annuels. Nous traiterons vos demandes à notre retour." 
+              rows={3}
+              className="resize-none"
+            />
+            <p className="text-[11px] text-muted-foreground">Laissez les dates vides pour désactiver le mode congés.</p>
           </div>
 
           <div className="border-b border-border pt-4 pb-4">

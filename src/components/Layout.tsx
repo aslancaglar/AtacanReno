@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
 import MobileStickyCTA from "./MobileStickyCTA";
+import VacationModal from "./VacationModal";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,6 +22,7 @@ const Layout = ({ children, hideHeader, hideFooter, hideWhatsApp, hideStickyCTA 
       {!hideFooter && <Footer />}
       {!hideWhatsApp && <WhatsAppButton />}
       {!hideStickyCTA && <MobileStickyCTA />}
+      <VacationModal />
     </div>
   );
 };
