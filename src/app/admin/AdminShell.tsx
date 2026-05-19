@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Toaster } from "@/components/ui/sonner";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import {
@@ -139,6 +140,7 @@ export default function AdminShell({
 
         <main className="flex-1 p-4 sm:p-6 lg:p-8">{children}</main>
       </div>
+      <Toaster richColors position="bottom-right" />
     </div>
   );
 }

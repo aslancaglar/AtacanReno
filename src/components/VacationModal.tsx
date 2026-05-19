@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { CalendarDays, X } from "lucide-react";
 
 export default function VacationModal() {
@@ -18,19 +18,19 @@ export default function VacationModal() {
   useEffect(() => {
     if (!companyInfo) return;
 
-    const hasDismissed = sessionStorage.getItem("vacationModalDismissed");
-    if (hasDismissed) return;
-
     const { vacationStartDate, vacationEndDate } = companyInfo;
     if (!vacationStartDate || !vacationEndDate) return;
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const start = new Date(vacationStartDate);
+    // Parse dates safely to avoid timezone offset issues (treating YYYY-MM-DD as local)
+    const [yearS, monthS, dayS] = vacationStartDate.split("-").map(Number);
+    const start = new Date(yearS, monthS - 1, dayS);
     start.setHours(0, 0, 0, 0);
 
-    const end = new Date(vacationEndDate);
+    const [yearE, monthE, dayE] = vacationEndDate.split("-").map(Number);
+    const end = new Date(yearE, monthE - 1, dayE);
     end.setHours(23, 59, 59, 999);
 
     if (today >= start && today <= end) {
@@ -40,7 +40,6 @@ export default function VacationModal() {
 
   const handleClose = () => {
     setIsOpen(false);
-    sessionStorage.setItem("vacationModalDismissed", "true");
   };
 
   if (!isMounted || !isOpen || !companyInfo) return null;
@@ -62,7 +61,7 @@ export default function VacationModal() {
       <DialogContent className="p-0 border-0 overflow-hidden sm:max-w-md rounded-2xl shadow-2xl [&>button]:hidden">
 
         {/* ── Header band ── */}
-        <div className="relative bg-primary px-8 pt-8 pb-10 flex flex-col items-center text-center">
+        <div className="relative bg-primary px-8 pt-8 pb-8 flex flex-col items-center text-center">
           {/* Custom close button */}
           <button
             onClick={handleClose}
@@ -77,18 +76,13 @@ export default function VacationModal() {
             <CalendarDays className="w-8 h-8 text-white" />
           </div>
 
-          <h2 className="text-white text-2xl font-bold tracking-tight leading-tight mb-1">
+          <DialogTitle className="text-white text-2xl font-bold tracking-tight leading-tight mb-3">
             Fermeture exceptionnelle
-          </h2>
-          <p className="text-white/60 text-sm font-medium uppercase tracking-widest">
-            ATC Rénovation
-          </p>
-        </div>
-
-        {/* ── Floating date pill — bridges header and body ── */}
-        <div className="flex justify-center -mt-5 z-10 relative">
-          <div className="bg-secondary text-secondary-foreground text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg flex items-center gap-2 border border-secondary/20">
-            <CalendarDays className="w-4 h-4" />
+          </DialogTitle>
+          
+          {/* Date pill inside header */}
+          <div className="bg-white/15 text-white text-sm font-medium px-4 py-1.5 rounded-full flex items-center gap-2">
+            <CalendarDays className="w-4 h-4 opacity-70" />
             <span>{startFormatted}</span>
             <span className="opacity-50">→</span>
             <span>{endFormatted}</span>

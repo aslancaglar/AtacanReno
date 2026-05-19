@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Save } from "lucide-react";
+import { Save, XCircle } from "lucide-react";
 import { toast } from "sonner";
 
 export default function SettingsPage() {
@@ -151,9 +151,23 @@ export default function SettingsPage() {
             <p className="text-[11px] text-muted-foreground">Indiquez vos zones de déplacement (une ville ou un secteur par ligne).</p>
           </div>
 
-          <div className="border-b border-border pt-4 pb-4">
-            <h3 className="text-lg font-bold text-nav">Congés / Fermeture Exceptionnelle</h3>
-            <p className="text-sm text-muted-foreground">Configurez une période de fermeture. Un message s'affichera aux visiteurs du site.</p>
+          <div className="border-b border-border pt-4 pb-4 flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-bold text-nav">Congés / Fermeture Exceptionnelle</h3>
+              <p className="text-sm text-muted-foreground">Configurez une période de fermeture. Un message s'affichera aux visiteurs du site.</p>
+            </div>
+            {(form.vacationStartDate || form.vacationEndDate) && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => setForm({ ...form, vacationStartDate: "", vacationEndDate: "", vacationMessage: "" })}
+                className="shrink-0 gap-1.5 text-destructive border-destructive/30 hover:bg-destructive/5 hover:text-destructive"
+              >
+                <XCircle className="w-4 h-4" />
+                Désactiver
+              </Button>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
