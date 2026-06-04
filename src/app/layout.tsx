@@ -71,8 +71,8 @@ export default async function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://precise-walrus-432.eu-west-1.convex.cloud" />
-        <link rel="preconnect" href="https://precise-walrus-432.eu-west-1.convex.cloud" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_CONVEX_URL} />
+        <link rel="preconnect" href={process.env.NEXT_PUBLIC_CONVEX_URL} crossOrigin="anonymous" />
         {/* Google Tag (gtag.js) */}
         <Script
           async
