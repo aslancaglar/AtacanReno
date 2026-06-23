@@ -13,7 +13,7 @@ const title = "Installation de Portes Intérieures";
 const shortTitle = "Portes";
 const seoTitle = "Installation de Portes Intérieures à Nancy";
 const imageUrl = "/images/service-menuiserie.jpg";
-const shortDescription = "Blocs-portes et systèmes fin de chantier : structurez vos circulations.";
+const shortDescription = "Blocs-portes, portes fin de chantier et coulissantes à galandage : à Nancy, nous posons et réglons vos portes intérieures au millimètre pour un confort acoustique et des finitions soignées.";
 const description = `**La porte intérieure structure les circulations et isole acoustiquement vos pièces.** C'est un élément clé qui donne le ton décoratif de votre logement. **ATC Rénovation** pose tous types de menuiseries à **Nancy** avec une précision artisanale.
  
 **Solutions de Menuiserie sur Mesure**

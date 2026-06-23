@@ -13,7 +13,7 @@ const title = "Revêtements de Sols & Murs";
 const shortTitle = "Sols & Murs";
 const seoTitle = "Revêtements de Sols & Murs à Nancy";
 const imageUrl = "/images/service-sols.jpg";
-const shortDescription = "Carrelage, parquet, sols souples : des revêtements posés dans les règles de l'art.";
+const shortDescription = "Carrelage grand format, parquet, faïence ou sol souple : à Nancy, nous préparons les supports (ragréage, planéité au laser) et posons vos revêtements selon les DTU pour un résultat durable.";
 const description = `**Le sol est le revêtement qui subit le plus de contraintes au quotidien.** Qu'il s'agisse de carrelage ou de bois, il doit être posé avec une précision artisanale pour durer. **ATC Rénovation** à **Nancy** intervient sur tous types de supports avec une exigence de préparation irréprochable.
  
 **Une Préparation Technique Indispensable**

@@ -13,7 +13,7 @@ const title = "Rénovation de Chambre & Salon";
 const shortTitle = "Chambre & Salon";
 const seoTitle = "Rénovation de Chambre & Salon à Nancy";
 const imageUrl = "/images/service-salon.jpg";
-const shortDescription = "Modernisez vos pièces de vie avec des finitions soignées et un aménagement sur mesure.";
+const shortDescription = "Acoustique, lumière, rangements et finitions : à Nancy, nous repensons vos chambres et salons de A à Z, en coordonnant peinture, sols, cloisons et éclairage pour un espace qui vous ressemble.";
 const description = `**Une chambre ou un salon rénové, c'est un espace repensé pour mieux vivre.** Chez **ATC Rénovation**, nous prenons en charge la transformation complète de vos pièces de vie à **Nancy** avec une approche sur mesure.
  
 **Confort Acoustique et Lumineux**

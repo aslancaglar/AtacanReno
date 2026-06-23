@@ -13,7 +13,7 @@ const title = "Plâtrerie, Cloisons & Faux Plafonds";
 const shortTitle = "Plâtrerie";
 const seoTitle = "Plâtrerie, Cloisons & Faux Plafonds à Nancy";
 const imageUrl = "/images/service-platrerie.jpg";
-const shortDescription = "Cloisons, faux plafonds, isolation phonique : structurez vos espaces.";
+const shortDescription = "Cloisons sur mesure, faux plafonds design et isolation phonique haute performance : votre plaquiste à Nancy structure, isole et embellit chaque pièce avec des enduits parfaitement lisses.";
 const description = `**La plâtrerie constitue le socle indispensable de toute rénovation intérieure réussie.** Implantée à **Nancy**, **ATC Rénovation** met son savoir-faire au service des particuliers et professionnels de **Meurthe-et-Moselle** pour transformer durablement leur habitat. De la **cloison sur mesure** au **faux plafond design**, nous réalisons l'ensemble des travaux de **plâtrerie sèche** dans tout le **département 54**.
 
 **Votre Artisan Plaquiste à Nancy et ses Environs**

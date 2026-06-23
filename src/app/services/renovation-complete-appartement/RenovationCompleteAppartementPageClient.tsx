@@ -13,7 +13,7 @@ const title = "Rénovation Complète d'Appartement";
 const shortTitle = "Appartement Complet";
 const seoTitle = "Rénovation Complète d'Appartement à Nancy";
 const imageUrl = "/images/service-appart.jpg";
-const shortDescription = "Prise en charge de A à Z de votre projet de rénovation, tous corps de métier réunis.";
+const shortDescription = "Un seul interlocuteur, tous les corps de métier coordonnés : à Nancy, nous menons votre rénovation d'appartement clé en main, de la dépose à la réception finale, avec un planning maîtrisé.";
 const description = `**La rénovation complète est notre cœur de métier.** Que vous soyez un particulier ou un investisseur à **Nancy**, **ATC Rénovation** prend en charge l'intégralité de votre projet avec une solution clé en main.
  
 **Une Gestion de Projet Centralisée**

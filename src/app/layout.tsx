@@ -1,11 +1,36 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Script from "next/script";
+import { unstable_cache } from "next/cache";
+import { getFunctionName } from "convex/server";
+import { convexToJson } from "convex/values";
+import type { Preloaded } from "convex/react";
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
-import { preloadQuery } from "convex/nextjs";
+import { fetchQuery } from "convex/nextjs";
 import { api } from "../../convex/_generated/api";
 import { RGPDNotification } from "@/components/RGPDNotification";
+
+// Revalidate static pages hourly so company-info edits propagate.
+export const revalidate = 3600;
+
+// preloadQuery() forces a `cache: "no-store"` fetch, which opts the entire
+// route tree into dynamic rendering (uncacheable pages -> worse crawl budget).
+// We wrap the fetch in unstable_cache so the no-store call is isolated and the
+// pages stay statically generated, while still shipping the data in the SSR
+// HTML. usePreloadedQuery() subscribes to live updates on the client anyway.
+const getPreloadedCompanyInfo = unstable_cache(
+  async (): Promise<Preloaded<typeof api.companyInfo.get>> => {
+    const value = await fetchQuery(api.companyInfo.get);
+    return {
+      _name: getFunctionName(api.companyInfo.get),
+      _argsJSON: convexToJson({}),
+      _valueJSON: convexToJson(value),
+    } as Preloaded<typeof api.companyInfo.get>;
+  },
+  ["company-info-preloaded"],
+  { revalidate: 3600, tags: ["company-info"] }
+);
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -64,7 +89,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const preloadedCompanyInfo = await preloadQuery(api.companyInfo.get);
+  const preloadedCompanyInfo = await getPreloadedCompanyInfo();
 
   return (
     <html lang="fr" className={manrope.variable} suppressHydrationWarning>

@@ -13,7 +13,7 @@ const title = "Isolation & Rénovation Énergétique (RGE)";
 const shortTitle = "Isolation RGE";
 const seoTitle = "Isolation Thermique & Rénovation Énergétique à Nancy (RGE)";
 const imageUrl = "/images/service-isolation.jpg";
-const shortDescription = "Isolation certifiée RGE : bénéficiez des aides MaPrimeRénov' et réduisez vos factures.";
+const shortDescription = "Combles, murs et planchers : artisan RGE Qualibat à Nancy, nous isolons votre logement et montons vos dossiers d'aides (MaPrimeRénov', éco-PTZ) pour réduire durablement vos factures de chauffage.";
 const description = `**L'isolation est l'investissement le plus rentable d'une rénovation** : elle réduit immédiatement vos factures de chauffage, améliore le confort été comme hiver, et augmente la valeur patrimoniale de votre bien. **ATC Rénovation** est artisan certifié **RGE Qualibat** à **Nancy**, ce qui vous permet de bénéficier de toutes les **aides publiques** en vigueur : **MaPrimeRénov'**, Coup de Pouce Économies d'Énergie, éco-PTZ, TVA réduite à 5,5 %.
 
 **Nos Solutions d'Isolation sur Mesure**

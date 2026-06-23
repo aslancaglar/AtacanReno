@@ -13,7 +13,7 @@ const title = "Peinture & Décoration";
 const shortTitle = "Peinture";
 const seoTitle = "Peinture & Décoration Intérieure à Nancy";
 const imageUrl = "/images/service-peinture.jpg";
-const shortDescription = "Peinture intérieure, enduits décoratifs, papier peint : sublimez vos murs.";
+const shortDescription = "Des murs nets, des teintes justes et des finitions qui durent : nos peintres préparent chaque support avec soin avant d'appliquer peintures, papiers peints et enduits décoratifs dans tout le Grand Nancy.";
 const description = `**La peinture est le geste qui révèle le caractère d'un intérieur.** Bien posée, elle donne profondeur, lumière et harmonie ; mal exécutée, elle laisse des reprises visibles, des cloques ou des bavures. Nos peintres expérimentés interviennent à **Nancy** sur tous les supports : neufs, rénovés, abîmés ou anciens.
  
 **Une Préparation Méticuleuse pour un Rendu Parfait**

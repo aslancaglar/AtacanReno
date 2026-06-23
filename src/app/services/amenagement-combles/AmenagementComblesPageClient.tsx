@@ -13,7 +13,7 @@ const title = "Aménagement des Combles";
 const shortTitle = "Combles";
 const seoTitle = "Aménagement des Combles à Nancy";
 const imageUrl = "/images/service-combles.jpg";
-const shortDescription = "Transformez vos combles en espace de vie : chambre et bureau.";
+const shortDescription = "Suite parentale, bureau ou chambre d'amis sous les toits : à Nancy, nous aménageons vos combles en clé en main — isolation, plâtrerie, électricité, sols et peinture par un seul interlocuteur.";
 const description = `**L'aménagement des combles est l'une des solutions les plus rentables** pour gagner de la surface habitable sans déménager ni faire d'extension. À **Nancy** et dans le Grand Est, nous transformons vos volumes inexploités en pièces de vie complètes : suite parentale, bureau ou chambre d'amis.
  
 **Une Expertise Technique Pointue**
