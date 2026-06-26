@@ -1,0 +1,11 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - img [ref=e5]
+    - heading "Administration" [level=1] [ref=e8]
+    - paragraph [ref=e9]: Veuillez entrer le mot de passe pour accéder au tableau de bord.
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]: Mot de passe
+        - textbox "••••••••" [ref=e13]
+      - button "Se connecter" [disabled] [ref=e14]
+  - alert [ref=e15]

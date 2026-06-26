@@ -1,0 +1,236 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "ATC Rénovation - Notre différence est notre qualité" [ref=e28]
+      - generic [ref=e31]:
+        - navigation "Fil d'Ariane" [ref=e32]:
+          - link "Accueil" [ref=e34] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e35]:
+            - img [ref=e36]
+            - generic [ref=e38]: À propos
+        - generic [ref=e39]: À propos
+        - heading "ATC Rénovation - Notre différence est notre qualité" [level=1] [ref=e40]
+        - paragraph [ref=e41]: ATC Rénovation est votre spécialiste de la rénovation intérieure clé en main depuis plus de 20 ans. Nous intervenons à Nancy et dans toute la Meurthe-et-Moselle (54).
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - img [ref=e47]
+        - generic [ref=e49]: 20+
+        - generic [ref=e50]: Années d'expérience
+      - generic [ref=e51]:
+        - img [ref=e52]
+        - generic [ref=e55]: 300+
+        - generic [ref=e56]: Projets terminés
+      - generic [ref=e57]:
+        - img [ref=e58]
+        - generic [ref=e60]: 4.9/5
+        - generic [ref=e61]: Note moyenne sur Google
+      - generic [ref=e62]:
+        - img [ref=e63]
+        - generic [ref=e66]: 100%
+        - generic [ref=e67]: Délais respectés
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]: Notre histoire
+          - heading "De la passion artisanale à l'expertise reconnue" [level=2] [ref=e74]
+        - generic [ref=e75]:
+          - paragraph [ref=e76]: Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. Depuis 2004, ATC Rénovation accompagne les habitants de Nancy et du Grand Nancy dans la transformation de leurs espaces de vie, avec passion et un souci constant de la perfection.
+          - paragraph [ref=e77]: "De la rénovation complète de votre appartement à l'aménagement de vos combles, en passant par la peinture, les revêtements de sols, la menuiserie ou encore l'électricité : nous transformons vos rêves en réalité, avec soin et passion."
+          - paragraph [ref=e78]: Aujourd'hui, avec plus de 300 projets livrés et une note de 4.9/5 sur Google, ATC Rénovation est un acteur de référence de la rénovation intérieure en région nancéienne. Notre certification RGE nous permet également d'accompagner nos clients dans leurs projets d'isolation et de rénovation énergétique avec accès aux aides de l'État.
+      - generic [ref=e80]:
+        - img "Fondateur d'ATC Rénovation" [ref=e81]
+        - generic [ref=e82]:
+          - generic [ref=e83]: 20+
+          - generic [ref=e84]: ans d'expérience
+    - generic [ref=e87]:
+      - img "Certification RGE Qualibat" [ref=e89]
+      - img "Garantie Décennale" [ref=e91]
+      - img "MaPrimeRénov'" [ref=e93]
+    - generic [ref=e95]:
+      - generic [ref=e96]:
+        - generic [ref=e97]: Ce qui nous définit
+        - heading "Nos Valeurs" [level=2] [ref=e98]
+        - paragraph [ref=e99]: Chaque projet est guidé par des principes forts qui font la différence entre un bon travail et un travail exceptionnel.
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - img [ref=e103]
+          - heading "Qualité sans compromis" [level=3] [ref=e105]
+          - paragraph [ref=e106]: Nous utilisons exclusivement des matériaux de premier choix et appliquons des techniques éprouvées pour garantir un résultat durable et impeccable.
+        - generic [ref=e107]:
+          - img [ref=e109]
+          - heading "Passion du métier" [level=3] [ref=e111]
+          - paragraph [ref=e112]: Chaque projet est une nouvelle aventure. Notre équipe met tout son cœur et son savoir-faire pour transformer vos idées en réalité.
+        - generic [ref=e113]:
+          - img [ref=e115]
+          - heading "Écoute & transparence" [level=3] [ref=e120]
+          - paragraph [ref=e121]: Un seul interlocuteur du début à la fin. Nous vous accompagnons à chaque étape avec des échanges clairs et un suivi personnalisé.
+        - generic [ref=e122]:
+          - img [ref=e124]
+          - heading "Respect des engagements" [level=3] [ref=e128]
+          - paragraph [ref=e129]: Délais tenus, budget respecté. Nous nous engageons sur un planning précis et un devis détaillé sans mauvaise surprise.
+        - generic [ref=e130]:
+          - img [ref=e132]
+          - heading "Certifications reconnues" [level=3] [ref=e135]
+          - paragraph [ref=e136]: Artisan certifié RGE et assuré en garantie décennale, nous répondons aux plus hauts standards de qualité et de sécurité.
+        - generic [ref=e137]:
+          - img [ref=e139]
+          - heading "Satisfaction client" [level=3] [ref=e144]
+          - paragraph [ref=e145]: Avec une note de 4.9/5 sur Google, la satisfaction de nos clients est notre meilleure récompense et notre première motivation.
+    - generic [ref=e148]:
+      - generic [ref=e149]:
+        - generic [ref=e150]:
+          - generic [ref=e151]: Pourquoi nous choisir
+          - heading "L'assurance d'un travail bien fait, du premier coup." [level=2] [ref=e152]
+        - list [ref=e153]:
+          - listitem [ref=e154]:
+            - img [ref=e156]
+            - generic [ref=e158]: Un interlocuteur unique pour tous vos travaux d'intérieur
+          - listitem [ref=e159]:
+            - img [ref=e161]
+            - generic [ref=e163]: Artisan certifié RGE pour l'isolation et la rénovation énergétique
+          - listitem [ref=e164]:
+            - img [ref=e166]
+            - generic [ref=e168]: Garantie décennale sur l'ensemble de nos travaux
+          - listitem [ref=e169]:
+            - img [ref=e171]
+            - generic [ref=e173]: Devis gratuit et détaillé sous 48 heures
+          - listitem [ref=e174]:
+            - img [ref=e176]
+            - generic [ref=e178]: Coordination de tous les corps de métier
+          - listitem [ref=e179]:
+            - img [ref=e181]
+            - generic [ref=e183]: Chantier propre et respect du voisinage
+          - listitem [ref=e184]:
+            - img [ref=e186]
+            - generic [ref=e188]: Suivi photo de l'avancement de vos travaux
+          - listitem [ref=e189]:
+            - img [ref=e191]
+            - generic [ref=e193]: Service après-vente réactif
+      - generic [ref=e194]:
+        - img "Rénovation salle de bains ATC" [ref=e195]
+        - img "Rénovation salon ATC" [ref=e196]
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - generic [ref=e200]: Confiance
+        - heading "Nos Partenaires" [level=2] [ref=e201]
+      - generic [ref=e202]:
+        - img "Isover" [ref=e204]
+        - img "Knauf" [ref=e206]
+        - img "Moselle Türen" [ref=e208]
+        - img "Litt" [ref=e210]
+        - img "Semin" [ref=e212]
+    - generic [ref=e214]:
+      - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e215]:
+        - text: Prêt à transformer votre
+        - text: espace de vie ?
+      - paragraph [ref=e216]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+      - link "Demander un devis" [ref=e218] [cursor=pointer]:
+        - /url: /devis
+        - button "Demander un devis" [ref=e219]
+  - contentinfo [ref=e220]:
+    - generic [ref=e221]:
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - generic [ref=e224]:
+            - heading "ATC Rénovation" [level=3] [ref=e225]
+            - generic [ref=e226]: Notre différence est notre qualité
+          - paragraph [ref=e227]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e228]:
+          - heading "Navigation" [level=4] [ref=e229]
+          - list [ref=e230]:
+            - listitem [ref=e231]:
+              - link "Accueil" [ref=e232] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e233]:
+              - link "À Propos" [ref=e234] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e235]:
+              - link "Services" [ref=e236] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e237]:
+              - link "Réalisations" [ref=e238] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e239]:
+              - link "Contact" [ref=e240] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e241]:
+          - heading "Nos Services" [level=4] [ref=e242]
+          - list [ref=e243]:
+            - listitem [ref=e244]:
+              - link "Plâtrerie" [ref=e245] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e246]:
+              - link "Isolation RGE" [ref=e247] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e248]:
+              - link "Peinture" [ref=e249] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e250]:
+              - link "Sols & Murs" [ref=e251] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e252]:
+              - link "Chambre & Salon" [ref=e253] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e254]:
+              - link "Appartement Complet" [ref=e255] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e256]:
+              - link "Portes" [ref=e257] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e258]:
+              - link "Combles" [ref=e259] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e260]:
+          - heading "Zones d'Intervention" [level=4] [ref=e261]
+          - list [ref=e262]:
+            - listitem [ref=e263]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e264]:
+          - heading "Contact" [level=4] [ref=e265]
+          - list [ref=e266]:
+            - listitem [ref=e267]:
+              - img [ref=e268]
+              - generic [ref=e271]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e272]:
+              - img [ref=e273]
+              - link "Appeler le 06 29 04 72 72" [ref=e275] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e276]:
+              - img [ref=e277]
+              - link "atacanch@gmail.com" [ref=e280] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e281]:
+        - paragraph [ref=e282]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e283]:
+          - button "Mentions légales" [ref=e284] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e285] [cursor=pointer]

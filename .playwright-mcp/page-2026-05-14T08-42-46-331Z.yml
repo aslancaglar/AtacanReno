@@ -1,0 +1,270 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Plâtrerie, Cloisons & Faux Plafonds" [ref=e28]
+      - generic [ref=e30]:
+        - navigation "Fil d'Ariane" [ref=e31]:
+          - link "Accueil" [ref=e33] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e34]:
+            - img [ref=e35]
+            - link "Services" [ref=e37] [cursor=pointer]:
+              - /url: /services
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e41]: Plâtrerie
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - generic [ref=e47]: Plâtrerie
+          - heading "Plâtrerie, Cloisons & Faux Plafonds à Nancy" [level=1] [ref=e48]
+          - paragraph [ref=e49]: "Cloisons, faux plafonds, isolation phonique : structurez vos espaces."
+    - generic [ref=e53]:
+      - generic [ref=e54]: Notre expertise
+      - heading "Plâtrerie, Cloisons & Faux Plafonds" [level=2] [ref=e55]
+      - generic [ref=e56]:
+        - generic [ref=e58]:
+          - img "Plâtrerie, Cloisons & Faux Plafonds" [ref=e59]
+          - generic [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e63]: Spécialiste
+        - generic [ref=e64]:
+          - paragraph [ref=e65]:
+            - strong [ref=e66]: La plâtrerie constitue le socle indispensable de toute rénovation intérieure réussie.
+            - text: Implantée à
+            - strong [ref=e67]: Nancy
+            - text: ","
+            - strong [ref=e68]: ATC Rénovation
+            - text: met son savoir-faire au service des particuliers et professionnels de
+            - strong [ref=e69]: Meurthe-et-Moselle
+            - text: pour transformer durablement leur habitat. De la
+            - strong [ref=e70]: cloison sur mesure
+            - text: au
+            - strong [ref=e71]: faux plafond design
+            - text: ", nous réalisons l'ensemble des travaux de"
+            - strong [ref=e72]: plâtrerie sèche
+            - text: dans tout le
+            - strong [ref=e73]: département 54
+            - text: .
+          - heading "Votre Artisan Plaquiste à Nancy et ses Environs" [level=3] [ref=e74]: Votre Artisan Plaquiste à Nancy et ses Environs
+          - paragraph [ref=e76]:
+            - text: Spécialistes de la
+            - strong [ref=e77]: plâtrerie sèche
+            - text: ", nous intervenons à"
+            - strong [ref=e78]: Nancy
+            - text: ", Vandœuvre-lès-Nancy, Laxou, Maxéville, Villers-lès-Nancy, Tomblaine, Jarville-la-Malgrange, Essey-lès-Nancy, Saint-Max et dans toute la"
+            - strong [ref=e79]: Meurthe-et-Moselle
+            - text: . Notre équipe maîtrise les techniques modernes de pose de plaques de plâtre (
+            - strong [ref=e80]: BA13
+            - text: ", hydrofuges, ignifuges, phoniques) pour répondre à toutes les contraintes de votre habitat lorrain."
+          - paragraph [ref=e81]:
+            - text: Que vous rénoviez une
+            - strong [ref=e82]: maison de ville à Nancy
+            - text: ", un"
+            - strong [ref=e83]: appartement dans le centre historique
+            - text: ou une
+            - strong [ref=e84]: construction récente en périphérie
+            - text: ", nous adaptons nos méthodes à la nature de votre support et à vos exigences."
+          - heading "Cloisons sur Mesure pour Repenser Vos Espaces" [level=3] [ref=e85]: Cloisons sur Mesure pour Repenser Vos Espaces
+          - paragraph [ref=e87]:
+            - text: "Créer une nouvelle pièce, séparer un espace ouvert ou aménager un dressing : les"
+            - strong [ref=e88]: cloisons
+            - text: sont l'outil idéal pour redessiner votre intérieur sans gros œuvre. Nous concevons des
+            - strong [ref=e89]: cloisons sur mesure
+            - text: ", droites ou courbes, avec ou sans ouverture, en tenant compte de vos contraintes techniques (passage de gaines, prises électriques, plomberie)."
+          - paragraph [ref=e90]:
+            - text: Chaque cloison alliera
+            - strong [ref=e91]: solidité
+            - text: ","
+            - strong [ref=e92]: esthétique
+            - text: et
+            - strong [ref=e93]: performance acoustique
+            - text: . Nous proposons également des
+            - strong [ref=e94]: cloisons amovibles
+            - text: ou
+            - strong [ref=e95]: semi-vitrées
+            - text: pour les bureaux et espaces professionnels du
+            - strong [ref=e96]: Grand Nancy
+            - text: .
+          - 'heading "Faux Plafonds : Esthétique et Performance" [level=3] [ref=e97]': "Faux Plafonds : Esthétique et Performance"
+          - paragraph [ref=e99]:
+            - text: Le
+            - strong [ref=e100]: faux plafond
+            - text: est devenu un élément incontournable de la rénovation moderne à
+            - strong [ref=e101]: Nancy
+            - text: . Il permet de masquer les imperfections, dissimuler les gaines techniques, intégrer un
+            - strong [ref=e102]: éclairage LED encastré
+            - text: et améliorer l'
+            - strong [ref=e103]: isolation thermique et phonique
+            - text: de votre logement.
+          - paragraph [ref=e104]:
+            - text: Nous réalisons tous types de
+            - strong [ref=e105]: faux plafonds
+            - text: ": plafonds tendus, plafonds suspendus en plaques de plâtre, plafonds décoratifs avec retombées, corniches lumineuses ou plafonds acoustiques."
+          - 'heading "Isolation Phonique : Le Confort au Quotidien" [level=3] [ref=e106]': "Isolation Phonique : Le Confort au Quotidien"
+          - paragraph [ref=e108]:
+            - text: Les nuisances sonores affectent directement votre qualité de vie, particulièrement en milieu urbain. Nous intégrons systématiquement des solutions d'
+            - strong [ref=e109]: isolation phonique performantes
+            - text: ": laine de roche haute densité, plaques phoniques spécifiques, désolidarisation des structures, conformes aux normes acoustiques en vigueur."
+          - 'heading "Enduits de Finition : La Touche Finale" [level=3] [ref=e110]': "Enduits de Finition : La Touche Finale"
+          - paragraph [ref=e112]:
+            - text: La qualité d'une plâtrerie se mesure à la finesse de ses finitions. Nos
+            - strong [ref=e113]: plaquistes
+            - text: appliquent des enduits de qualité professionnelle pour obtenir des surfaces parfaitement lisses, prêtes à être peintes ou décorées.
+          - heading "Pourquoi Choisir ATC Rénovation à Nancy ?" [level=3] [ref=e114]: Pourquoi Choisir ATC Rénovation à Nancy ?
+          - paragraph [ref=e116]:
+            - text: Artisan local implanté en
+            - strong [ref=e117]: Meurthe-et-Moselle
+            - text: ", nous garantissons :"
+            - strong [ref=e118]: engagement qualité
+            - text: ","
+            - strong [ref=e119]: respect des délais
+            - text: ","
+            - strong [ref=e120]: propreté du chantier
+            - text: ","
+            - strong [ref=e121]: matériaux certifiés
+            - text: et
+            - strong [ref=e122]: conseils personnalisés
+            - text: . Nos artisans qualifiés respectent les
+            - strong [ref=e123]: normes DTU
+            - text: en vigueur pour un travail durable.
+          - paragraph [ref=e124]:
+            - text: Vous avez un projet de
+            - strong [ref=e125]: plâtrerie à Nancy
+            - text: ou en
+            - strong [ref=e126]: Meurthe-et-Moselle
+            - text: "? Contactez"
+            - strong [ref=e127]: ATC Rénovation
+            - text: pour un devis gratuit et personnalisé.
+    - generic [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e131]: Ce que nous faisons
+        - heading "Nos prestations" [level=2] [ref=e132]
+        - paragraph [ref=e133]: Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - img [ref=e137]
+          - heading "Cloisons sur mesure (droites ou courbes)" [level=3] [ref=e139]
+        - generic [ref=e140]:
+          - img [ref=e142]
+          - heading "Faux plafonds (tendus, suspendus, décoratifs)" [level=3] [ref=e144]
+        - generic [ref=e145]:
+          - img [ref=e147]
+          - heading "Isolation phonique haute performance" [level=3] [ref=e149]
+        - generic [ref=e150]:
+          - img [ref=e152]
+          - heading "Enduits de finition lisses" [level=3] [ref=e154]
+    - generic [ref=e156]:
+      - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e157]:
+        - text: Prêt à transformer votre
+        - text: espace de vie ?
+      - paragraph [ref=e158]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+      - link "Demander un devis" [ref=e160] [cursor=pointer]:
+        - /url: /devis
+        - button "Demander un devis" [ref=e161]
+  - contentinfo [ref=e162]:
+    - generic [ref=e163]:
+      - generic [ref=e164]:
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - heading "ATC Rénovation" [level=3] [ref=e167]
+            - generic [ref=e168]: Notre différence est notre qualité
+          - paragraph [ref=e169]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e170]:
+          - heading "Navigation" [level=4] [ref=e171]
+          - list [ref=e172]:
+            - listitem [ref=e173]:
+              - link "Accueil" [ref=e174] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e175]:
+              - link "À Propos" [ref=e176] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e177]:
+              - link "Services" [ref=e178] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e179]:
+              - link "Réalisations" [ref=e180] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e181]:
+              - link "Contact" [ref=e182] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e183]:
+          - heading "Nos Services" [level=4] [ref=e184]
+          - list [ref=e185]:
+            - listitem [ref=e186]:
+              - link "Plâtrerie" [ref=e187] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e188]:
+              - link "Isolation RGE" [ref=e189] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e190]:
+              - link "Peinture" [ref=e191] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e192]:
+              - link "Sols & Murs" [ref=e193] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e194]:
+              - link "Chambre & Salon" [ref=e195] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e196]:
+              - link "Appartement Complet" [ref=e197] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e198]:
+              - link "Portes" [ref=e199] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e200]:
+              - link "Combles" [ref=e201] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e202]:
+          - heading "Zones d'Intervention" [level=4] [ref=e203]
+          - list [ref=e204]:
+            - listitem [ref=e205]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e206]:
+          - heading "Contact" [level=4] [ref=e207]
+          - list [ref=e208]:
+            - listitem [ref=e209]:
+              - img [ref=e210]
+              - generic [ref=e213]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e214]:
+              - img [ref=e215]
+              - link "Appeler le 06 29 04 72 72" [ref=e217] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e218]:
+              - img [ref=e219]
+              - link "atacanch@gmail.com" [ref=e222] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e223]:
+        - paragraph [ref=e224]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e225]:
+          - button "Mentions légales" [ref=e226] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e227] [cursor=pointer]

@@ -1,0 +1,185 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Installation de Portes Intérieures" [ref=e28]
+      - generic [ref=e30]:
+        - navigation "Fil d'Ariane" [ref=e31]:
+          - link "Accueil" [ref=e33] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e34]:
+            - img [ref=e35]
+            - link "Services" [ref=e37] [cursor=pointer]:
+              - /url: /services
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e41]: Portes
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - generic [ref=e48]: Portes
+          - heading "Installation de Portes Intérieures à Nancy" [level=1] [ref=e49]
+          - paragraph [ref=e50]: "Blocs-portes et systèmes fin de chantier : structurez vos circulations."
+    - generic [ref=e54]:
+      - generic [ref=e55]: Notre expertise
+      - heading "Installation de Portes Intérieures" [level=2] [ref=e56]
+      - generic [ref=e57]:
+        - generic [ref=e59]:
+          - img "Installation de Portes Intérieures" [ref=e60]
+          - generic [ref=e61]:
+            - img [ref=e62]
+            - generic [ref=e65]: Spécialiste
+        - paragraph [ref=e67]:
+          - strong [ref=e68]: La porte intérieure structure les circulations et isole acoustiquement vos pièces.
+          - text: C'est un élément clé qui donne le ton décoratif de votre logement.
+          - strong [ref=e69]: ATC Rénovation
+          - text: pose tous types de menuiseries à
+          - strong [ref=e70]: Nancy
+          - text: avec une précision artisanale.
+          - strong [ref=e71]: Solutions de Menuiserie sur Mesure
+          - text: Nous installons des
+          - strong [ref=e72]: blocs-portes complets
+          - text: ", des systèmes fin de chantier, ainsi que des"
+          - strong [ref=e73]: portes coulissantes à galandage
+          - text: pour optimiser l'espace. Le choix d'une porte dépend de paramètres techniques précis (huisserie, sens d'ouverture, épaisseur de cloison) que nous validons lors de notre visite technique.
+          - strong [ref=e74]: Finitions et Performances Acoustiques
+          - text: "Nous proposons une large gamme de finitions : portes laquées,"
+          - strong [ref=e75]: plaquées bois
+          - text: (chêne, noyer) ou vitrées. Pour un confort optimal, nous installons des
+          - strong [ref=e76]: portes acoustiques renforcées
+          - text: permettant un affaiblissement sonore significatif entre les pièces.
+          - strong [ref=e77]: Une Pose aux Réglages Millimétrés
+          - text: "La qualité de notre pose se mesure aux détails : alignement parfait du dormant, jeu régulier et absence de frottement. Nous assurons également la pose de la quincaillerie et des joints d'isolation. Un chantier de remplacement de portes s'effectue généralement en"
+          - strong [ref=e78]: 1 à 2 jours
+          - text: .
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]: Ce que nous faisons
+        - heading "Nos prestations" [level=2] [ref=e83]
+        - paragraph [ref=e84]: Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - img [ref=e88]
+          - heading "Pose de blocs-portes neufs" [level=3] [ref=e90]
+        - generic [ref=e91]:
+          - img [ref=e93]
+          - heading "Portes coulissantes & galandage" [level=3] [ref=e95]
+        - generic [ref=e96]:
+          - img [ref=e98]
+          - heading "Portes acoustiques & thermiques" [level=3] [ref=e100]
+        - generic [ref=e101]:
+          - img [ref=e103]
+          - heading "Remplacement de menuiseries intérieures" [level=3] [ref=e105]
+    - generic [ref=e107]:
+      - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e108]:
+        - text: Prêt à transformer votre
+        - text: espace de vie ?
+      - paragraph [ref=e109]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+      - link "Demander un devis" [ref=e111] [cursor=pointer]:
+        - /url: /devis
+        - button "Demander un devis" [ref=e112]
+  - contentinfo [ref=e113]:
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - heading "ATC Rénovation" [level=3] [ref=e118]
+            - generic [ref=e119]: Notre différence est notre qualité
+          - paragraph [ref=e120]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e121]:
+          - heading "Navigation" [level=4] [ref=e122]
+          - list [ref=e123]:
+            - listitem [ref=e124]:
+              - link "Accueil" [ref=e125] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e126]:
+              - link "À Propos" [ref=e127] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e128]:
+              - link "Services" [ref=e129] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e130]:
+              - link "Réalisations" [ref=e131] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e132]:
+              - link "Contact" [ref=e133] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e134]:
+          - heading "Nos Services" [level=4] [ref=e135]
+          - list [ref=e136]:
+            - listitem [ref=e137]:
+              - link "Plâtrerie" [ref=e138] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e139]:
+              - link "Isolation RGE" [ref=e140] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e141]:
+              - link "Peinture" [ref=e142] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e143]:
+              - link "Sols & Murs" [ref=e144] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e145]:
+              - link "Chambre & Salon" [ref=e146] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e147]:
+              - link "Appartement Complet" [ref=e148] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e149]:
+              - link "Portes" [ref=e150] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e151]:
+              - link "Combles" [ref=e152] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e153]:
+          - heading "Zones d'Intervention" [level=4] [ref=e154]
+          - list [ref=e155]:
+            - listitem [ref=e156]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e157]:
+          - heading "Contact" [level=4] [ref=e158]
+          - list [ref=e159]:
+            - listitem [ref=e160]:
+              - img [ref=e161]
+              - generic [ref=e164]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e165]:
+              - img [ref=e166]
+              - link "Appeler le 06 29 04 72 72" [ref=e168] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e169]:
+              - img [ref=e170]
+              - link "atacanch@gmail.com" [ref=e173] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e174]:
+        - paragraph [ref=e175]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e176]:
+          - button "Mentions légales" [ref=e177] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e178] [cursor=pointer]

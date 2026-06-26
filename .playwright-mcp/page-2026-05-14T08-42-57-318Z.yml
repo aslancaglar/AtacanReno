@@ -1,0 +1,187 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Revêtements de Sols & Murs" [ref=e28]
+      - generic [ref=e30]:
+        - navigation "Fil d'Ariane" [ref=e31]:
+          - link "Accueil" [ref=e33] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e34]:
+            - img [ref=e35]
+            - link "Services" [ref=e37] [cursor=pointer]:
+              - /url: /services
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e41]: Sols & Murs
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - generic [ref=e49]: Sols & Murs
+          - heading "Revêtements de Sols & Murs à Nancy" [level=1] [ref=e50]
+          - paragraph [ref=e51]: "Carrelage, parquet, sols souples : des revêtements posés dans les règles de l'art."
+    - generic [ref=e55]:
+      - generic [ref=e56]: Notre expertise
+      - heading "Revêtements de Sols & Murs" [level=2] [ref=e57]
+      - generic [ref=e58]:
+        - generic [ref=e60]:
+          - img "Revêtements de Sols & Murs" [ref=e61]
+          - generic [ref=e62]:
+            - img [ref=e63]
+            - generic [ref=e67]: Spécialiste
+        - paragraph [ref=e69]:
+          - strong [ref=e70]: Le sol est le revêtement qui subit le plus de contraintes au quotidien.
+          - text: Qu'il s'agisse de carrelage ou de bois, il doit être posé avec une précision artisanale pour durer.
+          - strong [ref=e71]: ATC Rénovation
+          - text: à
+          - strong [ref=e72]: Nancy
+          - text: intervient sur tous types de supports avec une exigence de préparation irréprochable.
+          - strong [ref=e73]: Une Préparation Technique Indispensable
+          - text: La qualité d'une pose se joue avant tout sur le support. Nous réalisons les
+          - strong [ref=e74]: ragréages auto-lissants
+          - text: ", traitons les fissures et posons les sous-couches phoniques indispensables en copropriété. Nous vérifions la planéité au laser avant toute intervention pour garantir un résultat sans défaut."
+          - strong [ref=e75]: Carrelage, Faïence et Grands Formats
+          - text: Côté carrelage, nous maîtrisons la pose de
+          - strong [ref=e76]: grès cérame
+          - text: ", mosaïque et pierre naturelle. Nous sommes spécialisés dans les"
+          - strong [ref=e77]: carrelages grand format
+          - text: (jusqu'à 120x120 cm) qui demandent un double encollage et un calepinage précis. Nous utilisons des joints époxy pour les zones humides afin de garantir une étanchéité totale.
+          - strong [ref=e78]: Parquets et Sols Souples
+          - text: Pour le bois, nous sélectionnons des essences de qualité (
+          - strong [ref=e79]: chêne
+          - text: ", frêne) en pose collée ou clipsée selon votre chauffage au sol. Nous installons également des"
+          - strong [ref=e80]: sols souples PVC
+          - text: ou des parquets stratifiés haute résistance pour les budgets optimisés. Chaque pose est garantie conforme aux
+          - strong [ref=e81]: normes DTU
+          - text: en vigueur.
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e85]: Ce que nous faisons
+        - heading "Nos prestations" [level=2] [ref=e86]
+        - paragraph [ref=e87]: Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - img [ref=e91]
+          - heading "Pose de carrelage & faïence" [level=3] [ref=e93]
+        - generic [ref=e94]:
+          - img [ref=e96]
+          - heading "Parquet massif & contrecollé" [level=3] [ref=e98]
+        - generic [ref=e99]:
+          - img [ref=e101]
+          - heading "Sols souples & PVC clipsable" [level=3] [ref=e103]
+        - generic [ref=e104]:
+          - img [ref=e106]
+          - heading "Ragréage & Préparation supports" [level=3] [ref=e108]
+    - generic [ref=e110]:
+      - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e111]:
+        - text: Prêt à transformer votre
+        - text: espace de vie ?
+      - paragraph [ref=e112]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+      - link "Demander un devis" [ref=e114] [cursor=pointer]:
+        - /url: /devis
+        - button "Demander un devis" [ref=e115]
+  - contentinfo [ref=e116]:
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - heading "ATC Rénovation" [level=3] [ref=e121]
+            - generic [ref=e122]: Notre différence est notre qualité
+          - paragraph [ref=e123]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e124]:
+          - heading "Navigation" [level=4] [ref=e125]
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - link "Accueil" [ref=e128] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e129]:
+              - link "À Propos" [ref=e130] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e131]:
+              - link "Services" [ref=e132] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e133]:
+              - link "Réalisations" [ref=e134] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e135]:
+              - link "Contact" [ref=e136] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e137]:
+          - heading "Nos Services" [level=4] [ref=e138]
+          - list [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Plâtrerie" [ref=e141] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e142]:
+              - link "Isolation RGE" [ref=e143] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e144]:
+              - link "Peinture" [ref=e145] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e146]:
+              - link "Sols & Murs" [ref=e147] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e148]:
+              - link "Chambre & Salon" [ref=e149] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e150]:
+              - link "Appartement Complet" [ref=e151] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e152]:
+              - link "Portes" [ref=e153] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e154]:
+              - link "Combles" [ref=e155] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e156]:
+          - heading "Zones d'Intervention" [level=4] [ref=e157]
+          - list [ref=e158]:
+            - listitem [ref=e159]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e160]:
+          - heading "Contact" [level=4] [ref=e161]
+          - list [ref=e162]:
+            - listitem [ref=e163]:
+              - img [ref=e164]
+              - generic [ref=e167]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e168]:
+              - img [ref=e169]
+              - link "Appeler le 06 29 04 72 72" [ref=e171] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e172]:
+              - img [ref=e173]
+              - link "atacanch@gmail.com" [ref=e176] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e177]:
+        - paragraph [ref=e178]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e179]:
+          - button "Mentions légales" [ref=e180] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e181] [cursor=pointer]

@@ -1,0 +1,12 @@
+- main [ref=e3]:
+  - generic [ref=e6]:
+    - img [ref=e8]
+    - heading "Demande reçue !" [level=1] [ref=e11]
+    - paragraph [ref=e12]: Merci pour votre demande de devis. Notre équipe l'étudie avec attention et vous recontactera sous 24 à 48h avec une proposition personnalisée et adaptée à vos besoins.
+    - generic [ref=e13]:
+      - link "Retour à l'accueil" [ref=e14] [cursor=pointer]:
+        - /url: /
+        - button "Retour à l'accueil" [ref=e15]
+      - link "Découvrir nos services" [ref=e16] [cursor=pointer]:
+        - /url: /services
+        - button "Découvrir nos services" [ref=e17]

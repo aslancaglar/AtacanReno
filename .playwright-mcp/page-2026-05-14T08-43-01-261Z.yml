@@ -1,0 +1,183 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Rénovation de Chambre & Salon" [ref=e28]
+      - generic [ref=e30]:
+        - navigation "Fil d'Ariane" [ref=e31]:
+          - link "Accueil" [ref=e33] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e34]:
+            - img [ref=e35]
+            - link "Services" [ref=e37] [cursor=pointer]:
+              - /url: /services
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e41]: Chambre & Salon
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - generic [ref=e48]: Chambre & Salon
+          - heading "Rénovation de Chambre & Salon à Nancy" [level=1] [ref=e49]
+          - paragraph [ref=e50]: Modernisez vos pièces de vie avec des finitions soignées et un aménagement sur mesure.
+    - generic [ref=e54]:
+      - generic [ref=e55]: Notre expertise
+      - heading "Rénovation de Chambre & Salon" [level=2] [ref=e56]
+      - generic [ref=e57]:
+        - generic [ref=e59]:
+          - img "Rénovation de Chambre & Salon" [ref=e60]
+          - generic [ref=e61]:
+            - img [ref=e62]
+            - generic [ref=e65]: Spécialiste
+        - paragraph [ref=e67]:
+          - strong [ref=e68]: Une chambre ou un salon rénové, c'est un espace repensé pour mieux vivre.
+          - text: Chez
+          - strong [ref=e69]: ATC Rénovation
+          - text: ", nous prenons en charge la transformation complète de vos pièces de vie à"
+          - strong [ref=e70]: Nancy
+          - text: avec une approche sur mesure.
+          - strong [ref=e71]: Confort Acoustique et Lumineux
+          - text: Pour vos chambres, nous privilégions le calme et la sérénité. Nous installons des
+          - strong [ref=e72]: doublages phoniques
+          - text: ", des faux plafonds avec éclairage LED variable et des parquets chaleureux. Nous concevons également des"
+          - strong [ref=e73]: rangements intégrés
+          - text: et des dressings sur mesure pour libérer l'espace.
+          - strong [ref=e74]: Espaces de Vie Ouverts et Modernes
+          - text: Dans le salon, l'objectif est de créer du volume et de la lumière. Nous réalisons l'ouverture de cloisons, la pose de sols fluides et la création de
+          - strong [ref=e75]: bibliothèques sur mesure
+          - text: . Notre équipe coordonne tous les corps d'état (peinture, électricité, sol) pour vous garantir un résultat harmonieux.
+          - strong [ref=e76]: Un Accompagnement de A à Z
+          - text: De la conception aux finitions, nous sommes votre interlocuteur unique. Un chantier de rénovation de pièce de vie dure généralement
+          - strong [ref=e77]: 2 à 3 semaines
+          - text: . Nous nous engageons sur un planning précis et une propreté exemplaire tout au long des travaux.
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - generic [ref=e81]: Ce que nous faisons
+        - heading "Nos prestations" [level=2] [ref=e82]
+        - paragraph [ref=e83]: Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - img [ref=e87]
+          - heading "Peinture & Décoration murale" [level=3] [ref=e89]
+        - generic [ref=e90]:
+          - img [ref=e92]
+          - heading "Pose de parquets & Sols" [level=3] [ref=e94]
+        - generic [ref=e95]:
+          - img [ref=e97]
+          - heading "Rangements & Dressings sur mesure" [level=3] [ref=e99]
+        - generic [ref=e100]:
+          - img [ref=e102]
+          - heading "Éclairage & Faux plafonds" [level=3] [ref=e104]
+    - generic [ref=e106]:
+      - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e107]:
+        - text: Prêt à transformer votre
+        - text: espace de vie ?
+      - paragraph [ref=e108]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+      - link "Demander un devis" [ref=e110] [cursor=pointer]:
+        - /url: /devis
+        - button "Demander un devis" [ref=e111]
+  - contentinfo [ref=e112]:
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - heading "ATC Rénovation" [level=3] [ref=e117]
+            - generic [ref=e118]: Notre différence est notre qualité
+          - paragraph [ref=e119]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e120]:
+          - heading "Navigation" [level=4] [ref=e121]
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - link "Accueil" [ref=e124] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e125]:
+              - link "À Propos" [ref=e126] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e127]:
+              - link "Services" [ref=e128] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e129]:
+              - link "Réalisations" [ref=e130] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e131]:
+              - link "Contact" [ref=e132] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e133]:
+          - heading "Nos Services" [level=4] [ref=e134]
+          - list [ref=e135]:
+            - listitem [ref=e136]:
+              - link "Plâtrerie" [ref=e137] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e138]:
+              - link "Isolation RGE" [ref=e139] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e140]:
+              - link "Peinture" [ref=e141] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e142]:
+              - link "Sols & Murs" [ref=e143] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e144]:
+              - link "Chambre & Salon" [ref=e145] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e146]:
+              - link "Appartement Complet" [ref=e147] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e148]:
+              - link "Portes" [ref=e149] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e150]:
+              - link "Combles" [ref=e151] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e152]:
+          - heading "Zones d'Intervention" [level=4] [ref=e153]
+          - list [ref=e154]:
+            - listitem [ref=e155]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e156]:
+          - heading "Contact" [level=4] [ref=e157]
+          - list [ref=e158]:
+            - listitem [ref=e159]:
+              - img [ref=e160]
+              - generic [ref=e163]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e164]:
+              - img [ref=e165]
+              - link "Appeler le 06 29 04 72 72" [ref=e167] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e168]:
+              - img [ref=e169]
+              - link "atacanch@gmail.com" [ref=e172] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e173]:
+        - paragraph [ref=e174]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e175]:
+          - button "Mentions légales" [ref=e176] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e177] [cursor=pointer]

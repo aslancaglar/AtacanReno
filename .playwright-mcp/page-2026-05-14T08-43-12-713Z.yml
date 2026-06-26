@@ -1,0 +1,181 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Aménagement des Combles" [ref=e28]
+      - generic [ref=e30]:
+        - navigation "Fil d'Ariane" [ref=e31]:
+          - link "Accueil" [ref=e33] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e34]:
+            - img [ref=e35]
+            - link "Services" [ref=e37] [cursor=pointer]:
+              - /url: /services
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e41]: Combles
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - generic [ref=e48]: Combles
+          - heading "Aménagement des Combles à Nancy" [level=1] [ref=e49]
+          - paragraph [ref=e50]: "Transformez vos combles en espace de vie : chambre et bureau."
+    - generic [ref=e54]:
+      - generic [ref=e55]: Notre expertise
+      - heading "Aménagement des Combles" [level=2] [ref=e56]
+      - generic [ref=e57]:
+        - generic [ref=e59]:
+          - img "Aménagement des Combles" [ref=e60]
+          - generic [ref=e61]:
+            - img [ref=e62]
+            - generic [ref=e65]: Spécialiste
+        - paragraph [ref=e67]:
+          - strong [ref=e68]: L'aménagement des combles est l'une des solutions les plus rentables
+          - text: pour gagner de la surface habitable sans déménager ni faire d'extension. À
+          - strong [ref=e69]: Nancy
+          - text: "et dans le Grand Est, nous transformons vos volumes inexploités en pièces de vie complètes : suite parentale, bureau ou chambre d'amis."
+          - strong [ref=e70]: Une Expertise Technique Pointue
+          - text: Le projet démarre par un diagnostic technique rigoureux. Chez
+          - strong [ref=e71]: ATC Rénovation
+          - text: ", nous vérifions la hauteur sous faîtage, l'état de la charpente et la faisabilité de l'accès. Nous étudions également les démarches administratives nécessaires selon la surface créée."
+          - strong [ref=e72]: Un Aménagement Clé en Main
+          - text: "Notre offre couvre l'intégralité des travaux :"
+          - strong [ref=e73]: isolation thermique
+          - text: haute performance, plâtrerie complète sur ossature métallique, pose de fenêtres de toit type
+          - strong [ref=e74]: Velux
+          - text: ", et installation électrique aux normes. Nous assurons également la pose des revêtements de sols et les finitions de peinture."
+          - strong [ref=e75]: Gain de Valeur Patrimoniale
+          - text: Aménager ses combles, c'est aussi augmenter la valeur de son bien. Le chantier dure en moyenne
+          - strong [ref=e76]: 4 à 8 semaines
+          - text: ", avec un seul interlocuteur dédié et des matériaux conformes à la réglementation thermique en vigueur pour un confort été comme hiver."
+    - generic [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]: Ce que nous faisons
+        - heading "Nos prestations" [level=2] [ref=e81]
+        - paragraph [ref=e82]: Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - img [ref=e86]
+          - heading "Isolation des rampants & plafonds" [level=3] [ref=e88]
+        - generic [ref=e89]:
+          - img [ref=e91]
+          - heading "Plâtrerie & Cloisonnement sur mesure" [level=3] [ref=e93]
+        - generic [ref=e94]:
+          - img [ref=e96]
+          - heading "Pose de fenêtres de toit (Velux)" [level=3] [ref=e98]
+        - generic [ref=e99]:
+          - img [ref=e101]
+          - heading "Électricité & Finitions complètes" [level=3] [ref=e103]
+    - generic [ref=e105]:
+      - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e106]:
+        - text: Prêt à transformer votre
+        - text: espace de vie ?
+      - paragraph [ref=e107]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+      - link "Demander un devis" [ref=e109] [cursor=pointer]:
+        - /url: /devis
+        - button "Demander un devis" [ref=e110]
+  - contentinfo [ref=e111]:
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - heading "ATC Rénovation" [level=3] [ref=e116]
+            - generic [ref=e117]: Notre différence est notre qualité
+          - paragraph [ref=e118]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e119]:
+          - heading "Navigation" [level=4] [ref=e120]
+          - list [ref=e121]:
+            - listitem [ref=e122]:
+              - link "Accueil" [ref=e123] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e124]:
+              - link "À Propos" [ref=e125] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e126]:
+              - link "Services" [ref=e127] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e128]:
+              - link "Réalisations" [ref=e129] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e130]:
+              - link "Contact" [ref=e131] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e132]:
+          - heading "Nos Services" [level=4] [ref=e133]
+          - list [ref=e134]:
+            - listitem [ref=e135]:
+              - link "Plâtrerie" [ref=e136] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e137]:
+              - link "Isolation RGE" [ref=e138] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e139]:
+              - link "Peinture" [ref=e140] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e141]:
+              - link "Sols & Murs" [ref=e142] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e143]:
+              - link "Chambre & Salon" [ref=e144] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e145]:
+              - link "Appartement Complet" [ref=e146] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e147]:
+              - link "Portes" [ref=e148] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e149]:
+              - link "Combles" [ref=e150] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e151]:
+          - heading "Zones d'Intervention" [level=4] [ref=e152]
+          - list [ref=e153]:
+            - listitem [ref=e154]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e155]:
+          - heading "Contact" [level=4] [ref=e156]
+          - list [ref=e157]:
+            - listitem [ref=e158]:
+              - img [ref=e159]
+              - generic [ref=e162]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e163]:
+              - img [ref=e164]
+              - link "Appeler le 06 29 04 72 72" [ref=e166] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e167]:
+              - img [ref=e168]
+              - link "atacanch@gmail.com" [ref=e171] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e172]:
+        - paragraph [ref=e173]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e174]:
+          - button "Mentions légales" [ref=e175] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e176] [cursor=pointer]

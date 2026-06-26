@@ -1,0 +1,445 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: ATC Rénovation
+          - generic [ref=e8]: Notre différence est notre qualité
+        - link "Appeler le 06 29 04 72 72" [ref=e10] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e11]
+        - button "Ouvrir le menu" [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+    - main [ref=e15]:
+      - generic [ref=e16]:
+        - img "Rénovation intérieure — ATC Rénovation Nancy" [ref=e18]
+        - generic [ref=e21]:
+          - heading "Votre spécialiste en rénovation intérieure à Nancy" [level=1] [ref=e22]
+          - paragraph [ref=e23]: "Appartement, maison ou local professionnel : confiez vos travaux à une équipe d'experts forts de 20 ans d'expérience."
+          - generic [ref=e24]:
+            - link "Demander un devis" [ref=e25] [cursor=pointer]:
+              - /url: /devis
+              - button "Demander un devis" [ref=e26]
+            - link "Nos Réalisations" [ref=e27] [cursor=pointer]:
+              - /url: /realisations
+              - button "Nos Réalisations" [ref=e28]
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - generic [ref=e32]: SL
+              - generic [ref=e34]: JP
+              - generic [ref=e36]: MD
+              - generic [ref=e38]: TR
+            - generic [ref=e39]:
+              - img [ref=e40]
+              - img [ref=e42]
+              - img [ref=e44]
+              - img [ref=e46]
+              - img [ref=e48]
+            - link "4.9/5 Avis Google" [ref=e50] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/RwbnhGRwfampRRGS8
+              - text: 4.9/5 Avis Google
+              - img [ref=e51]
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - img [ref=e59]
+          - generic [ref=e61]: 20+
+          - generic [ref=e62]: Années d'expérience
+        - generic [ref=e63]:
+          - img [ref=e64]
+          - generic [ref=e67]: 300+
+          - generic [ref=e68]: Projets terminés
+        - generic [ref=e69]:
+          - img [ref=e70]
+          - generic [ref=e72]: 4.9/5
+          - generic [ref=e73]: Note moyenne sur Google
+        - generic [ref=e74]:
+          - img [ref=e75]
+          - generic [ref=e78]: 100%
+          - generic [ref=e79]: Délais respectés
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - img "Fondateur d'ATC Rénovation" [ref=e85]
+          - generic [ref=e86]:
+            - generic [ref=e87]: 20+
+            - generic [ref=e88]: ans d'expérience
+        - generic [ref=e89]:
+          - generic [ref=e90]: À propos de nous
+          - heading "Une passion pour le détail, un engagement pour la qualité." [level=2] [ref=e91]
+          - paragraph [ref=e92]: Depuis 20 ans, ATC Rénovation vous accompagne dans la transformation de vos espaces de vie. Nous croyons que chaque intérieur a le potentiel de devenir extraordinaire.
+          - paragraph [ref=e93]: "Spécialistes du « clé en main », nous coordonnons l'ensemble des corps de métier pour réaliser vos projets de A à Z. De la rénovation complète de votre appartement à l'aménagement de vos combles, en passant par la peinture, les revêtements de sols, la menuiserie ou encore l'électricité : nous transformons vos rêves en réalité, avec soin et passion."
+          - list [ref=e94]:
+            - listitem [ref=e95]:
+              - img [ref=e97]
+              - generic [ref=e99]: Un interlocuteur unique pour tous vos travaux d'intérieur
+            - listitem [ref=e100]:
+              - img [ref=e102]
+              - generic [ref=e104]: 20 ans d'expertise sur le bassin nancéien
+            - listitem [ref=e105]:
+              - img [ref=e107]
+              - generic [ref=e109]: Respect strict des délais et de votre budget
+            - listitem [ref=e110]:
+              - img [ref=e112]
+              - generic [ref=e114]: Garantie décennale et isolation thermique certifiée RGE
+          - generic [ref=e115]:
+            - img "Certification RGE Qualibat" [ref=e117]
+            - img "Garantie Décennale" [ref=e119]
+            - img "MaPrimeRénov'" [ref=e121]
+      - generic [ref=e123]:
+        - generic [ref=e124]:
+          - heading "Nos services de rénovation intérieure à Nancy" [level=2] [ref=e125]
+          - paragraph [ref=e126]: "Peinture, isolation thermique RGE, plâtrerie, revêtements de sols, menuiserie et aménagement des combles : des artisans qualifiés interviennent à Nancy et dans tout le Grand Nancy."
+        - generic [ref=e127]:
+          - 'link "Plâtrerie, Cloisons & Faux Plafonds Plâtrerie, Cloisons & Faux Plafonds Cloisons, faux plafonds, isolation phonique : structurez vos espaces. Voir plâtrerie et faux plafonds à Nancy" [ref=e129] [cursor=pointer]':
+            - /url: /services/platrerie-faux-plafonds
+            - img "Plâtrerie, Cloisons & Faux Plafonds" [ref=e131]
+            - generic [ref=e132]:
+              - heading "Plâtrerie, Cloisons & Faux Plafonds" [level=3] [ref=e133]:
+                - img [ref=e134]
+                - text: Plâtrerie, Cloisons & Faux Plafonds
+              - paragraph [ref=e136]: "Cloisons, faux plafonds, isolation phonique : structurez vos espaces."
+              - generic [ref=e137]:
+                - text: Voir plâtrerie et faux plafonds à Nancy
+                - img [ref=e138]
+          - 'link "Isolation & Rénovation Énergétique (RGE) Isolation & Rénovation Énergétique (RGE) Isolation certifiée RGE : bénéficiez des aides MaPrimeRénov'' et réduisez vos factures. Voir isolation thermique RGE à Nancy" [ref=e141] [cursor=pointer]':
+            - /url: /services/isolation-renovation-energetique
+            - img "Isolation & Rénovation Énergétique (RGE)" [ref=e143]
+            - generic [ref=e144]:
+              - heading "Isolation & Rénovation Énergétique (RGE)" [level=3] [ref=e145]:
+                - img [ref=e146]
+                - text: Isolation & Rénovation Énergétique (RGE)
+              - paragraph [ref=e148]: "Isolation certifiée RGE : bénéficiez des aides MaPrimeRénov' et réduisez vos factures."
+              - generic [ref=e149]:
+                - text: Voir isolation thermique RGE à Nancy
+                - img [ref=e150]
+          - 'link "Peinture & Décoration Peinture & Décoration Peinture intérieure, enduits décoratifs, papier peint : sublimez vos murs. Voir peinture intérieure à Nancy" [ref=e153] [cursor=pointer]':
+            - /url: /services/peinture-decoration
+            - img "Peinture & Décoration" [ref=e155]
+            - generic [ref=e156]:
+              - heading "Peinture & Décoration" [level=3] [ref=e157]:
+                - img [ref=e158]
+                - text: Peinture & Décoration
+              - paragraph [ref=e162]: "Peinture intérieure, enduits décoratifs, papier peint : sublimez vos murs."
+              - generic [ref=e163]:
+                - text: Voir peinture intérieure à Nancy
+                - img [ref=e164]
+          - 'link "Revêtements de Sols & Murs Revêtements de Sols & Murs Carrelage, parquet, sols souples : des revêtements posés dans les règles de l''art. Voir revêtements de sols et murs à Nancy" [ref=e167] [cursor=pointer]':
+            - /url: /services/revetements-sols-murs
+            - img "Revêtements de Sols & Murs" [ref=e169]
+            - generic [ref=e170]:
+              - heading "Revêtements de Sols & Murs" [level=3] [ref=e171]:
+                - img [ref=e172]
+                - text: Revêtements de Sols & Murs
+              - paragraph [ref=e176]: "Carrelage, parquet, sols souples : des revêtements posés dans les règles de l'art."
+              - generic [ref=e177]:
+                - text: Voir revêtements de sols et murs à Nancy
+                - img [ref=e178]
+          - link "Rénovation de Chambre & Salon Rénovation de Chambre & Salon Modernisez vos pièces de vie avec des finitions soignées et un aménagement sur mesure. Voir rénovation de chambre et salon à Nancy" [ref=e181] [cursor=pointer]:
+            - /url: /services/renovation-chambre-salon
+            - img "Rénovation de Chambre & Salon" [ref=e183]
+            - generic [ref=e184]:
+              - heading "Rénovation de Chambre & Salon" [level=3] [ref=e185]:
+                - img [ref=e186]
+                - text: Rénovation de Chambre & Salon
+              - paragraph [ref=e189]: Modernisez vos pièces de vie avec des finitions soignées et un aménagement sur mesure.
+              - generic [ref=e190]:
+                - text: Voir rénovation de chambre et salon à Nancy
+                - img [ref=e191]
+          - link "Rénovation Complète d'Appartement Rénovation Complète d'Appartement Prise en charge de A à Z de votre projet de rénovation, tous corps de métier réunis. Voir rénovation complète d'appartement à Nancy" [ref=e194] [cursor=pointer]:
+            - /url: /services/renovation-complete-appartement
+            - img "Rénovation Complète d'Appartement" [ref=e196]
+            - generic [ref=e197]:
+              - heading "Rénovation Complète d'Appartement" [level=3] [ref=e198]:
+                - img [ref=e199]
+                - text: Rénovation Complète d'Appartement
+              - paragraph [ref=e203]: Prise en charge de A à Z de votre projet de rénovation, tous corps de métier réunis.
+              - generic [ref=e204]:
+                - text: Voir rénovation complète d'appartement à Nancy
+                - img [ref=e205]
+          - 'link "Installation de Portes Intérieures Installation de Portes Intérieures Blocs-portes et systèmes fin de chantier : structurez vos circulations. Voir installation de portes intérieures à Nancy" [ref=e208] [cursor=pointer]':
+            - /url: /services/menuiserie-amenagement
+            - img "Installation de Portes Intérieures" [ref=e210]
+            - generic [ref=e211]:
+              - heading "Installation de Portes Intérieures" [level=3] [ref=e212]:
+                - img [ref=e213]
+                - text: Installation de Portes Intérieures
+              - paragraph [ref=e216]: "Blocs-portes et systèmes fin de chantier : structurez vos circulations."
+              - generic [ref=e217]:
+                - text: Voir installation de portes intérieures à Nancy
+                - img [ref=e218]
+          - 'link "Aménagement des Combles Aménagement des Combles Transformez vos combles en espace de vie : chambre et bureau. Voir aménagement de combles à Nancy" [ref=e221] [cursor=pointer]':
+            - /url: /services/amenagement-combles
+            - img "Aménagement des Combles" [ref=e223]
+            - generic [ref=e224]:
+              - heading "Aménagement des Combles" [level=3] [ref=e225]:
+                - img [ref=e226]
+                - text: Aménagement des Combles
+              - paragraph [ref=e229]: "Transformez vos combles en espace de vie : chambre et bureau."
+              - generic [ref=e230]:
+                - text: Voir aménagement de combles à Nancy
+                - img [ref=e231]
+        - paragraph [ref=e233]: "ATC Rénovation intervient à Nancy, Vandœuvre-lès-Nancy, Laxou, Maxéville, Villers-lès-Nancy et dans toute la Meurthe-et-Moselle pour vos projets de rénovation intérieure. Que vous cherchiez un peintre à Nancy, un artisan plaquiste pour vos cloisons ou faux plafonds, un poseur de carrelage ou parquet, ou encore un isolateur certifié RGE pour bénéficier de MaPrimeRénov' : notre équipe coordonne tous les corps de métier, du sol au plafond. Devis gratuit sous 48h, respect des délais, garantie décennale."
+      - generic [ref=e235]:
+        - generic [ref=e236]:
+          - generic [ref=e237]: Portfolio
+          - heading "Nos Dernières Réalisations" [level=2] [ref=e238]
+          - paragraph [ref=e239]: Découvrez nos projets de rénovation réalisés à Nancy et ses environs. Chaque chantier reflète notre savoir-faire et notre souci du détail.
+        - generic [ref=e241]:
+          - button "Tout" [ref=e242] [cursor=pointer]
+          - button "Salles de bain" [ref=e243] [cursor=pointer]
+          - button "Appartements" [ref=e244] [cursor=pointer]
+          - button "Salons" [ref=e245] [cursor=pointer]
+          - button "Cuisines" [ref=e246] [cursor=pointer]
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - generic [ref=e250] [cursor=pointer]:
+              - img "Suite Parentale de Luxe" [ref=e251]
+              - generic [ref=e252]:
+                - generic [ref=e253]: Salles de bain
+                - heading "Suite Parentale de Luxe" [level=3] [ref=e254]
+                - paragraph [ref=e255]: Nancy Centre
+            - generic [ref=e257] [cursor=pointer]:
+              - img "Rénovation Design Épuré" [ref=e258]
+              - generic [ref=e259]:
+                - generic [ref=e260]: Salons
+                - heading "Rénovation Design Épuré" [level=3] [ref=e261]
+                - paragraph [ref=e262]: Laxou
+          - generic [ref=e263]:
+            - generic [ref=e265] [cursor=pointer]:
+              - img "Rénovation Complète T4" [ref=e266]
+              - generic [ref=e267]:
+                - generic [ref=e268]: Appartements
+                - heading "Rénovation Complète T4" [level=3] [ref=e269]
+                - paragraph [ref=e270]: Vandoeuvre-lès-Nancy
+            - generic [ref=e272] [cursor=pointer]:
+              - img "Cuisine Ouverte Sur Mesure" [ref=e273]
+              - generic [ref=e274]:
+                - generic [ref=e275]: Cuisines
+                - heading "Cuisine Ouverte Sur Mesure" [level=3] [ref=e276]
+                - paragraph [ref=e277]: Nancy Centre
+          - generic [ref=e278]:
+            - generic [ref=e280] [cursor=pointer]:
+              - img "Loft Parisien Contemporain" [ref=e281]
+              - generic [ref=e282]:
+                - generic [ref=e283]: Salons
+                - heading "Loft Parisien Contemporain" [level=3] [ref=e284]
+                - paragraph [ref=e285]: Nancy Vieille Ville
+            - generic [ref=e287] [cursor=pointer]:
+              - img "Harmonie et Lumière" [ref=e288]
+              - generic [ref=e289]:
+                - generic [ref=e290]: Cuisines
+                - heading "Harmonie et Lumière" [level=3] [ref=e291]
+                - paragraph [ref=e292]: Essey-lès-Nancy
+        - link "Voir toutes nos réalisations" [ref=e294] [cursor=pointer]:
+          - /url: /realisations
+          - button "Voir toutes nos réalisations" [ref=e295]:
+            - text: Voir toutes nos réalisations
+            - img
+      - generic [ref=e297]:
+        - generic [ref=e298]:
+          - generic [ref=e299]: Témoignages
+          - heading "Ce que disent nos clients" [level=2] [ref=e300]
+          - paragraph [ref=e301]: La satisfaction de nos clients est notre meilleure carte de visite. Découvrez leurs retours d'expérience.
+        - region [ref=e303]:
+          - generic [ref=e305]:
+            - group [ref=e306]:
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - generic [ref=e311]: SL
+                  - generic [ref=e312]:
+                    - generic [ref=e313]: Sophie Laurent
+                    - text: Rénovation Salle de Bains
+                - generic [ref=e314]:
+                  - img [ref=e315]
+                  - img [ref=e317]
+                  - img [ref=e319]
+                  - img [ref=e321]
+                  - img [ref=e323]
+                - paragraph [ref=e325]: "“Nous avons confié à ATC Rénovation la rénovation complète de notre salle de bains. Le résultat est spectaculaire : douche à l'italienne en mosaïque, double vasque sur mesure, et une finition irréprochable. L'équipe a respecté chaque détail de notre vision tout en apportant des conseils précieux. Un chantier propre, des délais tenus, un budget respecté. Nous recommandons sans hésiter !”"
+                - img "Rénovation Salle de Bains" [ref=e327]
+            - group [ref=e328]:
+              - generic [ref=e330]:
+                - generic [ref=e331]:
+                  - generic [ref=e333]: JM
+                  - generic [ref=e334]:
+                    - generic [ref=e335]: Jean-Pierre Morel
+                    - text: Rénovation Appartement T4
+                - generic [ref=e336]:
+                  - img [ref=e337]
+                  - img [ref=e339]
+                  - img [ref=e341]
+                  - img [ref=e343]
+                  - img [ref=e345]
+                - paragraph [ref=e347]: "“ATC Rénovation a pris en charge la rénovation intégrale de notre appartement T4 à Vandoeuvre. Tout a été refait : sols, murs, cuisine, salle de bains, électricité. Le suivi de chantier était exemplaire avec un seul interlocuteur du début à la fin. Le rapport qualité-prix est excellent et le résultat dépasse largement ce que nous imaginions. Merci à toute l'équipe pour ce travail remarquable.”"
+                - img "Rénovation Appartement T4" [ref=e349]
+            - group [ref=e350]:
+              - generic [ref=e352]:
+                - generic [ref=e353]:
+                  - generic [ref=e355]: MD
+                  - generic [ref=e356]:
+                    - generic [ref=e357]: Marie Dubois
+                    - text: Cuisine Ouverte Sur Mesure
+                - generic [ref=e358]:
+                  - img [ref=e359]
+                  - img [ref=e361]
+                  - img [ref=e363]
+                  - img [ref=e365]
+                  - img [ref=e367]
+                - paragraph [ref=e369]: “Notre vieille cuisine fermée a été transformée en un espace ouvert, moderne et lumineux. L'îlot central en quartz est magnifique, les rangements sont optimisés et la crédence en carreaux de ciment apporte un vrai cachet. L'équipe a su gérer la plomberie, l'électricité et la pose de cuisine avec une coordination parfaite. On adore cuisiner maintenant !”
+                - img "Cuisine Ouverte Sur Mesure" [ref=e371]
+            - group [ref=e372]:
+              - generic [ref=e374]:
+                - generic [ref=e375]:
+                  - generic [ref=e377]: TR
+                  - generic [ref=e378]:
+                    - generic [ref=e379]: Thomas Renard
+                    - text: Isolation Combles RGE
+                - generic [ref=e380]:
+                  - img [ref=e381]
+                  - img [ref=e383]
+                  - img [ref=e385]
+                  - img [ref=e387]
+                  - img [ref=e389]
+                - paragraph [ref=e391]: “Isolation des combles réalisée par ATC Rénovation dans le cadre de MaPrimeRénov'. Dossier d'aides monté par leurs soins, travaux propres et rapides. On sent vraiment la différence de confort thermique cet hiver. Entreprise certifiée RGE, sérieuse et compétente.”
+                - img "Isolation Combles RGE" [ref=e393]
+            - group [ref=e394]:
+              - generic [ref=e396]:
+                - generic [ref=e397]:
+                  - generic [ref=e399]: IM
+                  - generic [ref=e400]:
+                    - generic [ref=e401]: Isabelle Martin
+                    - text: Peinture & Décoration
+                - generic [ref=e402]:
+                  - img [ref=e403]
+                  - img [ref=e405]
+                  - img [ref=e407]
+                  - img [ref=e409]
+                  - img [ref=e411]
+                - paragraph [ref=e413]: “ATC Rénovation a refait toute la peinture de notre salon et posé un magnifique papier peint panoramique. Le travail de préparation des murs était minutieux et le rendu final est sublime. Les conseils en colorimétrie nous ont beaucoup aidés à faire les bons choix.”
+                - img "Peinture & Décoration" [ref=e415]
+            - group [ref=e416]:
+              - generic [ref=e418]:
+                - generic [ref=e419]:
+                  - generic [ref=e421]: FP
+                  - generic [ref=e422]:
+                    - generic [ref=e423]: François Petit
+                    - text: Aménagement Combles
+                - generic [ref=e424]:
+                  - img [ref=e425]
+                  - img [ref=e427]
+                  - img [ref=e429]
+                  - img [ref=e431]
+                  - img [ref=e433]
+                - paragraph [ref=e435]: “Aménagement complet de nos combles en suite parentale avec salle d'eau. Un vrai travail d'orfèvre pour optimiser chaque centimètre sous les rampants. Pose de Velux, isolation, placo, carrelage, peinture — tout a été géré par une seule équipe. Résultat parfait.”
+                - img "Aménagement Combles" [ref=e437]
+          - generic:
+            - button "Previous slide" [disabled]:
+              - img
+              - generic: Previous slide
+            - button "Next slide" [disabled]:
+              - img
+              - generic: Next slide
+        - link "Lire tous les avis sur Google" [ref=e440] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/RwbnhGRwfampRRGS8
+          - button "Lire tous les avis sur Google" [ref=e441]:
+            - text: Lire tous les avis sur Google
+            - img
+      - generic [ref=e443]:
+        - generic [ref=e444]:
+          - generic [ref=e445]: Confiance
+          - heading "Nos Partenaires" [level=2] [ref=e446]
+        - generic [ref=e447]:
+          - img "Isover" [ref=e449]
+          - img "Knauf" [ref=e451]
+          - img "Moselle Türen" [ref=e453]
+          - img "Litt" [ref=e455]
+          - img "Semin" [ref=e457]
+      - generic [ref=e459]:
+        - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e460]:
+          - text: Prêt à transformer votre
+          - text: espace de vie ?
+        - paragraph [ref=e461]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+        - link "Demander un devis" [ref=e463] [cursor=pointer]:
+          - /url: /devis
+          - button "Demander un devis" [ref=e464]
+    - contentinfo [ref=e465]:
+      - generic [ref=e466]:
+        - generic [ref=e467]:
+          - generic [ref=e468]:
+            - generic [ref=e469]:
+              - heading "ATC Rénovation" [level=3] [ref=e470]
+              - generic [ref=e471]: Notre différence est notre qualité
+            - paragraph [ref=e472]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+          - generic [ref=e473]:
+            - heading "Navigation" [level=4] [ref=e474]
+            - list [ref=e475]:
+              - listitem [ref=e476]:
+                - link "Accueil" [ref=e477] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e478]:
+                - link "À Propos" [ref=e479] [cursor=pointer]:
+                  - /url: /a-propos
+              - listitem [ref=e480]:
+                - link "Services" [ref=e481] [cursor=pointer]:
+                  - /url: /services
+              - listitem [ref=e482]:
+                - link "Réalisations" [ref=e483] [cursor=pointer]:
+                  - /url: /realisations
+              - listitem [ref=e484]:
+                - link "Contact" [ref=e485] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e486]:
+            - heading "Nos Services" [level=4] [ref=e487]
+            - list [ref=e488]:
+              - listitem [ref=e489]:
+                - link "Plâtrerie" [ref=e490] [cursor=pointer]:
+                  - /url: /services/platrerie-faux-plafonds
+              - listitem [ref=e491]:
+                - link "Isolation RGE" [ref=e492] [cursor=pointer]:
+                  - /url: /services/isolation-renovation-energetique
+              - listitem [ref=e493]:
+                - link "Peinture" [ref=e494] [cursor=pointer]:
+                  - /url: /services/peinture-decoration
+              - listitem [ref=e495]:
+                - link "Sols & Murs" [ref=e496] [cursor=pointer]:
+                  - /url: /services/revetements-sols-murs
+              - listitem [ref=e497]:
+                - link "Chambre & Salon" [ref=e498] [cursor=pointer]:
+                  - /url: /services/renovation-chambre-salon
+              - listitem [ref=e499]:
+                - link "Appartement Complet" [ref=e500] [cursor=pointer]:
+                  - /url: /services/renovation-complete-appartement
+              - listitem [ref=e501]:
+                - link "Portes" [ref=e502] [cursor=pointer]:
+                  - /url: /services/menuiserie-amenagement
+              - listitem [ref=e503]:
+                - link "Combles" [ref=e504] [cursor=pointer]:
+                  - /url: /services/amenagement-combles
+          - generic [ref=e505]:
+            - heading "Zones d'Intervention" [level=4] [ref=e506]
+            - list [ref=e507]:
+              - listitem [ref=e508]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+          - generic [ref=e509]:
+            - heading "Contact" [level=4] [ref=e510]
+            - list [ref=e511]:
+              - listitem [ref=e512]:
+                - img [ref=e513]
+                - generic [ref=e516]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+              - listitem [ref=e517]:
+                - img [ref=e518]
+                - link "Appeler le 06 29 04 72 72" [ref=e520] [cursor=pointer]:
+                  - /url: tel:0629047272
+                  - text: 06 29 04 72 72
+              - listitem [ref=e521]:
+                - img [ref=e522]
+                - link "atacanch@gmail.com" [ref=e525] [cursor=pointer]:
+                  - /url: mailto:atacanch@gmail.com
+              - listitem:
+                - generic: SIRET
+                - generic: "82369837800028"
+        - generic [ref=e526]:
+          - paragraph [ref=e527]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+          - generic [ref=e528]:
+            - button "Mentions légales" [ref=e529] [cursor=pointer]
+            - button "Politique de confidentialité" [ref=e530] [cursor=pointer]

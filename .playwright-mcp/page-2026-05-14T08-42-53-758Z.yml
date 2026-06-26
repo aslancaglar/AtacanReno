@@ -1,0 +1,193 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Peinture & Décoration" [ref=e28]
+      - generic [ref=e30]:
+        - navigation "Fil d'Ariane" [ref=e31]:
+          - link "Accueil" [ref=e33] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e34]:
+            - img [ref=e35]
+            - link "Services" [ref=e37] [cursor=pointer]:
+              - /url: /services
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e41]: Peinture
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - generic [ref=e49]: Peinture
+          - heading "Peinture & Décoration Intérieure à Nancy" [level=1] [ref=e50]
+          - paragraph [ref=e51]: "Peinture intérieure, enduits décoratifs, papier peint : sublimez vos murs."
+    - generic [ref=e55]:
+      - generic [ref=e56]: Notre expertise
+      - heading "Peinture & Décoration" [level=2] [ref=e57]
+      - generic [ref=e58]:
+        - generic [ref=e60]:
+          - img "Peinture & Décoration" [ref=e61]
+          - generic [ref=e62]:
+            - img [ref=e63]
+            - generic [ref=e67]: Spécialiste
+        - paragraph [ref=e69]:
+          - strong [ref=e70]: La peinture est le geste qui révèle le caractère d'un intérieur.
+          - text: Bien posée, elle donne profondeur, lumière et harmonie ; mal exécutée, elle laisse des reprises visibles, des cloques ou des bavures. Nos peintres expérimentés interviennent à
+          - strong [ref=e71]: Nancy
+          - text: "sur tous les supports : neufs, rénovés, abîmés ou anciens."
+          - strong [ref=e72]: Une Préparation Méticuleuse pour un Rendu Parfait
+          - text: La phase de préparation représente
+          - strong [ref=e73]: 70 % de la qualité finale
+          - text: . Chez
+          - strong [ref=e74]: ATC Rénovation
+          - text: ", nous prenons le temps de poncer, reboucher, dégraisser et appliquer une sous-couche adaptée. Cette rigueur explique la durabilité de nos finitions et l'absence de défauts à long terme."
+          - strong [ref=e75]: Une Palette Infinie de Finitions
+          - text: "Côté revêtements, nous maîtrisons toute la gamme : peinture acrylique (mate, satinée, velours), peinture glycéro pour les menuiseries, ou peintures techniques. La"
+          - strong [ref=e76]: pose de papier peint
+          - text: ", qu'il soit intissé ou panoramique, demande une précision muraliste que nous assurons. Nous proposons aussi des"
+          - strong [ref=e77]: enduits décoratifs
+          - text: comme le
+          - strong [ref=e78]: béton ciré
+          - text: ou le
+          - strong [ref=e79]: stuc à la chaux
+          - text: .
+          - strong [ref=e80]: Conseil Colorimétrique Inclus
+          - text: Choisir une couleur, c'est anticiper la lumière de la pièce et son orientation. Nous vous présentons des palettes professionnelles (
+          - strong [ref=e81]: Farrow & Ball
+          - text: ","
+          - strong [ref=e82]: Tollens
+          - text: ","
+          - strong [ref=e83]: Ressource
+          - text: ), réalisons des essais sur mur, et vous accompagnons jusqu'au choix final. Nous utilisons des peintures à
+          - strong [ref=e84]: faible COV
+          - text: pour un intérieur sain.
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]: Ce que nous faisons
+        - heading "Nos prestations" [level=2] [ref=e89]
+        - paragraph [ref=e90]: Chaque prestation est réalisée par nos artisans qualifiés avec des matériaux de premier choix.
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - img [ref=e94]
+          - heading "Peinture intérieure (mate, satin, velours)" [level=3] [ref=e96]
+        - generic [ref=e97]:
+          - img [ref=e99]
+          - heading "Pose de papier peint & panoramique" [level=3] [ref=e101]
+        - generic [ref=e102]:
+          - img [ref=e104]
+          - heading "Enduits décoratifs & Béton ciré" [level=3] [ref=e106]
+        - generic [ref=e107]:
+          - img [ref=e109]
+          - heading "Conseil en harmonie des couleurs" [level=3] [ref=e111]
+    - generic [ref=e113]:
+      - heading "Prêt à transformer votre espace de vie ?" [level=2] [ref=e114]:
+        - text: Prêt à transformer votre
+        - text: espace de vie ?
+      - paragraph [ref=e115]: Obtenez un devis gratuit et personnalisé pour votre projet de rénovation sous 48 heures.
+      - link "Demander un devis" [ref=e117] [cursor=pointer]:
+        - /url: /devis
+        - button "Demander un devis" [ref=e118]
+  - contentinfo [ref=e119]:
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - heading "ATC Rénovation" [level=3] [ref=e124]
+            - generic [ref=e125]: Notre différence est notre qualité
+          - paragraph [ref=e126]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e127]:
+          - heading "Navigation" [level=4] [ref=e128]
+          - list [ref=e129]:
+            - listitem [ref=e130]:
+              - link "Accueil" [ref=e131] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e132]:
+              - link "À Propos" [ref=e133] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e134]:
+              - link "Services" [ref=e135] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e136]:
+              - link "Réalisations" [ref=e137] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e138]:
+              - link "Contact" [ref=e139] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e140]:
+          - heading "Nos Services" [level=4] [ref=e141]
+          - list [ref=e142]:
+            - listitem [ref=e143]:
+              - link "Plâtrerie" [ref=e144] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e145]:
+              - link "Isolation RGE" [ref=e146] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e147]:
+              - link "Peinture" [ref=e148] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e149]:
+              - link "Sols & Murs" [ref=e150] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e151]:
+              - link "Chambre & Salon" [ref=e152] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e153]:
+              - link "Appartement Complet" [ref=e154] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e155]:
+              - link "Portes" [ref=e156] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e157]:
+              - link "Combles" [ref=e158] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e159]:
+          - heading "Zones d'Intervention" [level=4] [ref=e160]
+          - list [ref=e161]:
+            - listitem [ref=e162]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e163]:
+          - heading "Contact" [level=4] [ref=e164]
+          - list [ref=e165]:
+            - listitem [ref=e166]:
+              - img [ref=e167]
+              - generic [ref=e170]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e171]:
+              - img [ref=e172]
+              - link "Appeler le 06 29 04 72 72" [ref=e174] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e175]:
+              - img [ref=e176]
+              - link "atacanch@gmail.com" [ref=e179] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e180]:
+        - paragraph [ref=e181]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e182]:
+          - button "Mentions légales" [ref=e183] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e184] [cursor=pointer]

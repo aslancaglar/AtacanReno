@@ -28,6 +28,40 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/services/platrerie-faux-plafonds",
+        destination: "/platrerie",
+        permanent: true,
+      },
+      {
+        source: "/platrerie-faux-plafonds",
+        destination: "/platrerie",
+        permanent: true,
+      },
+      {
+        source: "/services/isolation-renovation-energetique",
+        destination: "/isolation-thermique-et-renovation-energetique",
+        permanent: true,
+      },
+      {
+        source: "/isolation-renovation-energetique",
+        destination: "/isolation-thermique-et-renovation-energetique",
+        permanent: true,
+      },
+      {
+        source: "/services/:slug",
+        destination: "/:slug",
+        permanent: true,
+      },
+      {
+        source: "/services",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

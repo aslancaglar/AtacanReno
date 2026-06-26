@@ -1,0 +1,230 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "ATC Rénovation Notre différence est notre qualité" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: ATC Rénovation
+        - generic [ref=e8]: Notre différence est notre qualité
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "À Propos" [ref=e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+          - img [ref=e14]
+        - link "Réalisations" [ref=e16] [cursor=pointer]:
+          - /url: /realisations
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e18]:
+        - link "Appeler le 06 29 04 72 72" [ref=e19] [cursor=pointer]:
+          - /url: tel:0629047272
+          - img [ref=e21]
+          - generic [ref=e23]: 06 29 04 72 72
+        - link "Demander un devis" [ref=e24] [cursor=pointer]:
+          - /url: /devis
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Contactez-nous" [ref=e28]
+      - generic [ref=e31]:
+        - navigation "Fil d'Ariane" [ref=e32]:
+          - link "Accueil" [ref=e34] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e35]:
+            - img [ref=e36]
+            - generic [ref=e38]: Contact
+        - heading "Contactez-nous" [level=1] [ref=e39]
+        - paragraph [ref=e40]: Parlons de votre projet de rénovation. Devis gratuit sous 48h, sans engagement.
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]: Coordonnées
+        - heading "Nos informations de contact" [level=2] [ref=e45]
+        - paragraph [ref=e46]: N'hésitez pas à nous contacter par téléphone ou par email. Nous vous répondons sous 24h.
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - link "Adresse 123 Rue de Nancy, 54630 Flavigny-sur-Moselle" [ref=e49] [cursor=pointer]:
+            - /url: https://maps.google.com/?q=123%20Rue%20de%20Nancy%2C%2054630%20Flavigny-sur-Moselle
+            - generic [ref=e50]:
+              - img [ref=e52]
+              - generic [ref=e55]:
+                - generic [ref=e56]: Adresse
+                - text: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+          - link "Téléphone 06 29 04 72 72" [ref=e57] [cursor=pointer]:
+            - /url: tel:0629047272
+            - generic [ref=e58]:
+              - img [ref=e60]
+              - generic [ref=e62]:
+                - generic [ref=e63]: Téléphone
+                - text: 06 29 04 72 72
+          - link "Email atacanch@gmail.com" [ref=e64] [cursor=pointer]:
+            - /url: mailto:atacanch@gmail.com
+            - generic [ref=e65]:
+              - img [ref=e67]
+              - generic [ref=e70]:
+                - generic [ref=e71]: Email
+                - text: atacanch@gmail.com
+          - generic [ref=e73]:
+            - img [ref=e75]
+            - generic [ref=e78]:
+              - generic [ref=e79]: Horaires
+              - text: "Lun – Ven : 8h00 – 18h00 Sam : 9h00 – 13h00"
+        - link "Voir sur Google Maps" [ref=e82] [cursor=pointer]:
+          - /url: https://maps.google.com/?q=ATC%20R%C3%A9novation%2C%20123%20Rue%20de%20Nancy%2C%2054630%20Flavigny-sur-Moselle
+          - img [ref=e83]
+          - text: Voir sur Google Maps
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]: Comment ça marche
+        - heading "De votre demande à la réalisation" [level=2] [ref=e89]
+        - paragraph [ref=e90]: Un processus simple et transparent pour concrétiser votre projet de rénovation.
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - img [ref=e95]
+            - generic [ref=e97]: "01"
+          - heading "Prise de contact" [level=3] [ref=e98]
+          - paragraph [ref=e99]: Appelez-nous ou envoyez-nous un email. Nous vous répondons sous 24h.
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - img [ref=e103]
+            - generic [ref=e106]: "02"
+          - heading "Visite sur site" [level=3] [ref=e107]
+          - paragraph [ref=e108]: Un technicien se déplace gratuitement pour évaluer votre projet.
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - img [ref=e112]
+            - generic [ref=e115]: "03"
+          - heading "Devis détaillé" [level=3] [ref=e116]
+          - paragraph [ref=e117]: Recevez un devis transparent et complet sous 48h, sans engagement.
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - img [ref=e121]
+            - generic [ref=e126]: "04"
+          - heading "Début des travaux" [level=3] [ref=e127]
+          - paragraph [ref=e128]: Nos artisans qualifiés réalisent vos travaux dans les délais convenus.
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e134]: FAQ
+          - heading "Questions fréquentes" [level=2] [ref=e135]
+          - paragraph [ref=e136]: Retrouvez les réponses aux questions les plus courantes sur nos services et notre fonctionnement.
+        - generic [ref=e137]:
+          - heading "Besoin d'une réponse rapide ?" [level=3] [ref=e138]:
+            - img [ref=e139]
+            - text: Besoin d'une réponse rapide ?
+          - paragraph [ref=e141]: Appelez-nous directement, notre équipe est disponible du lundi au vendredi de 8h à 18h.
+          - link "06 29 04 72 72" [ref=e142] [cursor=pointer]:
+            - /url: tel:0629047272
+            - img [ref=e143]
+            - text: 06 29 04 72 72
+      - generic [ref=e145]:
+        - group [ref=e146]:
+          - generic "Le devis est-il gratuit ?" [ref=e147] [cursor=pointer]:
+            - generic [ref=e148]: Le devis est-il gratuit ?
+            - img [ref=e149]
+        - group [ref=e151]:
+          - generic "Quelle est votre zone d'intervention ?" [ref=e152] [cursor=pointer]:
+            - generic [ref=e153]: Quelle est votre zone d'intervention ?
+            - img [ref=e154]
+        - group [ref=e156]:
+          - generic "Quels sont vos délais d'intervention ?" [ref=e157] [cursor=pointer]:
+            - generic [ref=e158]: Quels sont vos délais d'intervention ?
+            - img [ref=e159]
+        - group [ref=e161]:
+          - generic "Êtes-vous certifié RGE ?" [ref=e162] [cursor=pointer]:
+            - generic [ref=e163]: Êtes-vous certifié RGE ?
+            - img [ref=e164]
+        - group [ref=e166]:
+          - generic "Quelles garanties offrez-vous ?" [ref=e167] [cursor=pointer]:
+            - generic [ref=e168]: Quelles garanties offrez-vous ?
+            - img [ref=e169]
+    - generic [ref=e173]:
+      - heading "Prêt à transformer votre intérieur ?" [level=2] [ref=e174]
+      - paragraph [ref=e175]: Obtenez un devis gratuit et personnalisé sous 48h. Sans engagement, sans surprise.
+      - link "Appelez-nous maintenant" [ref=e176] [cursor=pointer]:
+        - /url: tel:0629047272
+        - button "Appelez-nous maintenant" [ref=e177]:
+          - img
+          - text: Appelez-nous maintenant
+  - contentinfo [ref=e178]:
+    - generic [ref=e179]:
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e182]:
+            - heading "ATC Rénovation" [level=3] [ref=e183]
+            - generic [ref=e184]: Notre différence est notre qualité
+          - paragraph [ref=e185]: Spécialiste de la rénovation d'intérieur « clé en main » sur Nancy et sa région depuis plus de 20 ans. De la conception à la réalisation, nous transformons votre intérieur.
+        - generic [ref=e186]:
+          - heading "Navigation" [level=4] [ref=e187]
+          - list [ref=e188]:
+            - listitem [ref=e189]:
+              - link "Accueil" [ref=e190] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e191]:
+              - link "À Propos" [ref=e192] [cursor=pointer]:
+                - /url: /a-propos
+            - listitem [ref=e193]:
+              - link "Services" [ref=e194] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e195]:
+              - link "Réalisations" [ref=e196] [cursor=pointer]:
+                - /url: /realisations
+            - listitem [ref=e197]:
+              - link "Contact" [ref=e198] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e199]:
+          - heading "Nos Services" [level=4] [ref=e200]
+          - list [ref=e201]:
+            - listitem [ref=e202]:
+              - link "Plâtrerie" [ref=e203] [cursor=pointer]:
+                - /url: /services/platrerie-faux-plafonds
+            - listitem [ref=e204]:
+              - link "Isolation RGE" [ref=e205] [cursor=pointer]:
+                - /url: /services/isolation-renovation-energetique
+            - listitem [ref=e206]:
+              - link "Peinture" [ref=e207] [cursor=pointer]:
+                - /url: /services/peinture-decoration
+            - listitem [ref=e208]:
+              - link "Sols & Murs" [ref=e209] [cursor=pointer]:
+                - /url: /services/revetements-sols-murs
+            - listitem [ref=e210]:
+              - link "Chambre & Salon" [ref=e211] [cursor=pointer]:
+                - /url: /services/renovation-chambre-salon
+            - listitem [ref=e212]:
+              - link "Appartement Complet" [ref=e213] [cursor=pointer]:
+                - /url: /services/renovation-complete-appartement
+            - listitem [ref=e214]:
+              - link "Portes" [ref=e215] [cursor=pointer]:
+                - /url: /services/menuiserie-amenagement
+            - listitem [ref=e216]:
+              - link "Combles" [ref=e217] [cursor=pointer]:
+                - /url: /services/amenagement-combles
+        - generic [ref=e218]:
+          - heading "Zones d'Intervention" [level=4] [ref=e219]
+          - list [ref=e220]:
+            - listitem [ref=e221]: Nancy, Flavigny-sur-Moselle, Vandœuvre-lès-Nancy, Lunéville, Toul, Longwy, Villers-lès-Nancy, Pont-à-Mousson, Saint-Max, Villerupt, Essey-lès-Nancy, Malzéville, Dombasle-sur-Meurthe, Saint-Max, Jarville-la-Malgrange, Mont-Saint-Martin, Tomblaine, Saint-Nicolas-de-Port, Val de Briey, Jarny
+        - generic [ref=e222]:
+          - heading "Contact" [level=4] [ref=e223]
+          - list [ref=e224]:
+            - listitem [ref=e225]:
+              - img [ref=e226]
+              - generic [ref=e229]: 123 Rue de Nancy, 54630 Flavigny-sur-Moselle
+            - listitem [ref=e230]:
+              - img [ref=e231]
+              - link "Appeler le 06 29 04 72 72" [ref=e233] [cursor=pointer]:
+                - /url: tel:0629047272
+                - text: 06 29 04 72 72
+            - listitem [ref=e234]:
+              - img [ref=e235]
+              - link "atacanch@gmail.com" [ref=e238] [cursor=pointer]:
+                - /url: mailto:atacanch@gmail.com
+            - listitem:
+              - generic: SIRET
+              - generic: "82369837800028"
+      - generic [ref=e239]:
+        - paragraph [ref=e240]: © 2026 ATC Rénovation Intérieure. Tous droits réservés.
+        - generic [ref=e241]:
+          - button "Mentions légales" [ref=e242] [cursor=pointer]
+          - button "Politique de confidentialité" [ref=e243] [cursor=pointer]
