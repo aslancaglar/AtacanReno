@@ -33,7 +33,7 @@ export default function DevisSuccessClient() {
                   Retour à l'accueil
                 </Button>
               </Link>
-              <Link href="/services">
+              <Link href="/#services">
                 <Button variant="outline" className="btn-pill px-10 h-14 text-base font-semibold min-w-[200px]">
                   Découvrir nos services
                 </Button>

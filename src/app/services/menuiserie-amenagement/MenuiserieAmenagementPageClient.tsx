@@ -74,7 +74,7 @@ const MenuiserieAmenagementPageClient = () => (
         <Breadcrumb
           items={[
             { label: "Accueil", href: "/" },
-            { label: "Services", href: "/services" },
+            { label: "Services", href: "/#services" },
             { label: shortTitle },
           ]}
           className="mb-8"

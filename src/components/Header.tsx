@@ -12,7 +12,7 @@ import { usePreloadedCompanyInfo } from "@/app/ConvexClientProvider";
 const navLinks = [
   { label: "Accueil", to: "/", isPage: true },
   { label: "À Propos", to: "/a-propos", isPage: true },
-  { label: "Services", to: "/services", isPage: true, hasMega: true },
+  { label: "Services", to: "/#services", isPage: false, hasMega: true },
   { label: "Réalisations", to: "/realisations", isPage: true },
   { label: "Contact", to: "/contact", isPage: true },
 ];
@@ -68,7 +68,7 @@ const Header = () => {
         <div className={`flex items-center justify-between rounded-full px-6 py-5 xl:py-3 transition-all duration-300 bg-primary overflow-hidden ${scrolled ? "shadow-lg" : "xl:bg-transparent"}`}>
           <Link href="/" className="flex flex-col items-start shrink-0 leading-tight group">
             <span className="text-lg font-bold tracking-tight text-white group-hover:text-secondary transition-colors">ATC Rénovation</span>
-            <span className="text-[10px] font-medium tracking-wider text-white/70 uppercase">Notre différence est notre qualité</span>
+            <span className="text-[10px] font-medium tracking-wider text-white/70 uppercase">Notre difference est notre qualité</span>
           </Link>
 
           <nav className="hidden xl:flex items-center bg-primary rounded-full px-1.5 py-1.5 gap-0.5">
@@ -76,13 +76,13 @@ const Header = () => {
               if (link.hasMega) {
                 return (
                   <div key={link.to} className="relative" onMouseEnter={handleMegaEnter} onMouseLeave={handleMegaLeave}>
-                    <Link
-                      href={link.to}
-                      className="text-sm font-medium px-5 py-2 rounded-full transition-all duration-200 flex items-center gap-1 text-white/80 hover:text-white hover:bg-white/10"
+                    <button
+                      onClick={() => setMegaOpen(!megaOpen)}
+                      className="text-sm font-medium px-5 py-2 rounded-full transition-all duration-200 flex items-center gap-1 text-white/80 hover:text-white hover:bg-white/10 outline-none"
                     >
                       {link.label}
                       <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} aria-hidden="true" />
-                    </Link>
+                    </button>
                   </div>
                 );
               }
