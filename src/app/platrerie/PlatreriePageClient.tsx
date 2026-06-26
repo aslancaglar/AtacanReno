@@ -73,7 +73,7 @@ const renderWithBold = (text: string) => {
 
 /* ───────────────────── Component ───────────────────── */
 
-const PlatrerieFauxPlafondsPageClient = () => (
+const PlatreriePageClient = () => (
   <Layout>
     {/* ─── Page Hero ─── */}
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
@@ -254,4 +254,4 @@ const PlatrerieFauxPlafondsPageClient = () => (
   </Layout>
 );
 
-export default PlatrerieFauxPlafondsPageClient;
+export default PlatreriePageClient;

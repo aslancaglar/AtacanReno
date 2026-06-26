@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import PlatrerieFauxPlafondsPageClient from "./PlatrerieFauxPlafondsPageClient";
+import PlatreriePageClient from "./PlatreriePageClient";
 
 const BASE_URL = "https://atcrenovation.com";
-const SLUG = "platrerie-faux-plafonds";
+const SLUG = "platrerie";
 
 export const metadata: Metadata = {
   title: "Artisan Plaquiste à Nancy | Plâtrerie & Faux Plafonds 54 — ATC Rénovation",
@@ -31,5 +31,5 @@ export const metadata: Metadata = {
 };
 
 export default function PlâtrerieePage() {
-  return <PlatrerieFauxPlafondsPageClient />;
+  return <PlatreriePageClient />;
 }

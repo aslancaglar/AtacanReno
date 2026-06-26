@@ -18,7 +18,7 @@ export interface ServiceData {
 
 export const services: ServiceData[] = [
   {
-    slug: "platrerie-faux-plafonds",
+    slug: "platrerie",
     title: "Plâtrerie, Cloisons & Faux Plafonds",
     shortTitle: "Plâtrerie",
     seoTitle: "Plâtrerie, Cloisons & Faux Plafonds à Nancy",
@@ -175,7 +175,7 @@ export const serviceImages: Record<string, string> = {
   "peinture-decoration": "/images/service-peinture.jpg",
   "revetements-sols-murs": "/images/service-sols.jpg",
   "menuiserie-amenagement": "/images/service-menuiserie.jpg",
-  "platrerie-faux-plafonds": "/images/service-platrerie.jpg",
+  "platrerie": "/images/service-platrerie.jpg",
   "isolation-renovation-energetique": "/images/service-isolation.jpg",
   "amenagement-combles": "/images/service-combles.jpg",
 };
