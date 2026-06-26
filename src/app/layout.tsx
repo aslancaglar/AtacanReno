@@ -32,6 +32,14 @@ const getPreloadedCompanyInfo = unstable_cache(
   { revalidate: 3600, tags: ["company-info"] }
 );
 
+const getRawCompanyInfo = unstable_cache(
+  async () => {
+    return await fetchQuery(api.companyInfo.get);
+  },
+  ["company-info-raw"],
+  { revalidate: 3600, tags: ["company-info"] }
+);
+
 const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -90,6 +98,74 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const preloadedCompanyInfo = await getPreloadedCompanyInfo();
+  const companyInfo = await getRawCompanyInfo();
+
+  const defaultInfo = {
+    email: "contact@atcrenovation.com",
+    phone: "06 29 04 72 72",
+    address: "123 Rue de Nancy, 54630 Flavigny-sur-Moselle",
+  };
+
+  const email = companyInfo?.email || defaultInfo.email;
+  const phone = companyInfo?.phone || defaultInfo.phone;
+  const address = companyInfo?.address || defaultInfo.address;
+
+  // Split address for geo coordinates and address formatting
+  const addressParts = address.split(",");
+  const streetAddress = addressParts[0]?.trim() || "123 Rue de Nancy";
+  const localityAndPostal = addressParts[1]?.trim() || "54630 Flavigny-sur-Moselle";
+  const postalCodeMatch = localityAndPostal.match(/\d{5}/);
+  const postalCode = postalCodeMatch ? postalCodeMatch[0] : "54630";
+  const addressLocality = localityAndPostal.replace(/\d{5}/, "").trim() || "Flavigny-sur-Moselle";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "ATC Rénovation",
+    "image": "https://atcrenovation.com/images/hero-bg.jpg",
+    "@id": "https://atcrenovation.com/#organization",
+    "url": "https://atcrenovation.com",
+    "telephone": phone,
+    "email": email,
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": streetAddress,
+      "addressLocality": addressLocality,
+      "postalCode": postalCode,
+      "addressRegion": "Grand Est",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.5695,
+      "longitude": 6.1866
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      "https://maps.app.goo.gl/RwbnhGRwfampRRGS8"
+    ],
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Nancy" },
+      { "@type": "AdministrativeArea", "name": "Vandœuvre-lès-Nancy" },
+      { "@type": "AdministrativeArea", "name": "Laxou" },
+      { "@type": "AdministrativeArea", "name": "Villers-lès-Nancy" },
+      { "@type": "AdministrativeArea", "name": "Meurthe-et-Moselle" }
+    ]
+  };
 
   return (
     <html lang="fr" className={manrope.variable} suppressHydrationWarning>
@@ -98,6 +174,10 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_CONVEX_URL} />
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_CONVEX_URL} crossOrigin="anonymous" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* Google Tag (gtag.js) */}
         <Script
           async

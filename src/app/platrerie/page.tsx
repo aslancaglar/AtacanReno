@@ -31,5 +31,32 @@ export const metadata: Metadata = {
 };
 
 export default function PlâtrerieePage() {
-  return <PlatreriePageClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Plâtrerie, Cloisons & Faux Plafonds à Nancy",
+    "provider": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "ATC Rénovation",
+      "url": "https://atcrenovation.com"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Nancy" },
+      { "@type": "AdministrativeArea", "name": "Vandœuvre-lès-Nancy" },
+      { "@type": "AdministrativeArea", "name": "Laxou" },
+      { "@type": "AdministrativeArea", "name": "Villers-lès-Nancy" },
+      { "@type": "AdministrativeArea", "name": "Meurthe-et-Moselle" }
+    ],
+    "description": "ATC Rénovation, votre artisan plaquiste à Nancy. Cloisons sur mesure, faux plafonds design, isolation phonique et enduits de finition en Meurthe-et-Moselle (54)."
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <PlatreriePageClient />
+    </>
+  );
 }

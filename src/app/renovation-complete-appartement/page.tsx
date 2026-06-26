@@ -31,5 +31,32 @@ export const metadata: Metadata = {
 };
 
 export default function AppartementPage() {
-  return <RenovationCompleteAppartementPageClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Rénovation Complète d'Appartement à Nancy",
+    "provider": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "ATC Rénovation",
+      "url": "https://atcrenovation.com"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Nancy" },
+      { "@type": "AdministrativeArea", "name": "Vandœuvre-lès-Nancy" },
+      { "@type": "AdministrativeArea", "name": "Laxou" },
+      { "@type": "AdministrativeArea", "name": "Villers-lès-Nancy" },
+      { "@type": "AdministrativeArea", "name": "Meurthe-et-Moselle" }
+    ],
+    "description": "Rénovation complète d'appartement à Nancy, clé en main : tous corps de métier. Plomberie, électricité, peinture, sols par ATC Rénovation."
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <RenovationCompleteAppartementPageClient />
+    </>
+  );
 }
