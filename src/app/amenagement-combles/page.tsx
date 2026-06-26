@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Aménagement des Combles à Nancy — ATC Rénovation",
     description:
       "Aménagement de combles à Nancy, clé en main : isolation, plâtrerie, électricité, sols, peinture. Chambre ou bureau sous les toits.",
-    url: `${BASE_URL}/services/${SLUG}`,
+    url: `${BASE_URL}/${SLUG}`,
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: `${BASE_URL}/services/${SLUG}`,
+    canonical: `${BASE_URL}/${SLUG}`,
   },
 };
 

@@ -33,7 +33,7 @@ const ServicesSection = () => {
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
             >
               <Link
-                href={`/services/${service.slug}`}
+                href={`/${service.slug}`}
                 className="group bg-card rounded-2xl overflow-hidden hover:shadow-[0px_20px_40px_rgba(52,48,38,0.06)] transition-all duration-300 h-full block"
               >
                 <div className="aspect-[4/3] overflow-hidden">

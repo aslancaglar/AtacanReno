@@ -5,7 +5,7 @@ const BASE_URL = "https://atcrenovation.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = services.map((service) => ({
-    url: `${BASE_URL}/services/${service.slug}`,
+    url: `${BASE_URL}/${service.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));

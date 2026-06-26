@@ -159,7 +159,7 @@ const Header = () => {
                 return (
                   <Link
                     key={service.slug}
-                    href={`/services/${service.slug}`}
+                    href={`/${service.slug}`}
                     onClick={() => setMegaOpen(false)}
                     className="flex items-start gap-3 p-3 rounded-xl hover:bg-muted transition-colors group text-left"
                   >
@@ -200,7 +200,7 @@ const Header = () => {
                       return (
                         <Link
                           key={service.slug}
-                          href={`/services/${service.slug}`}
+                          href={`/${service.slug}`}
                           onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
                           className="flex items-center gap-2.5 py-2 px-3 rounded-lg text-sm text-nav hover:bg-muted transition-colors text-left"
                         >

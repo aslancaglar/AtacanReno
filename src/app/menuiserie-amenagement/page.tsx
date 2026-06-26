@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Installation de Portes Intérieures à Nancy — ATC Rénovation",
     description:
       "Pose de portes intérieures à Nancy : blocs-portes, fin de chantier, réglages précis. Confort acoustique optimal.",
-    url: `${BASE_URL}/services/${SLUG}`,
+    url: `${BASE_URL}/${SLUG}`,
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: `${BASE_URL}/services/${SLUG}`,
+    canonical: `${BASE_URL}/${SLUG}`,
   },
 };
 

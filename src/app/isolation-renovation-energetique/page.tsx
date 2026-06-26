@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Isolation Thermique & Rénovation Énergétique à Nancy (RGE) — ATC Rénovation",
     description:
       "Isolation certifiée RGE à Nancy : combles, murs, planchers. Éligible MaPrimeRénov', jusqu'à 80% d'aides.",
-    url: `${BASE_URL}/services/${SLUG}`,
+    url: `${BASE_URL}/${SLUG}`,
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: `${BASE_URL}/services/${SLUG}`,
+    canonical: `${BASE_URL}/${SLUG}`,
   },
 };
 

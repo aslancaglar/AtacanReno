@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Peinture & Décoration Intérieure à Nancy — ATC Rénovation",
     description:
       "Peintre à Nancy : peinture intérieure, papier peint, enduits décoratifs. Finitions impeccables, conseils colorimétriques.",
-    url: `${BASE_URL}/services/${SLUG}`,
+    url: `${BASE_URL}/${SLUG}`,
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: `${BASE_URL}/services/${SLUG}`,
+    canonical: `${BASE_URL}/${SLUG}`,
   },
 };
 

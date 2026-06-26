@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Revêtements de Sols & Murs à Nancy — ATC Rénovation",
     description:
       "Pose de carrelage, parquet et sols souples à Nancy. Faïence, grand format, ragréage.",
-    url: `${BASE_URL}/services/${SLUG}`,
+    url: `${BASE_URL}/${SLUG}`,
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: `${BASE_URL}/services/${SLUG}`,
+    canonical: `${BASE_URL}/${SLUG}`,
   },
 };
 

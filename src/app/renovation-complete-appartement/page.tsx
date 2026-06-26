@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Rénovation Complète d'Appartement à Nancy — ATC Rénovation",
     description:
       "Rénovation complète d'appartement à Nancy, clé en main : tous corps de métier. Plomberie, électricité, peinture, sols.",
-    url: `${BASE_URL}/services/${SLUG}`,
+    url: `${BASE_URL}/${SLUG}`,
     type: "website",
     locale: "fr_FR",
     siteName: "ATC Rénovation",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: `${BASE_URL}/services/${SLUG}`,
+    canonical: `${BASE_URL}/${SLUG}`,
   },
 };
 
