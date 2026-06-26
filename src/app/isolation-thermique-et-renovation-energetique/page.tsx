@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import IsolationRenovationEnergetiquePageClient from "./IsolationRenovationEnergetiquePageClient";
+import IsolationThermiqueEtRenovationEnergetiquePageClient from "./IsolationThermiqueEtRenovationEnergetiquePageClient";
 
 const BASE_URL = "https://atcrenovation.com";
-const SLUG = "isolation-renovation-energetique";
+const SLUG = "isolation-thermique-et-renovation-energetique";
 
 export const metadata: Metadata = {
   title: "Isolation Thermique & Rénovation Énergétique à Nancy (RGE) — ATC Rénovation",
@@ -31,5 +31,5 @@ export const metadata: Metadata = {
 };
 
 export default function IsolationPage() {
-  return <IsolationRenovationEnergetiquePageClient />;
+  return <IsolationThermiqueEtRenovationEnergetiquePageClient />;
 }

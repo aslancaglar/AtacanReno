@@ -36,7 +36,7 @@ export const services: ServiceData[] = [
     ],
   },
   {
-    slug: "isolation-renovation-energetique",
+    slug: "isolation-thermique-et-renovation-energetique",
     title: "Isolation & Rénovation Énergétique (RGE)",
     shortTitle: "Isolation RGE",
     seoTitle: "Isolation Thermique & Rénovation Énergétique à Nancy (RGE)",
@@ -176,7 +176,7 @@ export const serviceImages: Record<string, string> = {
   "revetements-sols-murs": "/images/service-sols.jpg",
   "menuiserie-amenagement": "/images/service-menuiserie.jpg",
   "platrerie": "/images/service-platrerie.jpg",
-  "isolation-renovation-energetique": "/images/service-isolation.jpg",
+  "isolation-thermique-et-renovation-energetique": "/images/service-isolation.jpg",
   "amenagement-combles": "/images/service-combles.jpg",
 };
 
