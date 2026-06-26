@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import HomeClient from "./HomeClient";
+import Layout from "@/components/Layout";
+import HeroSection from "@/components/home/HeroSection";
+import StatsSection from "@/components/home/StatsSection";
+import AboutPreview from "@/components/home/AboutPreview";
+import ServicesSection from "@/components/home/ServicesSection";
+import RealisationsPreview from "@/components/home/RealisationsPreview";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import PartnersSection from "@/components/home/PartnersSection";
+import CTASection from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
   alternates: {
@@ -8,5 +16,16 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeClient />;
+  return (
+    <Layout>
+      <HeroSection />
+      <StatsSection />
+      <AboutPreview />
+      <ServicesSection />
+      <RealisationsPreview />
+      <TestimonialsSection />
+      <PartnersSection />
+      <CTASection />
+    </Layout>
+  );
 }
